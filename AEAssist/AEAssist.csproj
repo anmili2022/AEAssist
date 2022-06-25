@@ -330,8 +330,8 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Ninja\SpellQueue\SpellQueue_Katon.cs" />
     <Compile Include="AI\Ninja\SpellQueue\SpellQueue_Raiton.cs" />
     <Compile Include="AI\Ninja\SpellQueue\SpellQueue_Suiton.cs" />
-    <Compile Include="AI\Paladin\Ability\Paladin_Blank.cs" />
-    <Compile Include="AI\Paladin\GCD\_Blank.cs" />
+    <Compile Include="AI\Paladin\Ability\PaladinAbility_Blank.cs" />
+    <Compile Include="AI\Paladin\GCD\PaladinGCD_Blank.cs" />
     <Compile Include="AI\Paladin\Paladin_AIPriorityQueue.cs" />
     <Compile Include="AI\Paladin\Paladin_BattleData.cs" />
     <Compile Include="AI\Paladin\Paladin_Rotation.cs" />
