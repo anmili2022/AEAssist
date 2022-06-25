@@ -38,7 +38,7 @@ namespace AEAssist.AI.Paladin
 
         public SpellEntity GetBaseGCDSpell()
         {
-            return null;
+            return SpellsDefine.FastBlade.GetSpellEntity();
         }
     }
 }

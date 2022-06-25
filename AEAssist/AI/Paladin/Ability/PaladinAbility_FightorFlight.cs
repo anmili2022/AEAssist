@@ -3,16 +3,12 @@ using AEAssist.Define;
 using AEAssist.Helper;
 namespace AEAssist.AI.Paladin.Ability
 {
-    public class PaladinAbility_Blank : IAIHandler
+    public class PaladinAbility_FightorFlight : IAIHandler
     {
-        uint spell;
-        static public uint GetSpell()
-        {
-            return 0;
-        }
+        uint spell = SpellsDefine.FightorFlight;
+       
         public int Check(SpellEntity lastSpell)
         {
-            spell = GetSpell();
 
             if (!spell.IsReady())
                 return -1;
@@ -26,5 +22,4 @@ namespace AEAssist.AI.Paladin.Ability
             return null;
         }
     }
-    
 }
