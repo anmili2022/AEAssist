@@ -330,6 +330,12 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Ninja\SpellQueue\SpellQueue_Katon.cs" />
     <Compile Include="AI\Ninja\SpellQueue\SpellQueue_Raiton.cs" />
     <Compile Include="AI\Ninja\SpellQueue\SpellQueue_Suiton.cs" />
+    <Compile Include="AI\Paladin\Ability\Paladin_Blank.cs" />
+    <Compile Include="AI\Paladin\GCD\_Blank.cs" />
+    <Compile Include="AI\Paladin\Paladin_AIPriorityQueue.cs" />
+    <Compile Include="AI\Paladin\Paladin_BattleData.cs" />
+    <Compile Include="AI\Paladin\Paladin_Rotation.cs" />
+    <Compile Include="AI\Paladin\Paladin_SpellHelper.cs" />
     <Compile Include="AI\Reaper\SpellEvent\SpellEvent_EnshourdGCD.cs" />
     <Compile Include="AI\Reaper\SpellEvent\SpellEvent_Lemure.cs" />
     <Compile Include="AI\Sage\Ability\SageAbilityHaima.cs" />
@@ -502,6 +508,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="Setting\Setting\NinjaSettings.cs" />
     <Compile Include="Setting\Setting\ReaperSettings.cs" />
     <Compile Include="Setting\Setting\SageSettings.cs" />
+    <Compile Include="Setting\Setting\PaladinSettings.cs" />
     <Compile Include="Setting\Setting\SMNSettings.cs" />
     <Compile Include="Setting\Setting\SamuraiSettings.cs" />
     <Compile Include="Setting\Setting\WhiteMageSetting.cs" />
