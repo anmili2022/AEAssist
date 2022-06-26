@@ -181,6 +181,12 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
       <Link>TriggerModel\View\GUIToolTip.cs</Link>
     </Compile>
     <Compile Include="AI\AIMgrs.cs" />
+    <Compile Include="AI\Astrologian\AstBattleData.cs" />
+    <Compile Include="AI\Astrologian\AstRotation.cs" />
+    <Compile Include="AI\Astrologian\AstSpellHelper.cs" />
+    <Compile Include="AI\Astrologian\Ast_AIPriorityQueue.cs" />
+    <Compile Include="AI\Astrologian\GCD\AstBaseGCD.cs" />
+    <Compile Include="AI\Astrologian\GCD\AstGCDDot.cs" />
     <Compile Include="AI\Bard\Ability\BardAbility_Barrage.cs" />
     <Compile Include="AI\Bard\Ability\BardAbility_Bloodletter.cs" />
     <Compile Include="AI\Bard\Ability\BardAbility_Buffs.cs" />
@@ -501,6 +507,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="Rotations\Core\IRotation.cs" />
     <Compile Include="Rotations\Core\RotationManager.cs" />
     <Compile Include="Rotations\JobAttribute.cs" />
+    <Compile Include="Setting\Setting\AstSettings.cs" />
     <Compile Include="Setting\Setting\BlackMageSetting.cs" />
     <Compile Include="Setting\Setting\DancerSettings.cs" />
     <Compile Include="Setting\Setting\GunBreakerSettings.cs" />
@@ -964,6 +971,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <PackageReference Include="System.ObjectModel" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AI\Astrologian\Ability\" />
     <Folder Include="AI\GunBreaker\SpellEvent\" />
     <Folder Include="AI\Monk\SpellQueue\" />
     <Folder Include="AI\Summoner\SpellQueue\" />

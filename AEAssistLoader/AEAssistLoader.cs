@@ -55,6 +55,7 @@ namespace AEAssistLoader
                     case ClassJobType.Sage:
                     case ClassJobType.Summoner:
                     case ClassJobType.WhiteMage:
+                    case ClassJobType.Astrologian:
                     case ClassJobType.BlackMage:
                     case ClassJobType.Monk:
                     case ClassJobType.Ninja:
