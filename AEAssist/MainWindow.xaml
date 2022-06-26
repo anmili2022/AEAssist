@@ -7,7 +7,7 @@
         xmlns:viewModels="clr-namespace:AEAssist"
         xmlns:dataBinding="clr-namespace:AEAssist"
         mc:Ignorable="d"
-        Title="AEAssist" Height="550" Width="800" WindowStyle="SingleBorderWindow" Icon="Resources/Icon.png"
+        Title="AEAssist" Height="580" Width="800" WindowStyle="SingleBorderWindow" Icon="Resources/Icon.png"
         ResizeMode="NoResize">
 
     <Window.Resources>
@@ -33,12 +33,13 @@
             <ImageBrush ImageSource="Resources/Background/Black_1.jpeg" Stretch="UniformToFill" Opacity="0.6" />
         </Grid.Background>
 
-        <StackPanel>
+        <StackPanel Margin="0,0,0,0">
+            
             <Border CornerRadius="3" VerticalAlignment="Top">
                 <TabControl
                     Background="Transparent"
                     TabStripPlacement="Left"
-                    Height="450">
+                    Height="500" HorizontalAlignment="Left">
                     <TabItem Width="50" Height="50">
                         <TabItem.Header>
                             <Image Margin="5" Source="Resources/Icon.png" />
@@ -48,10 +49,12 @@
                                 <RotateTransform Angle="90" />
                             </TransformGroup>
                         </TabItem.LayoutTransform>
-                        <view:GeneralSettingView HorizontalAlignment="Center" />
+                        <view:GeneralSettingView HorizontalAlignment="Center" Width="740" VerticalAlignment="Top"/>
                     </TabItem>
 
 
+
+                    <!--
                     <TabItem Width="50" Height="50">
                         <TabItem.Header>
                             <Image Margin="5" Source="Resources/jobs/brd-framed.png" />
@@ -76,7 +79,7 @@
                         <view:MCHSettingView HorizontalAlignment="Center" />
                     </TabItem>
 
-
+                    
                     <TabItem Width="50" Height="50">
                         <TabItem.Header>
                             <Image Margin="5" Source="Resources/jobs/rpr-framed.png" />
@@ -112,7 +115,7 @@
                         </TabItem.LayoutTransform>
                         <view:SMNSettingView HorizontalAlignment="Center" />
                     </TabItem>
-                    
+                    -->
                     <!-- <TabItem Width="50" Height="50"> -->
                     <!--     <TabItem.Header> -->
                     <!--         <Image Margin="5" Source="Resources/jobs/mch-framed.png" /> -->
@@ -123,7 +126,7 @@
                     <!--         </TransformGroup> -->
                     <!--     </TabItem.LayoutTransform> -->
                     <!--     <view:MCHSettingView HorizontalAlignment="Center" /> -->
-                    <!-- </TabItem> -->
+                    <!-- </TabItem> 
                     
                     
                     
@@ -161,9 +164,45 @@
                         </TabItem.LayoutTransform>
                         <view:WhiteMageSettingView HorizontalAlignment="Center" />
                     </TabItem>
+                    -->
+                    <TabItem Width="50" Height="50">
+                        <TabItem.Header>
+                            <Image Margin="5" Source="Resources/jobs/Melee.png" />
+                        </TabItem.Header>
+                        <TabItem.LayoutTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="90" />
+                            </TransformGroup>
+                        </TabItem.LayoutTransform>
+                        <view:Melee HorizontalAlignment="Center" Width="740" />
+                    </TabItem>
+                    <TabItem Width="50" Height="50">
+                        <TabItem.Header>
+                            <Image Margin="5" Source="Resources/jobs/Ranged.png" />
+                        </TabItem.Header>
+                        <TabItem.LayoutTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="90" />
+                            </TransformGroup>
+                        </TabItem.LayoutTransform>
+                        <view:Ranged HorizontalAlignment="Center" Width="740" />
+                    </TabItem>
+                    <TabItem Width="50" Height="50">
+                        <TabItem.Header>
+                            <Image Margin="5" Source="Resources/jobs/Healer.png" />
+                        </TabItem.Header>
+                        <TabItem.LayoutTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="90" />
+                            </TransformGroup>
+                        </TabItem.LayoutTransform>
+                        <view:Healer HorizontalAlignment="Center" Width="740" />
+                    </TabItem>
                 </TabControl>
+                
             </Border>
-            <Border>
+            
+            <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <TextBox Text="{Binding Language.QQGroup}" Margin="10" HorizontalAlignment="Left" IsReadOnly="True" />
                     <TextBox Text="Discord:    https://discord.gg/Yyrf42h9gj" Margin="10" IsReadOnly="True"

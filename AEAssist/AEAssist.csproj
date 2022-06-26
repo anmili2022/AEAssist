@@ -50,11 +50,6 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     </Reference>
     <Reference Include="RebornBuddy">
       <HintPath>..\References\RebornBuddy.exe</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="RebornBuddy, Version=1.0.473.0, Culture=neutral, PublicKeyToken=48d7174f8a943034">
-      <HintPath>..\References\RebornBuddy.exe</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -553,6 +548,9 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="View\BardSettingView.xaml.cs">
       <DependentUpon>BardSettingView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Caster.xaml.cs">
+      <DependentUpon>Caster.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CommonOverlay.xaml.cs">
       <DependentUpon>CommonOverlay.xaml</DependentUpon>
     </Compile>
@@ -571,6 +569,9 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="View\GeneralSetting\UserControl_Hotkey.xaml.cs">
       <DependentUpon>UserControl_Hotkey.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Healer.xaml.cs">
+      <DependentUpon>Healer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Hotkey\BuiltinHotkeys\ArmLength.cs" />
     <Compile Include="View\Hotkey\BuiltinHotkeys\Burst.cs" />
     <Compile Include="View\Hotkey\BuiltinHotkeys\EnAvant.cs" />
@@ -581,6 +582,9 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="View\Hotkey\IBuiltinHotkey.cs" />
     <Compile Include="View\MCHSettingView.xaml.cs">
       <DependentUpon>MCHSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Melee.xaml.cs">
+      <DependentUpon>Melee.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MeleeOverlay.xaml.cs">
       <DependentUpon>MeleeOverlay.xaml</DependentUpon>
@@ -646,11 +650,17 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_ReaperOverlay.cs" />
     <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_SageOverlay.cs" />
     <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_SamuraiOverlay.cs" />
+    <Compile Include="View\Ranged.xaml.cs">
+      <DependentUpon>Ranged.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ReaperSettingView.xaml.cs">
       <DependentUpon>ReaperSettingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SMNSettingView.xaml.cs">
       <DependentUpon>SMNSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AstrologianSettingView.xaml.cs">
+      <DependentUpon>AstrologianSettingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WhiteMageSettingView.xaml.cs">
       <DependentUpon>WhiteMageSettingView.xaml</DependentUpon>
@@ -695,6 +705,11 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Resource Include="Resources\Spells\Monk\RiddleofEarth.png" />
     <Resource Include="Resources\Spells\Monk\Six-sidedStar.png" />
     <Resource Include="Resources\Images\General\ArrowDownHighlighted.png" />
+    <Resource Include="Resources\jobs\Caster.png" />
+    <Resource Include="Resources\jobs\Healer.png" />
+    <Resource Include="Resources\jobs\Melee.png" />
+    <Resource Include="Resources\jobs\Ranged.png" />
+    <Resource Include="Resources\jobs\Tank.png" />
     <Content Include="Resources\Lan_zh-CN.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -705,7 +720,19 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Resource Include="Resources\Spells\WhiteMage\PlenaryIndulgence.png" />
     <Resource Include="Resources\Spells\WhiteMage\PresenceofMind.png" />
     <Resource Include="Resources\Spells\WhiteMage\ThinAir.png" />
+    <Page Include="View\Caster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DancerSettingView.xaml" />
+    <Page Include="View\Healer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Melee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Overlay\CombatMessageOverlay.xaml" />
     <Page Include="View\Overlay\SMNOverlayWindow.xaml">
       <SubType>Designer</SubType>
@@ -719,7 +746,14 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Ranged.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SMNSettingView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AstrologianSettingView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\WhiteMageSettingView.xaml">
