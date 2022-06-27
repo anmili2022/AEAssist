@@ -7,11 +7,24 @@ namespace AEAssist.AI.Paladin.Ability
     {
         uint spell = SpellsDefine.FightorFlight;
        
+       
         public int Check(SpellEntity lastSpell)
         {
-
             if (!spell.IsReady())
                 return -1;
+
+            if (AIRoot.Instance.CloseBurst)
+                return -2;
+          
+
+            if (!AIRoot.Instance.Is2ndAbilityTime())
+                return -3;
+
+            //add setting when to use fof
+            if(Paladin_SpellHelper.LastGCDSpellID()!=SpellsDefine.RiotBlade)
+
+                return -4;
+            
             return 0;
         }
 
