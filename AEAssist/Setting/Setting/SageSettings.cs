@@ -13,7 +13,7 @@ namespace AEAssist
         {
             Reset();
         }
-        
+
         public int Dot_TimeLeft { get; set; } = ConstValue.AuraTick;
         public int TTK_EukrasianDosis { get; set; }
 
@@ -21,7 +21,7 @@ namespace AEAssist
         public bool LucidDreamingToggle { get; set; } = true;
 
         public bool SwiftResToggle { get; set; } = true;
-        
+
         public bool EarlyDecisionMode { get; set; }
         public bool Heal { get; set; } = true;
 

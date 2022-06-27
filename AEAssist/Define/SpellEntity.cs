@@ -47,10 +47,10 @@ namespace AEAssist.Define
         {
             SpellTargetType = targetIndex;
         }
-        
+
         public SpellEntity(uint id, BattleCharacter target) : this(id)
         {
-            SpellTargetType =  SpellTargetType.SpecifyTarget;
+            SpellTargetType = SpellTargetType.SpecifyTarget;
             specifyTarget = target;
         }
 

@@ -2,7 +2,6 @@
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
-using ff14bot;
 using ff14bot.Enums;
 
 namespace AEAssist.AI.Samurai
@@ -22,7 +21,7 @@ namespace AEAssist.AI.Samurai
             AEAssist.DataBinding.Instance.EarlyDecisionMode = SettingMgr.GetSetting<SamuraiSettings>().EarlyDecisionMode;
             LogHelper.Info("EarlyDecisionMode: " + AEAssist.DataBinding.Instance.EarlyDecisionMode);
         }
-        
+
         public Task<bool> PreCombatBuff()
         {
             return Task.FromResult(false);

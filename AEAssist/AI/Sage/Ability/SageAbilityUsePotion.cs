@@ -18,7 +18,7 @@ namespace AEAssist.AI.Sage.Ability
                 return -4;
             if (!PotionHelper.CheckPotion(SettingMgr.GetSetting<GeneralSettings>().MindPotionId))
                 return -6;
-            
+
             return 0;
         }
 

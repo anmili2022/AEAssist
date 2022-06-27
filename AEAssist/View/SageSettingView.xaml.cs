@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
-using System.Windows.Forms;
 using AEAssist.Opener;
 using ff14bot.Enums;
 using UserControl = System.Windows.Controls.UserControl;
@@ -22,7 +21,7 @@ namespace AEAssist.View
             };
             SageResPriority.ItemsSource = sageResPriority;
             SageResPriority.SelectedIndex = SettingMgr.GetSetting<SageSettings>().SageResPriority;
-            
+
 
             if (OpenerMgr.Instance.JobOpeners.ContainsKey(ClassJobType.Sage))
             {
@@ -36,7 +35,7 @@ namespace AEAssist.View
             SettingMgr.GetSetting<SageSettings>().SageOpener = ChooseOpener.SelectedValue.ToString();
             OpenerMgr.Instance.SpecifyOpenerByName[ClassJobType.Sage] = ChooseOpener.SelectedValue.ToString();
         }
-        
+
         private void ChooseResPriority_OnSelectionChanged(object sender, EventArgs eventArgs)
         {
             SettingMgr.GetSetting<SageSettings>().SageResPriority = int.Parse(SageResPriority.SelectedValue.ToString());

@@ -1,9 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot.Managers;
-using ff14bot;
-using System;
 using Buddy.Coroutines;
 
 namespace AEAssist.AI.Summoner.GCD
@@ -13,10 +11,10 @@ namespace AEAssist.AI.Summoner.GCD
         uint spell = SpellsDefine.SummonCarbuncle;
         public int Check(SpellEntity lastSpell)
         {
-            
+
             if (SMN_SpellHelper.HasCarbuncle())
                 return -4;
-           
+
             if (!spell.IsReady())
                 return -1;
 
@@ -39,7 +37,7 @@ namespace AEAssist.AI.Summoner.GCD
             int randomTimer = new Random().Next(2000, 4000);
 
             await Coroutine.Sleep(randomTimer);
-            if (Check(null)>=0)
+            if (Check(null) >= 0)
                 if (await spell.DoGCD()) return spell.GetSpellEntity();
 
             return null;

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using AEAssist.Helper;
 
@@ -12,7 +11,7 @@ namespace AEAssist.View.Hotkey
 
 
         private Dictionary<string, Action> HotkeyName2Actions = new Dictionary<string, Action>();
-        
+
 
         private HashSet<IBuiltinHotkey> _builtinHotkeys = new HashSet<IBuiltinHotkey>();
 
@@ -31,7 +30,7 @@ namespace AEAssist.View.Hotkey
 
                 var ins = Activator.CreateInstance(type) as IBuiltinHotkey;
                 _builtinHotkeys.Add(ins);
-                LogHelper.Info("BuiltinHotkey: "+type.Name);
+                LogHelper.Info("BuiltinHotkey: " + type.Name);
                 HotkeyName2Actions[type.Name] = ins.OnHotkeyDown;
             }
         }
@@ -61,7 +60,7 @@ namespace AEAssist.View.Hotkey
                     continue;
                 }
 
-                if(!HotkeyName2Actions.TryGetValue(hotkeyData.TypeName,out var action))
+                if (!HotkeyName2Actions.TryGetValue(hotkeyData.TypeName, out var action))
                     continue;
                 var hotkey = hotkeyData;
                 Hotkeys.Add(ff14bot.Managers.HotkeyManager.Register($"AEAssist_{hotkeyData.TypeName}", hotkey.Key, hotkey.ModifierKey,
@@ -70,8 +69,8 @@ namespace AEAssist.View.Hotkey
                         action();
                     }));
             }
-            
-        
+
+
         }
 
         public void UnRegisterKey()
@@ -91,7 +90,7 @@ namespace AEAssist.View.Hotkey
             {
                 foreach (var builtin in _builtinHotkeys)
                 {
-                    if(builtin.GetType().Name != v.TypeName)
+                    if (builtin.GetType().Name != v.TypeName)
                         continue;
                     v.Name = builtin.GetDisplayString();
                     break;

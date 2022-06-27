@@ -1,17 +1,28 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-namespace AEAssist.AI.Summoner.GCD
+namespace AEAssist.AI.Paladin.GCD
 {
-    public class _Blank : IAIHandler
+    public class PaladinGCD_Dot : IAIHandler
     {
         uint spell;
         static public uint GetSpell()
         {
-            return 0;
+            switch (Paladin_SpellHelper.LastGCDSpellID())
+            {
+                case SpellsDefine.FastBlade:
+                    return SpellsDefine.RiotBlade;
+                case SpellsDefine.RiotBlade:
+                    return SpellsDefine.GoringBlade;
+
+            }
+            return SpellsDefine.FastBlade;
         }
         public int Check(SpellEntity lastSpell)
         {
+            if (!SpellsDefine.GoringBlade.IsUnlock())
+                return -2;
+
             spell = GetSpell();
 
             if (!spell.IsReady())

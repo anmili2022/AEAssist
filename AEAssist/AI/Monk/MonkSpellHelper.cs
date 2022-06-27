@@ -1,12 +1,8 @@
-﻿using System;
-using System.Linq;
-using System.Runtime.InteropServices;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using Buddy.Coroutines;
 using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Managers;
 using ff14bot.Objects;
 
@@ -40,9 +36,9 @@ namespace AEAssist.AI.Monk
             }
 
             var target = Core.Me.CurrentTarget as Character;
-            
+
             var priority = MeleePosition.Priority.Low;
-            
+
             if (InRaptorForm())
             {
                 priority = MeleePosition.Priority.Medium;
@@ -78,7 +74,7 @@ namespace AEAssist.AI.Monk
                     }
                 }
             }
-            
+
             if (UsingDot())
             {
                 if (TargetHelper.CheckNeedUseAOEByMe(5, 5, 5))
@@ -156,7 +152,7 @@ namespace AEAssist.AI.Monk
 
             return false;
         }
-        
+
 
         public static async Task<SpellEntity> DoOpoOpoGCDS(Character target, bool pb = false)
         {
@@ -181,7 +177,7 @@ namespace AEAssist.AI.Monk
                         }
                     }
                 }
-                
+
             }
 
             if (Core.Me.HasMyAura(AurasDefine.LeadenFist) || !SpellsDefine.DragonKick.IsUnlock())
@@ -357,7 +353,7 @@ namespace AEAssist.AI.Monk
 
             return null;
         }
-        
+
 
         public static async Task<SpellEntity> BaseGCDCombo(Character target)
         {

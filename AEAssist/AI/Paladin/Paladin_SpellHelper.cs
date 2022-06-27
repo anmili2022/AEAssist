@@ -1,20 +1,11 @@
-﻿using System;
-using System.Linq;
-using System.Windows.Media;
-using AEAssist.Define;
-using AEAssist.Define.DataStruct;
+﻿using AEAssist.Define;
 using AEAssist.Helper;
-using Buddy.Coroutines;
 using ff14bot;
-using ff14bot.Helpers;
-using ff14bot.Managers;
-using ff14bot.Objects;
-using ff14bot.RemoteWindows;
 namespace AEAssist.AI.Paladin
 {
     public static class Paladin_SpellHelper
     {
-        
+
         public static bool Debugging { get; set; } = true;
         public static bool CheckUseAOE()
         {
@@ -39,7 +30,7 @@ namespace AEAssist.AI.Paladin
 
             if (SpellsDefine.FightorFlight.CoolDownInGCDs(2))
                 return true;
-            
+
             return false;
         }
 

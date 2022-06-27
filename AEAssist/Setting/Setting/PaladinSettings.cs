@@ -11,14 +11,14 @@ namespace AEAssist
         }
 
         public bool EarlyDecisionMode { get; set; }
-      
+
         public void Reset()
         {
         }
 
         public void OnLoad()
         {
-            
+
         }
     }
 }

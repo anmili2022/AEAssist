@@ -6,7 +6,7 @@ namespace AEAssist.AI.Paladin.Ability
     public class PaladinAbility_SpiritsWithin : IAIHandler
     {
         uint spell = SpellsDefine.SpiritsWithin;
-       
+
         public int Check(SpellEntity lastSpell)
         {
 

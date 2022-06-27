@@ -1,6 +1,5 @@
 ﻿using System;
 using AEAssist.Helper;
-using AEAssist.View;
 using ff14bot;
 using ff14bot.Objects;
 using PropertyChanged;
@@ -18,14 +17,14 @@ namespace AEAssist
             Side,
             None
         }
-        
+
         public enum Priority
         {
             Low,
             Medium,
             High
         }
-        
+
         private Position CurrentPosition { get; set; } = Position.None;
         private Position RequiredPosition { get; set; } = Position.None;
         public Priority CurrentPriority { get; set; } = Priority.Low;
@@ -33,10 +32,10 @@ namespace AEAssist
         public bool IsPositionCorrect { get; set; } = true;
 
         public int TargetDistance { get; set; } = 0;
-        
+
         public System.Windows.Media.Brush IsPositionCorrectColor { get; set; } = System.Windows.Media.Brushes.Green;
         public System.Windows.Media.Brush IsTargetDistanceSafe { get; set; } = System.Windows.Media.Brushes.Green;
-        
+
         private void SetString()
         {
             switch (RequiredPosition)
@@ -59,13 +58,13 @@ namespace AEAssist
             RequiredPosition = Position.Back;
             CurrentPriority = priority;
         }
-        
+
         public void SetPositionToSide(Priority priority = Priority.Low)
         {
             RequiredPosition = Position.Side;
             CurrentPriority = priority;
         }
-        
+
         public void SetPositionToNone(Priority priority = Priority.Low)
         {
             RequiredPosition = Position.None;
@@ -82,8 +81,8 @@ namespace AEAssist
         {
             return RequiredPosition;
         }
-        
-        
+
+
         private void SetColor()
         {
             switch (IsPositionCorrect)
@@ -111,7 +110,7 @@ namespace AEAssist
         private void SetDistance(GameObject CurrentTarget)
         {
             var distanceF = TargetHelper.GetTargetDistanceFromMeTest(CurrentTarget, Core.Me);
-            var distanceI = (int)Math.Round(distanceF*100);
+            var distanceI = (int)Math.Round(distanceF * 100);
             TargetDistance = distanceI;
             if (distanceI > 300)
             {
@@ -130,16 +129,16 @@ namespace AEAssist
             {
                 IsTargetDistanceSafe = System.Windows.Media.Brushes.Green;
             }
-            
-            
+
+
         }
-        
+
         public void ShowMsg()
         {
             if (Core.Me.HasTarget)
             {
                 var CurrentTarget = Core.Me.CurrentTarget;
-                
+
                 SetDistance(CurrentTarget);
                 if (CurrentTarget.IsBehind)
                 {

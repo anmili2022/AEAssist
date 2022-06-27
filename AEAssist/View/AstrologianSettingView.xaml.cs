@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
-using System.Windows.Forms;
 using AEAssist.Opener;
 using ff14bot.Enums;
 using UserControl = System.Windows.Controls.UserControl;
@@ -22,7 +21,7 @@ namespace AEAssist.View
             };
             AstResPriority.ItemsSource = astResPriority;
             AstResPriority.SelectedIndex = SettingMgr.GetSetting<AstSettings>().AstResPriority;
-            
+
 
             if (OpenerMgr.Instance.JobOpeners.ContainsKey(ClassJobType.Astrologian))
             {
@@ -36,7 +35,7 @@ namespace AEAssist.View
             SettingMgr.GetSetting<AstSettings>().AstOpener = ChooseOpener.SelectedValue.ToString();
             OpenerMgr.Instance.SpecifyOpenerByName[ClassJobType.Astrologian] = ChooseOpener.SelectedValue.ToString();
         }
-        
+
         private void ChooseResPriority_OnSelectionChanged(object sender, EventArgs eventArgs)
         {
             SettingMgr.GetSetting<AstSettings>().AstResPriority = int.Parse(AstResPriority.SelectedValue.ToString());

@@ -1,5 +1,4 @@
-﻿using AEAssist.AI.Dancer;
-using PropertyChanged;
+﻿using PropertyChanged;
 
 namespace AEAssist
 {
@@ -10,7 +9,7 @@ namespace AEAssist
         {
             Reset();
         }
-        
+
         public bool EarlyDecisionMode { get; set; }
 
         public bool UseDanceOnlyInRange { get; set; } = false;
@@ -23,7 +22,7 @@ namespace AEAssist
 
         public void OnLoad()
         {
-            
+
         }
     }
 }

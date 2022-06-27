@@ -36,37 +36,37 @@ namespace AEAssist.AI.Paladin.GCD
             return false;
         }
 
-        public static uint GetSingleTarget() 
+        public static uint GetSingleTarget()
         {
             if (Core.Me.HasAura(AurasDefine.SwordOath))
                 return SpellsDefine.Atonement;
 
             var lastGCDSpellID = Paladin_SpellHelper.LastGCDSpellID();
 
-            if (lastGCDSpellID  == SpellsDefine.FastBlade && SpellsDefine.RiotBlade.IsUnlock())
+            if (lastGCDSpellID == SpellsDefine.FastBlade && SpellsDefine.RiotBlade.IsUnlock())
                 return SpellsDefine.RiotBlade;
 
             if (lastGCDSpellID == SpellsDefine.RiotBlade && SpellsDefine.RageofHalone.IsUnlock())
                 return GetRoyalAuthority();
 
-            return SpellsDefine.FastBlade; 
+            return SpellsDefine.FastBlade;
         }
 
-        public static uint GetRoyalAuthority() 
+        public static uint GetRoyalAuthority()
         {
             if (SpellsDefine.RoyalAuthority.IsUnlock())
                 return SpellsDefine.RoyalAuthority;
             return SpellsDefine.RageofHalone;
         }
-        public static uint GetAOE() 
+        public static uint GetAOE()
         {
-            
+
             if (Paladin_SpellHelper.LastGCDSpellID() == SpellsDefine.TotalEclipse && SpellsDefine.Prominance.IsUnlock())
                 return SpellsDefine.Prominance;
-            
+
             return SpellsDefine.TotalEclipse;
-            
+
         }
-        
+
     }
 }

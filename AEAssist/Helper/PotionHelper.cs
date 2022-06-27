@@ -2,8 +2,6 @@
 using System.Linq;
 using System.Threading.Tasks;
 using AEAssist.AI;
-using AEAssist;
-using AEAssist.Define;
 using Buddy.Coroutines;
 using ff14bot;
 using ff14bot.Managers;
@@ -15,7 +13,7 @@ namespace AEAssist.Helper
         public static List<PotionData> DexPotions { get; set; } = new List<PotionData>();
         public static List<PotionData> StrPotions { get; set; } = new List<PotionData>();
         public static List<PotionData> MindPotions { get; set; } = new List<PotionData>();
-        
+
         public static List<PotionData> INTPotions { get; set; } = new List<PotionData>();
 
         public static void Init()
@@ -69,7 +67,7 @@ namespace AEAssist.Helper
                 ID = 29492,
                 Name = "Grade 3 Str/3级刚力之幻药"
             });
-            
+
             if (MindPotions == null)
                 MindPotions = new List<PotionData>();
             MindPotions.Add(new PotionData
@@ -95,7 +93,7 @@ namespace AEAssist.Helper
 
             if (INTPotions == null)
                 INTPotions = new List<PotionData>();
-            
+
             INTPotions.Add(new PotionData
             {
                 ID = 36112,
@@ -172,7 +170,7 @@ namespace AEAssist.Helper
             var num = 0;
             foreach (var v in InventoryManager.FilledSlots)
                 if (v.RawItemId == potionId)
-                    num = (int) (num + v.Item.ItemCount());
+                    num = (int)(num + v.Item.ItemCount());
 
             return num;
         }

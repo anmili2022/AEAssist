@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using AEAssist.Helper;
-using ff14bot.Enums;
-using AEAssist.AI.Paladin.GCD;
 using AEAssist.AI.Paladin.Ability;
+using AEAssist.AI.Paladin.GCD;
+using ff14bot.Enums;
 namespace AEAssist.AI.Paladin
 {
     [Job(ClassJobType.Paladin)]

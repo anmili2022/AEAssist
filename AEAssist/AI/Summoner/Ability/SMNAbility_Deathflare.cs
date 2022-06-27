@@ -1,13 +1,11 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
-using ff14bot.Managers;
 using AEAssist.Helper;
-using ff14bot.Helpers;
-using System.Windows.Media;
+using ff14bot.Managers;
 
 namespace AEAssist.AI.Summoner.Ability
 {
-    
+
     public class SMNAbility_Deathflare : IAIHandler
     {
         uint spell = SpellsDefine.Deathflare;
@@ -27,7 +25,7 @@ namespace AEAssist.AI.Summoner.Ability
                 return -3;
             }
 
-            
+
 
             return 0;
         }

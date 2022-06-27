@@ -3,10 +3,7 @@ using AEAssist.AI.GeneralAI;
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
-using ff14bot;
 using ff14bot.Enums;
-using ff14bot.Managers;
-using Language = AEAssist.Language;
 
 namespace AEAssist.AI.Machinist
 {
@@ -23,7 +20,7 @@ namespace AEAssist.AI.Machinist
 
             AEAssist.DataBinding.Instance.EarlyDecisionMode = SettingMgr.GetSetting<MCHSettings>().EarlyDecisionMode;
         }
-        
+
         public async Task<bool> PreCombatBuff()
         {
             if (!SettingMgr.GetSetting<BardSettings>().UsePeloton)
@@ -31,7 +28,7 @@ namespace AEAssist.AI.Machinist
                 GUIHelper.ShowInfo(Language.Instance.Content_Bard_PreCombat1);
                 return false;
             }
-            
+
             return await PhysicsRangeDPSHelper.UsePoleton();
         }
         public Task<bool> NoTarget()

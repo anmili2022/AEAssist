@@ -1,13 +1,7 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using Buddy.Coroutines;
-using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Managers;
-using ff14bot.Objects;
 
 
 namespace AEAssist.AI.Astrologian.Ability
@@ -21,8 +15,8 @@ namespace AEAssist.AI.Astrologian.Ability
             if (ActionResourceManager.Astrologian.Arcana == 0) return -2;
             //if (Core.Me.HasAura(AurasDefine.TheArrow) && Core.Me.HasAura(AurasDefine.TheBalance) && Core.Me.HasAura(AurasDefine.TheSpear) && Core.Me.HasAura(AurasDefine.TheBole) && Core.Me.HasAura(AurasDefine.TheEwer) && Core.Me.HasAura(AurasDefine.TheSpire))
             //{
-                //LogHelper.Debug("有卡不抽");
-                //return -2;
+            //LogHelper.Debug("有卡不抽");
+            //return -2;
             //}
 
             return 0;
@@ -33,7 +27,7 @@ namespace AEAssist.AI.Astrologian.Ability
             switch (ActionResourceManager.Astrologian.Arcana)
             {
                 case ActionResourceManager.Astrologian.AstrologianCard.None:
-                    return null;                    
+                    return null;
                 case ActionResourceManager.Astrologian.AstrologianCard.Balance:
                     LogHelper.Debug("发近战太阳神");
                     return AstSpellHelper.CastMeleeCard();

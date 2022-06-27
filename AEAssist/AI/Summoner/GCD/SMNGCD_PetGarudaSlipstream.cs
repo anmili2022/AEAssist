@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot.Managers;
 using ff14bot;
 namespace AEAssist.AI.Summoner.GCD
 {
@@ -14,7 +13,7 @@ namespace AEAssist.AI.Summoner.GCD
                 return -3;
             if (!spell.IsReady())
                 return -1;
-            if (SpellsDefine.Swiftcast.IsReady()&&!AIRoot.Instance.CloseBurst)
+            if (SpellsDefine.Swiftcast.IsReady() && !AIRoot.Instance.CloseBurst)
             {
                 return -4;
             }

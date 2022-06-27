@@ -33,7 +33,7 @@ namespace AEAssist
         public string Toggle_ShowGameLog { get; set; }
         public string Toggle_ShowDebugLog { get; set; }
         public string Toggle_ShowBattleTime { get; set; }
-        
+
         public string Toggle_CombatMessageOverlay { get; set; }
 
         public string Toggle_NextAbilityFirst { get; set; }
@@ -55,15 +55,15 @@ namespace AEAssist
 
         public string Toggle_Potion { get; set; }
         public string Toggle_Battery { get; set; }
-        
+
         public string Toggle_Heat { get; set; }
-        
+
         public string Toggle_Apex { get; set; }
         public string Toggle_ActiveAttack { get; set; }
         public string Toggle_PreferDoubleEnshroud { get; set; }
 
         #region Casters
-        
+
         // Casters Roles Defaults
         public string Toggle_LucidDreaming { get; set; }
         public string Toggle_SwiftRes { get; set; }
@@ -133,10 +133,10 @@ namespace AEAssist
         public string Label_CurrTriggerLine { get; set; }
         public string Label_DexChoosePotion { get; set; }
         public string Label_StrChoosePotion { get; set; }
-        
+
         public string Label_MindChoosePotion { get; set; }
         public string Label_ChooseOpener { get; set; }
-        
+
         public string Label_ChooseResPriority { get; set; }
 
         public string Label_PotionNum { get; set; }
@@ -183,9 +183,9 @@ namespace AEAssist
         public string Toggle_Bloodletter { get; set; }
 
         public string Label_OverlayScale { get; set; }
-        
+
         public string Label_CombatMessageFontSize { get; set; }
-        
+
         public string Textbox_Sage_DotTimeLeft { get; set; }
 
         public string Textbox_WhiteMage_DotTimeLeft { get; set; }
@@ -195,24 +195,24 @@ namespace AEAssist
         public string TextBox_DivineBenison { get; set; }
         public string TextBox_Regen { get; set; }
         public string TextBox_AfflatusSolace { get; set; }
-        
+
         public string ToolTip_Bard_FinalBurst { get; set; }
         public string ToolTip_Bard_Bloodletter { get; set; }
         public string ToolTip_Bard_Burst { get; set; }
-        
+
         public string ToolTip_MCH_FinalBurst { get; set; }
         public string ToolTip_MCH_WildFireFirst { get; set; }
         public string ToolTip_MCH_Burst { get; set; }
-        
+
         public string ToolTip_RPR_Burst { get; set; }
-        public string ToolTip_RPR_DoubleEnshroundPrefer{ get; set; }
+        public string ToolTip_RPR_DoubleEnshroundPrefer { get; set; }
 
         public string ToolTip_SMN_Burst { get; set; }
 
         public string ToolTip_SMN_FinalBurst { get; set; }
 
         public string Toggle_SMN_SaveInstantSpells { get; set; }
-        public string ToolTip_SMN_SaveInstantSpells { get; set;}
+        public string ToolTip_SMN_SaveInstantSpells { get; set; }
         public string Textbox_SMN_SwiftcastOption { get; set; }
         public string Toggle_SMN_Crimson { get; set; }
 

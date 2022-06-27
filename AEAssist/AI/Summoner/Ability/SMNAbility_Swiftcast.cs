@@ -1,10 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot.Managers;
-
-using ff14bot.Helpers;
-using System.Windows.Media;
 using ff14bot;
 
 namespace AEAssist.AI.Summoner.Ability
@@ -13,7 +9,7 @@ namespace AEAssist.AI.Summoner.Ability
     {
 
         uint spell = SpellsDefine.Swiftcast;
-        
+
         public int Check(SpellEntity lastSpell)
         {
             if (!SpellsDefine.Swiftcast.IsReady())
@@ -27,9 +23,9 @@ namespace AEAssist.AI.Summoner.Ability
 
             if (SMN_SpellHelper.Garuda() && Core.Me.HasAura(AurasDefine.GarudasFavor))
                 return 1;
-            
-            if (SMN_SpellHelper.Ifrit() && SettingMgr.GetSetting<SMNSettings>().SwiftcastOption > 1)  
-                return 2; 
+
+            if (SMN_SpellHelper.Ifrit() && SettingMgr.GetSetting<SMNSettings>().SwiftcastOption > 1)
+                return 2;
 
             return -99;
         }

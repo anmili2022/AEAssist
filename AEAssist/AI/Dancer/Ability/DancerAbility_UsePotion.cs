@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using AEAssist.AI.Sage;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
@@ -19,7 +18,7 @@ namespace AEAssist.AI.Dancer.Ability
                 return -4;
             if (!PotionHelper.CheckPotion(SettingMgr.GetSetting<GeneralSettings>().DexPotionId))
                 return -6;
-        
+
             if (SpellsDefine.TechnicalStep.CoolDownInGCDs(2))
                 return 0;
 

@@ -14,7 +14,7 @@ namespace AEAssist.AI.Monk.Ability
             {
                 return -10;
             }
-            
+
             if (!SpellsDefine.SteelPeak.IsUnlock())
             {
                 return -2;
@@ -59,7 +59,7 @@ namespace AEAssist.AI.Monk.Ability
 
             return singeTarget;
         }
-        
+
         public async Task<SpellEntity> Run()
         {
             var spell = GetChakraSpell();

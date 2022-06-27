@@ -1,7 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using AEAssist.View.Hotkey;
-using AEAssist.View.Style;
 
 namespace AEAssist.View.GeneralSetting
 {
@@ -13,7 +11,7 @@ namespace AEAssist.View.GeneralSetting
             this.Hotkeys.ItemsSource = SettingMgr.GetSetting<HotkeySetting>().AllHotkeyDatas;
 
         }
-        
+
         private void RefreshHotkey_OnClick(object sender, RoutedEventArgs e)
         {
             SettingMgr.GetSetting<HotkeySetting>().RegisHotkey();

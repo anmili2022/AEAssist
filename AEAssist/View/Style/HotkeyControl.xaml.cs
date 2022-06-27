@@ -26,7 +26,7 @@ namespace AEAssist.View.Style
 
         public string Text
         {
-            get => (string) GetValue(TextProperty);
+            get => (string)GetValue(TextProperty);
             set => SetValue(TextProperty, value);
         }
 
@@ -34,13 +34,13 @@ namespace AEAssist.View.Style
 
         public Keys KeySetting
         {
-            get => (Keys) GetValue(KeySettingProperty);
+            get => (Keys)GetValue(KeySettingProperty);
             set => SetValue(KeySettingProperty, value);
         }
 
         public ModifierKeys ModKeySetting
         {
-            get => (ModifierKeys) GetValue(ModKeySettingProperty);
+            get => (ModifierKeys)GetValue(ModKeySettingProperty);
             set => SetValue(ModKeySettingProperty, value);
         }
 
@@ -93,7 +93,7 @@ namespace AEAssist.View.Style
 
             if (Keyboard.Modifiers == 0) ModKeySetting = ModifierKeys.None;
 
-            var newKey = (Keys) KeyInterop.VirtualKeyFromKey(key);
+            var newKey = (Keys)KeyInterop.VirtualKeyFromKey(key);
             KeySetting = newKey;
             // Update the text box.
             TxtHk.Text = $"{ModKeySetting.ToString()} + {newKey.ToString()}";

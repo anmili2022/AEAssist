@@ -31,7 +31,7 @@ namespace AEAssist.AI
         private readonly HashSet<uint> DeleteSet = new HashSet<uint>();
 
         public Dictionary<uint, Character> Units = new Dictionary<uint, Character>();
-        
+
         public Dictionary<uint, BattleCharacter> Enemys = new Dictionary<uint, BattleCharacter>();
 
         public Dictionary<uint, BattleCharacter> EnemysIn25 = new Dictionary<uint, BattleCharacter>();
@@ -66,10 +66,10 @@ namespace AEAssist.AI
                         LogHelper.Info($"Find enemy casting spell : {v.Name} NpcId: {v.NpcId} " +
                                        $"CastingSpell [{v.SpellCastInfo.Name}] [{v.SpellCastInfo.SpellData.LocalizedName}] SpellId : {v.SpellCastInfo.SpellData.Id} ");
                 }
-                var unit = v as BattleCharacter;;
-                if(unit == null)
+                var unit = v as BattleCharacter; ;
+                if (unit == null)
                     continue;
-                
+
                 Enemys.Add(unit.ObjectId, unit);
                 if (!unit.ValidAttackUnit())
                     continue;
@@ -78,14 +78,14 @@ namespace AEAssist.AI
 
                 var combatReach = Core.Me.CombatReach + unit.CombatReach;
 
-                if (Core.Me.Distance(unit) < 25 - 1 + combatReach) 
+                if (Core.Me.Distance(unit) < 25 - 1 + combatReach)
                     EnemysIn25.Add(unit.ObjectId, unit);
 
                 // if (Core.Me.Distance(unit) < 12 - 1 + combatReach)
                 // {
                 //     EnemysIn12.Add(unit);
                 // }
-                
+
             }
 
 
@@ -146,8 +146,8 @@ namespace AEAssist.AI
                 return;
 
             var duration = stat.DamageLL.Last.Value.Item2 - stat.DamageLL.First.Value.Item2;
-            var avgDamagePerMs = total / (float) duration;
-            stat.DeathPrediction = (int) (character.CurrentHealth / avgDamagePerMs);
+            var avgDamagePerMs = total / (float)duration;
+            stat.DeathPrediction = (int)(character.CurrentHealth / avgDamagePerMs);
         }
     }
 }

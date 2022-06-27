@@ -3,7 +3,6 @@ using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
 using ff14bot.Objects;
-using AEAssist.AI.Samurai.SpellQueue;
 
 namespace AEAssist.AI.Samurai.GCD
 {
@@ -12,8 +11,8 @@ namespace AEAssist.AI.Samurai.GCD
         public int Check(SpellEntity lastSpell)
         {
             var ta = Core.Me.CurrentTarget as Character;
-            if( SamuraiSpellHelper.SenCounts() == 1)
-                if(ta.HasMyAuraWithTimeleft(AurasDefine.Higanbana,3000))
+            if (SamuraiSpellHelper.SenCounts() == 1)
+                if (ta.HasMyAuraWithTimeleft(AurasDefine.Higanbana, 3000))
                     return 10;
             return -2;
         }

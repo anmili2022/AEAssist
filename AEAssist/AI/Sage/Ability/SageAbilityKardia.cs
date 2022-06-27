@@ -19,7 +19,7 @@ namespace AEAssist.AI.Sage.Ability
             {
                 return null;
             }
-            
+
             var ret = await spell.DoAbility();
             return ret ? spell : null;
         }

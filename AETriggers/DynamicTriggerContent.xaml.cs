@@ -1,4 +1,3 @@
-using System;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
@@ -32,7 +31,7 @@ namespace AETriggers
             {
                 return;
             }
-            
+
             if (trigger.DefaultStyle || trigger.TriggerObj == null)
             {
                 var textBox = new TextBox();
@@ -67,26 +66,26 @@ namespace AETriggers
                 }
 
                 var tooltip = v.GetCustomAttribute<GUIToolTipAttribute>();
-                if(tooltip != null)
+                if (tooltip != null)
                 {
                     element0.ToolTip = tooltip.tip;
                 }
 
                 stackPanel.Children.Add(element0);
-                CreateUI(v,obj,stackPanel);
+                CreateUI(v, obj, stackPanel);
                 this.Panel.Children.Add(stackPanel);
             }
         }
 
-        void CreateUI(PropertyInfo v,object obj,StackPanel panel)
+        void CreateUI(PropertyInfo v, object obj, StackPanel panel)
         {
             if (v.PropertyType == typeof(bool))
             {
                 CreateBool(v, obj, panel);
             }
-            else if(v.PropertyType == typeof(string))
+            else if (v.PropertyType == typeof(string))
             {
-               CreateString(v,obj,panel);
+                CreateString(v, obj, panel);
             }
             else if (v.PropertyType == typeof(int))
             {
@@ -96,7 +95,7 @@ namespace AETriggers
             {
                 CreateFloat(v, obj, panel);
             }
-            else if(v.PropertyType == typeof(uint))
+            else if (v.PropertyType == typeof(uint))
             {
                 var element1 = new TextBox();
                 element1.Margin = new Thickness(15, 0, 5, 0);
@@ -118,7 +117,7 @@ namespace AETriggers
 
                     v.SetValue(obj, value_obj);
                 };
-                
+
                 panel.Children.Add(element1);
             }
         }
@@ -187,7 +186,7 @@ namespace AETriggers
                 element2.Margin = new Thickness(5, 0, 5, 0);
                 element2.Foreground = Brushes.Aqua;
                 element2.Text = v.GetValue(obj).ToString();
-                
+
                 var element1 = new Slider();
                 element1.Margin = new Thickness(5, 0, 5, 0);
                 element1.Width = 80;
@@ -204,20 +203,20 @@ namespace AETriggers
                     element2.Text = value_obj.ToString();
                     v.SetValue(obj, value_obj);
                 };
-                
-                
-                
+
+
+
                 panel.Children.Add(element1);
                 panel.Children.Add(element2);
-                
+
             }
         }
-        
+
         void CreateFloat(PropertyInfo v, object obj, StackPanel panel)
         {
 
             var rangeAttr = v.GetCustomAttribute<GUIFloatRangeAttribute>();
-        
+
             {
                 var element1 = new TextBox();
                 element1.Margin = new Thickness(15, 0, 5, 0);

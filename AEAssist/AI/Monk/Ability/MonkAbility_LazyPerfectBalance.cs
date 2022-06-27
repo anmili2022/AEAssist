@@ -1,6 +1,5 @@
 using System;
 using System.Threading.Tasks;
-using System.Windows.Media.Animation;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
@@ -17,7 +16,7 @@ namespace AEAssist.AI.Monk.Ability
             {
                 return -5;
             }
-            
+
             if (!AIRoot.Instance.CloseBurst)
                 return -5;
 

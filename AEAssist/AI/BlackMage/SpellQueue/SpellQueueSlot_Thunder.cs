@@ -1,8 +1,6 @@
 ﻿using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Managers;
-using ff14bot.Objects;
 
 namespace AEAssist.AI.BlackMage.SpellQueue
 {
@@ -16,9 +14,9 @@ namespace AEAssist.AI.BlackMage.SpellQueue
         public void Fill(SpellQueueSlot slot)
         {
             if (BlackMageHelper.ThunderCheck() >= 0 &&
-                Core.Me.CurrentMana >=1200)
+                Core.Me.CurrentMana >= 1200)
             {
-                slot.SetGCD(BlackMageHelper.GetThunder().Id,SpellTargetType.CurrTarget);
+                slot.SetGCD(BlackMageHelper.GetThunder().Id, SpellTargetType.CurrTarget);
             }
             else
             {
@@ -27,7 +25,7 @@ namespace AEAssist.AI.BlackMage.SpellQueue
             if (slot.GetGCDSpell() != 0 &&
                 SpellsDefine.ManaFont.IsReady())
             {
-                slot.Abilitys.Enqueue((SpellsDefine.ManaFont,  SpellTargetType.Self));
+                slot.Abilitys.Enqueue((SpellsDefine.ManaFont, SpellTargetType.Self));
             }
         }
     }

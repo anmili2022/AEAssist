@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 using AEAssist.Define;
-using AEAssist.Helper;
-using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Managers;
-using ff14bot.Objects;
 
 namespace AEAssist.AI.BlackMage.GCD
 {
-    public class BlackMageGCD_Dot: IAIHandler
+    public class BlackMageGCD_Dot : IAIHandler
     {
         public int Check(SpellEntity lastSpell)
         {

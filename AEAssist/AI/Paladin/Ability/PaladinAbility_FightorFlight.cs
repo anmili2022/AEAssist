@@ -6,8 +6,8 @@ namespace AEAssist.AI.Paladin.Ability
     public class PaladinAbility_FightorFlight : IAIHandler
     {
         uint spell = SpellsDefine.FightorFlight;
-       
-       
+
+
         public int Check(SpellEntity lastSpell)
         {
             if (!spell.IsReady())
@@ -15,16 +15,16 @@ namespace AEAssist.AI.Paladin.Ability
 
             if (AIRoot.Instance.CloseBurst)
                 return -2;
-          
+
 
             if (!AIRoot.Instance.Is2ndAbilityTime())
                 return -3;
 
             //add setting when to use fof
-            if(Paladin_SpellHelper.LastGCDSpellID()!=SpellsDefine.RiotBlade)
+            if (Paladin_SpellHelper.LastGCDSpellID() != SpellsDefine.RiotBlade)
 
                 return -4;
-            
+
             return 0;
         }
 

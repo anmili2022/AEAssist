@@ -7,7 +7,7 @@ using ff14bot.Enums;
 namespace AEAssist.AI.WhiteMage
 {
     [Job(ClassJobType.WhiteMage)]
-    internal class WhiteMageRotation :IRotation
+    internal class WhiteMageRotation : IRotation
     {
         public void Init()
         {

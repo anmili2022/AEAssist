@@ -3,11 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using Buddy.Coroutines;
-using ff14bot;
-using ff14bot.Helpers;
-using ff14bot.Managers;
-using ff14bot.Objects;
 
 namespace AEAssist.AI.WhiteMage.GCD
 {
@@ -24,8 +19,8 @@ namespace AEAssist.AI.WhiteMage.GCD
             {
                 return -2;
             }
-            
-            LogHelper.Debug("再生选取目标："+Convert.ToString(skillTarget));
+
+            LogHelper.Debug("再生选取目标：" + Convert.ToString(skillTarget));
             //if (!SpellsDefine.Regen.IsReady()) return -1;
 
             return 0;

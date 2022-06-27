@@ -1,9 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot;
-using ff14bot.Objects;
-using ff14bot.Managers;
 
 namespace AEAssist.AI.Samurai.Ability
 {

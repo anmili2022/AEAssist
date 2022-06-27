@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using AEAssist.AI.Sage;
+﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
@@ -17,7 +15,7 @@ namespace AEAssist.AI.Dancer.Ability
                 return -10;
             }
             LogHelper.Error($"Current feathers -- {ActionResourceManager.Dancer.FourFoldFeathers.ToString()}");
-            
+
             if (ActionResourceManager.Dancer.FourFoldFeathers < 1)
             {
                 return -1;

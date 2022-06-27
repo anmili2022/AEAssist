@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using AEAssist.AI.Monk;
-using ff14bot;
 using ff14bot.Enums;
 
 namespace AEAssist.Utilities.CombatMessages
@@ -9,12 +8,12 @@ namespace AEAssist.Utilities.CombatMessages
     public class CombatMessageManager
     {
         private static List<ICombatMessageStrategy> AEMessageStrategies = new List<ICombatMessageStrategy>();
-        
+
         public static void ClearMessageStrategies()
         {
             AEMessageStrategies.Clear();
         }
-        
+
         public static void RegisterMessageStrategy(ICombatMessageStrategy strategy)
         {
             if (strategy == null) return;
@@ -23,7 +22,7 @@ namespace AEAssist.Utilities.CombatMessages
             // we're unlikely to have enough strategies for it to be a problem.
             AEMessageStrategies = AEMessageStrategies.OrderBy(m => m.Priority).ToList();
         }
-        
+
         // Called by the pulse handler to set the appropriate message
         // If no messages should be shown, the existing message is cleared
         public static void UpdateDisplayedMessage()
@@ -37,8 +36,8 @@ namespace AEAssist.Utilities.CombatMessages
 
             CombatMessageModel.Instance.ClearMessage();
         }
-        
-            static ClassJobType? AECurrentClass = null;
+
+        static ClassJobType? AECurrentClass = null;
 
         //To add combat messages for a class, update this method to call out to a method that will register the
         //desired class's message strategies.
@@ -68,7 +67,7 @@ namespace AEAssist.Utilities.CombatMessages
 
                 case ClassJobType.Pugilist:
                 case ClassJobType.Monk:
-                     MonkCombatMessageStrategy.RegisterCombatMessages();
+                    MonkCombatMessageStrategy.RegisterCombatMessages();
                     break;
 
                 case ClassJobType.Marauder:

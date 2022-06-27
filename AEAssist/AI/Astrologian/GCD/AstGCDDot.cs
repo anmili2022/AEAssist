@@ -6,7 +6,7 @@ using ff14bot.Objects;
 
 namespace AEAssist.AI.Astrologian.GCD
 {
-    internal class AstGCDDot:IAIHandler
+    internal class AstGCDDot : IAIHandler
     {
         public int Check(SpellEntity lastSpell)
         {

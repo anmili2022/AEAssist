@@ -20,7 +20,7 @@ namespace AEAssist.AI.Sage.GCD
             var phlegmaCharges = DataManager.GetSpellData(SpellsDefine.Phlegma).Charges;
             var phlegmaChargesII = DataManager.GetSpellData(SpellsDefine.PhlegmaII).Charges;
             var phlegmaChargesIII = DataManager.GetSpellData(SpellsDefine.PhlegmaIII).Charges;
-            
+
             LogHelper.Debug("Current Phlegma Charge is: " + phlegmaChargesIII);
 
             if (phlegmaCharges == 0 || phlegmaChargesII == 0 || phlegmaChargesIII == 0)
@@ -46,14 +46,14 @@ namespace AEAssist.AI.Sage.GCD
                     var spellData = SageSpellHelper.GetPhlegma();
                     if (spellData == null)
                     {
-                        LogHelper.Error("Failed to get spell returning null;"); 
+                        LogHelper.Error("Failed to get spell returning null;");
                         return null;
                     }
                     LogHelper.Debug("Doing Phlegma AOE");
                     if (await spellData.DoGCD()) return spellData;
                 }
             }
-            
+
             var spell = SageSpellHelper.GetPhlegma();
             if (spell == null) return null;
             var ret = await spell.DoGCD();

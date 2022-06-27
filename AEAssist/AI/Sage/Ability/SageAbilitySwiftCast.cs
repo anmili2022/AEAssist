@@ -10,7 +10,7 @@ namespace AEAssist.AI.Sage.Ability
         {
             if (!SpellsDefine.Swiftcast.IsReady()) return -1;
             if (!SpellsDefine.Egeiro.IsReady()) return -1;
-            
+
             return 0;
         }
 

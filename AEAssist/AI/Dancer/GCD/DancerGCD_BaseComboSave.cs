@@ -1,8 +1,6 @@
 using System.Threading.Tasks;
-using AEAssist.AI.Sage;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot;
 using ff14bot.Managers;
 
 namespace AEAssist.AI.Dancer.GCD

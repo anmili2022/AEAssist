@@ -6,7 +6,7 @@ namespace AEAssist.AI.Paladin.Ability
     public class PaladinAbility_CircleofScorn : IAIHandler
     {
         uint spell = SpellsDefine.CircleofScorn;
-       
+
         public int Check(SpellEntity lastSpell)
         {
 

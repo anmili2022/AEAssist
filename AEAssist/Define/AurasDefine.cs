@@ -335,7 +335,7 @@ namespace AEAssist.Define
             EwerDrawn = 917,
             SpearDrawn = 916,
             SpireDrawn = 918;
- 
+
         private const int
             Invincibility0 = 981,
             Invincibility1 = 969,
@@ -349,7 +349,7 @@ namespace AEAssist.Define
 
         public const int
 
-            #region PVP Specific
+        #region PVP Specific
 
             PvpSynastrySource = 1336,
             PvpSynastryDestination = 1337,

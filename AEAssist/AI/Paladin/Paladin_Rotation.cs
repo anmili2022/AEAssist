@@ -3,12 +3,6 @@ using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
 using ff14bot.Enums;
-using ff14bot;
-using ff14bot.Managers;
-using ff14bot.Objects;
-using AEAssist.AI.Paladin.GCD;
-using System;
-using Buddy.Coroutines;
 
 namespace AEAssist.AI.Paladin
 {
@@ -19,7 +13,7 @@ namespace AEAssist.AI.Paladin
         {
             //CountDownHandler.Instance.AddListener(1500,
             //    () => PotionHelper.UsePotion(SettingMgr.GetSetting<GeneralSettings>().MindPotionId));
-            
+
 
             AEAssist.DataBinding.Instance.EarlyDecisionMode = SettingMgr.GetSetting<PaladinSettings>().EarlyDecisionMode;
         }
@@ -27,12 +21,12 @@ namespace AEAssist.AI.Paladin
         {
 
             return false;
-            
+
         }
 
         public async Task<bool> NoTarget()
         {
-            
+
             return false;
         }
 
