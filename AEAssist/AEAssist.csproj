@@ -338,6 +338,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Paladin\Ability\PaladinAbility_FightorFlight.cs" />
     <Compile Include="AI\Paladin\Ability\PaladinAbility_Blank.cs" />
     <Compile Include="AI\Paladin\GCD\PaladinGCD_Base.cs" />
+    <Compile Include="AI\Paladin\GCD\PaladinGCD_Ranged.cs" />
     <Compile Include="AI\Paladin\GCD\PaladinGCD_Dot.cs" />
     <Compile Include="AI\Paladin\GCD\PaladinGCD_Blank.cs" />
     <Compile Include="AI\Paladin\Paladin_AIPriorityQueue.cs" />
