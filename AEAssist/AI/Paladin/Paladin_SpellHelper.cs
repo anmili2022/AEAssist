@@ -47,5 +47,9 @@ namespace AEAssist.AI.Paladin
         {
             return Core.Me.CanAttackTargetInRange(Core.Me.CurrentTarget, 3);
         }
+        public static bool OutOfAOERange()
+        {
+            return Core.Me.CanAttackTargetInRange(Core.Me.CurrentTarget, 5);
+        }
     }
 }
