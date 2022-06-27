@@ -8,6 +8,7 @@ using ff14bot;
 using ff14bot.Helpers;
 using ff14bot.Managers;
 using ff14bot.Objects;
+using ff14bot.Enums;
 
 namespace AEAssist.AI.Astrologian
 {
@@ -98,5 +99,132 @@ namespace AEAssist.AI.Astrologian
 
             return NormalCheck();
         }
+        private static int GetWeight(Character c)
+        {
+            switch (c.CurrentJob)
+            {
+                case ClassJobType.Astrologian:
+                    return SettingMgr.GetSetting<AstSettings>().AstCardWeight;
+
+                case ClassJobType.Monk:
+                case ClassJobType.Pugilist:
+                    return SettingMgr.GetSetting<AstSettings>().MnkCardWeight;
+
+                case ClassJobType.BlackMage:
+                case ClassJobType.Thaumaturge:
+                    return SettingMgr.GetSetting<AstSettings>().BlmCardWeight;
+
+                case ClassJobType.Dragoon:
+                case ClassJobType.Lancer:
+                    return SettingMgr.GetSetting<AstSettings>().DrgCardWeight;
+
+                case ClassJobType.Samurai:
+                    return SettingMgr.GetSetting<AstSettings>().SamCardWeight;
+
+                case ClassJobType.Machinist:
+                    return SettingMgr.GetSetting<AstSettings>().MchCardWeight;
+
+                case ClassJobType.Summoner:
+                case ClassJobType.Arcanist:
+                    return SettingMgr.GetSetting<AstSettings>().SmnCardWeight;
+
+                case ClassJobType.Bard:
+                case ClassJobType.Archer:
+                    return SettingMgr.GetSetting<AstSettings>().BrdCardWeight;
+
+                case ClassJobType.Ninja:
+                case ClassJobType.Rogue:
+                    return SettingMgr.GetSetting<AstSettings>().NinCardWeight;
+
+                case ClassJobType.RedMage:
+                    return SettingMgr.GetSetting<AstSettings>().RdmCardWeight;
+
+                case ClassJobType.Dancer:
+                    return SettingMgr.GetSetting<AstSettings>().DncCardWeight;
+
+                case ClassJobType.Paladin:
+                case ClassJobType.Gladiator:
+                    return SettingMgr.GetSetting<AstSettings>().PldCardWeight;
+
+                case ClassJobType.Warrior:
+                case ClassJobType.Marauder:
+                    return SettingMgr.GetSetting<AstSettings>().WarCardWeight;
+
+                case ClassJobType.DarkKnight:
+                    return SettingMgr.GetSetting<AstSettings>().DrkCardWeight;
+
+                case ClassJobType.Gunbreaker:
+                    return SettingMgr.GetSetting<AstSettings>().GnbCardWeight;
+
+                case ClassJobType.WhiteMage:
+                case ClassJobType.Conjurer:
+                    return SettingMgr.GetSetting<AstSettings>().WhmCardWeight;
+
+                case ClassJobType.Scholar:
+                    return SettingMgr.GetSetting<AstSettings>().SchCardWeight;
+
+                case ClassJobType.Reaper:
+                    return SettingMgr.GetSetting<AstSettings>().RprCardWeight;
+
+                case ClassJobType.Sage:
+                    return SettingMgr.GetSetting<AstSettings>().SgeCardWeight;
+
+                case ClassJobType.BlueMage:
+                    return SettingMgr.GetSetting<AstSettings>().BluCardWeight;
+            }
+
+            return c.CurrentJob == ClassJobType.Adventurer ? 70 : 0;
+        }
+        public static async Task<SpellEntity> CastMeleeCard()
+        {
+
+            if (GroupHelper.InParty)
+            {
+                var skillTarget = GroupHelper.CastableAlliesWithin30.Where(a => !a.HasMyAura(AurasDefine.TheArrow) && !a.HasMyAura(AurasDefine.TheBalance) && !a.HasMyAura(AurasDefine.TheSpear) &&  a.CurrentHealth > 0 && (a.IsTank() || a.IsMeleeDps())).OrderBy(GetWeight);
+                LogHelper.Debug(Convert.ToString(skillTarget));
+                LogHelper.Debug(Convert.ToString(skillTarget.FirstOrDefault()));
+                var skillt = GroupHelper.CastableAlliesWithin30;
+                foreach (Character chara in skillTarget)
+                    LogHelper.Debug(Convert.ToString(chara));
+                foreach (Character chara in skillt)
+                    LogHelper.Debug(Convert.ToString(chara) + Convert.ToString(chara.IsMeleeDps()));
+                if (skillTarget.FirstOrDefault() == null)
+                    return null;
+                
+                //return await Spells.Play.Cast(ally.FirstOrDefault());
+                //var skillTarget = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && r.CurrentHealthPercent <= SettingMgr.GetSetting<WhiteMageSettings>().TetragrammatonHp);
+                if (!SpellsDefine.Draw.IsUnlock()) return null;
+                var spell = new SpellEntity(SpellsDefine.Play, skillTarget.FirstOrDefault() as BattleCharacter);
+                await spell.DoAbility();
+                //await CastTetragrammaton(skillTarget);
+            }
+            return null;
+        }
+        public static async Task<SpellEntity> CastRangedCard()
+        {
+
+            if (GroupHelper.InParty)
+            {
+                var skillTarget = GroupHelper.CastableAlliesWithin30.Where(a => !a.HasMyAura(AurasDefine.TheBole) && !a.HasMyAura(AurasDefine.TheEwer) && !a.HasMyAura(AurasDefine.TheSpire) && a.CurrentHealth > 0 && (a.IsRangedDpsCard())).OrderBy(GetWeight);
+                LogHelper.Debug(Convert.ToString(skillTarget));
+                LogHelper.Debug(Convert.ToString(skillTarget.FirstOrDefault()));
+                var skillt = GroupHelper.CastableAlliesWithin30;
+                foreach (Character chara in skillt)
+                    LogHelper.Debug(Convert.ToString(chara) + Convert.ToString(chara.IsRangedDpsCard()));
+                foreach (Character chara in skillTarget)
+                    LogHelper.Debug(Convert.ToString(chara));
+                if (skillTarget.FirstOrDefault() == null)
+                    return null;
+
+                //return await Spells.Play.Cast(ally.FirstOrDefault());
+                //var skillTarget = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && r.CurrentHealthPercent <= SettingMgr.GetSetting<WhiteMageSettings>().TetragrammatonHp);
+                if (!SpellsDefine.Draw.IsUnlock()) return null;
+                var spell = new SpellEntity(SpellsDefine.Play, skillTarget.FirstOrDefault() as BattleCharacter);
+                await spell.DoAbility();
+                //await CastTetragrammaton(skillTarget);
+            }
+            return null;
+        }
+
     }
 }

@@ -327,9 +327,14 @@ namespace AEAssist.Define
             PhantomKamaitachiReady = 2723,
             Bunshin = 1954,
             //MNK
-            DisciplinedFist = 3001;
-            
-            
+            DisciplinedFist = 3001,
+            //AST
+            ArrowDrawn = 915,
+            BalanceDrawn = 913,
+            BoleDrawn = 914,
+            EwerDrawn = 917,
+            SpearDrawn = 916,
+            SpireDrawn = 918;
  
         private const int
             Invincibility0 = 981,
