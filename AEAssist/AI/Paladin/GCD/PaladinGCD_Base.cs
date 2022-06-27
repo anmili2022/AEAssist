@@ -9,7 +9,7 @@ namespace AEAssist.AI.Paladin.GCD
         uint spell;
         static public uint GetSpell()
         {
-            if (CheckAOE())
+            if (Paladin_SpellHelper.CheckAOE() && SpellsDefine.TotalEclipse.IsUnlock())
                 return GetAOE();
             return GetSingleTarget();
         }
@@ -29,12 +29,7 @@ namespace AEAssist.AI.Paladin.GCD
             return null;
         }
 
-        public static bool CheckAOE()
-        {
-            if (TargetHelper.CheckNeedUseAOE(0, 5) && SpellsDefine.TotalEclipse.IsUnlock())
-                return true;
-            return false;
-        }
+        
 
         public static uint GetSingleTarget()
         {

@@ -36,11 +36,13 @@ namespace AEAssist.AI.Paladin
 
         public static bool OutOfMeleeRange()
         {
-            return Core.Me.CanAttackTargetInRange(Core.Me.CurrentTarget, 3);
+            return !Core.Me.CanAttackTargetInRange(Core.Me.CurrentTarget, 3);
         }
+
+        //AOE 这个距离判定有点迷
         public static bool OutOfAOERange()
         {
-            return Core.Me.CanAttackTargetInRange(Core.Me.CurrentTarget, 5);
+            return Core.Me.Distance(Core.Me.CurrentTarget) > 5;
         }
     }
 }
