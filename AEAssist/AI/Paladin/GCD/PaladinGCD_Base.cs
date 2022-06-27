@@ -41,14 +41,12 @@ namespace AEAssist.AI.Paladin.GCD
             if (Core.Me.HasAura(AurasDefine.SwordOath))
                 return SpellsDefine.Atonement;
 
-            var lastGCDSpell = AIRoot.GetBattleData<BattleData>().lastGCDSpell;
-            if (lastGCDSpell == null)
-                return SpellsDefine.FastBlade;
+            var lastGCDSpellID = Paladin_SpellHelper.LastGCDSpellID();
 
-            if (lastGCDSpell.Id == SpellsDefine.FastBlade && SpellsDefine.RiotBlade.IsUnlock())
+            if (lastGCDSpellID  == SpellsDefine.FastBlade && SpellsDefine.RiotBlade.IsUnlock())
                 return SpellsDefine.RiotBlade;
 
-            if (lastGCDSpell.Id == SpellsDefine.RiotBlade && SpellsDefine.RageofHalone.IsUnlock())
+            if (lastGCDSpellID == SpellsDefine.RiotBlade && SpellsDefine.RageofHalone.IsUnlock())
                 return GetRoyalAuthority();
 
             return SpellsDefine.FastBlade; 
@@ -62,11 +60,8 @@ namespace AEAssist.AI.Paladin.GCD
         }
         public static uint GetAOE() 
         {
-            var lastGCDSpell = AIRoot.GetBattleData<BattleData>().lastGCDSpell;
-            if (lastGCDSpell == null)
-                return SpellsDefine.TotalEclipse;
             
-            if (lastGCDSpell.Id == SpellsDefine.TotalEclipse && SpellsDefine.Prominance.IsUnlock())
+            if (Paladin_SpellHelper.LastGCDSpellID() == SpellsDefine.TotalEclipse && SpellsDefine.Prominance.IsUnlock())
                 return SpellsDefine.Prominance;
             
             return SpellsDefine.TotalEclipse;

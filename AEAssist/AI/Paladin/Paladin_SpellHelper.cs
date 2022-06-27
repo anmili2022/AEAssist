@@ -20,5 +20,32 @@ namespace AEAssist.AI.Paladin
         {
             return false;
         }
+
+        public static uint LastGCDSpellID()
+        {
+            var spell = AIRoot.GetBattleData<BattleData>().lastGCDSpell;
+            if (spell == null)
+                return 0;
+            return spell.Id;
+        }
+
+        public static bool FightorFlightCooldownSoon()
+        {
+            if (!SpellsDefine.FightorFlight.IsUnlock())
+                return false;
+
+            if (Core.Me.HasAura(AurasDefine.FightOrFight))
+                return false;
+
+            if (SpellsDefine.FightorFlight.CoolDownInGCDs(2))
+                return true;
+            
+            return false;
+        }
+
+        public static bool OutOfMeleeRange()
+        {
+            return Core.Me.CanAttackTargetInRange(Core.Me.CurrentTarget, 3);
+        }
     }
 }
