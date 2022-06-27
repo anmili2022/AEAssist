@@ -5,9 +5,9 @@ using ff14bot;
 
 namespace AEAssist.AI.Paladin.Ability
 {
-    public class PaladinAbility_FightorFlight : IAIHandler
+    public class PaladinAbility_Requiescat : IAIHandler
     {
-        uint spell = SpellsDefine.FightorFlight;
+        uint spell = SpellsDefine.Requiescat;
 
 
         public int Check(SpellEntity lastSpell)
@@ -18,18 +18,8 @@ namespace AEAssist.AI.Paladin.Ability
             if (AIRoot.Instance.CloseBurst)
                 return -2;
 
-
-            if (!AIRoot.Instance.Is2ndAbilityTime())
+            if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.Requiescat, 30-5*(int)AIRoot.Instance.GetGCDDuration()))
                 return -3;
-
-            //add setting when to use fof
-            if (Paladin_SpellHelper.LastGCDSpellID() != SpellsDefine.RiotBlade)
-
-                return -4;
-
-            if (Core.Me.HasAura(AurasDefine.Requiescat))
-                return -5;
-
             return 0;
         }
 
