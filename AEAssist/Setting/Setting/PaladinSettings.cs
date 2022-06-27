@@ -12,8 +12,12 @@ namespace AEAssist
 
         public bool EarlyDecisionMode { get; set; }
 
+        public int ReserveManaPercentage { get; set; }
+        public int FightorFlightTiming { get; set; }
         public void Reset()
         {
+            ReserveManaPercentage = 40;
+            FightorFlightTiming = 1;
         }
 
         public void OnLoad()
