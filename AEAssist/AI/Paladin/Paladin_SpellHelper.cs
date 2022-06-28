@@ -9,15 +9,6 @@ namespace AEAssist.AI.Paladin
     {
 
         public static bool Debugging { get; set; } = true;
-     
-
-        public static uint LastGCDSpellID()
-        {
-            var spell = AIRoot.GetBattleData<BattleData>().lastGCDSpell;
-            if (spell == null)
-                return 0;
-            return spell.Id;
-        }
 
         public static bool FightorFlightCooldownSoon()
         {
@@ -27,7 +18,7 @@ namespace AEAssist.AI.Paladin
             if (Core.Me.HasAura(AurasDefine.FightOrFight))
                 return false;
 
-            if (SpellsDefine.FightorFlight.CoolDownInGCDs(2))
+            if (SpellsDefine.FightorFlight.CoolDownInGCDs(3))
                 return true;
 
             return false;

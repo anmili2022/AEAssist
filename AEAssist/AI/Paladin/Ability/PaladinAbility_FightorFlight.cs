@@ -2,6 +2,7 @@
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
+using ff14bot.Managers;
 
 namespace AEAssist.AI.Paladin.Ability
 {
@@ -23,7 +24,8 @@ namespace AEAssist.AI.Paladin.Ability
                 return -3;
 
             //add setting when to use fof
-            if (Paladin_SpellHelper.LastGCDSpellID() != SpellsDefine.RiotBlade)
+
+            if (ActionManager.LastSpellId != SpellsDefine.RiotBlade)
 
                 return -4;
 
