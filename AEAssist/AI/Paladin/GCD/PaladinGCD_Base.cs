@@ -9,13 +9,18 @@ namespace AEAssist.AI.Paladin.GCD
         uint spell;
         static public uint GetSpell()
         {
-            if (Paladin_SpellHelper.CheckAOE() && SpellsDefine.TotalEclipse.IsUnlock())
+            if (Paladin_SpellHelper.CheckUseAOE() && SpellsDefine.TotalEclipse.IsUnlock())
                 return GetAOE();
             return GetSingleTarget();
         }
         public int Check(SpellEntity lastSpell)
         {
             spell = GetSpell();
+
+            //一个dot设置 
+            if (!DataBinding.Instance.UseDot)
+                return -3;
+            //检查dot剩余时间
 
             if (!spell.IsReady())
                 return -1;
@@ -29,19 +34,17 @@ namespace AEAssist.AI.Paladin.GCD
             return null;
         }
 
-        
+
 
         public static uint GetSingleTarget()
         {
             if (Core.Me.HasAura(AurasDefine.SwordOath))
                 return SpellsDefine.Atonement;
 
-            var lastGCDSpellID = Paladin_SpellHelper.LastGCDSpellID();
-
-            if (lastGCDSpellID == SpellsDefine.FastBlade && SpellsDefine.RiotBlade.IsUnlock())
+            if (Paladin_SpellHelper.LastSpellCombo(SpellsDefine.FastBlade) && SpellsDefine.RiotBlade.IsUnlock())
                 return SpellsDefine.RiotBlade;
 
-            if (lastGCDSpellID == SpellsDefine.RiotBlade && SpellsDefine.RageofHalone.IsUnlock())
+            if (Paladin_SpellHelper.LastSpellCombo(SpellsDefine.RiotBlade) && SpellsDefine.RageofHalone.IsUnlock())
                 return GetRoyalAuthority();
 
             return SpellsDefine.FastBlade;
@@ -56,7 +59,7 @@ namespace AEAssist.AI.Paladin.GCD
         public static uint GetAOE()
         {
 
-            if (Paladin_SpellHelper.LastGCDSpellID() == SpellsDefine.TotalEclipse && SpellsDefine.Prominance.IsUnlock())
+            if (Paladin_SpellHelper.LastSpellCombo(SpellsDefine.TotalEclipse) && SpellsDefine.Prominance.IsUnlock())
                 return SpellsDefine.Prominance;
 
             return SpellsDefine.TotalEclipse;

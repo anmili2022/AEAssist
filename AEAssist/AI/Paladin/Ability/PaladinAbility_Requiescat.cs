@@ -9,7 +9,6 @@ namespace AEAssist.AI.Paladin.Ability
     {
         uint spell = SpellsDefine.Requiescat;
 
-
         public int Check(SpellEntity lastSpell)
         {
             if (!spell.IsReady())
@@ -18,8 +17,11 @@ namespace AEAssist.AI.Paladin.Ability
             if (AIRoot.Instance.CloseBurst)
                 return -2;
 
-            if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.Requiescat, 30 - 5 * (int)AIRoot.Instance.GetGCDDuration()))
+            if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.FightOrFight, 30 - 5 * (int)AIRoot.Instance.GetGCDDuration()))
                 return -3;
+
+            if (Paladin_SpellHelper.OutOfMeleeRange())
+                return -4;
             return 0;
         }
 
