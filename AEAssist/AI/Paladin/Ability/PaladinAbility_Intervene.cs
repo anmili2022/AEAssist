@@ -21,9 +21,11 @@ namespace AEAssist.AI.Paladin.Ability
             if (AIRoot.Instance.CloseBurst)
                 if (spell.GetSpellEntity().SpellData.Charges > 1.9)
                     return 1;
+                else return -4;
             if (SpellsDefine.FightorFlight.IsReady()||SpellsDefine.FightorFlight.CoolDownInGCDs(3))
                 return -2;
-            
+            if (Paladin_SpellHelper.OutOfMeleeRange())
+                return 2;
             
             return 0;
         }
