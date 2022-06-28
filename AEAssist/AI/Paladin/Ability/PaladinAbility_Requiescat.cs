@@ -18,7 +18,7 @@ namespace AEAssist.AI.Paladin.Ability
             if (AIRoot.Instance.CloseBurst)
                 return -2;
 
-            if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.Requiescat, 30-5*(int)AIRoot.Instance.GetGCDDuration()))
+            if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.Requiescat, 30 - 5 * (int)AIRoot.Instance.GetGCDDuration()))
                 return -3;
             return 0;
         }

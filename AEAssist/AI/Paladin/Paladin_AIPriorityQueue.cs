@@ -17,9 +17,11 @@ namespace AEAssist.AI.Paladin
         public List<IAIHandler> AbilityQueue { get; } = new List<IAIHandler>()
         {
             new PaladinAbility_FightorFlight(),
+            new PaladinAbility_Requiescat(),
             new PaladinAbility_SpiritsWithin(),
             new PaladinAbility_CircleofScorn(),
-
+            
+            new PaladinAbility_Sheltron()
         };
         public Task<bool> UsePotion()
         {

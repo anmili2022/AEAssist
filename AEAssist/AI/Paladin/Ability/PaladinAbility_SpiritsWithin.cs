@@ -7,6 +7,12 @@ namespace AEAssist.AI.Paladin.Ability
     {
         uint spell = SpellsDefine.SpiritsWithin;
 
+        public uint GetSpell()
+        {
+            if (SpellsDefine.Expiacion.IsUnlock())
+                return SpellsDefine.Expiacion;
+            return SpellsDefine.SpiritsWithin;
+        }
         public int Check(SpellEntity lastSpell)
         {
 

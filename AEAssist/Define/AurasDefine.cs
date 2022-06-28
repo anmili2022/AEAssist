@@ -334,8 +334,13 @@ namespace AEAssist.Define
             BoleDrawn = 914,
             EwerDrawn = 917,
             SpearDrawn = 916,
-            SpireDrawn = 918;
-
+            SpireDrawn = 918,
+            //PLD
+            Sheltron = 1856,
+            HolySheltron = 2674,
+            KnightsResolve = 2675
+            ;
+            
         private const int
             Invincibility0 = 981,
             Invincibility1 = 969,

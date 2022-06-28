@@ -44,5 +44,12 @@ namespace AEAssist.AI.Paladin
         {
             return Core.Me.Distance(Core.Me.CurrentTarget) > 5;
         }
+
+        public static bool CheckAOE()
+        {
+            if (TargetHelper.CheckNeedUseAOE(0, 5))
+                return true;
+            return false;
+        }
     }
 }
