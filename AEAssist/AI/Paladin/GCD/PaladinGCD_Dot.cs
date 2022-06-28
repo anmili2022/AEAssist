@@ -1,6 +1,10 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
+using ff14bot;
+using ff14bot.Managers;
+using ff14bot.Objects;
+
 namespace AEAssist.AI.Paladin.GCD
 {
     public class PaladinGCD_Dot : IAIHandler
@@ -8,21 +12,28 @@ namespace AEAssist.AI.Paladin.GCD
         uint spell;
         static public uint GetSpell()
         {
-            switch (Paladin_SpellHelper.LastGCDSpellID())
+            switch (ActionManager.LastSpellId)
             {
                 case SpellsDefine.FastBlade:
                     return SpellsDefine.RiotBlade;
                 case SpellsDefine.RiotBlade:
                     return SpellsDefine.GoringBlade;
-
+                default:
+                    return SpellsDefine.FastBlade;
             }
-            return SpellsDefine.FastBlade;
+
+
         }
         public int Check(SpellEntity lastSpell)
         {
             if (!SpellsDefine.GoringBlade.IsUnlock())
                 return -2;
 
+            if (!DataBinding.Instance.UseDot)
+                return -3;
+
+            if (!Paladin_SpellHelper.NeedRenewDot())
+                return -4;
             spell = GetSpell();
 
             if (!spell.IsReady())
@@ -36,5 +47,7 @@ namespace AEAssist.AI.Paladin.GCD
 
             return null;
         }
+
+        
     }
 }
