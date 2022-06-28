@@ -75,7 +75,10 @@ namespace AEAssist.Define
             Mantra,
 
 
-
+            //SMN
+            SearingLight,
+            SummonCarbuncle,
+            RadiantAegis,
 
 
 
