@@ -216,6 +216,9 @@ namespace AEAssist
         public string Textbox_SMN_SwiftcastOption { get; set; }
         public string Toggle_SMN_Crimson { get; set; }
 
+        public string TextBox_PLD_ReserveManaPercentage { get; set; }
+        public string TextBox_PLD_SheltronThreshold { get; set; }
+        public string Textbox_PLD_FightorFlightTiming { get; set; }
 
-    }
+        }
 }

@@ -111,6 +111,8 @@
   "Textbox_SMN_SwiftcastOption": "即刻咏唱目标",
   "Toggle_SMN_Crimson": "火神冲",
   "Toggle_Bloodletter":"失血箭",
-  "ToolTip_Bard_Bloodletter":"是否使用失血箭"
-
+  "ToolTip_Bard_Bloodletter":"是否使用失血箭",
+  "TextBox_PLD_ReserveManaPercentage": "保留蓝量",
+  "TextBox_PLD_SheltronThreshold": "高于此值自动使用盾阵",
+  "Textbox_PLD_FightorFlightTiming" : "站逃反应时机"
 }
