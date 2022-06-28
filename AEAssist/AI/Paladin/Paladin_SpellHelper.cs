@@ -54,19 +54,23 @@ namespace AEAssist.AI.Paladin
             var target = Core.Me.CurrentTarget as Character;
             if (target == null)
                 return false;
-
-            if (!target.HasMyAuraWithTimeleft(AurasDefine.BladeOfValor, 3 * (int)AIRoot.Instance.GetGCDDuration()) && !target.HasMyAura(AurasDefine.GoringBlade))
-            {
-                LogHelper.Info($"Target's dot expires in {target.GetAuraById(AurasDefine.BladeOfValor).TimeLeft} ms, renewing dot.");
-                return true;
-            }
-            if (!target.HasMyAuraWithTimeleft(AurasDefine.GoringBlade, 3 * (int)AIRoot.Instance.GetGCDDuration()) && ! target.HasMyAura(AurasDefine.BladeOfValor))
-            {
-                LogHelper.Info($"Target's dot expires in {target.GetAuraById(AurasDefine.GoringBlade).TimeLeft} ms, renewing dot.");
-                return true;
-            }
+            if (target.HasMyAura(AurasDefine.GoringBlade))
+                if (!target.HasMyAuraWithTimeleft(AurasDefine.GoringBlade, 3 * (int)AIRoot.Instance.GetGCDDuration()))
+                {
+                    LogHelper.Info($"Target's dot expires in {target.GetAuraById(AurasDefine.GoringBlade).TimeLeft} ms, renewing dot.");
+                    return true;
+                }
+                else return false;
+            if (target.HasMyAura(AurasDefine.BladeOfValor))
+                if (!target.HasMyAuraWithTimeleft(AurasDefine.BladeOfValor, 3 * (int)AIRoot.Instance.GetGCDDuration()))
+                {
+                    LogHelper.Info($"Target's dot expires in {target.GetAuraById(AurasDefine.BladeOfValor).TimeLeft} ms, renewing dot.");
+                    return true;
+                }
+                else return false;
             
-            return false;
+            
+            return true;
         }
 
         public static int GCDNeededforCombo()
