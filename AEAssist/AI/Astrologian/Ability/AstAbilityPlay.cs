@@ -19,12 +19,34 @@ namespace AEAssist.AI.Astrologian.Ability
 
             if (!SpellsDefine.Play.IsReady()) return -1;
             if (ActionResourceManager.Astrologian.Arcana == 0) return -2;
+            if (SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds<110 && SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds >= 5)
+            {
+                if (SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds>55 && SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds < 65)
+                {
+                    if (AIRoot.GetBattleData<AstBattleData>().half)
+                    {
+                        AIRoot.GetBattleData<AstBattleData>().half = false;
+                        return 0;
+                    }
+                    
+                }
+                if (SpellsDefine.Draw.IsMaxChargeReady(0.1f))
+                {
+                    LogHelper.Debug("即将溢出，发卡");
+                    return 0;
+                }
+                return -3;
+            }
             //if (Core.Me.HasAura(AurasDefine.TheArrow) && Core.Me.HasAura(AurasDefine.TheBalance) && Core.Me.HasAura(AurasDefine.TheSpear) && Core.Me.HasAura(AurasDefine.TheBole) && Core.Me.HasAura(AurasDefine.TheEwer) && Core.Me.HasAura(AurasDefine.TheSpire))
             //{
-                //LogHelper.Debug("有卡不抽");
-                //return -2;
+            //LogHelper.Debug("有卡不抽");
+            //return -2;
             //}
-
+            //if (SpellsDefine.Divination.CoolDownInGCDs(1))
+            //{
+                //SpellData
+                //SpellsDefine.Divination.GetSpellEntity().AdjustedCooldown
+            //}
             return 0;
         }
 

@@ -195,7 +195,8 @@ namespace AEAssist.AI.Astrologian
                 //var skillTarget = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && r.CurrentHealthPercent <= SettingMgr.GetSetting<WhiteMageSettings>().TetragrammatonHp);
                 if (!SpellsDefine.Draw.IsUnlock()) return null;
                 var spell = new SpellEntity(SpellsDefine.Play, skillTarget.FirstOrDefault() as BattleCharacter);
-                await spell.DoAbility();
+                AIRoot.GetBattleData<AstBattleData>().AstNum = AIRoot.GetBattleData<AstBattleData>().AstNum + 1;
+                await spell.DoAbility();                
                 //await CastTetragrammaton(skillTarget);
             }
             return null;
@@ -220,7 +221,8 @@ namespace AEAssist.AI.Astrologian
                 //var skillTarget = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && r.CurrentHealthPercent <= SettingMgr.GetSetting<WhiteMageSettings>().TetragrammatonHp);
                 if (!SpellsDefine.Draw.IsUnlock()) return null;
                 var spell = new SpellEntity(SpellsDefine.Play, skillTarget.FirstOrDefault() as BattleCharacter);
-                await spell.DoAbility();
+                AIRoot.GetBattleData<AstBattleData>().AstNum = AIRoot.GetBattleData<AstBattleData>().AstNum + 1;
+                await spell.DoAbility();               
                 //await CastTetragrammaton(skillTarget);
             }
             return null;

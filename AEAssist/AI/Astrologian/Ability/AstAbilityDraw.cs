@@ -29,12 +29,14 @@ namespace AEAssist.AI.Astrologian.Ability
                 return -2;
                 //AurasDefine.TheBalance;
             }
+            
             return 0;
         }
 
         public async Task<SpellEntity> Run()
         {
-            LogHelper.Debug("开始");
+            LogHelper.Debug("开始");            
+            LogHelper.Debug(Convert.ToString(SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds));
             LogHelper.Debug(Convert.ToString(ActionResourceManager.Astrologian.Arcana));
             LogHelper.Debug(Convert.ToString(ActionResourceManager.Astrologian.SealCount));
             LogHelper.Debug(Convert.ToString(ActionResourceManager.Astrologian.UniqueSeals));

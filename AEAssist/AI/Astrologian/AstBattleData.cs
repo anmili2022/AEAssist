@@ -12,5 +12,7 @@ namespace AEAssist.AI.Astrologian
             lastCombustWithObj.TryGetValue(targetId, out var ret);
             return ret;
         }
+        public int AstNum;
+        public bool half = true;
     }
 }

@@ -22,10 +22,11 @@ namespace AEAssist.AI.Astrologian
 
         public List<IAIHandler> AbilityQueue { get; } = new List<IAIHandler>()
         {
-
+            new AstAbilityAstrodyne(),
             new AstAbilityDraw(),
-            new AstAbilityPlay()
-            //new SageAbilityLucidDreaming(),
+            new AstAbilityPlay(),
+            new AstAbilityLucidDreaming(),
+            new AstAbilityDivination(),
             //new SageAbilityUsePotion(),
         };
         public async Task<bool> UsePotion()

@@ -176,7 +176,10 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
       <Link>TriggerModel\View\GUIToolTip.cs</Link>
     </Compile>
     <Compile Include="AI\AIMgrs.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityAstrodyne.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityDivination.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityDraw.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityLucidDreaming.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityPlay.cs" />
     <Compile Include="AI\Astrologian\AstBattleData.cs" />
     <Compile Include="AI\Astrologian\AstRotation.cs" />
