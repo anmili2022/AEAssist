@@ -2,6 +2,8 @@
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
+using ff14bot.Managers;
+
 namespace AEAssist.AI.Paladin.GCD
 {
     public class PaladinGCD_Base : IAIHandler
@@ -17,11 +19,7 @@ namespace AEAssist.AI.Paladin.GCD
         {
             spell = GetSpell();
 
-            //一个dot设置 
-            if (!DataBinding.Instance.UseDot)
-                return -3;
-            //检查dot剩余时间
-
+          
             if (!spell.IsReady())
                 return -1;
             return 0;
@@ -41,13 +39,20 @@ namespace AEAssist.AI.Paladin.GCD
             if (Core.Me.HasAura(AurasDefine.SwordOath))
                 return SpellsDefine.Atonement;
 
-            if (Paladin_SpellHelper.LastSpellCombo(SpellsDefine.FastBlade) && SpellsDefine.RiotBlade.IsUnlock())
-                return SpellsDefine.RiotBlade;
-
-            if (Paladin_SpellHelper.LastSpellCombo(SpellsDefine.RiotBlade) && SpellsDefine.RageofHalone.IsUnlock())
-                return GetRoyalAuthority();
-
-            return SpellsDefine.FastBlade;
+            switch (ActionManager.LastSpellId) 
+            {
+                case SpellsDefine.FastBlade:
+                    if (SpellsDefine.RageofHalone.IsUnlock())
+                        return SpellsDefine.RiotBlade;
+                    else return SpellsDefine.FastBlade;
+                case SpellsDefine.RiotBlade:
+                    if (SpellsDefine.RageofHalone.IsUnlock())
+                        return GetRoyalAuthority();
+                    else return SpellsDefine.FastBlade;
+                default:
+                    return SpellsDefine.FastBlade;
+            }
+            
         }
 
         public static uint GetRoyalAuthority()
@@ -59,7 +64,7 @@ namespace AEAssist.AI.Paladin.GCD
         public static uint GetAOE()
         {
 
-            if (Paladin_SpellHelper.LastSpellCombo(SpellsDefine.TotalEclipse) && SpellsDefine.Prominance.IsUnlock())
+            if (ActionManager.LastSpellId == SpellsDefine.TotalEclipse && SpellsDefine.Prominance.IsUnlock())
                 return SpellsDefine.Prominance;
 
             return SpellsDefine.TotalEclipse;

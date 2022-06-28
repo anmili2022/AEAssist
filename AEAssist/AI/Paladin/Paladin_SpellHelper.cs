@@ -1,16 +1,15 @@
 ﻿using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
+using ff14bot.Managers;
+
 namespace AEAssist.AI.Paladin
 {
     public static class Paladin_SpellHelper
     {
 
         public static bool Debugging { get; set; } = true;
-        public static bool CheckUseAOE()
-        {
-            return false;
-        }
+     
 
         public static uint LastGCDSpellID()
         {
@@ -42,14 +41,19 @@ namespace AEAssist.AI.Paladin
         //AOE 这个距离判定有点迷
         public static bool OutOfAOERange()
         {
-            return Core.Me.Distance(Core.Me.CurrentTarget) > 5;
+            return Core.Me.Distance(Core.Me.CurrentTarget) > 5 && OutOfMeleeRange();
         }
 
-        public static bool CheckAOE()
+        public static bool CheckUseAOE(int count = 3)
         {
-            if (TargetHelper.CheckNeedUseAOE(0, 5))
+            if (!DataBinding.Instance.UseAOE)
+                return false;
+
+            if (TargetHelper.CheckNeedUseAOE(0, 5, count))
                 return true;
             return false;
         }
+
+
     }
 }
