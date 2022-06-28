@@ -188,9 +188,14 @@ namespace AEAssist
 
         #region PLD
         public bool Requiescat { get; set; } = true;
+        public bool IronWill { get; set; } = true;
+
+        public bool Intervene { get; set; } = true;
         public void PLDReset()
         {
             Requiescat = true;
+            IronWill = true;
+            Intervene = true;
         }
         #endregion
 
