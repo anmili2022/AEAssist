@@ -59,6 +59,7 @@ namespace AEAssist
         public DancerSettings DancerSettings => SettingMgr.GetSetting<DancerSettings>();
         public MonkSettings MonkSettings => SettingMgr.GetSetting<MonkSettings>();
         public SMNSettings SMNSettings => SettingMgr.GetSetting<SMNSettings>();
+        public PaladinSettings PaladinSettings => SettingMgr.GetSetting<PaladinSettings>();
         public DebugCenter DebugCenter => DebugCenter.Intance;
         public MeleePosition MeleePosition => MeleePosition.Intance;
 
@@ -117,6 +118,7 @@ namespace AEAssist
             SageSettings.LucidDreamingToggle = true;
             Wildfire = true;
             SMNReset();
+            PLDReset();
         }
 
 
@@ -177,11 +179,21 @@ namespace AEAssist
         public bool Crimson { get; set; } = true;
 
         public bool SaveInstantSpells { get; set; } = false;
-        #endregion
         public void SMNReset()
         {
             Crimson = true;
             SaveInstantSpells = false;
         }
+        #endregion
+
+        #region PLD
+        public bool Requiescat { get; set; } = true;
+        public void PLDReset()
+        {
+            Requiescat = true;
+        }
+        #endregion
+
+
     }
 }
