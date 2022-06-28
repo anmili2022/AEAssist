@@ -33,7 +33,7 @@ namespace AEAssist.AI.Dancer
             new DancerAbility_FanDance4(),
             new DancerAbility_FanDance3(),
             new DancerAbility_FanDance(),
-            
+
         };
         public async Task<bool> UsePotion()
         {

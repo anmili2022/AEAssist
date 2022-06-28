@@ -3,12 +3,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using Buddy.Coroutines;
 using ff14bot;
-using ff14bot.Helpers;
-using ff14bot.Managers;
-using ff14bot.Objects;
 using ff14bot.Enums;
+using ff14bot.Objects;
 
 namespace AEAssist.AI.Astrologian
 {
@@ -47,15 +44,15 @@ namespace AEAssist.AI.Astrologian
             LogHelper.Debug("Checking if Combust2 is unlocked...");
             if (!SpellsDefine.Combust2.IsUnlock())
             {
-                LogHelper.Debug("Combust2 not unlocked.. trying to use Combust instead.. ");                
+                LogHelper.Debug("Combust2 not unlocked.. trying to use Combust instead.. ");
                 return AurasDefine.Combust;
             }
             LogHelper.Debug("Checking if Combust3 is unlocked...");
             if (!SpellsDefine.Combust3.IsUnlock())
             {
-                LogHelper.Debug("Combust3 not unlocked.. trying to use Combust32 instead.. ");                
+                LogHelper.Debug("Combust3 not unlocked.. trying to use Combust32 instead.. ");
                 return AurasDefine.Combust2;
-            }                      
+            }
             return AurasDefine.Combust3;
         }
         public static bool IsTargetHasAuraCombust(Character target)
@@ -180,7 +177,7 @@ namespace AEAssist.AI.Astrologian
 
             if (GroupHelper.InParty)
             {
-                var skillTarget = GroupHelper.CastableAlliesWithin30.Where(a => !a.HasMyAura(AurasDefine.TheArrow) && !a.HasMyAura(AurasDefine.TheBalance) && !a.HasMyAura(AurasDefine.TheSpear) &&  a.CurrentHealth > 0 && (a.IsTank() || a.IsMeleeDps())).OrderBy(GetWeight);
+                var skillTarget = GroupHelper.CastableAlliesWithin30.Where(a => !a.HasMyAura(AurasDefine.TheArrow) && !a.HasMyAura(AurasDefine.TheBalance) && !a.HasMyAura(AurasDefine.TheSpear) && a.CurrentHealth > 0 && (a.IsTank() || a.IsMeleeDps())).OrderBy(GetWeight);
                 LogHelper.Debug(Convert.ToString(skillTarget));
                 LogHelper.Debug(Convert.ToString(skillTarget.FirstOrDefault()));
                 var skillt = GroupHelper.CastableAlliesWithin30;
@@ -190,7 +187,7 @@ namespace AEAssist.AI.Astrologian
                     LogHelper.Debug(Convert.ToString(chara) + Convert.ToString(chara.IsMeleeDps()));
                 if (skillTarget.FirstOrDefault() == null)
                     return null;
-                
+
                 //return await Spells.Play.Cast(ally.FirstOrDefault());
                 //var skillTarget = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && r.CurrentHealthPercent <= SettingMgr.GetSetting<WhiteMageSettings>().TetragrammatonHp);
                 if (!SpellsDefine.Draw.IsUnlock()) return null;

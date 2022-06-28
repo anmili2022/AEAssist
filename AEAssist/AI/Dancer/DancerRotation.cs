@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
-using AEAssist.AI.Sage;
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
 using ff14bot.Enums;
-using ff14bot.Managers;
-using ff14bot.Objects;
 
 namespace AEAssist.AI.Dancer
 {
-    [Job(ClassJobType.Dancer)] 
+    [Job(ClassJobType.Dancer)]
     public class DancerRotation : IRotation
     {
         public void Init()

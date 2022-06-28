@@ -5,7 +5,6 @@ using AEAssist.Rotations.Core;
 using ff14bot;
 using ff14bot.Enums;
 using ff14bot.Managers;
-using Language = AEAssist.Language;
 
 namespace AEAssist.AI.Reaper
 {
@@ -51,13 +50,13 @@ namespace AEAssist.AI.Reaper
             // maybe after revive todo: get the id of revive aura
             if (Core.Me.CurrentHealth * 100 / Core.Me.MaxHealth < 50)
                 return false;
-            
+
             if (Core.Me.HasAura(AurasDefine.Soulsow))
                 return true;
 
             return await SpellsDefine.Soulsow.DoGCD();
         }
-        
+
         public SpellEntity GetBaseGCDSpell()
         {
             return SpellsDefine.Slice.GetSpellEntity();

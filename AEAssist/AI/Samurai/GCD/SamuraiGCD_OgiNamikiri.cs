@@ -1,10 +1,8 @@
 ﻿using System.Threading.Tasks;
+using AEAssist.AI.Samurai.SpellQueue;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Objects;
-using ff14bot.Managers;
-using AEAssist.AI.Samurai.SpellQueue;
 
 namespace AEAssist.AI.Samurai.GCD
 {

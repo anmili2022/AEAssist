@@ -8,7 +8,7 @@ using ff14bot.Enums;
 namespace AEAssist.AI.Astrologian
 {
     [Job(ClassJobType.Astrologian)]
-    internal class Ast_AIPriorityQueue:IAIPriorityQueue
+    internal class Ast_AIPriorityQueue : IAIPriorityQueue
     {
         public List<IAIHandler> GCDQueue { get; } = new List<IAIHandler>()
         {

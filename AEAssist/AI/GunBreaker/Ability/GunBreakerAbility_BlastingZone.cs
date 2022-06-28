@@ -12,7 +12,7 @@ namespace AEAssist.AI.GunBreaker.Ability
                 return -1;
             if (SpellsDefine.NoMercy.GetSpellEntity().SpellData.Charges < 0.9)
                 return 1;
-            if(!SpellsDefine.NoMercy.CoolDownInGCDs(2))
+            if (!SpellsDefine.NoMercy.CoolDownInGCDs(2))
                 return -2;
             return 0;
         }

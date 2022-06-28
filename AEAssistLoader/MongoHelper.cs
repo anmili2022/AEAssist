@@ -17,7 +17,7 @@ namespace AEAssist
 
         static MongoHelper()
         {
-            var conventionPack = new ConventionPack {new IgnoreExtraElementsConvention(true)};
+            var conventionPack = new ConventionPack { new IgnoreExtraElementsConvention(true) };
 
             ConventionRegistry.Register("IgnoreExtraElements", conventionPack, type => true);
 
@@ -117,7 +117,7 @@ namespace AEAssist
             {
                 using (var memoryStream = new MemoryStream(bytes))
                 {
-                    return (T) BsonSerializer.Deserialize(memoryStream, typeof(T));
+                    return (T)BsonSerializer.Deserialize(memoryStream, typeof(T));
                 }
             }
             catch (Exception e)
@@ -128,7 +128,7 @@ namespace AEAssist
 
         public static T FromBson<T>(byte[] bytes, int index, int count)
         {
-            return (T) FromBson(typeof(T), bytes, index, count);
+            return (T)FromBson(typeof(T), bytes, index, count);
         }
 
         public static T Clone<T>(T t)

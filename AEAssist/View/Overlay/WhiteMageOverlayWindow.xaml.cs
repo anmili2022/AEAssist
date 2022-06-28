@@ -49,7 +49,7 @@ namespace AEAssist.View.Overlay
             AIRoot.GetBattleData<BattleData>().NextAbilityUsePotion = true;
         }
 
-        
+
         // Assize
         private void UseAssize_OnClick(object sender, RoutedEventArgs e)
         {
@@ -65,7 +65,7 @@ namespace AEAssist.View.Overlay
         private void UseAsylumSelf_OnClick(object sender, RoutedEventArgs e)
         {
             AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.Asylum, SpellTargetType.Self);
-            
+
         }
 
         // LiturgyOfTheBell
@@ -102,7 +102,7 @@ namespace AEAssist.View.Overlay
         // PlenaryIndulgence
         private void UsePlenaryIndulgence_OnClick(object sender, RoutedEventArgs e)
         {
-           
+
             //AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.PlenaryIndulgence.GetSpellEntity();
             AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.PlenaryIndulgence.GetSpellEntity();
             //LogHelper.Debug("trying to use Pneuma next");
@@ -115,7 +115,7 @@ namespace AEAssist.View.Overlay
             AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.ThinAir.GetSpellEntity();
         }
 
-        
+
 
         private void Expander_OnMouseMove(object sender, MouseEventArgs e)
         {

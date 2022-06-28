@@ -6,13 +6,13 @@ namespace AEAssist
     {
         public string Name;
         public string Tooltip;
-        
+
         public bool NeedParams;
         public string ParamTooltip;
         public string Example;
-        
-        public TriggerAttribute(string name,string Tooltip = null,
-            bool NeedParams = true,string ParamTooltip=null,string Example=null)
+
+        public TriggerAttribute(string name, string Tooltip = null,
+            bool NeedParams = true, string ParamTooltip = null, string Example = null)
         {
             Name = name;
             this.Tooltip = Tooltip;

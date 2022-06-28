@@ -15,7 +15,7 @@
 
         public static int ReaperDoubleEnshroudMinCheckTime = 4500;
         public static int ReaperDoubleEnshroudMaxCheckTime = 25000;
-        
+
         public static int SageAOECount = 2;
         public static int WhiteMageAOECount = 2;
 
@@ -24,7 +24,7 @@
         public static int BlackMageLatencyCompensation = 250;
 
         public static int DancerAOECount = 2;
-            
+
         public static int SettingVersion = 13;
     }
 }

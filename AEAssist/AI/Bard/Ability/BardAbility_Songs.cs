@@ -1,9 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using AEAssist;
 using Buddy.Coroutines;
-using ff14bot;
 using ff14bot.Managers;
 
 namespace AEAssist.AI.Bard.Ability
@@ -44,7 +42,7 @@ namespace AEAssist.AI.Bard.Ability
             if (AIRoot.GetBattleData<BattleData>().CurrBattleTimeInMs > 10000 && spell.Id == SpellsDefine.TheWanderersMinuet)
             {
                 var halfGCD = AIRoot.Instance.GetGCDDuration() / 2;
-                await Coroutine.Sleep((int)(halfGCD-100));
+                await Coroutine.Sleep((int)(halfGCD - 100));
             }
 
             var ret = await spell.DoAbility();
@@ -76,7 +74,7 @@ namespace AEAssist.AI.Bard.Ability
             {
                 if (currSong != ActionResourceManager.Bard.BardSong.None)
                 {
-                    if (bardBattleData.ControlByNextSongQueue((int) currSong))
+                    if (bardBattleData.ControlByNextSongQueue((int)currSong))
                     {
                         if (remainTime <= 45000 - bardBattleData.nextSongDuration[0])
                             spell = GetSongsByOrder(null, out forceNextSong);
@@ -97,7 +95,7 @@ namespace AEAssist.AI.Bard.Ability
             }
             else
             {
-                if (bardBattleData.ControlByNextSongQueue((int) currSong))
+                if (bardBattleData.ControlByNextSongQueue((int)currSong))
                 {
                     if (remainTime <= 45000 - bardBattleData.nextSongDuration[0])
                         spell = GetSongsByOrder(null, out forceNextSong);
@@ -116,7 +114,7 @@ namespace AEAssist.AI.Bard.Ability
 
                             break;
                         case ActionResourceManager.Bard.BardSong.MagesBallad:
-                            if ( SpellsDefine.TheWanderersMinuet.GetSpellEntity().Cooldown.TotalMilliseconds < 100
+                            if (SpellsDefine.TheWanderersMinuet.GetSpellEntity().Cooldown.TotalMilliseconds < 100
                                  || remainTime <= SettingMgr.GetSetting<BardSettings>().Songs_MB_TimeLeftForSwitch)
                                 spell = GetSongsByOrder(SpellsDefine.MagesBallad.GetSpellEntity(), out forceNextSong);
 
@@ -145,10 +143,10 @@ namespace AEAssist.AI.Bard.Ability
             var currSong = ActionResourceManager.Bard.ActiveSong;
             if (currSong == ActionResourceManager.Bard.BardSong.None)
                 currSong = bardBattleData.lastSong;
-            if (bardBattleData.ControlByNextSongQueue((int) currSong))
+            if (bardBattleData.ControlByNextSongQueue((int)currSong))
             {
                 var nextSong = AIRoot.GetBattleData<BardBattleData>().GetNextSong();
-                switch ((ActionResourceManager.Bard.BardSong) nextSong)
+                switch ((ActionResourceManager.Bard.BardSong)nextSong)
                 {
                     case ActionResourceManager.Bard.BardSong.MagesBallad:
                         spell = SpellsDefine.MagesBallad.GetSpellEntity();

@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Media;
 using AEAssist.AI;
 using AEAssist.Helper;
-using ff14bot;
-using ff14bot.Managers;
 using PropertyChanged;
-using QuickGraph;
 
 namespace AEAssist
 {

@@ -1,11 +1,9 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using Buddy.Coroutines;
 using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Managers;
 using ff14bot.Objects;
 
@@ -355,7 +353,7 @@ namespace AEAssist.AI.Sage
             var spell = SpellsDefine.Swiftcast.GetSpellEntity();
             var ret = await spell.DoAbility();
         }
-        
+
         public static async Task CastEgeiroToTarget(Character target)
         {
             if (!SpellsDefine.Egeiro.IsUnlock()) return;
@@ -363,7 +361,7 @@ namespace AEAssist.AI.Sage
             var spell = new SpellEntity(SpellsDefine.Egeiro, target as BattleCharacter);
             await spell.DoGCD();
         }
-        
+
         public static async Task<SpellEntity> CastResPriority()
         {
             var priority = SettingMgr.GetSetting<SageSettings>().SageResPriority;
@@ -379,9 +377,9 @@ namespace AEAssist.AI.Sage
                         // check if the player already ressed.
                         LogHelper.Debug("checking if the player already rezzed if so skipping.");
                         if (deadAlly.HasAura(AurasDefine.Raise)) continue;
-                        
+
                         // check if the distance from the player is more than 30
-                        
+
                         // if (deadAlly.Distance(Core.Me) >= 40) continue;
                         if (!ActionManager.CanCastOrQueue(SpellsDefine.Egeiro.GetSpellEntity().SpellData, deadAlly)) continue;
 
@@ -404,7 +402,7 @@ namespace AEAssist.AI.Sage
                             await CastEgeiroToTarget(deadAlly);
                             return null;
                         }
-                        
+
                         if (deadAlly.IsTank())
                         {
                             // check if there is healers that are dead too.
@@ -449,7 +447,7 @@ namespace AEAssist.AI.Sage
                             await CastEgeiroToTarget(deadAlly);
                             return null;
                         }
-                        
+
                         if (deadAlly.IsHealer())
                         {
                             // check if there is healers that are dead too.
@@ -477,10 +475,10 @@ namespace AEAssist.AI.Sage
                         // check if the player already ressed.
                         LogHelper.Debug("checking if the player already rezzed if so skipping.");
                         if (deadAlly.HasAura(AurasDefine.Raise)) continue;
-                        
+
                         // check if the distance from the player is more than 30
                         if (deadAlly.Distance(Core.Me) >= 40) continue;
-                        
+
                         if (deadAlly.IsTank())
                         {
                             // check if there is dps that's dead too.
@@ -500,7 +498,7 @@ namespace AEAssist.AI.Sage
                             await CastEgeiroToTarget(deadAlly);
                             return null;
                         }
-                        
+
                         if (deadAlly.IsHealer())
                         {
                             // check if there is dps that are dead too.
@@ -532,10 +530,10 @@ namespace AEAssist.AI.Sage
             var spell = new SpellEntity(SpellsDefine.EukrasianDiagnosis, target as BattleCharacter);
             return await spell.DoGCD();
         }
-        
-        
+
+
         public static async Task<bool> CastEukrasianPrognosis(Character target)
-        {   
+        {
             if (!SpellsDefine.EukrasianPrognosis.IsUnlock()) return false;
             await SageSpellHelper.CastEukrasia();
             var spell = new SpellEntity(SpellsDefine.EukrasianPrognosis, target as BattleCharacter);
@@ -553,7 +551,7 @@ namespace AEAssist.AI.Sage
         public static async Task PrePullEukrasianDiagnosisThreePeople()
         {
             if (GroupHelper.CastableParty.Count <= 3) return;
-            
+
             var count = 0;
             const int need = 3;
             const int retryTime = 25;
@@ -579,14 +577,14 @@ namespace AEAssist.AI.Sage
 
                 }
             }
-            
+
             foreach (var character in GroupHelper.CastableParty)
             {
                 // check if we can EukrasianDiagnosis.
                 if (character.IsTank())
                     continue;
                 // if healer skip
-                if(character.IsHealer())
+                if (character.IsHealer())
                     continue;
                 if (count >= need)
                     return;

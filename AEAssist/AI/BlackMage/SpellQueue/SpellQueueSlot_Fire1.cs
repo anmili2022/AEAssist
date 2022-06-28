@@ -1,5 +1,4 @@
 ﻿using AEAssist.Define;
-using AEAssist.Helper;
 
 namespace AEAssist.AI.BlackMage.SpellQueue
 {
@@ -12,7 +11,7 @@ namespace AEAssist.AI.BlackMage.SpellQueue
 
         public void Fill(SpellQueueSlot slot)
         {
-            slot.SetGCD(SpellsDefine.Fire,SpellTargetType.CurrTarget);
+            slot.SetGCD(SpellsDefine.Fire, SpellTargetType.CurrTarget);
         }
     }
 }

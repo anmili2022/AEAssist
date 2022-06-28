@@ -2,7 +2,6 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using AEAssist.AI;
-using AEAssist.AI.Machinist;
 using AEAssist.Define;
 using AEAssist.Helper;
 
@@ -24,7 +23,7 @@ namespace AEAssist.View.Overlay
         }
 
         //TODO 三个蛮神
-        
+
 
 
         private void UseSureCast_OnClick(object sender, RoutedEventArgs e)
@@ -55,8 +54,8 @@ namespace AEAssist.View.Overlay
         }
 
 
-        
-            
+
+
         private void Close_OnClick(object sender, RoutedEventArgs e)
         {
             OverlayManager.OverlayManager.Instance.Close();

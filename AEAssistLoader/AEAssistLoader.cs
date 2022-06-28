@@ -64,10 +64,10 @@ namespace AEAssistLoader
                         Logging.Write(Colors.Red, $@"[AEAssist] {Core.Me.CurrentJob} is only for develop.");
                         return new[] { Core.Me.CurrentJob };
                     default:
-                    {
-                        Logging.Write(Colors.Red, $@"[AEAssist] {Core.Me.CurrentJob} is not supported.");
-                        return new[] { ClassJobType.Adventurer };
-                    }
+                        {
+                            Logging.Write(Colors.Red, $@"[AEAssist] {Core.Me.CurrentJob} is not supported.");
+                            return new[] { ClassJobType.Adventurer };
+                        }
                 }
             }
         }

@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot.Managers;
 
 namespace AEAssist.AI.Summoner.GCD
 {
@@ -30,7 +29,7 @@ namespace AEAssist.AI.Summoner.GCD
                 return -2;
 
             //等一下灼热之光
-            if (SpellsDefine.SearingLight.IsUnlock()&& SpellsDefine.SearingLight.CoolDownInGCDs(2))
+            if (SpellsDefine.SearingLight.IsUnlock() && SpellsDefine.SearingLight.CoolDownInGCDs(2))
                 return -3;
 
             return 0;

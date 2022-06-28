@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using AEAssist;
 using ff14bot;
 using ff14bot.Objects;
 
@@ -19,7 +18,7 @@ namespace AEAssist.AI.Bard.Ability
                 return -4;
             if (!PotionHelper.CheckPotion(SettingMgr.GetSetting<GeneralSettings>().DexPotionId))
                 return -6;
-        
+
             if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.RagingStrikes)
                 || SpellsDefine.RagingStrikes.GetSpellEntity().Cooldown.TotalMilliseconds < 5000)
                 return 0;

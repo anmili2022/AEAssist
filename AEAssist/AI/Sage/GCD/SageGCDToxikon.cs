@@ -11,7 +11,7 @@ namespace AEAssist.AI.Sage.GCD
         {
             var toxikonCheck = SageSpellHelper.GetToxikon();
             if (toxikonCheck == null) return -5;
-            
+
             var battleData = AIRoot.GetBattleData<BattleData>();
             if (battleData.lastGCDSpell == SageSpellHelper.GetToxikon())
             {
@@ -29,7 +29,7 @@ namespace AEAssist.AI.Sage.GCD
             var toxikonIICharges = DataManager.GetSpellData(SpellsDefine.ToxikonII).Charges;
 
             if (!(toxikonCharges <= 1) && !(toxikonIICharges <= 1)) return 0;
-            LogHelper.Debug("Toxikon's Didn't pass the check, currently only got Toxikon: " + 
+            LogHelper.Debug("Toxikon's Didn't pass the check, currently only got Toxikon: " +
                             toxikonCharges + "and ToxikonII :" + toxikonIICharges + "charges.");
             return -4;
 

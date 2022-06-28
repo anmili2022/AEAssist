@@ -4,12 +4,12 @@ using PropertyChanged;
 
 namespace AEAssist.TriggerAction
 {
-    [Trigger("DisableOtherGroup 关闭其他组",Tooltip = "关闭另一组触发器",ParamTooltip = "[Other trigger's group id]")]
+    [Trigger("DisableOtherGroup 关闭其他组", Tooltip = "关闭另一组触发器", ParamTooltip = "[Other trigger's group id]")]
     [AddINotifyPropertyChangedInterface]
     public class TriggerAction_DisableOtherTrigger : ITriggerAction
     {
         [GUILabel("GroupId")]
-        public string TriggerId{ get; set; }
+        public string TriggerId { get; set; }
 
         public void WriteFromJson(string[] values)
         {

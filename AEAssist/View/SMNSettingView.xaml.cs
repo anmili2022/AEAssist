@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Controls;
-using System.Windows.Forms;
-using AEAssist.Opener;
-using ff14bot.Enums;
 using UserControl = System.Windows.Controls.UserControl;
 
 namespace AEAssist.View
@@ -22,15 +18,15 @@ namespace AEAssist.View
             };
             SwiftcastOption.ItemsSource = swiftcastOption;
             SwiftcastOption.SelectedIndex = SettingMgr.GetSetting<SMNSettings>().SwiftcastOption;
-            
 
-   
+
+
         }
         private void ChooseSwiftcastOption_OnSelectionChanged(object sender, EventArgs eventArgs)
         {
             SettingMgr.GetSetting<SMNSettings>().SwiftcastOption = int.Parse(SwiftcastOption.SelectedValue.ToString());
         }
 
-        
+
     }
 }

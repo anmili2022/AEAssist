@@ -1,17 +1,16 @@
 ﻿using System.Threading.Tasks;
+using AEAssist.AI.Samurai.SpellQueue;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Objects;
 using ff14bot.Managers;
-using AEAssist.AI.Samurai.SpellQueue;
 
 namespace AEAssist.AI.Samurai.GCD
 {
     public class SamuraiGCD_MidareSetsugekka : IAIHandler
     {
         public int Check(SpellEntity lastSpell)
-        {            
+        {
             if (SamuraiSpellHelper.SenCounts() == 3 && !MovementManager.IsMoving)
             {
                 return 1;
@@ -31,10 +30,10 @@ namespace AEAssist.AI.Samurai.GCD
             }
             else
             {
-                if(await SpellsDefine.MidareSetsugekka.DoGCD())
+                if (await SpellsDefine.MidareSetsugekka.DoGCD())
                     return SpellsDefine.MidareSetsugekka.GetSpellEntity();
             }
-            
+
             return null;
         }
     }

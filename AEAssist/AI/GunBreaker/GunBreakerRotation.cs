@@ -2,7 +2,6 @@
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
-using ff14bot;
 using ff14bot.Enums;
 
 namespace AEAssist.AI.Gunbreaker
@@ -17,8 +16,8 @@ namespace AEAssist.AI.Gunbreaker
 
         public void Init()
         {
-                CountDownHandler.Instance.AddListener(300, () =>
-                    SpellsDefine.LightningShot.DoGCD());
+            CountDownHandler.Instance.AddListener(300, () =>
+                SpellsDefine.LightningShot.DoGCD());
 
             AEAssist.DataBinding.Instance.EarlyDecisionMode = SettingMgr.GetSetting<GunBreakerSettings>().EarlyDecisionMode;
             LogHelper.Info("EarlyDecisionMode: " + AEAssist.DataBinding.Instance.EarlyDecisionMode);

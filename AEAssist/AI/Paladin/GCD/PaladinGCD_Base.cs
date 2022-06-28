@@ -9,7 +9,7 @@ namespace AEAssist.AI.Paladin.GCD
         uint spell;
         static public uint GetSpell()
         {
-            if (CheckAOE())
+            if (Paladin_SpellHelper.CheckAOE() && SpellsDefine.TotalEclipse.IsUnlock())
                 return GetAOE();
             return GetSingleTarget();
         }
@@ -29,49 +29,39 @@ namespace AEAssist.AI.Paladin.GCD
             return null;
         }
 
-        public static bool CheckAOE()
-        {
-            if (TargetHelper.CheckNeedUseAOE(0, 5) && SpellsDefine.TotalEclipse.IsUnlock())
-                return true;
-            return false;
-        }
+        
 
-        public static uint GetSingleTarget() 
+        public static uint GetSingleTarget()
         {
             if (Core.Me.HasAura(AurasDefine.SwordOath))
                 return SpellsDefine.Atonement;
 
-            var lastGCDSpell = AIRoot.GetBattleData<BattleData>().lastGCDSpell;
-            if (lastGCDSpell == null)
-                return SpellsDefine.FastBlade;
+            var lastGCDSpellID = Paladin_SpellHelper.LastGCDSpellID();
 
-            if (lastGCDSpell.Id == SpellsDefine.FastBlade && SpellsDefine.RiotBlade.IsUnlock())
+            if (lastGCDSpellID == SpellsDefine.FastBlade && SpellsDefine.RiotBlade.IsUnlock())
                 return SpellsDefine.RiotBlade;
 
-            if (lastGCDSpell.Id == SpellsDefine.RiotBlade && SpellsDefine.RageofHalone.IsUnlock())
+            if (lastGCDSpellID == SpellsDefine.RiotBlade && SpellsDefine.RageofHalone.IsUnlock())
                 return GetRoyalAuthority();
 
-            return SpellsDefine.FastBlade; 
+            return SpellsDefine.FastBlade;
         }
 
-        public static uint GetRoyalAuthority() 
+        public static uint GetRoyalAuthority()
         {
             if (SpellsDefine.RoyalAuthority.IsUnlock())
                 return SpellsDefine.RoyalAuthority;
             return SpellsDefine.RageofHalone;
         }
-        public static uint GetAOE() 
+        public static uint GetAOE()
         {
-            var lastGCDSpell = AIRoot.GetBattleData<BattleData>().lastGCDSpell;
-            if (lastGCDSpell == null)
-                return SpellsDefine.TotalEclipse;
-            
-            if (lastGCDSpell.Id == SpellsDefine.TotalEclipse && SpellsDefine.Prominance.IsUnlock())
+
+            if (Paladin_SpellHelper.LastGCDSpellID() == SpellsDefine.TotalEclipse && SpellsDefine.Prominance.IsUnlock())
                 return SpellsDefine.Prominance;
-            
+
             return SpellsDefine.TotalEclipse;
-            
+
         }
-        
+
     }
 }

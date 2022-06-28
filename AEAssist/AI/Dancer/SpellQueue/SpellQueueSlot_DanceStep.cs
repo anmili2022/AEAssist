@@ -1,11 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Windows.Forms;
-using AEAssist.AI.Sage;
-using AEAssist.Define;
+﻿using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
 using ff14bot.Managers;
-using ff14bot.Objects;
 
 namespace AEAssist.AI.Dancer.SpellQueue
 {
@@ -36,10 +32,10 @@ namespace AEAssist.AI.Dancer.SpellQueue
 
         public void Fill(SpellQueueSlot slot)
         {
-            slot.SetBreakCondition(()=>this.Check(0));
+            slot.SetBreakCondition(() => this.Check(0));
             foreach (var v in ActionResourceManager.Dancer.Steps)
             {
-                if(v == ActionResourceManager.Dancer.DanceStep.Finish)
+                if (v == ActionResourceManager.Dancer.DanceStep.Finish)
                     continue;
                 var spell = DancerSpellHelper.GetDanceStep(v);
                 LogHelper.Info($"Queue Step: {v} {spell.SpellData.LocalizedName}");

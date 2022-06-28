@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
-using System.Windows.Forms;
 using AEAssist.Opener;
 using ff14bot.Enums;
 using UserControl = System.Windows.Controls.UserControl;
@@ -22,7 +21,7 @@ namespace AEAssist.View
             };
             WhiteMageResPriority.ItemsSource = whiteMageResPriority;
             WhiteMageResPriority.SelectedIndex = SettingMgr.GetSetting<WhiteMageSettings>().WhiteMageResPriority;
-            
+
 
             if (OpenerMgr.Instance.JobOpeners.ContainsKey(ClassJobType.WhiteMage))
             {
@@ -36,7 +35,7 @@ namespace AEAssist.View
             SettingMgr.GetSetting<WhiteMageSettings>().WhiteMageOpener = ChooseOpener.SelectedValue.ToString();
             OpenerMgr.Instance.SpecifyOpenerByName[ClassJobType.WhiteMage] = ChooseOpener.SelectedValue.ToString();
         }
-        
+
         private void ChooseResPriority_OnSelectionChanged(object sender, EventArgs eventArgs)
         {
             SettingMgr.GetSetting<WhiteMageSettings>().WhiteMageResPriority = int.Parse(WhiteMageResPriority.SelectedValue.ToString());

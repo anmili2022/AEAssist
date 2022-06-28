@@ -8,10 +8,10 @@ namespace AEAssist.AI.Summoner.GCD
     public class SMNGCD_PetBase : IAIHandler
     {
         uint spell;
-        
+
         static public uint GetSpell()
         {
-            if (SMN_SpellHelper.CheckUseAOE()&&DataBinding.Instance.UseAOE)
+            if (SMN_SpellHelper.CheckUseAOE() && DataBinding.Instance.UseAOE)
             {
                 var aoeSpell = GetAOE();
                 if (aoeSpell != 0)

@@ -32,7 +32,7 @@ namespace AEAssist.AI.Reaper.Ability
             if (SpellsDefine.Enshroud.RecentlyUsed() || Core.Me.HasAura(AurasDefine.Enshrouded))
                 return -7;
             if (SpellsDefine.Gluttony.IsUnlock()
-                && SpellsDefine.Gluttony.GetSpellEntity().Cooldown.TotalMilliseconds < 10000 && ActionResourceManager.Reaper.SoulGauge<90) return -8;
+                && SpellsDefine.Gluttony.GetSpellEntity().Cooldown.TotalMilliseconds < 10000 && ActionResourceManager.Reaper.SoulGauge < 90) return -8;
 
             if (ReaperSpellHelper.CheckCanUsePlentifulHarvest() >= 0)
             {
@@ -44,7 +44,7 @@ namespace AEAssist.AI.Reaper.Ability
                 return -10;
             }
 
-            if (ActionManager.ComboTimeLeft >0 && ActionManager.ComboTimeLeft < 3.5f)
+            if (ActionManager.ComboTimeLeft > 0 && ActionManager.ComboTimeLeft < 3.5f)
                 return -11;
 
             if (!Core.Me.CanAttackTargetInRange(Core.Me.CurrentTarget))

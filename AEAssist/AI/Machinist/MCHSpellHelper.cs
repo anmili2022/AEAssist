@@ -2,7 +2,6 @@
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Managers;
 using ff14bot.Objects;
 
 namespace AEAssist.AI.Machinist
@@ -68,7 +67,7 @@ namespace AEAssist.AI.Machinist
                     return cleanShot;
                 }
             }
-            
+
             var splitShot = GetSplitShot();
             if (await splitShot.DoGCD())
             {
@@ -90,7 +89,7 @@ namespace AEAssist.AI.Machinist
         public static SpellEntity GetReassembleGCD()
         {
             SpellEntity spell = null;
-            if (SpellsDefine.ChainSaw.IsReady()) 
+            if (SpellsDefine.ChainSaw.IsReady())
                 spell = SpellsDefine.ChainSaw.GetSpellEntity();
             else if (SpellsDefine.AirAnchor.IsReady())
                 spell = SpellsDefine.AirAnchor.GetSpellEntity();

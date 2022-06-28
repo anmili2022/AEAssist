@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using AEAssist.AI;
 using AEAssist.Define;
 using ff14bot;
@@ -13,12 +12,12 @@ namespace AEAssist.Helper
         {
             return unit != null && unit.IsValid && unit.IsTargetable && unit.CanAttack && unit.CurrentHealth > 0;
         }
-        
+
         public static bool CanAttackUnit(this GameObject unit)
         {
             return unit != null && unit.CanAttack && unit.CurrentHealth > 0;
         }
-        
+
         public static bool ValidUnit(this GameObject unit)
         {
             return unit != null && unit.CurrentHealth > 0 && unit.NpcId != 0 && !unit.IsMe;
@@ -41,7 +40,7 @@ namespace AEAssist.Helper
 
             return false;
         }
-        
+
         public static bool ValidPartyTarget(this GameObject unit)
         {
             return unit != null && unit.ValidPartyTarget() && unit.IsTargetable && unit.CurrentHealth > 0;
@@ -58,25 +57,25 @@ namespace AEAssist.Helper
             var combatDistance = Math.Max(target.Distance(origin) - Core.Target.CombatReach, 0);
             return combatDistance;
         }
-        
-        public static float GetTargetDistanceFromMeTest (GameObject target, GameObject origin)
+
+        public static float GetTargetDistanceFromMeTest(GameObject target, GameObject origin)
         {
             var combatDistance = Math.Max(target.Distance2D(origin) - Core.Target.CombatReach - 0.5f, 0);
             return combatDistance;
         }
-        
-        
+
+
         public static bool CheckNeedUseAOE(int targetRange, int damageRange, int needCount = 3)
         {
             if (!AEAssist.DataBinding.Instance.UseAOE)
                 return false;
             var count = GetNearbyEnemyCount(Core.Me.CurrentTarget, targetRange, damageRange);
-            LogHelper.Debug(Convert.ToString( count));
+            LogHelper.Debug(Convert.ToString(count));
             if (count >= needCount)
                 return true;
             return false;
         }
-        
+
         public static bool CheckNeedUseAOETest(int targetRange, int damageRange, int needCount = 3)
         {
             if (!AEAssist.DataBinding.Instance.UseAOE)
@@ -100,7 +99,7 @@ namespace AEAssist.Helper
 
             return count;
         }
-        
+
         public static int GetNearbyEnemyCountTest(GameObject target, int targetRange, int damageRange)
         {
             if (target.Distance(Core.Me) >= targetRange)

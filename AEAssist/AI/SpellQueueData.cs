@@ -67,7 +67,7 @@ namespace AEAssist.AI
                 GCDQueues.Enqueue(v);
             }
         }
-        
+
         public void EnqueueGCD((uint spellId, SpellTargetType targetType) value)
         {
             if (!GCDQueueMode)

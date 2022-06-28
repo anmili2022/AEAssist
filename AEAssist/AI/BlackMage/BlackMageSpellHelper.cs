@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Linq;
-using System.Windows.Media;
 using AEAssist.Define;
-using AEAssist.Define.DataStruct;
 using AEAssist.Helper;
-using Buddy.Coroutines;
 using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Managers;
 using ff14bot.Objects;
-using ff14bot.RemoteWindows;
 
 namespace AEAssist.AI.BlackMage
 {
@@ -54,37 +49,37 @@ namespace AEAssist.AI.BlackMage
             {
                 return false;
             }
-            
+
             // if not enough time left
-            if (target.HasMyAura((uint) thunder4) &&
-                !target.HasMyAuraWithTimeleft((uint) thunder4, timeLeft))
+            if (target.HasMyAura((uint)thunder4) &&
+                !target.HasMyAuraWithTimeleft((uint)thunder4, timeLeft))
             {
                 return true;
             }
 
-            if (target.HasMyAura((uint) thunder3) &&
-                !target.HasMyAuraWithTimeleft((uint) thunder3, timeLeft))
+            if (target.HasMyAura((uint)thunder3) &&
+                !target.HasMyAuraWithTimeleft((uint)thunder3, timeLeft))
             {
                 return true;
             }
 
-            if (target.HasMyAura((uint) thunder2) &&
-                !target.HasMyAuraWithTimeleft((uint) thunder2, timeLeft))
+            if (target.HasMyAura((uint)thunder2) &&
+                !target.HasMyAuraWithTimeleft((uint)thunder2, timeLeft))
             {
                 return true;
             }
 
-            if (target.HasMyAura((uint) thunder1) &&
-                !target.HasMyAuraWithTimeleft((uint) thunder1, timeLeft))
+            if (target.HasMyAura((uint)thunder1) &&
+                !target.HasMyAuraWithTimeleft((uint)thunder1, timeLeft))
             {
                 return true;
             }
 
             // if target has no dot from me, target needs dot
-            if (!target.HasMyAura((uint) thunder4) &&
-                !target.HasMyAura((uint) thunder3) &&
-                !target.HasMyAura((uint) thunder2) &&
-                !target.HasMyAura((uint) thunder1)
+            if (!target.HasMyAura((uint)thunder4) &&
+                !target.HasMyAura((uint)thunder3) &&
+                !target.HasMyAura((uint)thunder2) &&
+                !target.HasMyAura((uint)thunder1)
                )
             {
                 return true;

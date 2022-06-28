@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using AEAssist.AI.Sage;
+﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
@@ -44,7 +42,7 @@ namespace AEAssist.AI.Dancer.Ability
                     return 1;
                 }
             }
-            
+
 
             return -4;
         }

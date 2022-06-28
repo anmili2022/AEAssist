@@ -5,7 +5,6 @@ using AEAssist.AI;
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Utilities.CombatMessages;
-using AEAssist.View.OverlayManager;
 using ff14bot.Enums;
 using ff14bot.Managers;
 
@@ -104,7 +103,7 @@ namespace AEAssist.Rotations.Core
 
             return false;
         }
-        
+
 
         public SpellEntity GetBaseGCDSpell()
         {

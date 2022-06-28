@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace AEAssist
+﻿namespace AEAssist
 {
     public static class Entry
     {

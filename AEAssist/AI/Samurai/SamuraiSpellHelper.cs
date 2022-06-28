@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using AEAssist.Define;
+﻿using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
 using ff14bot.Managers;
@@ -19,39 +18,39 @@ namespace AEAssist.AI.Samurai
                 {
                     if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Setsu))
                         //if (await SpellsDefine.Yukikaze.DoGCD())
-                            return SpellsDefine.Yukikaze.GetSpellEntity();
+                        return SpellsDefine.Yukikaze.GetSpellEntity();
                     //if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Ka))
                     if (Core.Me.GetAuraById(AurasDefine.Shifu)?.TimeLeft <
                         Core.Me.GetAuraById(AurasDefine.Jinpu)?.TimeLeft ||
                         !Core.Me.HasAura(AurasDefine.Shifu))
                         //if (await SpellsDefine.Shifu.DoGCD())
-                            return SpellsDefine.Shifu.GetSpellEntity();
+                        return SpellsDefine.Shifu.GetSpellEntity();
                     // if (ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Getsu))
                     //if (await SpellsDefine.Jinpu.DoGCD())
-                        return SpellsDefine.Jinpu.GetSpellEntity();
+                    return SpellsDefine.Jinpu.GetSpellEntity();
                 }
 
                 if (ActionManager.LastSpell == SpellsDefine.Shifu.GetSpellEntity().SpellData)
                     //if (await SpellsDefine.Kasha.DoGCD())
-                        return SpellsDefine.Kasha.GetSpellEntity();
+                    return SpellsDefine.Kasha.GetSpellEntity();
                 if (ActionManager.LastSpell == SpellsDefine.Jinpu.GetSpellEntity().SpellData)
                     //if (await SpellsDefine.Gekko.DoGCD())
-                        return SpellsDefine.Gekko.GetSpellEntity();
+                    return SpellsDefine.Gekko.GetSpellEntity();
                 //if (await SpellsDefine.Hakaze.DoGCD())
-                    return SpellsDefine.Hakaze.GetSpellEntity();
+                return SpellsDefine.Hakaze.GetSpellEntity();
             }
 
             if (Core.Me.HasAura(AurasDefine.MeikyoShisui))
             {
                 if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Ka))
                     //if (await SpellsDefine.Kasha.DoGCD())
-                        return SpellsDefine.Kasha.GetSpellEntity();
+                    return SpellsDefine.Kasha.GetSpellEntity();
                 if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Getsu))
                     //if (await SpellsDefine.Gekko.DoGCD())
-                        return SpellsDefine.Gekko.GetSpellEntity();
+                    return SpellsDefine.Gekko.GetSpellEntity();
                 if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Setsu))
                     //if (await SpellsDefine.Yukikaze.DoGCD())
-                        return SpellsDefine.Yukikaze.GetSpellEntity();
+                    return SpellsDefine.Yukikaze.GetSpellEntity();
             }
 
             return null;

@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Opener;
-using ff14bot;
 using ff14bot.Enums;
-using ff14bot.Managers;
 
 namespace AEAssist.AI.Monk
 {

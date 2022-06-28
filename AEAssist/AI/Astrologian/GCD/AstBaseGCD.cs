@@ -1,15 +1,14 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
-using AEAssist.Helper;
 using ff14bot.Managers;
 
 namespace AEAssist.AI.Astrologian.GCD
 {
-    public class AstBaseGCD: IAIHandler
+    public class AstBaseGCD : IAIHandler
     {
         public int Check(SpellEntity lastSpell)
         {
-            
+
             if (!MovementManager.IsMoving) return 0;
             return -10;
 

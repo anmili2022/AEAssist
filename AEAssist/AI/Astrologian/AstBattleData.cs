@@ -3,7 +3,7 @@ using ff14bot;
 
 namespace AEAssist.AI.Astrologian
 {
-    internal class AstBattleData:IBattleData
+    internal class AstBattleData : IBattleData
     {
         public readonly Dictionary<uint, bool> lastCombustWithObj = new Dictionary<uint, bool>();
         public bool IsTargetLastCombust()

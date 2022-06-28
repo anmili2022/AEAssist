@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using AEAssist.Define;
-using ff14bot;
 
 namespace AEAssist.AI.Ninja.SpellQueue
 {

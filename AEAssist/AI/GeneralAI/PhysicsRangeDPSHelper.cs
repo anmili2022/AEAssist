@@ -13,7 +13,7 @@ namespace AEAssist.AI.GeneralAI
             if (PartyManager.IsInParty)
                 if (TargetMgr.Instance.EnemysIn25.Count > 0)
                     return false;
-            
+
             if (Core.Me.HasTarget && Core.Me.CurrentTarget.CanAttack)
                 return false;
 

@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
-using ff14bot;
 using AEAssist.Helper;
 
 namespace AEAssist.AI.GunBreaker.GCD

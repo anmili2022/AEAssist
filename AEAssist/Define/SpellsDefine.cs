@@ -73,13 +73,13 @@ namespace AEAssist.Define
             FormShift,
             Meditation,
             Mantra,
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
         };
 
         public static HashSet<uint> IgnoreEarlyDecisionSet = new HashSet<uint>

@@ -7,7 +7,7 @@ using PropertyChanged;
 namespace AEAssist
 {
     [AddINotifyPropertyChangedInterface]
-    public class AstSettings:IBaseSetting
+    public class AstSettings : IBaseSetting
     {
         public AstSettings()
         {
@@ -19,7 +19,7 @@ namespace AEAssist
             Dot_TimeLeft = ConstValue.AuraTick;
             TTK_Aero = 30;
             AstOpener = "Default";
-            
+
         }
         public void OnLoad()
         {

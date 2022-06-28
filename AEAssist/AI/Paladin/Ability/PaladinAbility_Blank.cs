@@ -26,5 +26,5 @@ namespace AEAssist.AI.Paladin.Ability
             return null;
         }
     }
-    
+
 }

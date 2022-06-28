@@ -25,16 +25,16 @@ namespace AEAssist.AI.Machinist.Ability
 
             var character = Core.Me.CurrentTarget as Character;
             if (SpellsDefine.Wildfire.RecentlyUsed() || Core.Me.HasAura(AurasDefine.WildfireBuff)) return 2;
-            
+
             if (MCHSpellHelper.CheckReassmableGCD(2000))
                 return -5;
-            
+
             if (ActionResourceManager.Machinist.Heat >= 100)
                 return 10;
-            
+
             if (MCHSpellHelper.CheckReassmableGCD(SettingMgr.GetSetting<MCHSettings>().StrongGCDCheckTime))
                 return -6;
-            
+
             // 25秒是积累50点热度需要的时间
             var cooldown = SpellsDefine.Wildfire.GetSpellEntity().Cooldown.TotalMilliseconds;
             if (cooldown > 0)

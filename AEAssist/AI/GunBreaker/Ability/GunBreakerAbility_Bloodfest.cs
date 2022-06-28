@@ -15,7 +15,7 @@ namespace AEAssist.AI.GunBreaker.Ability
             if (!SpellsDefine.Bloodfest.GetSpellEntity().SpellData.IsReady())
                 return -1;
 
-            if (ActionResourceManager.Gunbreaker.Cartridge != 0 )
+            if (ActionResourceManager.Gunbreaker.Cartridge != 0)
                 return -2;
 
             return 0;

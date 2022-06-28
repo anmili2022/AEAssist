@@ -1,19 +1,18 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot.Managers;
 using ff14bot;
 namespace AEAssist.AI.Summoner.GCD
 {
     public class SMNGCD_RuinIV : IAIHandler
     {
         uint spell = SpellsDefine.Ruin4;
-       
+
         public int Check(SpellEntity lastSpell)
         {
             if (!spell.IsReady())
                 return -1;
-            if ((AIRoot.Instance.CloseBurst||DataBinding.Instance.SaveInstantSpells) && !SpellsDefine.EnergyDrain.CoolDownInGCDs(2))
+            if ((AIRoot.Instance.CloseBurst || DataBinding.Instance.SaveInstantSpells) && !SpellsDefine.EnergyDrain.CoolDownInGCDs(2))
             {
 
                 return -2;

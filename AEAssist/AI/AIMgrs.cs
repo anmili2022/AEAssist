@@ -21,7 +21,7 @@ namespace AEAssist.AI
 
         Task<bool> UsePotion();
     }
-    
+
     public class AIMgrs
     {
         public static readonly AIMgrs Instance = new AIMgrs();
