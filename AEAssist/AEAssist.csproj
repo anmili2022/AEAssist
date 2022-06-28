@@ -563,6 +563,16 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="View\BardSettingView.xaml.cs">
       <DependentUpon>BardSettingView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Overlay\PaladinOverlayWindow.xaml.cs">
+      <DependentUpon>PaladinOverlayWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_PaladinOverlay.cs" />
+    <Compile Include="View\PaladinSettingView.xaml.cs">
+      <DependentUpon>PaladinSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tank.xaml.cs">
+      <DependentUpon>Tank.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Caster.xaml.cs">
       <DependentUpon>Caster.xaml</DependentUpon>
     </Compile>
@@ -706,6 +716,18 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="Setting\Setting\BardSettings.cs" />
     <Compile Include="Setting\Setting\GeneralSettings.cs" />
     <Compile Include="Setting\Setting\VersionSetting.cs" />
+    <Resource Include="Resources\Spells\Paladin\DivineVeil.png" />
+    <Resource Include="Resources\Spells\TankRoleActions\ArmsLength.png" />
+    <Resource Include="Resources\Spells\TankRoleActions\Interject.png" />
+    <Resource Include="Resources\Spells\TankRoleActions\LowBlow.png" />
+    <Resource Include="Resources\Spells\TankRoleActions\Provoke.png" />
+    <Resource Include="Resources\Spells\TankRoleActions\Rampart.png" />
+    <Resource Include="Resources\Spells\TankRoleActions\Reprisal.png" />
+    <Resource Include="Resources\Spells\TankRoleActions\Shirk.png" />
+    <Resource Include="Resources\Spells\Paladin\HallowedGround.png" />
+    <Resource Include="Resources\Spells\Paladin\Requiescat.png" />
+    <Resource Include="Resources\Spells\Paladin\Sentinel.png" />
+    <Resource Include="Resources\Spells\Paladin\Sheltron.png" />
     <Resource Include="Resources\Spells\MagicalRangedDPSRoleActions\Addle.png" />
     <Resource Include="Resources\Spells\MagicalRangedDPSRoleActions\LucidDreaming.png" />
     <Resource Include="Resources\Spells\MagicalRangedDPSRoleActions\Surecast.png" />
@@ -735,6 +757,16 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Resource Include="Resources\Spells\WhiteMage\PlenaryIndulgence.png" />
     <Resource Include="Resources\Spells\WhiteMage\PresenceofMind.png" />
     <Resource Include="Resources\Spells\WhiteMage\ThinAir.png" />
+    <Page Include="View\Overlay\PaladinOverlayWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PaladinSettingView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Tank.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Caster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

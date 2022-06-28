@@ -219,6 +219,9 @@ namespace AEAssist
         public string TextBox_PLD_ReserveManaPercentage { get; set; }
         public string TextBox_PLD_SheltronThreshold { get; set; }
         public string Textbox_PLD_FightorFlightTiming { get; set; }
-
+        public string Toggle_Requiescat { get; set; }
+        public string Toggle_Intervene { get; set; }
+        public string Toggle_IronWill { get; set; }
+        public string ToolTip_PLD_FinalBurst { get; set; }
         }
 }
