@@ -23,9 +23,10 @@ namespace AEAssist.AI.Paladin.Ability
             if (!AIRoot.Instance.Is2ndAbilityTime())
                 return -3;
 
-            //add setting when to use fof
+            if (SettingMgr.GetSetting<PaladinSettings>().FightorFlightTiming == 1 && ActionManager.LastSpellId != SpellsDefine.FastBlade)
+                return -4;
 
-            if (ActionManager.LastSpellId != SpellsDefine.RiotBlade)
+            if (SettingMgr.GetSetting<PaladinSettings>().FightorFlightTiming == 2 && ActionManager.LastSpellId != SpellsDefine.RiotBlade)
 
                 return -4;
 

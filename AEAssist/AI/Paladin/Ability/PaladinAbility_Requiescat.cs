@@ -17,11 +17,17 @@ namespace AEAssist.AI.Paladin.Ability
             if (AIRoot.Instance.CloseBurst)
                 return -2;
 
-            if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.FightOrFight, 30 - 5 * (int)AIRoot.Instance.GetGCDDuration()))
+            if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.FightOrFight, 30000 - 5 * (int)AIRoot.Instance.GetGCDDuration()))
                 return -3;
 
             if (Paladin_SpellHelper.OutOfMeleeRange())
                 return -4;
+
+            if (!DataBinding.Instance.Requiescat)
+                return -5;
+
+            if (SpellsDefine.FightorFlight.IsReady())
+                return -6;
             return 0;
         }
 

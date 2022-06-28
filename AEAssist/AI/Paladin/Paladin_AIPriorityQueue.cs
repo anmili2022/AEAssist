@@ -10,7 +10,10 @@ namespace AEAssist.AI.Paladin
     {
         public List<IAIHandler> GCDQueue { get; } = new List<IAIHandler>()
         {
+            new PaladinGCD_BldeofXX(),
+            new PaladinGCD_HolySpirit(),
             new PaladinGCD_Ranged(),
+            new PaladinGCD_Dot(),
             new PaladinGCD_Base()
         };
 
