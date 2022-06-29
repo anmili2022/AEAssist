@@ -32,7 +32,8 @@ namespace AEAssist.AI.Paladin.Ability
 
             if (Core.Me.HasAura(AurasDefine.Requiescat))
                 return -5;
-
+            if (Paladin_SpellHelper.OutOfMeleeRange())
+                return -6;
             return 0;
         }
 
