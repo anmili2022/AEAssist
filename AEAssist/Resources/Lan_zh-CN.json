@@ -116,7 +116,7 @@
   "TextBox_PLD_SheltronThreshold": "高于此值自动使用盾阵",
   "Textbox_PLD_FightorFlightTiming" : "站逃反应时机",
   "Toggle_Intervene": "调停",
-  "Toggle_IronWill": "钢铁信念（盾姿）",
+  "Toggle_IronWill": "盾姿",
   
   "Toggle_Requiescat": "安魂祈祷",
   "ToolTip_PLD_FinalBurst": "资源倾斜，目前没用",
