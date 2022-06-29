@@ -64,8 +64,8 @@ namespace AEAssist.AI.Summoner.GCD
                     return 0;
             }
 
-            if (SwiftcastingSlipStream())
-                return GetGaruda();
+            //if (SwiftcastingSlipStream())
+            //    return GetGaruda();
 
             if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.AvailablePetFlags.Titan))
                 return GetTitan();

@@ -32,8 +32,10 @@ namespace AEAssist.AI.Paladin.GCD
 
             //一个gcd都不够了的情况下必须把安魂祈祷打掉
             if (LastGCD() && SpellsDefine.Confiteor.IsUnlock())
+            {
+                LogHelper.Info($"Requiescat {Core.Me.GetAuraById(AurasDefine.Requiescat).TimespanLeft.TotalMilliseconds} ms left. " );
                 return 3;
-
+            }
             //如果差一下就可以打出第三段近战 先打第三段
             if (Paladin_SpellHelper.GCDNeededforCombo() ==1)
                 return -6;
