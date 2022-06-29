@@ -22,7 +22,8 @@ namespace AEAssist.AI.Paladin.Ability
             if (Core.Me.HasAura(AurasDefine.KnightsResolve) || Core.Me.HasAura(AurasDefine.Sheltron) || Core.Me.HasAura(AurasDefine.Sheltron))
                 return -4;
             spell = GetSpell();
-
+            if (!DataBinding.Instance.Sheltron)
+                return -5;
             if (!spell.IsReady())
                 return -1;
             return 0;

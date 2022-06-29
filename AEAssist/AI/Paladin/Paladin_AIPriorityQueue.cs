@@ -23,7 +23,7 @@ namespace AEAssist.AI.Paladin
             new PaladinAbility_Requiescat(),
             new PaladinAbility_SpiritsWithin(),
             new PaladinAbility_CircleofScorn(),
-            
+            new PaladinAbility_Intervene(),
             new PaladinAbility_Sheltron()
         };
         public Task<bool> UsePotion()

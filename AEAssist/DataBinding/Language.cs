@@ -223,5 +223,6 @@ namespace AEAssist
         public string Toggle_Intervene { get; set; }
         public string Toggle_IronWill { get; set; }
         public string ToolTip_PLD_FinalBurst { get; set; }
+        public string Toggle_Sheltron { get; set; }
         }
 }

@@ -191,11 +191,14 @@ namespace AEAssist
         public bool IronWill { get; set; } = true;
 
         public bool Intervene { get; set; } = true;
+
+        public bool Sheltron { get; set; } = true;
         public void PLDReset()
         {
             Requiescat = true;
             IronWill = true;
             Intervene = true;
+            Sheltron = true;
         }
         #endregion
 
