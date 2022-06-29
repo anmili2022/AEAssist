@@ -114,5 +114,11 @@
   "ToolTip_Bard_Bloodletter":"是否使用失血箭",
   "TextBox_PLD_ReserveManaPercentage": "保留蓝量",
   "TextBox_PLD_SheltronThreshold": "高于此值自动使用盾阵",
-  "Textbox_PLD_FightorFlightTiming" : "站逃反应时机"
+  "Textbox_PLD_FightorFlightTiming" : "站逃反应时机",
+  "Toggle_Intervene": "调停",
+  "Toggle_IronWill": "钢铁信念（盾姿）",
+  
+  "Toggle_Requiescat": "安魂祈祷",
+  "ToolTip_PLD_FinalBurst": "资源倾斜，目前没用",
+  "Toggle_Sheltron": "盾阵"
 }
