@@ -30,7 +30,7 @@ namespace AEAssist.AI.Paladin.GCD
             if (Paladin_SpellHelper.OutOfMeleeRange())
                 return 2;
 
-            //一个gcd都不够了的情况下必须把安魂祈祷打掉
+            //一个gcd都不够了的情况下必须把悔罪打掉
             if (LastGCD() && SpellsDefine.Confiteor.IsUnlock())
             {
                 LogHelper.Info($"Requiescat {Core.Me.GetAuraById(AurasDefine.Requiescat).TimespanLeft.TotalMilliseconds} ms left. " );
