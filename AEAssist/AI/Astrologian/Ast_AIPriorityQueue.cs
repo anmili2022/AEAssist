@@ -24,6 +24,7 @@ namespace AEAssist.AI.Astrologian
         {
             new AstAbilityAstrodyne(),
             new AstAbilityDraw(),
+            new AstAbilityRedraw(),
             new AstAbilityPlay(),
             new AstAbilityLucidDreaming(),
             new AstAbilityDivination(),

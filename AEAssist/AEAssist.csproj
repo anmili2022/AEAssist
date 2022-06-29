@@ -181,6 +181,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Astrologian\Ability\AstAbilityDraw.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityLucidDreaming.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityPlay.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityRedraw.cs" />
     <Compile Include="AI\Astrologian\AstBattleData.cs" />
     <Compile Include="AI\Astrologian\AstRotation.cs" />
     <Compile Include="AI\Astrologian\AstSpellHelper.cs" />
