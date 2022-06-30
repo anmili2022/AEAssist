@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using AEAssist.Define;
+using AEAssist.Helper;
 
 namespace AEAssist.AI.Samurai.GCD
 {
@@ -7,12 +8,22 @@ namespace AEAssist.AI.Samurai.GCD
     {
         public int Check(SpellEntity lastSpell)
         {
-            var checkOddOrEvenBattleTime = SamuraiSpellHelper.CheckOddOrEvenBattleTime();
-            if (checkOddOrEvenBattleTime != 0)
+            var bd = AIRoot.GetBattleData<SamuraiBattleData>();
+            if (!bd.Bursting)
             {
-                return -1;
+                return -10;
             }
-            return 0;
+
+            if (bd.EvenBursting)
+            {
+                return 1;
+            }
+            if (lastSpell == SpellsDefine.MidareSetsugekka.GetSpellEntity())
+            {
+                bd.Bursting = false;
+                bd.EvenBursting = false;
+            }
+            return -1;
         }
 
         public async Task<SpellEntity> Run()

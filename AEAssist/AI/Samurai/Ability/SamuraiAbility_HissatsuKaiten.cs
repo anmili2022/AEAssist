@@ -11,7 +11,34 @@ namespace AEAssist.AI.Samurai.Ability
     {
         public int Check(SpellEntity lastSpell)
         {
-            return 0;
+            if (SamuraiSpellHelper.SenCounts() == 3)
+            {
+                return 0;
+            }
+            var bd = AIRoot.GetBattleData<SamuraiBattleData>();
+
+            if (bd.Bursting)
+            {
+                if (SamuraiSpellHelper.SenCounts() == 1)
+                {
+                    var target = Core.Me.CurrentTarget as Character;
+                    if (!target.HasMyAuraWithTimeleft(10000))
+                    {
+                        return 1;
+                    }
+                }
+                if (bd.EvenBursting)
+                {
+                    if (!SamuraiSpellHelper.TargetNeedsDot(Core.Me.CurrentTarget as Character))
+                    {
+                        if (SamuraiSpellHelper.SenCounts() == 1)
+                        {
+                            return 0;
+                        }
+                    }
+                }
+            }
+            return -1;
         }
 
         public async Task<SpellEntity> Run()
