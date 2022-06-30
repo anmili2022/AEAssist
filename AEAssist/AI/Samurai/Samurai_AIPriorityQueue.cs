@@ -12,15 +12,21 @@ namespace AEAssist.AI.Samurai
     {
         public List<IAIHandler> GCDQueue { get; } = new List<IAIHandler>
         {
-            // new SamuraiGCD_AoERotations(),
-            // new SamuraiGCD_OddMinuteBurst(),
-            // new SamuraiGCD_EvenMinutesBurst(),
-            // new SamuraiGCD_Fillers(),
+            new SamuraiGCD_AoERotations(),
+            new SamuraiGCD_OddMinuteBurst(),
+            new SamuraiGCD_EvenMinutesBurst(),
+            new SamuraiGCD_Fillers(),
             new SamuraiGCD_CoolDownPhase(),
         };
 
         public List<IAIHandler> AbilityQueue { get; } = new List<IAIHandler>
         {
+            new SamuraiGCD_Dot(),
+            new SamuraiGCD_OgiNamikiriCombo(),
+            new SamuraiAbility_HissatsuKaiten(),
+            new SamuraiAbility_KaeshiSetsugekka(),
+            new SamuraiAbility_HissatsuSenei(),
+            new SamuraiAbility_MeikyoShisui(),
             new SamuraiAbility_Ikishoten(),
             new SamuraiAbility_Shoha(),
             new SamuraiAbility_TsubameGaeshi()
