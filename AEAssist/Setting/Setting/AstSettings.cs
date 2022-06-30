@@ -32,6 +32,7 @@ namespace AEAssist
         public int LucidDreamingTrigger { get; set; } = ConstValue.LucidDreamingDefaultRefresh;
         public bool LucidDreamingToggle { get; set; } = true;
         public bool SwiftResToggle { get; set; } = true;
+        public bool AstHalfCard { get; set; } = true;
         public bool Heal { get; set; } = true;
         public bool EarlyDecisionMode { get; set; }
         public string AstOpener { get; set; } = "Default";

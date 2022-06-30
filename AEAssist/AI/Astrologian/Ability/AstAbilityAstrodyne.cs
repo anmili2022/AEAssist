@@ -35,6 +35,8 @@ namespace AEAssist.AI.Astrologian.Ability
             var spell = SpellsDefine.Astrodyne.GetSpellEntity();
             if (spell == null) return null;
             AIRoot.GetBattleData<AstBattleData>().AstNum = 0;
+            AIRoot.GetBattleData<AstBattleData>().half = true;
+            SettingMgr.GetSetting<AstSettings>().AstHalfCard = true;
             var ret = await spell.DoAbility();            
             return ret ? spell : null;
         }

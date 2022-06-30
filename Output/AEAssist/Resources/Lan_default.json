@@ -34,6 +34,7 @@
   "Toggle_SureCast" : "SureCast",
   "Toggle_SwiftCast" : "SwiftCast",
   "Heal" : "Heal",
+  "Half" : "Half",
   "Toggle_UseEnshroud" : "UseEnshroud",
   "Toggle_UseHarpe" : "UseHarpe",
   "Toggle_UseTrueNorthWhenMissActionDir" : "UseTrueNorthWhenMissActionDir",
@@ -133,5 +134,13 @@
   "Toggle_SMN_SaveInstantSpells" : "SMN",
   "ToolTip_SMN_SaveInstantSpells" : "SMN",
   "Textbox_SMN_SwiftcastOption" : "SMN",
-  "Toggle_SMN_Crimson" : "SMN"
+  "Toggle_SMN_Crimson" : "SMN",
+  "TextBox_PLD_ReserveManaPercentage" : "PLD",
+  "TextBox_PLD_SheltronThreshold" : "PLD",
+  "Textbox_PLD_FightorFlightTiming" : "PLD",
+  "Toggle_Requiescat" : "Requiescat",
+  "Toggle_Intervene" : "Intervene",
+  "Toggle_IronWill" : "IronWill",
+  "ToolTip_PLD_FinalBurst" : "PLD",
+  "Toggle_Sheltron" : "Sheltron"
 }

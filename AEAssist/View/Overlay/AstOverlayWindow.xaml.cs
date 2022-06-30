@@ -14,16 +14,16 @@ namespace AEAssist.View.Overlay
     /// <summary>
     /// Page1.xaml 的交互逻辑
     /// </summary>
-    public partial class WhiteMageOverlayWindow : UserControl
+    public partial class AstOverlayWindow : UserControl
     {
         public Action DragMove;
 
-        public WhiteMageOverlayWindow()
+        public AstOverlayWindow()
         {
             InitializeComponent();
         }
 
-        private void WhiteMageOverlayWindow_OnMouseMove(object sender, MouseEventArgs e)
+        private void AstOverlayWindow_OnMouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
             {
@@ -48,10 +48,31 @@ namespace AEAssist.View.Overlay
         {
             AIRoot.GetBattleData<BattleData>().NextAbilityUsePotion = true;
         }
-
-
+        // EarthlyStar
+        private void UseEarthlyStar_OnClick(object sender, RoutedEventArgs e)
+        {
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.EarthlyStar.GetSpellEntity();
+        }
+        // Macrocosmos
+        private void UseMacrocosmos_OnClick(object sender, RoutedEventArgs e)
+        {
+            //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
+            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.Macrocosmos.GetSpellEntity();
+        }
+        // Helios
+        private void UseHelios_OnClick(object sender, RoutedEventArgs e)
+        {
+            //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
+            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.Helios.GetSpellEntity();
+        }
+        // AspectedHelios
+        private void UseAspectedHelios_OnClick(object sender, RoutedEventArgs e)
+        {
+            //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
+            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.AspectedHelios.GetSpellEntity();
+        }
         // Assize
-        private void UseAssize_OnClick(object sender, RoutedEventArgs e)
+        /*private void UseAssize_OnClick(object sender, RoutedEventArgs e)
         {
             AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.Assize.GetSpellEntity();
         }
@@ -89,13 +110,13 @@ namespace AEAssist.View.Overlay
         private void UseCureIII_OnClick(object sender, RoutedEventArgs e)
         {
             //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
-            //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.ThinAir.GetSpellEntity();
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.ThinAir.GetSpellEntity();
             AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.Cure3.GetSpellEntity();
         }
         private void UseMedicaII_OnClick(object sender, RoutedEventArgs e)
         {
             //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
-            //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.ThinAir.GetSpellEntity();
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.ThinAir.GetSpellEntity();
             AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.Medica2.GetSpellEntity();
         }
 
@@ -114,7 +135,7 @@ namespace AEAssist.View.Overlay
         {
             AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.ThinAir.GetSpellEntity();
         }
-
+        */
 
 
         private void Expander_OnMouseMove(object sender, MouseEventArgs e)

@@ -1,11 +1,13 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
+using Buddy.Coroutines;
 using ff14bot;
-using ff14bot.Enums;
+using ff14bot.Managers;
 using ff14bot.Objects;
+using System;
+using ff14bot.Enums;
 
 namespace AEAssist.AI.Astrologian
 {
@@ -172,6 +174,82 @@ namespace AEAssist.AI.Astrologian
 
             return c.CurrentJob == ClassJobType.Adventurer ? 70 : 0;
         }
+        private static int GetHalfWeight(Character c)
+        {
+            switch (c.CurrentJob)
+            {
+                case ClassJobType.Astrologian:
+                    return SettingMgr.GetSetting<AstSettings>().AstHalfCardWeight;
+
+                case ClassJobType.Monk:
+                case ClassJobType.Pugilist:
+                    return SettingMgr.GetSetting<AstSettings>().MnkHalfCardWeight;
+
+                case ClassJobType.BlackMage:
+                case ClassJobType.Thaumaturge:
+                    return SettingMgr.GetSetting<AstSettings>().BlmHalfCardWeight;
+
+                case ClassJobType.Dragoon:
+                case ClassJobType.Lancer:
+                    return SettingMgr.GetSetting<AstSettings>().DrgHalfCardWeight;
+
+                case ClassJobType.Samurai:
+                    return SettingMgr.GetSetting<AstSettings>().SamHalfCardWeight;
+
+                case ClassJobType.Machinist:
+                    return SettingMgr.GetSetting<AstSettings>().MchHalfCardWeight;
+
+                case ClassJobType.Summoner:
+                case ClassJobType.Arcanist:
+                    return SettingMgr.GetSetting<AstSettings>().SmnHalfCardWeight;
+
+                case ClassJobType.Bard:
+                case ClassJobType.Archer:
+                    return SettingMgr.GetSetting<AstSettings>().BrdHalfCardWeight;
+
+                case ClassJobType.Ninja:
+                case ClassJobType.Rogue:
+                    return SettingMgr.GetSetting<AstSettings>().NinHalfCardWeight;
+
+                case ClassJobType.RedMage:
+                    return SettingMgr.GetSetting<AstSettings>().RdmHalfCardWeight;
+
+                case ClassJobType.Dancer:
+                    return SettingMgr.GetSetting<AstSettings>().DncHalfCardWeight;
+
+                case ClassJobType.Paladin:
+                case ClassJobType.Gladiator:
+                    return SettingMgr.GetSetting<AstSettings>().PldHalfCardWeight;
+
+                case ClassJobType.Warrior:
+                case ClassJobType.Marauder:
+                    return SettingMgr.GetSetting<AstSettings>().WarHalfCardWeight;
+
+                case ClassJobType.DarkKnight:
+                    return SettingMgr.GetSetting<AstSettings>().DrkHalfCardWeight;
+
+                case ClassJobType.Gunbreaker:
+                    return SettingMgr.GetSetting<AstSettings>().GnbHalfCardWeight;
+
+                case ClassJobType.WhiteMage:
+                case ClassJobType.Conjurer:
+                    return SettingMgr.GetSetting<AstSettings>().WhmHalfCardWeight;
+
+                case ClassJobType.Scholar:
+                    return SettingMgr.GetSetting<AstSettings>().SchHalfCardWeight;
+
+                case ClassJobType.Reaper:
+                    return SettingMgr.GetSetting<AstSettings>().RprHalfCardWeight;
+
+                case ClassJobType.Sage:
+                    return SettingMgr.GetSetting<AstSettings>().SgeHalfCardWeight;
+
+                case ClassJobType.BlueMage:
+                    return SettingMgr.GetSetting<AstSettings>().BluHalfCardWeight;
+            }
+
+            return c.CurrentJob == ClassJobType.Adventurer ? 70 : 0;
+        }
         public static async Task<SpellEntity> CastMeleeCard()
         {
 
@@ -224,6 +302,232 @@ namespace AEAssist.AI.Astrologian
             }
             return null;
         }
+        public static async Task<SpellEntity> CastMeleeCardHalf()
+        {
 
+            if (GroupHelper.InParty)
+            {
+                var skillTarget = GroupHelper.CastableAlliesWithin30.Where(a => !a.HasMyAura(AurasDefine.TheArrow) && !a.HasMyAura(AurasDefine.TheBalance) && !a.HasMyAura(AurasDefine.TheSpear) && a.CurrentHealth > 0 && (a.IsTank() || a.IsMeleeDps())).OrderBy(GetHalfWeight);
+                LogHelper.Debug(Convert.ToString(skillTarget));
+                LogHelper.Debug(Convert.ToString(skillTarget.FirstOrDefault()));
+                var skillt = GroupHelper.CastableAlliesWithin30;
+                foreach (Character chara in skillTarget)
+                    LogHelper.Debug(Convert.ToString(chara));
+                foreach (Character chara in skillt)
+                    LogHelper.Debug(Convert.ToString(chara) + Convert.ToString(chara.IsMeleeDps()));
+                if (skillTarget.FirstOrDefault() == null)
+                    return null;
+
+                //return await Spells.Play.Cast(ally.FirstOrDefault());
+                //var skillTarget = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && r.CurrentHealthPercent <= SettingMgr.GetSetting<WhiteMageSettings>().TetragrammatonHp);
+                if (!SpellsDefine.Draw.IsUnlock()) return null;
+                var spell = new SpellEntity(SpellsDefine.Play, skillTarget.FirstOrDefault() as BattleCharacter);
+                AIRoot.GetBattleData<AstBattleData>().AstNum = AIRoot.GetBattleData<AstBattleData>().AstNum + 1;
+                await spell.DoAbility();
+                //await CastTetragrammaton(skillTarget);
+            }
+            return null;
+        }
+        public static async Task<SpellEntity> CastRangedCardHalf()
+        {
+
+            if (GroupHelper.InParty)
+            {
+                var skillTarget = GroupHelper.CastableAlliesWithin30.Where(a => !a.HasMyAura(AurasDefine.TheBole) && !a.HasMyAura(AurasDefine.TheEwer) && !a.HasMyAura(AurasDefine.TheSpire) && a.CurrentHealth > 0 && (a.IsRangedDpsCard())).OrderBy(GetHalfWeight);
+                LogHelper.Debug(Convert.ToString(skillTarget));
+                LogHelper.Debug(Convert.ToString(skillTarget.FirstOrDefault()));
+                var skillt = GroupHelper.CastableAlliesWithin30;
+                foreach (Character chara in skillt)
+                    LogHelper.Debug(Convert.ToString(chara) + Convert.ToString(chara.IsRangedDpsCard()));
+                foreach (Character chara in skillTarget)
+                    LogHelper.Debug(Convert.ToString(chara));
+                if (skillTarget.FirstOrDefault() == null)
+                    return null;
+
+                //return await Spells.Play.Cast(ally.FirstOrDefault());
+                //var skillTarget = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && r.CurrentHealthPercent <= SettingMgr.GetSetting<WhiteMageSettings>().TetragrammatonHp);
+                if (!SpellsDefine.Draw.IsUnlock()) return null;
+                var spell = new SpellEntity(SpellsDefine.Play, skillTarget.FirstOrDefault() as BattleCharacter);
+                AIRoot.GetBattleData<AstBattleData>().AstNum = AIRoot.GetBattleData<AstBattleData>().AstNum + 1;
+                await spell.DoAbility();
+                //await CastTetragrammaton(skillTarget);
+            }
+            return null;
+        }
+        public static async Task<SpellEntity> CastResPriority()
+        {
+            var priority = SettingMgr.GetSetting<AstSettings>().AstResPriority;
+            var deadAllies = GroupHelper.DeadAllies;
+
+            switch (priority)
+            {
+                // Healer>Tanks>DPS
+                case 0:
+                    LogHelper.Debug("Healer>Tanks>DPS-RESSING");
+                    foreach (var deadAlly in deadAllies)
+                    {
+                        // check if the player already ressed.
+                        LogHelper.Debug("checking if the player already rezzed if so skipping.");
+                        if (deadAlly.HasAura(AurasDefine.Raise)) continue;
+
+                        // check if the distance from the player is more than 30
+
+                        // if (deadAlly.Distance(Core.Me) >= 40) continue;
+                        if (!ActionManager.CanCastOrQueue(SpellsDefine.Ascend.GetSpellEntity().SpellData, deadAlly)) continue;
+
+                        if (deadAlly.IsDps())
+                        {
+                            // check if there is tank that's dead too.
+                            if (deadAllies.Any(deadTanks => deadTanks.IsTank()))
+                            {
+                                if (deadAllies.Any(deadHealer => deadHealer.IsHealer()))
+                                {
+                                    LogHelper.Debug("Trying to swift res the healer.");
+                                    await CastAscendToTarget(deadAlly);
+                                    return null;
+                                }
+                                LogHelper.Debug("Trying to swift res the tank.");
+                                await CastAscendToTarget(deadAlly);
+                                return null;
+                            }
+                            LogHelper.Debug("Trying to swift res the dps.");
+                            await CastAscendToTarget(deadAlly);
+                            return null;
+                        }
+
+                        if (deadAlly.IsTank())
+                        {
+                            // check if there is healers that are dead too.
+                            if (deadAllies.Any(deadHealer => deadHealer.IsHealer()))
+                            {
+                                LogHelper.Debug("Trying to swift res the healer.");
+                                await CastAscendToTarget(deadAlly);
+                                return null;
+                            }
+                            LogHelper.Debug("Trying to swift res the tank.");
+                            await CastAscendToTarget(deadAlly);
+                            return null;
+                        }
+
+                        if (!deadAlly.IsHealer()) continue;
+                        LogHelper.Debug("Trying to swift res the healer.");
+                        await CastAscendToTarget(deadAlly);
+                        return null;
+                    }
+                    return null;
+                // Tanks>Healer>DPS
+                case 1:
+                    LogHelper.Debug("Tanks>Healer>DPS-RESSING");
+                    foreach (var deadAlly in deadAllies)
+                    {
+                        if (deadAlly.IsDps())
+                        {
+                            // check if there is healers that are dead too.
+                            if (deadAllies.Any(deadHealer => deadHealer.IsHealer()))
+                            {
+                                if (deadAllies.Any(deadTanks => deadTanks.IsTank()))
+                                {
+                                    LogHelper.Debug("Trying to swift res the tank.");
+                                    await CastAscendToTarget(deadAlly);
+                                    return null;
+                                }
+                                LogHelper.Debug("Trying to swift res the healer.");
+                                await CastAscendToTarget(deadAlly);
+                                return null;
+                            }
+                            LogHelper.Debug("Trying to swift res the dps.");
+                            await CastAscendToTarget(deadAlly);
+                            return null;
+                        }
+
+                        if (deadAlly.IsHealer())
+                        {
+                            // check if there is healers that are dead too.
+                            if (deadAllies.Any(deadTanks => deadTanks.IsTank()))
+                            {
+                                LogHelper.Debug("Trying to swift res the tank.");
+                                await CastAscendToTarget(deadAlly);
+                                return null;
+                            }
+                            LogHelper.Debug("Trying to swift res the healer.");
+                            await CastAscendToTarget(deadAlly);
+                            return null;
+                        }
+
+                        if (!deadAlly.IsTank()) continue;
+                        LogHelper.Debug("Trying to swift res the tank.");
+                        await CastAscendToTarget(deadAlly);
+                        return null;
+                    }
+                    return null;
+                // DPS>Healer>Tanks
+                case 2:
+                    foreach (var deadAlly in deadAllies)
+                    {
+                        // check if the player already ressed.
+                        LogHelper.Debug("checking if the player already rezzed if so skipping.");
+                        if (deadAlly.HasAura(AurasDefine.Raise)) continue;
+
+                        // check if the distance from the player is more than 30
+                        if (deadAlly.Distance(Core.Me) >= 40) continue;
+
+                        if (deadAlly.IsTank())
+                        {
+                            // check if there is dps that's dead too.
+                            if (deadAllies.Any(deadHealer => deadHealer.IsHealer()))
+                            {
+                                if (deadAllies.Any(deadDps => deadDps.IsDps()))
+                                {
+                                    LogHelper.Debug("Trying to swift res the dps.");
+                                    await CastAscendToTarget(deadAlly);
+                                    return null;
+                                }
+                                LogHelper.Debug("Trying to swift res the healer.");
+                                await CastAscendToTarget(deadAlly);
+                                return null;
+                            }
+                            LogHelper.Debug("Trying to swift res the tanks.");
+                            await CastAscendToTarget(deadAlly);
+                            return null;
+                        }
+
+                        if (deadAlly.IsHealer())
+                        {
+                            // check if there is dps that are dead too.
+                            if (deadAllies.Any(deadDps => deadDps.IsDps()))
+                            {
+                                LogHelper.Debug("Trying to swift res the DPS.");
+                                await CastAscendToTarget(deadAlly);
+                                return null;
+                            }
+                            LogHelper.Debug("Trying to swift res the healer.");
+                            await CastAscendToTarget(deadAlly);
+                            return null;
+                        }
+
+                        if (!deadAlly.IsDps()) continue;
+                        LogHelper.Debug("Trying to swift res the DPS.");
+                        await CastAscendToTarget(deadAlly);
+                        return null;
+                    }
+                    return null;
+            }
+            return null;
+        }
+        public static async Task CastAscendToTarget(Character target)
+        {
+            if (!SpellsDefine.Ascend.IsUnlock()) return;
+            await CastSwiftCast();
+            var spell = new SpellEntity(SpellsDefine.Ascend, target as BattleCharacter);
+            await spell.DoGCD();
+        }
+        public static async Task CastSwiftCast()
+        {
+            LogHelper.Debug("Checking if we have swiftcast aura or Swiftcast recentlyUsed");
+            if (Core.Me.HasAura(AurasDefine.Swiftcast) || SpellsDefine.Swiftcast.RecentlyUsed()) return;
+            LogHelper.Debug("Swiftcast can be used: using.");
+            var spell = SpellsDefine.Swiftcast.GetSpellEntity();
+            var ret = await spell.DoAbility();
+        }
     }
 }

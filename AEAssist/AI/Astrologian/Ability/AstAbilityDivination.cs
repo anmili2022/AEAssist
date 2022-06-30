@@ -24,6 +24,7 @@ namespace AEAssist.AI.Astrologian.Ability
             var spell = SpellsDefine.Divination.GetSpellEntity();
             if (spell == null) return null;
             AIRoot.GetBattleData<AstBattleData>().half = true;
+            SettingMgr.GetSetting<AstSettings>().AstHalfCard = true;
             var ret = await spell.DoAbility();
             return ret ? spell : null;
         }

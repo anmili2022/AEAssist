@@ -26,6 +26,7 @@ namespace AEAssist.AI.Astrologian
             new AstAbilityDraw(),
             new AstAbilityRedraw(),
             new AstAbilityPlay(),
+            new AstAbilityHalfPlay(),
             new AstAbilityLucidDreaming(),
             new AstAbilityDivination(),
             //new SageAbilityUsePotion(),
