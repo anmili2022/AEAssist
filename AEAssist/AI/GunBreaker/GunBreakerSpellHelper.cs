@@ -19,9 +19,14 @@ namespace AEAssist.AI.GunBreaker
 
         public static SpellEntity UseAoe()
         {
-            if (ActionResourceManager.Gunbreaker.Cartridge > 0)
-                return SpellsDefine.FatedCircle.GetSpellEntity();
-
+            if (ActionResourceManager.Gunbreaker.Cartridge > 0 )
+            {
+                if(Core.Me.ClassLevel < 90)
+                    return SpellsDefine.FatedCircle.GetSpellEntity();
+                //
+                else if(SpellsDefine.DoubleDown.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds > 8000)
+                    return SpellsDefine.FatedCircle.GetSpellEntity();
+            }
             if (ActionManager.LastSpell == SpellsDefine.DemonSlice.GetSpellEntity().SpellData)
                 return SpellsDefine.DemonSlaughter.GetSpellEntity();
 

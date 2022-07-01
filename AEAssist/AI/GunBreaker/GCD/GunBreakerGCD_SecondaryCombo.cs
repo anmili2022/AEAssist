@@ -14,6 +14,8 @@ namespace AEAssist.AI.GunBreaker.GCD
             {
                 if (SpellsDefine.SonicBreak.IsReady()|| (SpellsDefine.DoubleDown.IsReady() && (ActionResourceManager.Gunbreaker.Cartridge>1)))
                     return -10;
+                if (SpellsDefine.Bloodfest.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds < 2000)
+                    return -11;
                 return 100;
             }
             if (!DataBinding.Instance.Burst)
@@ -22,13 +24,19 @@ namespace AEAssist.AI.GunBreaker.GCD
             if (ActionResourceManager.Gunbreaker.Cartridge == 0)
                 return -1;
 
+            if (TargetHelper.CheckNeedUseAOEByMe(5, 5, 4))
+                return -4;
+
             if (!SpellsDefine.GnashingFang.GetSpellEntity().SpellData.IsReady())
                 return -2;
+
+            if (SpellsDefine.NoMercy.GetSpellEntity().SpellData.Charges == 1)
+                return -6;
 
             if (SpellsDefine.NoMercy.GetSpellEntity().SpellData.Charges < 0.5)
                 return 1;
 
-            if (SpellsDefine.NoMercy.GetSpellEntity().SpellData.CoolDownInGCDs(4))
+            if (SpellsDefine.NoMercy.GetSpellEntity().SpellData.CoolDownInGCDs(4) && SpellsDefine.NoMercy.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds !=0)
                 return -5;
             return 0;
         }

@@ -75,12 +75,12 @@ namespace AEAssist.Define
             Mantra,
             
             //GNB
-            DoubleDown
-            
-            
-            
-            
-            
+            DoubleDown,
+            FatedCircle,
+            BowShock,
+            DemonSlice,
+            DemonSlaughter
+
         };
 
         public static HashSet<uint> IgnoreEarlyDecisionSet = new HashSet<uint>
