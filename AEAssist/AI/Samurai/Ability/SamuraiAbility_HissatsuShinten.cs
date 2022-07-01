@@ -9,14 +9,63 @@ namespace AEAssist.AI.Samurai.Ability
     {
         public int Check(SpellEntity lastSpell)
         {
-            if (ActionResourceManager.Samurai.Kenki >= 80)
-                return 2;
-            if (SpellsDefine.KaeshiSetsugekka.GetSpellEntity().Cooldown.TotalMilliseconds < 65000 &&
-                ActionResourceManager.Samurai.Kenki < 50)
-                return -2;
-            if (SpellsDefine.Ikishoten.GetSpellEntity().Cooldown.TotalSeconds < 3 &&
-                ActionResourceManager.Samurai.Kenki > 50)
-                return 3;
+            if (ActionResourceManager.Samurai.Kenki >= 90 && ActionResourceManager.Samurai.Kenki <= 100)
+            {
+                return 5;
+            }
+            
+            var bd = AIRoot.GetBattleData<SamuraiBattleData>();
+
+            if (SamuraiSpellHelper.SenCounts() == 3)
+            {
+                return -3;
+            }
+
+            if (ActionResourceManager.Samurai.Kenki >= 25)
+            {
+                if (bd.Bursting)
+                {
+                
+                    if (bd.burstingShintenCount > 3)
+                    {
+                        return -1;
+                    }
+                    
+                    if (lastSpell == SpellsDefine.Kasha.GetSpellEntity() || 
+                        lastSpell == SpellsDefine.Gekko.GetSpellEntity()
+                        || lastSpell == SpellsDefine.Yukikaze.GetSpellEntity())
+                    {
+                        
+                        bd.burstingShintenCount++;
+                        return 1;
+                    }
+                }
+                
+                if (bd.EvenBursting)
+                {
+                    if (bd.burstingShintenCount > 4)
+                    {
+                        return -2;
+                    }
+                    
+                    if (lastSpell == SpellsDefine.Kasha.GetSpellEntity() || 
+                        lastSpell == SpellsDefine.Gekko.GetSpellEntity()
+                        || lastSpell == SpellsDefine.Yukikaze.GetSpellEntity())
+                    {
+                        
+                        bd.burstingShintenCount++;
+                        return 2;
+                    }
+                }
+                
+                // cooldown
+                if (ActionManager.LastSpellId == SpellsDefine.Kasha)
+                {
+                    LogHelper.Debug("Inside CoolDown");
+                    bd.burstingShintenCount = 0;
+                    return 0;
+                }
+            }
             return -1;
         }
 

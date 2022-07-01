@@ -107,7 +107,7 @@ namespace AEAssist.AI.Samurai
 
             // do odd minute bursts
 
-            if (SamuraiSpellHelper.SenCounts() == 3)
+            if (SenCounts() == 3)
             {
                 return SpellsDefine.MidareSetsugekka.GetSpellEntity();
             }
@@ -384,19 +384,18 @@ namespace AEAssist.AI.Samurai
         
         public static SpellEntity GetHissatsuShinten()
         {
-            
-            if (!SpellsDefine.HissatsuShinten.IsUnlock())
+            if (SpellsDefine.HissatsuShinten.IsUnlock())
             {
-                return null;
-            }
-            if (!SpellsDefine.HissatsuShinten.IsReady())
-            {
-                return null;
+                if (SpellsDefine.HissatsuShinten.IsReady())
+                {
+                    if (ActionResourceManager.Samurai.Kenki >= 25)
+                    {
+                        return SpellsDefine.HissatsuShinten.GetSpellEntity();
+                    }
+                }
             }
 
-            if (!ActionManager.CanCastOrQueue(SpellsDefine.HissatsuShinten.GetSpellEntity().SpellData,
-                    Core.Me.CurrentTarget)) return null;
-            return ActionResourceManager.Samurai.Kenki >= 25 ? SpellsDefine.HissatsuShinten.GetSpellEntity() : null;
+            return null;
         }
 
         public static SpellEntity IaijutsuCanSpell()
