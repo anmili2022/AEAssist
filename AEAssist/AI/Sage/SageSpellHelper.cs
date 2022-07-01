@@ -530,8 +530,28 @@ namespace AEAssist.AI.Sage
             var spell = new SpellEntity(SpellsDefine.EukrasianDiagnosis, target as BattleCharacter);
             return await spell.DoGCD();
         }
+        public static async Task<SpellEntity> CastEukrasianDiagnosisTest()
+        {
+            //if (!SpellsDefine.EukrasianDiagnosis.IsUnlock()) return null;
+            
+            //var spell = new SpellEntity(SpellsDefine.EukrasianDiagnosis, target as BattleCharacter);
+            //return await spell.DoGCD();
 
-
+            if (GroupHelper.InParty)
+            {
+                var skillTarget = GroupHelper.CastableAlliesWithin30.Where(r => r.CurrentHealth > 0 && !r.HasAura(AurasDefine.EukrasianDiagnosis) && !r.HasAura(AurasDefine.DifferentialDiagnosis)).OrderBy(GetHealth);
+                //await CastDivineBenison(skillTarget);
+                if (!SpellsDefine.EukrasianDiagnosis.IsUnlock()) return null;
+                var spell = new SpellEntity(SpellsDefine.EukrasianDiagnosis, skillTarget.FirstOrDefault() as BattleCharacter);
+                await CastEukrasia();
+                await spell.DoGCD();
+            }
+            return null;
+        }
+        public static float GetHealth(Character c)
+        {
+                return c.CurrentHealthPercent;
+        } 
         public static async Task<bool> CastEukrasianPrognosis(Character target)
         {
             if (!SpellsDefine.EukrasianPrognosis.IsUnlock()) return false;

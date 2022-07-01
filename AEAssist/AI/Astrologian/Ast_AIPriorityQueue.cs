@@ -13,6 +13,7 @@ namespace AEAssist.AI.Astrologian
         public List<IAIHandler> GCDQueue { get; } = new List<IAIHandler>()
         {
             //new SageGCDEgeiro(),
+            new AstGCDAscend(),
             new AstGCDDot(),
             //new SageGcdToxikon(),
             //new SageGcdPhlegma(),
@@ -22,6 +23,10 @@ namespace AEAssist.AI.Astrologian
 
         public List<IAIHandler> AbilityQueue { get; } = new List<IAIHandler>()
         {
+            new AstAbilityLightspeed(),
+            new AstAbilityCelestialIntersection(),
+            new AstAbilityEssentialDignity(),
+            new AstAbilityExaltation(),
             new AstAbilityAstrodyne(),
             new AstAbilityDraw(),
             new AstAbilityRedraw(),
@@ -29,6 +34,8 @@ namespace AEAssist.AI.Astrologian
             new AstAbilityHalfPlay(),
             new AstAbilityLucidDreaming(),
             new AstAbilityDivination(),
+            new AstAbilityMinorArcana(),
+            new AstAbilityCrownPlay(),
             //new SageAbilityUsePotion(),
         };
         public async Task<bool> UsePotion()

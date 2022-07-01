@@ -17,10 +17,10 @@ namespace AEAssist.AI.Astrologian.Ability
         {
             
             if (!SpellsDefine.Astrodyne.IsReady()) return -1;
-            if (!Core.Me.HasAura(AurasDefine.Divination))
-            {
-                return -4;
-            }
+            //if (!Core.Me.HasAura(AurasDefine.Divination))
+            //{
+                //return -4;
+            //}
             if (AIRoot.GetBattleData<AstBattleData>().AstNum < 3)
             {
                 LogHelper.Debug("印"+ Convert.ToString(AIRoot.GetBattleData<AstBattleData>().AstNum));

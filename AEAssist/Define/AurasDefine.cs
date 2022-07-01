@@ -280,6 +280,7 @@ namespace AEAssist.Define
             EukrasianDosisII = 2615,
             EukrasianDosisIII = 2616,
             EukrasianDiagnosis = 2607,
+            DifferentialDiagnosis = 2608,
             Kerachole = 2618,
             Kerakeia = 2938,
             Physis = 2617,

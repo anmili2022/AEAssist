@@ -48,8 +48,10 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Reference Include="MongoDB.Bson, Version=2.15.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\MongoDB.Bson.2.15.0\lib\net472\MongoDB.Bson.dll</HintPath>
     </Reference>
-    <Reference Include="RebornBuddy">
+    <Reference Include="RebornBuddy, Version=1.0.476.0, Culture=neutral, PublicKeyToken=48d7174f8a943034, processorArchitecture=AMD64">
       <HintPath>..\References\RebornBuddy.exe</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -177,10 +179,16 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     </Compile>
     <Compile Include="AI\AIMgrs.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityAstrodyne.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityCelestialIntersection.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityCrownPlay.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityDivination.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityDraw.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityEssentialDignity.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityExaltation.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityHalfPlay.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityLightspeed.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityLucidDreaming.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityMinorArcana.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityPlay.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityRedraw.cs" />
     <Compile Include="AI\Astrologian\AstBattleData.cs" />
@@ -379,6 +387,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Sage\GCD\SageGCDDot.cs" />
     <Compile Include="AI\Sage\GCD\SageGCDDyskrasia.cs" />
     <Compile Include="AI\Sage\GCD\SageGCDEgeiro.cs" />
+    <Compile Include="AI\Sage\GCD\SageGCDEukrasianDiagnosis.cs" />
     <Compile Include="AI\Sage\GCD\SageGCDPhlegma.cs" />
     <Compile Include="AI\Sage\GCD\SageGCDToxikon.cs" />
     <Compile Include="AI\Sage\OpenerSageStandard90.cs" />

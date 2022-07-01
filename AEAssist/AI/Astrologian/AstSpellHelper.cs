@@ -250,6 +250,10 @@ namespace AEAssist.AI.Astrologian
 
             return c.CurrentJob == ClassJobType.Adventurer ? 70 : 0;
         }
+        private static float GetCurrentHealthPercent(Character c)
+        {
+            return c.CurrentHealthPercent;
+        }
         public static async Task<SpellEntity> CastMeleeCard()
         {
 
@@ -528,6 +532,48 @@ namespace AEAssist.AI.Astrologian
             LogHelper.Debug("Swiftcast can be used: using.");
             var spell = SpellsDefine.Swiftcast.GetSpellEntity();
             var ret = await spell.DoAbility();
+        }
+        public static async Task<SpellEntity> CastEssentialDignity()
+        {
+
+            if (GroupHelper.InParty)
+            {
+                var skillTarget = GroupHelper.CastableAlliesWithin30.Where(r => r.CurrentHealth > 0 && r.CurrentHealthPercent <= 30f).OrderBy(GetCurrentHealthPercent);
+                //await CastDivineBenison(skillTarget);
+                if (!SpellsDefine.EssentialDignity.IsUnlock()) return null;
+                var spell = new SpellEntity(SpellsDefine.EssentialDignity, skillTarget.FirstOrDefault() as BattleCharacter);
+                await spell.DoAbility();
+            }
+            return null;
+
+        }
+        public static async Task<SpellEntity> CastCelestialIntersection()
+        {
+
+            if (GroupHelper.InParty)
+            {
+                var skillTarget = GroupHelper.CastableAlliesWithin30.Where(r => r.CurrentHealth > 0 && r.IsTank()).OrderBy(GetCurrentHealthPercent);
+                //await CastDivineBenison(skillTarget);
+                if (!SpellsDefine.CelestialIntersection.IsUnlock()) return null;
+                var spell = new SpellEntity(SpellsDefine.CelestialIntersection, skillTarget.FirstOrDefault() as BattleCharacter);
+                await spell.DoAbility();
+            }
+            return null;
+            
+        }
+        public static async Task<SpellEntity> CastExaltation()
+        {
+
+            if (GroupHelper.InParty)
+            {
+                var skillTarget = GroupHelper.CastableAlliesWithin30.Where(r => r.CurrentHealth > 0 && r.IsTank()).OrderBy(GetCurrentHealthPercent);
+                //await CastDivineBenison(skillTarget);
+                if (!SpellsDefine.Exaltation.IsUnlock()) return null;
+                var spell = new SpellEntity(SpellsDefine.Exaltation, skillTarget.FirstOrDefault() as BattleCharacter);
+                await spell.DoAbility();
+            }
+            return null;
+            
         }
     }
 }

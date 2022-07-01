@@ -1,8 +1,13 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
+using Buddy.Coroutines;
+using ff14bot;
+using ff14bot.Helpers;
 using ff14bot.Managers;
+using ff14bot.Objects;
 
 namespace AEAssist.AI.Astrologian.Ability
 {
@@ -20,11 +25,29 @@ namespace AEAssist.AI.Astrologian.Ability
             //}
             if (ActionResourceManager.Astrologian.Arcana != 0)
             {
+                if (!(Core.Me.HasAura(AurasDefine.ArrowDrawn) || Core.Me.HasAura(AurasDefine.BalanceDrawn) || Core.Me.HasAura(AurasDefine.SpearDrawn) || Core.Me.HasAura(AurasDefine.BoleDrawn) || Core.Me.HasAura(AurasDefine.EwerDrawn) || Core.Me.HasAura(AurasDefine.SpireDrawn)))
+                {
+                    LogHelper.Debug("没卡抽卡");
+                    return 0;
+                    //AurasDefine.TheBalance;
+                }
+                LogHelper.Debug("有卡不抽");
+                return -2;
+            }
+            /*
+            if (Core.Me.HasAura(AurasDefine.ArrowDrawn) || Core.Me.HasAura(AurasDefine.BalanceDrawn) || Core.Me.HasAura(AurasDefine.SpearDrawn) || Core.Me.HasAura(AurasDefine.BoleDrawn) && Core.Me.HasAura(AurasDefine.EwerDrawn) || Core.Me.HasAura(AurasDefine.SpireDrawn))
+            {
                 LogHelper.Debug("有卡不抽");
                 return -2;
                 //AurasDefine.TheBalance;
             }
-            
+            if (!(Core.Me.HasAura(AurasDefine.ArrowDrawn) || Core.Me.HasAura(AurasDefine.BalanceDrawn) || Core.Me.HasAura(AurasDefine.SpearDrawn) || Core.Me.HasAura(AurasDefine.BoleDrawn) && Core.Me.HasAura(AurasDefine.EwerDrawn) || Core.Me.HasAura(AurasDefine.SpireDrawn)))
+            {
+                LogHelper.Debug("没卡抽卡");
+                return 0;
+                //AurasDefine.TheBalance;
+            }
+            */
             return 0;
         }
 

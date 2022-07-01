@@ -18,7 +18,7 @@ namespace AEAssist.AI.Astrologian.Ability
         {
 
             if (!SpellsDefine.Play.IsReady()) return -1;
-            if (ActionResourceManager.Astrologian.Arcana == 0) return -2;
+            if (!(Core.Me.HasAura(AurasDefine.ArrowDrawn) || Core.Me.HasAura(AurasDefine.BalanceDrawn) || Core.Me.HasAura(AurasDefine.SpearDrawn) || Core.Me.HasAura(AurasDefine.BoleDrawn) || Core.Me.HasAura(AurasDefine.EwerDrawn) || Core.Me.HasAura(AurasDefine.SpireDrawn))) return -2;
             if (SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds<110 && SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds >= 5)
             {
                 
@@ -44,31 +44,37 @@ namespace AEAssist.AI.Astrologian.Ability
 
         public Task<SpellEntity> Run()
         {
-            switch (ActionResourceManager.Astrologian.Arcana)
+            if (Core.Me.HasAura(AurasDefine.BalanceDrawn))
             {
-                case ActionResourceManager.Astrologian.AstrologianCard.None:
-                    return null;                    
-                case ActionResourceManager.Astrologian.AstrologianCard.Balance:
-                    LogHelper.Debug("发近战太阳神");
-                    return AstSpellHelper.CastMeleeCard();
-                case ActionResourceManager.Astrologian.AstrologianCard.Bole:
-                    LogHelper.Debug("发远程世界树");
-                    return AstSpellHelper.CastRangedCard();
-                case ActionResourceManager.Astrologian.AstrologianCard.Arrow:
-                    LogHelper.Debug("发近战放浪神");
-                    return AstSpellHelper.CastMeleeCard();
-                case ActionResourceManager.Astrologian.AstrologianCard.Spear:
-                    LogHelper.Debug("发近战战争神");
-                    return AstSpellHelper.CastMeleeCard();
-                case ActionResourceManager.Astrologian.AstrologianCard.Ewer:
-                    LogHelper.Debug("发远程河流神");
-                    return AstSpellHelper.CastRangedCard();
-                case ActionResourceManager.Astrologian.AstrologianCard.Spire:
-                    LogHelper.Debug("发远程建筑神");
-                    return AstSpellHelper.CastRangedCard();
-                default:
-                    return null;
+                LogHelper.Debug("发近战太阳神");
+                return AstSpellHelper.CastMeleeCard();
             }
+            if (Core.Me.HasAura(AurasDefine.BoleDrawn))
+            {
+                LogHelper.Debug("发远程世界树");
+                return AstSpellHelper.CastRangedCard();
+            }
+            if (Core.Me.HasAura(AurasDefine.ArrowDrawn))
+            {
+                LogHelper.Debug("发近战放浪神");
+                return AstSpellHelper.CastMeleeCard();
+            }
+            if (Core.Me.HasAura(AurasDefine.SpearDrawn))
+            {
+                LogHelper.Debug("发近战战争神");
+                return AstSpellHelper.CastMeleeCard();
+            }
+            if (Core.Me.HasAura(AurasDefine.EwerDrawn))
+            {
+                LogHelper.Debug("发远程河流神");
+                return AstSpellHelper.CastRangedCard();
+            }
+            if (Core.Me.HasAura(AurasDefine.SpireDrawn))
+            {
+                LogHelper.Debug("发远程建筑神");
+                return AstSpellHelper.CastRangedCard();
+            }
+
             return null;
         }
     }
