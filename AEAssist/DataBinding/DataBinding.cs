@@ -118,8 +118,8 @@ namespace AEAssist
             UseMeikyoShisui = true;
             SageSettings.LucidDreamingToggle = true;
             Wildfire = true;
-            SMNReset();
-            PLDReset();
+            SMNSettings.SMNReset();
+            PaladinSettings. PLDReset();
         }
 
 
@@ -174,36 +174,6 @@ namespace AEAssist
 
 
         #endregion
-
-        #region SMN
-
-        public bool Crimson { get; set; } = true;
-
-        public bool SaveInstantSpells { get; set; } = false;
-        public void SMNReset()
-        {
-            Crimson = true;
-            SaveInstantSpells = false;
-        }
-
-        #endregion
-
-        #region PLD
-        public bool Requiescat { get; set; } = true;
-        public bool IronWill { get; set; } = true;
-
-        public bool Intervene { get; set; } = true;
-
-        public bool Sheltron { get; set; } = true;
-        public void PLDReset()
-        {
-            Requiescat = true;
-            IronWill = true;
-            Intervene = true;
-            Sheltron = true;
-        }
-        #endregion
-
 
         #region GNB
         public bool GNBOpen { get; set; }=true;
