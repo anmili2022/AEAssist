@@ -8,7 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d4dd496-53f2-4f45-9759-e61919e0ca0f" name="Changes" comment="fixed the changes so that it reflect the new settings files." />
+    <list default="true" id="9d4dd496-53f2-4f45-9759-e61919e0ca0f" name="Changes" comment="new build">
+      <change afterPath="$PROJECT_DIR$/AEAssist/View/Hotkey/BuiltinHotkeys/CrimsonCyclone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AEAssist.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AEAssist.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/DataBinding/Language.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/DataBinding/Language.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -244,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656805427177</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="new build">
+      <created>1656805666717</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1656805666717</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +291,8 @@
     <MESSAGE value="Please use settings, don't mix class settings in DataBinding.cs. I beg of you keep it clean can't have everything everywhere it get's confusing." />
     <MESSAGE value="changed to use it's own settings fiel :( Please..." />
     <MESSAGE value="fixed the changes so that it reflect the new settings files." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the changes so that it reflect the new settings files." />
+    <MESSAGE value="new build" />
+    <option name="LAST_COMMIT_MESSAGE" value="new build" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

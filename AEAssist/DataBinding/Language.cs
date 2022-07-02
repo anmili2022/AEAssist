@@ -180,6 +180,8 @@ namespace AEAssist
         public string Textbox_SwiftcastOption { get; set; }
         public string Toggle_CrimsonCyclone { get; set; }
         
+        public string Combox_Hotkey_CrimsonCyclone { get; set; }
+        
         #endregion
         
         #region PLD

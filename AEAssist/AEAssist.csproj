@@ -587,6 +587,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="View\BardSettingView.xaml.cs">
       <DependentUpon>BardSettingView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Hotkey\BuiltinHotkeys\CrimsonCyclone.cs" />
     <Compile Include="View\Overlay\PaladinOverlayWindow.xaml.cs">
       <DependentUpon>PaladinOverlayWindow.xaml</DependentUpon>
     </Compile>
