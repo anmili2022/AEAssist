@@ -16,6 +16,7 @@ namespace AEAssist.AI.GunBreaker.GCD
 
             if (SpellsDefine.NoMercy.CoolDownInGCDs(4))
                 return -2;
+            //if(TargetHelper.)
 
             return 0;
         }

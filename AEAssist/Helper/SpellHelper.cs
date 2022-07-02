@@ -239,7 +239,7 @@ namespace AEAssist.Helper
                 baseGCDTime * (count + 1) - SettingMgr.GetSetting<GeneralSettings>().ActionQueueMs)
             {
                 return true;
-            }
+            } 
             return false;
         }
 

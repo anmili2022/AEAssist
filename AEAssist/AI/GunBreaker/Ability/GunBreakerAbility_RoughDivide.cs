@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
+using ff14bot;
 
 namespace AEAssist.AI.GunBreaker.Ability
 {
@@ -8,9 +9,19 @@ namespace AEAssist.AI.GunBreaker.Ability
     {
         public int Check(SpellEntity lastSpell)
         {
-            if (SpellsDefine.RoughDivide.GetSpellEntity().SpellData.Charges < 1.9)
-                return -1;
-            return 0;
+            if (DataBinding.Instance.GNBRoughDivide)
+            {
+                if (SpellsDefine.RoughDivide.GetSpellEntity().SpellData.Charges > 1.9)
+                    return 1;
+            }
+            else
+            {
+                if (SpellsDefine.RoughDivide.GetSpellEntity().SpellData.Charges > 1.9)
+                    return 2;
+                if(Core.Me.HasAura(AurasDefine.NoMercy) && SpellsDefine.RoughDivide.IsReady())
+                    return 3;
+            }
+            return -1;
         }
         public async Task<SpellEntity> Run()
         {

@@ -397,9 +397,25 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Sage\SageSpellHelper.cs" />
     <Compile Include="AI\Sage\Sage_AIPriorityQueue.cs" />
     <Compile Include="AI\Sage\SpellEvent\SpellEventDot.cs" />
-    <Compile Include="AI\Samurai\GCD\SamuraiGCD_Higanbana.cs" />
-    <Compile Include="AI\Samurai\GCD\SamuraiGCD_MidareSetsugekka.cs" />
-    <Compile Include="AI\Samurai\Opener_Samurai_90.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_Hagakure.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_HissatsuGuren.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_HissatsuGyoten.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_HissatsuKyuten.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_HissatsuYaten.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_KaeshiGoken.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_KaeshiHiganbana.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_KaeshiNamikiri.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_KaeshiSetsugekka.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_Meditate.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_ShohaII.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_ThirdEye.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_TsubameGaeshi.cs" />
+    <Compile Include="AI\Samurai\GCD\SamuraiGCD_AoERotations.cs" />
+    <Compile Include="AI\Samurai\GCD\SamuraiGCD_CoolDownPhase.cs" />
+    <Compile Include="AI\Samurai\GCD\SamuraiGCD_EvenMinutesBurst.cs" />
+    <Compile Include="AI\Samurai\GCD\SamuraiGCD_Fillers.cs" />
+    <Compile Include="AI\Samurai\GCD\SamuraiGCD_OddMinuteBurst.cs" />
+    <Compile Include="AI\Samurai\Opener_SamuraiStandard_90.cs" />
     <Compile Include="AI\Samurai\SpellEvent\SpellEvent_GCD.cs" />
     <Compile Include="AI\Samurai\SpellQueue\SpellQueueSlot_KaeshiNamikiri.cs" />
     <Compile Include="AI\Samurai\SpellQueue\SpellQueueSlot_KaeshiSetsugekka.cs" />
@@ -452,8 +468,6 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Samurai\Ability\SamuraiAbility_Ikishoten.cs" />
     <Compile Include="AI\Samurai\Ability\SamuraiAbility_MeikyoShisui.cs" />
     <Compile Include="AI\Samurai\Ability\SamuraiAbility_Shoha.cs" />
-    <Compile Include="AI\Samurai\GCD\SamuraiGCD_BaseGCDCombo.cs" />
-    <Compile Include="AI\Samurai\GCD\SamuraiGCD_OgiNamikiri.cs" />
     <Compile Include="AI\Samurai\SamuraiBattleData.cs" />
     <Compile Include="AI\Samurai\SamuraiRotation.cs" />
     <Compile Include="AI\Samurai\SamuraiSpellHelper.cs" />
@@ -489,8 +503,6 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\WhiteMage\GCD\WhiteMageGCDRaise.cs" />
     <Compile Include="AI\WhiteMage\GCD\WhiteMageGCDAfflatusSolace.cs" />
     <Compile Include="AI\WhiteMage\GCD\WhiteMageGCDRegen.cs" />
-    <Compile Include="Converters\BooleanConverterT.cs" />
-    <Compile Include="Converters\BooleanToOpaqueConverter.cs" />
     <Compile Include="DataBinding\CombatMessage.cs" />
     <Compile Include="DataBinding\CombatMessageOverlayViewModel.cs" />
     <Compile Include="AI\WhiteMage\Ability\WhiteMageAbilityLucidDreaming.cs" />
@@ -595,6 +607,8 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="View\CommonOverlay.xaml.cs">
       <DependentUpon>CommonOverlay.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Converters\BooleanConverterT.cs" />
+    <Compile Include="View\Converters\BooleanToOpaqueConverter.cs" />
     <Compile Include="View\DancerSettingView.xaml.cs">
       <DependentUpon>DancerSettingView.xaml</DependentUpon>
     </Compile>
@@ -612,6 +626,8 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     </Compile>
     <Compile Include="View\Healer.xaml.cs">
       <DependentUpon>Healer.xaml</DependentUpon>
+    <Compile Include="View\GunBreakerSettingView.xaml.cs">
+      <DependentUpon>GunBreakerSettingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Hotkey\BuiltinHotkeys\ArmLength.cs" />
     <Compile Include="View\Hotkey\BuiltinHotkeys\Burst.cs" />
@@ -801,6 +817,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Melee.xaml">
+    <Page Include="View\GunBreakerSettingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -826,6 +843,9 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     </Page>
     <Page Include="View\AstrologianSettingView.xaml">
       <SubType>Designer</SubType>
+    <Page Include="View\Style\TabControlStyle1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\WhiteMageSettingView.xaml">
       <SubType>Designer</SubType>
@@ -1074,11 +1094,6 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
   <ItemGroup>
     <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />
     <PackageReference Include="System.ObjectModel" Version="4.3.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AI\GunBreaker\SpellEvent\" />
-    <Folder Include="AI\Monk\SpellQueue\" />
-    <Folder Include="AI\Summoner\SpellQueue\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

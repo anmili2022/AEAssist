@@ -77,7 +77,7 @@ namespace AEAssist
             GamelogManager.Pulse();
             SettingMgr.Instance.AutoSave();
             CombatMessageManager.UpdateDisplayedMessage();
-            MeleePosition.Intance.GetPriority();
+            // MeleePosition.Intance.GetPriority();
         }
 
         public void Shutdown()
@@ -125,8 +125,18 @@ namespace AEAssist
 
         public Composite CombatBuffBehavior { get; } = new TreeSharp.Action();
 
+
         public Composite CombatBehavior { get; } = new TreeSharp.Action();
         public Composite PullBuffBehavior { get; } = new TreeSharp.Action();
+
+        public Composite CombatBehavior{
+            get
+            {
+                return
+                    new ActionRunCoroutine(ctx => RotationManager.Instance.Update());
+            }
+        }
+        public Composite PullBuffBehavior{ get; } = new TreeSharp.Action();
         #endregion Behavior Composites
     }
 }

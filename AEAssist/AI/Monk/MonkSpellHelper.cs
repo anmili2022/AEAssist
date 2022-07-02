@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
+using ff14bot.Enums;
+using ff14bot.Helpers;
 using ff14bot.Managers;
 using ff14bot.Objects;
 
@@ -12,6 +14,25 @@ namespace AEAssist.AI.Monk
     {
         public static void SetPostion()
         {
+            if (!Core.OverlayManager.IsActive)
+            {
+                return;
+            }
+
+            if (Core.Me.CurrentJob != ClassJobType.Monk)
+            {
+                return;
+            }
+
+            if (!Core.Me.InCombat)
+            {
+                return;
+            }
+
+            if (!Core.Me.HasTarget)
+            {
+                return;
+            }
             if (AIRoot.GetBattleData<MonkBattleData>().RoFBH2)
             {
                 if (Core.Me.HasAura(AurasDefine.RiddleOfFire) &&
