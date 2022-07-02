@@ -14,7 +14,7 @@ namespace AEAssist.AI.Paladin.Ability
             
             if (!spell.IsReady())
                 return -1;
-            if (!DataBinding.Instance.Intervene)
+            if (!SettingMgr.GetSetting<PaladinSettings>().Intervene)
                 return -2;
             if (MovementManager.IsMoving)
                 return -3;

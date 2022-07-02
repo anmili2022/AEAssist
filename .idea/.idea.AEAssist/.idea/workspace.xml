@@ -8,18 +8,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d4dd496-53f2-4f45-9759-e61919e0ca0f" name="Changes" comment="added changes to sage; use Linq and added check if the dead player is targetable.">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AEAssist/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AEAssist/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/GeneralAI/PhysicsRangeDPSHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/GeneralAI/PhysicsRangeDPSHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/DataBinding/Language.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/DataBinding/Language.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/Resources/Lan_en.json" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/Resources/Lan_en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/View/Overlay/SMNOverlayWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/View/Overlay/SMNOverlayWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/View/SMNSettingView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/View/SMNSettingView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/AEAssist/AEAssist.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AEAssist/AEAssist.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/AEAssist/AEAssist.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AEAssist/AEAssist.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/AEAssist/Resources/Lan_en.json" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AEAssist/Resources/Lan_en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/AETriggers/AETriggers.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AETriggers/AETriggers.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/AETriggers/AETriggers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AETriggers/AETriggers.pdb" afterDir="false" />
+    <list default="true" id="9d4dd496-53f2-4f45-9759-e61919e0ca0f" name="Changes" comment="fixed some spell name to be showed properly in the toggle.">
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_Intervene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_Intervene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_IronWill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_IronWill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_Requiescat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_Requiescat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_Sheltron.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_Sheltron.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Summoner/GCD/SMNGCD_PetIfritCrimson.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Summoner/GCD/SMNGCD_PetIfritCrimson.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Summoner/GCD/SMNGCD_PetSummon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Summoner/GCD/SMNGCD_PetSummon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Summoner/GCD/SMNGCD_RuinIV.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Summoner/GCD/SMNGCD_RuinIV.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Summoner/SMN_SpellHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Summoner/SMN_SpellHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/DataBinding/DataBinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/DataBinding/DataBinding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/Setting/Setting/PaladinSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/Setting/Setting/PaladinSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/Setting/Setting/SMNSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/Setting/Setting/SMNSettings.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +51,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d672ef0d95b2449089b8789a939dfad252e5a0/9c/14294350/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d672ef0d95b2449089b8789a939dfad252e5a0/be/56cdaaaf/Single.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/CountDownHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/GeneralAI/PhysicsRangeDPSHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/GeneralAI/PhysicsRangeDPSHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/GunBreakerBattleData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/GunBreakerRotation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/GunBreakerSpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
@@ -70,23 +72,28 @@
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/SageSpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/Sage_AIPriorityQueue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Samurai/SamuraiSpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Summoner/GCD/SMNGCD_PetIfritCrimson.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/DataBinding/Language.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Gamelog/AEGamelogManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Helper/GroupHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Helper/SpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/MainWindow.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Setting/Setting/GeneralSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/Setting/Setting/SMNSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Utilities/CombatMessages/CombatMessageManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/GeneralSetting/UserControl_General.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/GeneralSetting/UserControl_General.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Hotkey/BuiltinHotkeys/ArmLength.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Overlay/CombatMessageOverlay.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/View/Overlay/CombatMessageOverlay.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/View/Overlay/SMNOverlayWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Overlay/UIComponent/OverlayUIComponent_BlackMageOverlay2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Overlay/UIComponent/OverlayUIComponent_DancerOverlay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Overlay/UIComponent/OverlayUIComponent_MCHOverlay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Overlay/UIComponent/OverlayUIComponent_ReaperOverlay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Overlay/UIComponent/OverlayUIComponent_SageOverlay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Overlay/UIComponent/OverlayUIComponent_SamuraiOverlay.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/View/SMNSettingView.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssistLoader/AEAssistLoader.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -200,6 +207,21 @@
       <workItem from="1656762211447" duration="987000" />
       <workItem from="1656768712854" duration="2302000" />
     </task>
+    <task id="LOCAL-00001" summary="moved most of the abilities to the correct regions. Please keep it tidy and make a region for each class or job.">
+      <created>1656804525706</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656804525706</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fixed some spell name to be showed properly in the toggle.">
+      <created>1656804570723</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656804570723</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +252,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="moved most of the abilities to the correct regions. Please keep it tidy and make a region for each class or job." />
+    <MESSAGE value="fixed some spell name to be showed properly in the toggle." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some spell name to be showed properly in the toggle." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

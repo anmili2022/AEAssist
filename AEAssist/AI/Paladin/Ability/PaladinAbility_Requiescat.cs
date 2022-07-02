@@ -23,7 +23,7 @@ namespace AEAssist.AI.Paladin.Ability
             if (Paladin_SpellHelper.OutOfMeleeRange())
                 return -4;
 
-            if (!DataBinding.Instance.Requiescat)
+            if (!SettingMgr.GetSetting<PaladinSettings>().Requiescat)
                 return -5;
 
             if (SpellsDefine.FightorFlight.IsReady())

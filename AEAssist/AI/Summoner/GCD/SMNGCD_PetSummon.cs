@@ -56,7 +56,7 @@ namespace AEAssist.AI.Summoner.GCD
         {
 
 
-            if (DataBinding.Instance.SaveInstantSpells)
+            if (SettingMgr.GetSetting<SMNSettings>().SaveInstantSpells)
             {
                 if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.AvailablePetFlags.Ifrit))
                     return GetIfrit();
