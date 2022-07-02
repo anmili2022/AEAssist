@@ -8,19 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d4dd496-53f2-4f45-9759-e61919e0ca0f" name="Changes" comment="fixed some spell name to be showed properly in the toggle.">
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_Intervene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_Intervene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_IronWill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_IronWill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_Requiescat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_Requiescat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_Sheltron.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Paladin/Ability/PaladinAbility_Sheltron.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Summoner/GCD/SMNGCD_PetIfritCrimson.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Summoner/GCD/SMNGCD_PetIfritCrimson.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Summoner/GCD/SMNGCD_PetSummon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Summoner/GCD/SMNGCD_PetSummon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Summoner/GCD/SMNGCD_RuinIV.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Summoner/GCD/SMNGCD_RuinIV.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Summoner/SMN_SpellHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Summoner/SMN_SpellHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/DataBinding/DataBinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/DataBinding/DataBinding.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/Setting/Setting/PaladinSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/Setting/Setting/PaladinSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/Setting/Setting/SMNSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/Setting/Setting/SMNSettings.cs" afterDir="false" />
-    </list>
+    <list default="true" id="9d4dd496-53f2-4f45-9759-e61919e0ca0f" name="Changes" comment="fixed the changes so that it reflect the new settings files." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +51,13 @@
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Monk/MonkRotation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Monk/MonkSpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Monk/Monk_AIPriority.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Paladin/Ability/PaladinAbility_Intervene.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Paladin/Ability/PaladinAbility_IronWill.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Paladin/Ability/PaladinAbility_IronWill.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Paladin/Ability/PaladinAbility_Requiescat.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Paladin/Ability/PaladinAbility_Requiescat.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Paladin/Ability/PaladinAbility_Sheltron.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Paladin/Ability/PaladinAbility_Sheltron.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Reaper/Opener_Reaper_90.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/GCD/SageBaseGCD.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/OpenerSageStandard90.cs" root0="FORCE_HIGHLIGHTING" />
@@ -73,12 +68,19 @@
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/Sage_AIPriorityQueue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Samurai/SamuraiSpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Summoner/GCD/SMNGCD_PetIfritCrimson.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Summoner/GCD/SMNGCD_PetIfritCrimson.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Summoner/GCD/SMNGCD_PetSummon.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Summoner/GCD/SMNGCD_RuinIV.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Summoner/SMN_SpellHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/DataBinding/DataBinding.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/DataBinding/Language.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Gamelog/AEGamelogManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Helper/GroupHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Helper/SpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/MainWindow.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Setting/Setting/GeneralSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/Setting/Setting/PaladinSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/Setting/Setting/SMNSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/Setting/Setting/SMNSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Utilities/CombatMessages/CombatMessageManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/GeneralSetting/UserControl_General.xaml" root0="FORCE_HIGHLIGHTING" />
@@ -221,7 +223,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656804570723</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Please use settings, don't mix class settings in DataBinding.cs. I beg of you keep it clean can't have everything everywhere it get's confusing.">
+      <created>1656805371170</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656805371170</updated>
+    </task>
+    <task id="LOCAL-00004" summary="changed to use it's own settings fiel :( Please...">
+      <created>1656805396745</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656805396745</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fixed the changes so that it reflect the new settings files.">
+      <created>1656805427177</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656805427177</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +277,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="moved most of the abilities to the correct regions. Please keep it tidy and make a region for each class or job." />
     <MESSAGE value="fixed some spell name to be showed properly in the toggle." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed some spell name to be showed properly in the toggle." />
+    <MESSAGE value="Please use settings, don't mix class settings in DataBinding.cs. I beg of you keep it clean can't have everything everywhere it get's confusing." />
+    <MESSAGE value="changed to use it's own settings fiel :( Please..." />
+    <MESSAGE value="fixed the changes so that it reflect the new settings files." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the changes so that it reflect the new settings files." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
