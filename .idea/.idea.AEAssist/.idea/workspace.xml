@@ -8,14 +8,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d4dd496-53f2-4f45-9759-e61919e0ca0f" name="Changes" comment="">
+    <list default="true" id="9d4dd496-53f2-4f45-9759-e61919e0ca0f" name="Changes" comment="added changes to sage; use Linq and added check if the dead player is targetable.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AEAssist/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AEAssist/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/View/SMNSettingView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/View/SMNSettingView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/GeneralAI/PhysicsRangeDPSHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/GeneralAI/PhysicsRangeDPSHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/DataBinding/Language.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/DataBinding/Language.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/Resources/Lan_en.json" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/Resources/Lan_en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/View/Overlay/SMNOverlayWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/View/Overlay/SMNOverlayWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/View/SMNSettingView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/View/SMNSettingView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/AEAssist/AEAssist.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AEAssist/AEAssist.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/AEAssist/AEAssist.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AEAssist/AEAssist.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/AEAssist/Resources/Lan_en.json" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AEAssist/Resources/Lan_en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/AETriggers/AETriggers.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AETriggers/AETriggers.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/AETriggers/AETriggers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AETriggers/AETriggers.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/1d/dffa6fec/Core.cs" root0="SKIP_HIGHLIGHTING" />
@@ -34,72 +50,37 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b04dc0027d9245d59f0781c8c53ad1565fe778/e9/72339056/FrameworkElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d672ef0d95b2449089b8789a939dfad252e5a0/9c/14294350/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d672ef0d95b2449089b8789a939dfad252e5a0/be/56cdaaaf/Single.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/AIRoot.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/AIRoot.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/CountDownHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/GunBreakerBattleData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/GunBreakerRotation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/GunBreakerSpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/GunBreaker_AIPriorityQueue.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/Opener_GunBreaker_90.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/AI/Monk/MonkBattleData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/AI/Monk/MonkCombatMessageStrategy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/AI/Monk/MonkRotation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/AI/Monk/MonkSpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/AI/Monk/Monk_AIPriority.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Reaper/Opener_Reaper_90.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/GCD/SageBaseGCD.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/OpenerSageStandard90.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Sage/OpenerSage_Test.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Sage/OpenerSage_Test.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/SageBattleData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Sage/SageRotation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/SageRotation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Sage/SageSpellHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/SageSpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/Sage_AIPriorityQueue.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_HissatsuKaiten.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_HissatsuSenei.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_HissatsuSenei.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_HissatsuShinten.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_HissatsuShinten.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_Ikishoten.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_Ikishoten.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_Ikishoten.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_MeikyoShisui.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_MeikyoShisui.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_Shoha.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_Shoha.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_TsubameGaeshi.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/GCD/SamuraiGCD_BaseGCDCombo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/GCD/SamuraiGCD_Fillers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/GCD/SamuraiGCD_Fillers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/GCD/SamuraiGCD_Fillers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/GCD/SamuraiGCD_Fillers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/GCD/SamuraiGCD_MidareSetsugekka.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Opener_SamuraiStandard_90.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Opener_SamuraiStandard_90.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/SamuraiBattleData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/SamuraiRotation.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/SamuraiSpellHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/SamuraiSpellHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/SamuraiSpellHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/SamuraiSpellHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/SamuraiSpellHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Samurai_AIPriorityQueue.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Samurai_AIPriorityQueue.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Samurai_AIPriorityQueue.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Samurai_AIPriorityQueue.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Samurai_AIPriorityQueue.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/DataBinding/Language.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/Define/SpellsDefine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/Define/SpellsDefine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/AI/Samurai/SamuraiSpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Gamelog/AEGamelogManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Helper/GroupHelper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/Helper/PotionHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/Helper/PotionHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Helper/SpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/MainWindow.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Setting/Setting/GeneralSettings.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/Setting/Setting/SageSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/Utilities/CombatMessages/CombatMessageManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/GeneralSetting/UserControl_General.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/GeneralSetting/UserControl_General.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Hotkey/BuiltinHotkeys/ArmLength.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/View/Overlay/SageOverlayWindow.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/View/Overlay/CombatMessageOverlay.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/View/Overlay/CombatMessageOverlay.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Overlay/UIComponent/OverlayUIComponent_BlackMageOverlay2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Overlay/UIComponent/OverlayUIComponent_DancerOverlay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Overlay/UIComponent/OverlayUIComponent_MCHOverlay.cs" root0="FORCE_HIGHLIGHTING" />

@@ -19,7 +19,6 @@ namespace AEAssist.AI.GeneralAI
 
             if (Core.Me.ContainAura(AurasDefine.Peloton, 100))
                 return false;
-
             if (await SpellsDefine.Peloton.DoAbility())
             {
                 GUIHelper.ShowInfo(Language.Instance.Content_Bard_PreCombat3);
