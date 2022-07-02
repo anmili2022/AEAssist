@@ -14,7 +14,7 @@ namespace AEAssist.AI.GunBreaker.GCD
             {
                 if (SpellsDefine.SonicBreak.IsReady()|| (SpellsDefine.DoubleDown.IsReady() && (ActionResourceManager.Gunbreaker.Cartridge>1)))
                     return -10;
-                if (SpellsDefine.Bloodfest.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds < 2000)
+                if (SpellsDefine.Bloodfest.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds < 2000 && ActionResourceManager.Gunbreaker.Cartridge > 0)
                     return -11;
                 return 100;
             }

@@ -23,7 +23,9 @@ namespace AEAssist.AI.GunBreaker.Ability
             if(ActionResourceManager.Gunbreaker.Cartridge != 3)
                 if(Core.Me.ClassLevel <88)
                     return 2;
-                else return -3;
+                else if(SpellsDefine.Bloodfest.GetSpellEntity().SpellData.IsReady())
+                    return 3;
+                else return -4;
 
             return 0;
         }
