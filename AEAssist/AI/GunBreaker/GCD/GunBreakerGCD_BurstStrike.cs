@@ -12,7 +12,8 @@ namespace AEAssist.AI.GunBreaker.GCD
         {
             if (ActionResourceManager.Gunbreaker.Cartridge == 0)
                 return -5;
-
+            if (TargetHelper.CheckNeedUseAOEByMe(5, 5, 2))
+                return -4;
             //子弹将要溢出
             if (ActionManager.LastSpell.Id == SpellsDefine.BrutalShell)
             {
@@ -23,7 +24,7 @@ namespace AEAssist.AI.GunBreaker.GCD
             }
 
             if (SpellsDefine.NoMercy.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds < 5000)
-                return -5;
+                return -7;
 
             //在无情中 泻子弹
             if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.NoMercy))
