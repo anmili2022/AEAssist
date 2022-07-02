@@ -65,6 +65,8 @@ namespace AEAssist
         public double OverlayPos_X { get; set; } = 60;
         public double OverlayPos_Y { get; set; } = 60;
 
+        [ValueRange(1500, 1900)] public int RegionOfAbility { get; set; } = 1500;
+
         public void Reset()
         {
             UserLatencyOffset = 50;

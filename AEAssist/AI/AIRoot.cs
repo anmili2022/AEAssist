@@ -235,11 +235,14 @@ namespace AEAssist.AI
             var canUseAbility = true;
             var delta = timeNow - battleData.lastCastTime;
             var coolDown = GetGCDDuration();
-
+            var time = SettingMgr.GetSetting<GeneralSettings>().RegionOfAbility;
+            var RegionOfAbility = coolDown - time;
+            if (RegionOfAbility > delta * 0.33f)
+                RegionOfAbility = delta * 0.33f;
             var canUseGCD = CanUseGCD();
             LogHelper.Debug($"CanUseGCD: {canUseGCD} coolDown: {coolDown} delta {delta}");
 
-            if (!canUseGCD && !Core.Me.IsCasting && battleData.maxAbilityTimes > 0 && coolDown - delta >= coolDown * 0.33f)
+            if (!canUseGCD && !Core.Me.IsCasting && battleData.maxAbilityTimes > 0 && coolDown - delta > RegionOfAbility)
                 canUseAbility = true;
             else
                 // LogHelper.Debug(
