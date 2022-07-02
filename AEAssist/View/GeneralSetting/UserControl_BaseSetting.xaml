@@ -34,6 +34,10 @@
                 <Label Content="{Binding Language.Textbox_AbilityTimesInGCD}" Width="150" />
                 <TextBox Width="150" Text="{Binding GeneralSettings.MaxAbilityTimsInGCD,Mode=TwoWay}" />
             </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10">
+                <Label Content="RegionOfAbility" Width="150" />
+                <TextBox Width="150" Text="{Binding GeneralSettings.RegionOfAbility,Mode=TwoWay}" />
+            </StackPanel>
             <CheckBox Name="NextAbilityFirst"
                       Content="{Binding Language.Toggle_NextAbilityFirst}" Width="150" Height="25" Margin="10"
                       HorizontalAlignment="Left"

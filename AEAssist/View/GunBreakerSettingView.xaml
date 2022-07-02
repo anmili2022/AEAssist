@@ -30,7 +30,7 @@
                 <CheckBox Name="EarlyDecisionMode"
                           Content="{Binding Language.Toggle_EarlyDecisionMode}" Width="200" Height="25"
                           HorizontalAlignment="Left"
-                          IsChecked="{Binding Settings.EarlyDecisionMode,Mode=TwoWay}" />
+                          IsChecked="{Binding GunBreakerSettings.EarlyDecisionMode,Mode=TwoWay}" />
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10">
                     <Label Content="UsePotionEarly(ms)" Width="120" />
                     <TextBox Width="100" Text="{Binding GunBreakerSettings.UsePotionEarly,Mode=TwoWay}" />
