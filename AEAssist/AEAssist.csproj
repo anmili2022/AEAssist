@@ -626,6 +626,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     </Compile>
     <Compile Include="View\Healer.xaml.cs">
       <DependentUpon>Healer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\GunBreakerSettingView.xaml.cs">
       <DependentUpon>GunBreakerSettingView.xaml</DependentUpon>
     </Compile>
@@ -816,7 +817,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Melee.xaml">
+    <Page Include="View\Melee.xaml" />
     <Page Include="View\GunBreakerSettingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -843,6 +844,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     </Page>
     <Page Include="View\AstrologianSettingView.xaml">
       <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Style\TabControlStyle1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

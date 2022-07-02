@@ -124,11 +124,7 @@ namespace AEAssist
         }
 
         public Composite CombatBuffBehavior { get; } = new TreeSharp.Action();
-
-
-        public Composite CombatBehavior { get; } = new TreeSharp.Action();
-        public Composite PullBuffBehavior { get; } = new TreeSharp.Action();
-
+        
         public Composite CombatBehavior{
             get
             {
