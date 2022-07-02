@@ -46,7 +46,7 @@ namespace AEAssist
 
 
         public HashSet<string> DotBlacklist { get; set; } = new HashSet<string>();
-        public int AutoFinalBurstCheckTime { get; set; } = 6000;
+        public int AutoFinalBurstCheckTime { get; set; } = 7000;
 
         public bool NextAbilityFirst { get; set; }
         public bool AutoSwitchTriggerLine { get; set; }
@@ -81,7 +81,7 @@ namespace AEAssist
             ShowToast = false;
             EarlyDecisionMode = true;
             AutoFinalBurst = true;
-            AutoFinalBurstCheckTime = 6000;
+            AutoFinalBurstCheckTime = 7000;
 
             DexPotionId = 36105; // 5级巧力
             StrPotionId = 36104; // 5级刚力
