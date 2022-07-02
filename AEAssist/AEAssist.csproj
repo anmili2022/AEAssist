@@ -381,6 +381,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Samurai\GCD\SamuraiGCD_Fillers.cs" />
     <Compile Include="AI\Samurai\GCD\SamuraiGCD_OddMinuteBurst.cs" />
     <Compile Include="AI\Samurai\GCD\SamuraiGCD_OgiNamikiriCombo.cs" />
+    <Compile Include="AI\Samurai\SamuraiCombatMessageStrategy.cs" />
     <Compile Include="AI\Samurai\Opener_SamuraiStandard_90.cs" />
     <Compile Include="AI\Samurai\SpellEvent\SpellEvent_GCD.cs" />
     <Compile Include="AI\Samurai\SpellQueue\SpellQueueSlot_KaeshiNamikiri.cs" />
@@ -695,6 +696,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Resource Include="Resources\Spells\Monk\RiddleofEarth.png" />
     <Resource Include="Resources\Spells\Monk\Six-sidedStar.png" />
     <Resource Include="Resources\Images\General\ArrowDownHighlighted.png" />
+    <Content Include="Resources\Images\General\ArrowSidesHighlighted.png" />
     <Content Include="Resources\Lan_zh-CN.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
