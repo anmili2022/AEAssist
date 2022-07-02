@@ -16,6 +16,11 @@ namespace AEAssist.AI.Samurai.Ability
                 return -3;
             }
 
+            if (ActionResourceManager.Samurai.Kenki == 100)
+            {
+                return 6;
+            }
+
             if (ActionResourceManager.Samurai.Kenki >= 25)
             {
                 if (bd.Bursting)
