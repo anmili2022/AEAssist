@@ -14,7 +14,8 @@ namespace AEAssist.AI.GunBreaker.Ability
                 return -1;
             if (!SpellsDefine.NoMercy.GetSpellEntity().SpellData.IsReady())
                 return -2;
-            if(TimeHelper.Now()- AIRoot.GetBattleData<BattleData>().lastCastTime < 1600)
+            var time = SettingMgr.GetSetting<GeneralSettings>().RegionOfAbility;
+            if (TimeHelper.Now()- AIRoot.GetBattleData<BattleData>().lastCastTime < time-300)
                 return -3;
 
             if (ActionResourceManager.Gunbreaker.SecondaryComboStage > 0)

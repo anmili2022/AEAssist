@@ -34,7 +34,8 @@ namespace AEAssist.AI.GunBreaker.GCD
                 if(SpellsDefine.DoubleDown.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds==0 && ActionResourceManager.Gunbreaker.Cartridge >1)
                     return -1;
                 //90级技能冷却时间<无情时间
-                else if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.NoMercy, (int)SpellsDefine.DoubleDown.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds))
+                else if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.NoMercy, (int)SpellsDefine.DoubleDown.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds)
+                    && ActionResourceManager.Gunbreaker.Cartridge > 1)
                     return -51;
                 else return 6;
             }
