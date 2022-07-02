@@ -59,8 +59,12 @@ namespace AEAssist.Gamelog
             if (SettingMgr.GetSetting<GeneralSettings>().ShowGameLog)
                 LogHelper.Info($"GameLog==> MessageType:{msgType.ToString()} Content:{content}");
         }
-        
-        
+
+        private HashSet<int> CheckTypes = new HashSet<int>()
+        {
+            185, 313, 569
+        };
+
 
         private void MessageRecevied(object sender, ChatEventArgs e)
         {
@@ -79,7 +83,8 @@ namespace AEAssist.Gamelog
                 }
                 AddBuffers((int) e.ChatLogEntry.MessageType, e.ChatLogEntry.Contents);
                 var type = (ushort) e.ChatLogEntry.MessageType;
-                if (type == 185 || type == 313)
+                
+                if (CheckTypes.Contains(type))
                 {
                     if (e.ChatLogEntry.Contents.Contains(Language.Instance.MessageLog_CountDown_BattleStart))
                     {
