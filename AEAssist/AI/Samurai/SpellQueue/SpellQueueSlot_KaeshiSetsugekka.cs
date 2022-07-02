@@ -1,8 +1,5 @@
-﻿using System;
-using AEAssist.Define;
+﻿using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot;
-using ff14bot.Managers;
 
 namespace AEAssist.AI.Samurai.SpellQueue
 {
@@ -14,11 +11,11 @@ namespace AEAssist.AI.Samurai.SpellQueue
         }
 
         public void Fill(SpellQueueSlot slot)
-        {   
+        {
             if (SpellsDefine.KaeshiSetsugekka.GetSpellEntity().SpellData.Charges > 0.99)
-            slot.SetGCDQueue((SpellsDefine.MidareSetsugekka, SpellTargetType.CurrTarget),
-                (SpellsDefine.KaeshiSetsugekka, SpellTargetType.CurrTarget));
-            
+                slot.SetGCDQueue((SpellsDefine.MidareSetsugekka, SpellTargetType.CurrTarget),
+                    (SpellsDefine.KaeshiSetsugekka, SpellTargetType.CurrTarget));
+
         }
     }
 }

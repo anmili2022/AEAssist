@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Media;
 using AEAssist.AI;
 using AEAssist.Helper;
-using ff14bot;
-using ff14bot.Managers;
 using PropertyChanged;
-using QuickGraph;
 
 namespace AEAssist
 {
@@ -59,9 +55,11 @@ namespace AEAssist
 
         public SageSettings SageSettings => SettingMgr.GetSetting<SageSettings>();
         public WhiteMageSettings WhiteMageSettings => SettingMgr.GetSetting<WhiteMageSettings>();
+        public AstSettings AstSettings => SettingMgr.GetSetting<AstSettings>();
         public DancerSettings DancerSettings => SettingMgr.GetSetting<DancerSettings>();
         public MonkSettings MonkSettings => SettingMgr.GetSetting<MonkSettings>();
         public SMNSettings SMNSettings => SettingMgr.GetSetting<SMNSettings>();
+        public PaladinSettings PaladinSettings => SettingMgr.GetSetting<PaladinSettings>();
         public GunBreakerSettings GunBreakerSettings => SettingMgr.GetSetting<GunBreakerSettings>();
         public DebugCenter DebugCenter => DebugCenter.Intance;
         public MeleePosition MeleePosition => MeleePosition.Intance;
@@ -121,6 +119,7 @@ namespace AEAssist
             SageSettings.LucidDreamingToggle = true;
             Wildfire = true;
             SMNReset();
+            PLDReset();
         }
 
 
@@ -181,15 +180,35 @@ namespace AEAssist
         public bool Crimson { get; set; } = true;
 
         public bool SaveInstantSpells { get; set; } = false;
-        #endregion
         public void SMNReset()
         {
             Crimson = true;
             SaveInstantSpells = false;
         }
+
+        #endregion
+
+        #region PLD
+        public bool Requiescat { get; set; } = true;
+        public bool IronWill { get; set; } = true;
+
+        public bool Intervene { get; set; } = true;
+
+        public bool Sheltron { get; set; } = true;
+        public void PLDReset()
+        {
+            Requiescat = true;
+            IronWill = true;
+            Intervene = true;
+            Sheltron = true;
+        }
+        #endregion
+
+
         #region GNB
         public bool GNBOpen { get; set; }=true;
         public bool GNBRoughDivide { get; set; } = true;
         #endregion
+
     }
 }

@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Managers;
 
 namespace AEAssist.AI.BlackMage.GCD
@@ -23,31 +22,31 @@ namespace AEAssist.AI.BlackMage.GCD
             {
                 return -10;
             }
-            
-            
-            
+
+
+
             //low level - no paradox
             // if we are in fire, use fire to refresh AF timer
             // if we have less than 2400 mana, skip refresh buff, go despair
             if (!SpellsDefine.Paradox.IsUnlock())
             {
                 if (ActionResourceManager.BlackMage.AstralStacks > 0 &&
-                    Core.Me.CurrentMana > 2400+1600)
+                    Core.Me.CurrentMana > 2400 + 1600)
                 {
                     return 1;
                 }
 
                 return -1;
             }
-            
+
             // with paradox
             if (!BlackMageHelper.IsParadoxReady())
             {
                 return -1;
             }
-            
+
             if (ActionResourceManager.BlackMage.AstralStacks > 0 &&
-                Core.Me.CurrentMana > 2400+1600)
+                Core.Me.CurrentMana > 2400 + 1600)
             {
                 return 1;
             }

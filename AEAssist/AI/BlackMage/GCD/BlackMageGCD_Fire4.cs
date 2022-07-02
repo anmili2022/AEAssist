@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Managers;
 
 namespace AEAssist.AI.BlackMage.GCD
@@ -17,7 +16,7 @@ namespace AEAssist.AI.BlackMage.GCD
             {
                 minmana = 2400;
             }
-            
+
             if (!SpellsDefine.Fire4.IsUnlock())
             {
                 // if (ActionResourceManager.BlackMage.AstralStacks > 0 && ActionResourceManager.BlackMage.StackTimer.TotalMilliseconds > 5000)
@@ -26,7 +25,7 @@ namespace AEAssist.AI.BlackMage.GCD
                     return 3;
                 }
             }
-            
+
             if (Core.Me.CurrentMana >= minmana &&
                 BlackMageHelper.IsMaxAstralStacks())
             {
@@ -38,13 +37,13 @@ namespace AEAssist.AI.BlackMage.GCD
                 var ParadoxCastTime = BlackMageHelper.GetSpellCastTimeSpan(SpellsDefine.Fire.GetSpellEntity());
                 if (ParadoxCastTime < TimeSpan.FromMilliseconds(2000))
                 { ParadoxCastTime = baseGCDTime; }
-                
+
                 if (ActionResourceManager.BlackMage.StackTimer > Fire4CastTime + ParadoxCastTime)
                 {
                     return 2;
                 }
             }
-            
+
             return -4;
         }
 

@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using AEAssist.AI.Sage;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
@@ -16,7 +15,7 @@ namespace AEAssist.AI.Dancer.GCD
             }
             if (AIRoot.Instance.CloseBurst)
                 return -5;
-            
+
             if (!SpellsDefine.TechnicalStep.IsReady())
             {
                 return -1;

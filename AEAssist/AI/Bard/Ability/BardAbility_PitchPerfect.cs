@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using AEAssist;
 using ff14bot.Managers;
 
 namespace AEAssist.AI.Bard.Ability

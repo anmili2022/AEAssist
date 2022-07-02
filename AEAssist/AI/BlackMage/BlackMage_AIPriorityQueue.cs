@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using AEAssist.AI.Bard.Ability;
 using AEAssist.AI.BlackMage.Ability;
 using AEAssist.AI.BlackMage.GCD;
-using AEAssist.Helper;
 using ff14bot.Enums;
 
 namespace AEAssist.AI.BlackMage

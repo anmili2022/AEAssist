@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using AEAssist.AI.GunBreaker.Ability;
+using AEAssist.AI.GunBreaker.GCD;
 using AEAssist.Helper;
 using ff14bot.Enums;
-using AEAssist.AI.GunBreaker.GCD;
-using AEAssist.AI.GunBreaker.Ability;
 
 namespace AEAssist.AI.Gunbreaker
 {

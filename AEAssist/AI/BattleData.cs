@@ -96,7 +96,7 @@ namespace AEAssist.AI
                 if (_NextGcdSpellId != null) GCDRetryEndTime = TimeHelper.Now() + 6000;
             }
         }
-        
+
         public SpellQueueSlot _NextSpellSlot;
 
         public SpellQueueSlot NextSpellSlot
@@ -110,7 +110,7 @@ namespace AEAssist.AI
         }
 
         public IAISpellQueue CurrApply { get; set; }
-        
+
         public int ApplyIndex = 0;
 
         public long GCDRetryEndTime;
@@ -145,7 +145,7 @@ namespace AEAssist.AI
 
         public void SetExecuted(string triggerId)
         {
-            ExecutedTriggers.Add(triggerId,0);
+            ExecutedTriggers.Add(triggerId, 0);
         }
 
         public long GetExecutedTriggersTime(string id)
@@ -153,20 +153,20 @@ namespace AEAssist.AI
             ExecutedTriggers.TryGetValue(id, out var time);
             return time;
         }
-        
+
         public long GetExecutedTriggersTime_And(List<string> ids)
         {
             long maxTime = 0;
             foreach (var v in ids)
             {
-                if (!ExecutedTriggers.TryGetValue(v,out var time))
+                if (!ExecutedTriggers.TryGetValue(v, out var time))
                     return 0;
                 if (time > maxTime)
                     maxTime = time;
             }
             return maxTime;
         }
-        
+
         public long GetExecutedTriggersTime_Or(List<string> ids)
         {
             foreach (var v in ids)

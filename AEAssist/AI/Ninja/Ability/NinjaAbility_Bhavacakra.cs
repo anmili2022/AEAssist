@@ -1,5 +1,4 @@
-﻿using System.CodeDom;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
@@ -41,7 +40,7 @@ namespace AEAssist.AI.Ninja.Ability
                             return 1;
                         }
                     }
-                    
+
                     else if (15 + currentNinki > 100)
                     {
                         return 1;

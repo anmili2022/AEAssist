@@ -2,7 +2,6 @@
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Managers;
 
 namespace AEAssist.AI.BlackMage.Ability
 {
@@ -13,7 +12,7 @@ namespace AEAssist.AI.BlackMage.Ability
             // if setting is no burst
             if (AIRoot.Instance.CloseBurst)
                 return -5;
-            
+
             if (!SpellsDefine.ManaFont.IsReady())
             {
                 return -1;

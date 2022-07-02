@@ -18,7 +18,7 @@ namespace AEAssist.AI.Ninja.GCD
 
             if (Core.Me.HasAura(AurasDefine.RaijuReady))
             {
-                if (AuraHelper.GetAuraStack(Core.Me,AurasDefine.RaijuReady)==3)
+                if (AuraHelper.GetAuraStack(Core.Me, AurasDefine.RaijuReady) == 3)
                 {
                     return -5;
                 }

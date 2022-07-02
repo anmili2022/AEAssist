@@ -13,7 +13,7 @@ namespace AEAssist.AI.BlackMage.SpellQueue
 
         public void Fill(SpellQueueSlot slot)
         {
-            slot.SetGCD(SpellsDefine.Fire4,SpellTargetType.CurrTarget);
+            slot.SetGCD(SpellsDefine.Fire4, SpellTargetType.CurrTarget);
         }
     }
 }

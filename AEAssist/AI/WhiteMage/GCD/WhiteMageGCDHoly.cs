@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Managers;
 
 namespace AEAssist.AI.WhiteMage.GCD
@@ -27,7 +26,7 @@ namespace AEAssist.AI.WhiteMage.GCD
 
         public async Task<SpellEntity> Run()
         {
-           
+
             var spell = WhiteMageSpellHelper.GetHoly();
             //spell.SpellTargetType = SpellTargetType.Self;
             if (spell == null) return null;

@@ -1,10 +1,8 @@
-using System;
 using System.Threading.Tasks;
 using AEAssist.AI.Ninja.SpellQueue;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Objects;
 
 namespace AEAssist.AI.Ninja.GCD
@@ -18,7 +16,7 @@ namespace AEAssist.AI.Ninja.GCD
                 return -10;
             }
             var target = Core.Me.CurrentTarget as Character;
-            
+
             if (target.ContainAura(AurasDefine.VulnerabilityTrickAttack))
             {
                 return 0;

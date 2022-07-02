@@ -2,6 +2,6 @@
 {
     public class SMN_BattleData : IBattleData
     {
-        
+
     }
 }

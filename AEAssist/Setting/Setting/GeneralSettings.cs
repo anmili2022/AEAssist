@@ -14,19 +14,19 @@ namespace AEAssist
             Reset();
         }
 
-        public int UserLatencyOffset { get; set; } 
-        [ValueRange(300, 700)] public int ActionQueueMs { get; set; } 
-        [ValueRange(1, 2)] public int MaxAbilityTimsInGCD { get; set; } 
+        public int UserLatencyOffset { get; set; }
+        [ValueRange(300, 700)] public int ActionQueueMs { get; set; }
+        [ValueRange(1, 2)] public int MaxAbilityTimsInGCD { get; set; }
         public int AnimationLockMs { get; set; }
 
         public bool EarlyDecisionMode { get; set; }
 
         public bool OpenTTK { get; set; }
         [ValueRange(1, 30)] public int TimeToKill_TimeInSec { get; set; }
-        [ValueRange(200000, 1000000)] public int TTK_IgnoreDamage { get; set; } 
+        [ValueRange(200000, 1000000)] public int TTK_IgnoreDamage { get; set; }
 
         public bool UsePotion { get; set; }
-        [ValueRange(1000, 5000)] public long UsePotionCountDown { get; set; } 
+        [ValueRange(1000, 5000)] public long UsePotionCountDown { get; set; }
 
         public bool ShowGameLog { get; set; }
         public bool ShowDebugLog { get; set; }
@@ -34,16 +34,16 @@ namespace AEAssist
         public bool ShowToast { get; set; }
 
         public bool ShowBattleTime { get; set; }
-        
+
         public bool UseCombatMessageOverlay { get; set; }
 
         public int DexPotionId { get; set; }
-        
+
         public int MindPotionId { get; set; }
 
         public int StrPotionId { get; set; }
-        
-        
+
+
 
         public HashSet<string> DotBlacklist { get; set; } = new HashSet<string>();
         public int AutoFinalBurstCheckTime { get; set; } = 6000;
@@ -96,7 +96,7 @@ namespace AEAssist
 
         public void OnLoad()
         {
-            
+
         }
     }
 }

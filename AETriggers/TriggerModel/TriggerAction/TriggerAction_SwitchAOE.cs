@@ -3,11 +3,11 @@ using PropertyChanged;
 
 namespace AEAssist.TriggerAction
 {
-    [Trigger("SwitchAOE",ParamTooltip = "0 = off, 1 = on")]
+    [Trigger("SwitchAOE", ParamTooltip = "0 = off, 1 = on")]
     [AddINotifyPropertyChangedInterface]
     public class TriggerAction_SwitchAOE : ITriggerAction
     {
-        public bool value{ get; set; }
+        public bool value { get; set; }
 
         public void WriteFromJson(string[] values)
         {
@@ -26,7 +26,7 @@ namespace AEAssist.TriggerAction
 
         public void Check()
         {
-            
+
         }
     }
 }

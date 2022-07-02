@@ -7,7 +7,6 @@ using AEAssist.Helper;
 using ff14bot.Enums;
 using ff14bot.Managers;
 using ff14bot.Objects;
-using Language = AEAssist.Language;
 
 namespace AEAssist.Gamelog
 {
@@ -47,7 +46,7 @@ namespace AEAssist.Gamelog
 
         private void AddBuffers(int msgType, string content)
         {
-            if (msgType >= 10 && msgType < (int) MessageType.Echo)
+            if (msgType >= 10 && msgType < (int)MessageType.Echo)
                 return;
             if (msgType > 1000)
                 return;
@@ -60,10 +59,12 @@ namespace AEAssist.Gamelog
                 LogHelper.Info($"GameLog==> MessageType:{msgType.ToString()} Content:{content}");
         }
 
+
         private HashSet<int> CheckTypes = new HashSet<int>()
         {
             185, 313, 569
         };
+
 
 
         private void MessageRecevied(object sender, ChatEventArgs e)
@@ -77,11 +78,12 @@ namespace AEAssist.Gamelog
                     for (int i = 0; i < names.Length; i++)
                     {
                         LogHelper.Info($"Index: {i} Name: {names[i]}");
-                        Index2Characters[i] =  names[i];
+                        Index2Characters[i] = names[i];
                     }
                     _action?.Invoke();
                 }
-                AddBuffers((int) e.ChatLogEntry.MessageType, e.ChatLogEntry.Contents);
+
+                AddBuffers((int)e.ChatLogEntry.MessageType, e.ChatLogEntry.Contents);
                 var type = (ushort) e.ChatLogEntry.MessageType;
                 
                 if (CheckTypes.Contains(type))
@@ -90,7 +92,7 @@ namespace AEAssist.Gamelog
                     {
                         var match = Regex.Match(e.ChatLogEntry.Contents,
                             Language.Instance.MessageLog_CountDown_BattleStartInTime);
-              
+
                         if (match.Success && int.TryParse(match.Value, out var restTime))
                         {
                             LogHelper.Info("StartCountDown: " + e.ChatLogEntry.Contents);

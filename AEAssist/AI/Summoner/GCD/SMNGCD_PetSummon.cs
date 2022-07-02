@@ -2,7 +2,6 @@
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot.Managers;
-using ff14bot;
 namespace AEAssist.AI.Summoner.GCD
 {
     public class SMNGCD_PetSummon : IAIHandler
@@ -51,22 +50,22 @@ namespace AEAssist.AI.Summoner.GCD
             return true;
         }
 
-     
 
-        static uint GetSpell() 
+
+        static uint GetSpell()
         {
-            
+
 
             if (DataBinding.Instance.SaveInstantSpells)
             {
-                if(ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.AvailablePetFlags.Ifrit))
+                if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.AvailablePetFlags.Ifrit))
                     return GetIfrit();
                 if (AIRoot.Instance.CloseBurst || !SMNGCD_Aethercharge.GetSpell().CoolDownInGCDs(8))
                     return 0;
             }
 
-            if (SwiftcastingSlipStream())
-                return GetGaruda();
+            //if (SwiftcastingSlipStream())
+            //    return GetGaruda();
 
             if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.AvailablePetFlags.Titan))
                 return GetTitan();

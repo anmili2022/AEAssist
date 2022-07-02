@@ -48,12 +48,9 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Reference Include="MongoDB.Bson, Version=2.15.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\MongoDB.Bson.2.15.0\lib\net472\MongoDB.Bson.dll</HintPath>
     </Reference>
-    <Reference Include="RebornBuddy">
+    <Reference Include="RebornBuddy, Version=1.0.476.0, Culture=neutral, PublicKeyToken=48d7174f8a943034, processorArchitecture=AMD64">
       <HintPath>..\References\RebornBuddy.exe</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="RebornBuddy, Version=1.0.473.0, Culture=neutral, PublicKeyToken=48d7174f8a943034">
-      <HintPath>..\References\RebornBuddy.exe</HintPath>
+      <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -181,6 +178,26 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
       <Link>TriggerModel\View\GUIToolTip.cs</Link>
     </Compile>
     <Compile Include="AI\AIMgrs.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityAstrodyne.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityCelestialIntersection.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityCrownPlay.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityDivination.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityDraw.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityEssentialDignity.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityExaltation.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityHalfPlay.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityLightspeed.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityLucidDreaming.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityMinorArcana.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityPlay.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityRedraw.cs" />
+    <Compile Include="AI\Astrologian\AstBattleData.cs" />
+    <Compile Include="AI\Astrologian\AstRotation.cs" />
+    <Compile Include="AI\Astrologian\AstSpellHelper.cs" />
+    <Compile Include="AI\Astrologian\Ast_AIPriorityQueue.cs" />
+    <Compile Include="AI\Astrologian\GCD\AstBaseGCD.cs" />
+    <Compile Include="AI\Astrologian\GCD\AstGCDAscend.cs" />
+    <Compile Include="AI\Astrologian\GCD\AstGCDDot.cs" />
     <Compile Include="AI\Bard\Ability\BardAbility_Barrage.cs" />
     <Compile Include="AI\Bard\Ability\BardAbility_Bloodletter.cs" />
     <Compile Include="AI\Bard\Ability\BardAbility_Buffs.cs" />
@@ -330,6 +347,24 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Ninja\SpellQueue\SpellQueue_Katon.cs" />
     <Compile Include="AI\Ninja\SpellQueue\SpellQueue_Raiton.cs" />
     <Compile Include="AI\Ninja\SpellQueue\SpellQueue_Suiton.cs" />
+    <Compile Include="AI\Paladin\Ability\PaladinAbility_Intervene.cs" />
+    <Compile Include="AI\Paladin\Ability\PaladinAbility_IronWill.cs" />
+    <Compile Include="AI\Paladin\Ability\PaladinAbility_Sheltron.cs" />
+    <Compile Include="AI\Paladin\Ability\PaladinAbility_CircleofScorn.cs" />
+    <Compile Include="AI\Paladin\Ability\PaladinAbility_Requiescat.cs" />
+    <Compile Include="AI\Paladin\Ability\PaladinAbility_SpiritsWithin.cs" />
+    <Compile Include="AI\Paladin\Ability\PaladinAbility_FightorFlight.cs" />
+    <Compile Include="AI\Paladin\Ability\PaladinAbility_Blank.cs" />
+    <Compile Include="AI\Paladin\GCD\PaladinGCD_Base.cs" />
+    <Compile Include="AI\Paladin\GCD\PaladinGCD_BladeofXX.cs" />
+    <Compile Include="AI\Paladin\GCD\PaladinGCD_HolySpirit.cs" />
+    <Compile Include="AI\Paladin\GCD\PaladinGCD_Ranged.cs" />
+    <Compile Include="AI\Paladin\GCD\PaladinGCD_Dot.cs" />
+    <Compile Include="AI\Paladin\GCD\PaladinGCD_Blank.cs" />
+    <Compile Include="AI\Paladin\Paladin_AIPriorityQueue.cs" />
+    <Compile Include="AI\Paladin\Paladin_BattleData.cs" />
+    <Compile Include="AI\Paladin\Paladin_Rotation.cs" />
+    <Compile Include="AI\Paladin\Paladin_SpellHelper.cs" />
     <Compile Include="AI\Reaper\SpellEvent\SpellEvent_EnshourdGCD.cs" />
     <Compile Include="AI\Reaper\SpellEvent\SpellEvent_Lemure.cs" />
     <Compile Include="AI\Sage\Ability\SageAbilityHaima.cs" />
@@ -352,6 +387,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Sage\GCD\SageGCDDot.cs" />
     <Compile Include="AI\Sage\GCD\SageGCDDyskrasia.cs" />
     <Compile Include="AI\Sage\GCD\SageGCDEgeiro.cs" />
+    <Compile Include="AI\Sage\GCD\SageGCDEukrasianDiagnosis.cs" />
     <Compile Include="AI\Sage\GCD\SageGCDPhlegma.cs" />
     <Compile Include="AI\Sage\GCD\SageGCDToxikon.cs" />
     <Compile Include="AI\Sage\OpenerSageStandard90.cs" />
@@ -505,6 +541,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="Rotations\Core\IRotation.cs" />
     <Compile Include="Rotations\Core\RotationManager.cs" />
     <Compile Include="Rotations\JobAttribute.cs" />
+    <Compile Include="Setting\Setting\AstSettings.cs" />
     <Compile Include="Setting\Setting\BlackMageSetting.cs" />
     <Compile Include="Setting\Setting\DancerSettings.cs" />
     <Compile Include="Setting\Setting\GunBreakerSettings.cs" />
@@ -514,6 +551,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="Setting\Setting\NinjaSettings.cs" />
     <Compile Include="Setting\Setting\ReaperSettings.cs" />
     <Compile Include="Setting\Setting\SageSettings.cs" />
+    <Compile Include="Setting\Setting\PaladinSettings.cs" />
     <Compile Include="Setting\Setting\SMNSettings.cs" />
     <Compile Include="Setting\Setting\SamuraiSettings.cs" />
     <Compile Include="Setting\Setting\WhiteMageSetting.cs" />
@@ -549,6 +587,23 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="View\BardSettingView.xaml.cs">
       <DependentUpon>BardSettingView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Overlay\PaladinOverlayWindow.xaml.cs">
+      <DependentUpon>PaladinOverlayWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_PaladinOverlay.cs" />
+    <Compile Include="View\Overlay\AstOverlayWindow.xaml.cs">
+      <DependentUpon>AstOverlayWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_AstOverlay.cs" />
+    <Compile Include="View\PaladinSettingView.xaml.cs">
+      <DependentUpon>PaladinSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tank.xaml.cs">
+      <DependentUpon>Tank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Caster.xaml.cs">
+      <DependentUpon>Caster.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CommonOverlay.xaml.cs">
       <DependentUpon>CommonOverlay.xaml</DependentUpon>
     </Compile>
@@ -569,6 +624,8 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="View\GeneralSetting\UserControl_Hotkey.xaml.cs">
       <DependentUpon>UserControl_Hotkey.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Healer.xaml.cs">
+      <DependentUpon>Healer.xaml</DependentUpon>
     <Compile Include="View\GunBreakerSettingView.xaml.cs">
       <DependentUpon>GunBreakerSettingView.xaml</DependentUpon>
     </Compile>
@@ -582,6 +639,9 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="View\Hotkey\IBuiltinHotkey.cs" />
     <Compile Include="View\MCHSettingView.xaml.cs">
       <DependentUpon>MCHSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Melee.xaml.cs">
+      <DependentUpon>Melee.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MeleeOverlay.xaml.cs">
       <DependentUpon>MeleeOverlay.xaml</DependentUpon>
@@ -647,11 +707,17 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_ReaperOverlay.cs" />
     <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_SageOverlay.cs" />
     <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_SamuraiOverlay.cs" />
+    <Compile Include="View\Ranged.xaml.cs">
+      <DependentUpon>Ranged.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ReaperSettingView.xaml.cs">
       <DependentUpon>ReaperSettingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SMNSettingView.xaml.cs">
       <DependentUpon>SMNSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AstrologianSettingView.xaml.cs">
+      <DependentUpon>AstrologianSettingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WhiteMageSettingView.xaml.cs">
       <DependentUpon>WhiteMageSettingView.xaml</DependentUpon>
@@ -682,6 +748,22 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="Setting\Setting\BardSettings.cs" />
     <Compile Include="Setting\Setting\GeneralSettings.cs" />
     <Compile Include="Setting\Setting\VersionSetting.cs" />
+    <Resource Include="Resources\Spells\Ast\AspectedHelios.png" />
+    <Resource Include="Resources\Spells\Ast\EarthlyStar.png" />
+    <Resource Include="Resources\Spells\Ast\Helios.png" />
+    <Resource Include="Resources\Spells\Ast\Macrocosmos.png" />
+    <Resource Include="Resources\Spells\Paladin\DivineVeil.png" />
+    <Resource Include="Resources\Spells\TankRoleActions\ArmsLength.png" />
+    <Resource Include="Resources\Spells\TankRoleActions\Interject.png" />
+    <Resource Include="Resources\Spells\TankRoleActions\LowBlow.png" />
+    <Resource Include="Resources\Spells\TankRoleActions\Provoke.png" />
+    <Resource Include="Resources\Spells\TankRoleActions\Rampart.png" />
+    <Resource Include="Resources\Spells\TankRoleActions\Reprisal.png" />
+    <Resource Include="Resources\Spells\TankRoleActions\Shirk.png" />
+    <Resource Include="Resources\Spells\Paladin\HallowedGround.png" />
+    <Resource Include="Resources\Spells\Paladin\Requiescat.png" />
+    <Resource Include="Resources\Spells\Paladin\Sentinel.png" />
+    <Resource Include="Resources\Spells\Paladin\Sheltron.png" />
     <Resource Include="Resources\Spells\MagicalRangedDPSRoleActions\Addle.png" />
     <Resource Include="Resources\Spells\MagicalRangedDPSRoleActions\LucidDreaming.png" />
     <Resource Include="Resources\Spells\MagicalRangedDPSRoleActions\Surecast.png" />
@@ -696,6 +778,11 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Resource Include="Resources\Spells\Monk\RiddleofEarth.png" />
     <Resource Include="Resources\Spells\Monk\Six-sidedStar.png" />
     <Resource Include="Resources\Images\General\ArrowDownHighlighted.png" />
+    <Resource Include="Resources\jobs\Caster.png" />
+    <Resource Include="Resources\jobs\Healer.png" />
+    <Resource Include="Resources\jobs\Melee.png" />
+    <Resource Include="Resources\jobs\Ranged.png" />
+    <Resource Include="Resources\jobs\Tank.png" />
     <Content Include="Resources\Lan_zh-CN.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -706,7 +793,30 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Resource Include="Resources\Spells\WhiteMage\PlenaryIndulgence.png" />
     <Resource Include="Resources\Spells\WhiteMage\PresenceofMind.png" />
     <Resource Include="Resources\Spells\WhiteMage\ThinAir.png" />
+    <Page Include="View\Overlay\PaladinOverlayWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Overlay\AstOverlayWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PaladinSettingView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Tank.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Caster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DancerSettingView.xaml" />
+    <Page Include="View\Healer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Melee.xaml">
     <Page Include="View\GunBreakerSettingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -724,9 +834,15 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Ranged.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SMNSettingView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\AstrologianSettingView.xaml">
+      <SubType>Designer</SubType>
     <Page Include="View\Style\TabControlStyle1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

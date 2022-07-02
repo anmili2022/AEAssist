@@ -1,9 +1,7 @@
 using System.Threading.Tasks;
-using AEAssist.AI.Sage;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Managers;
 
 namespace AEAssist.AI.Dancer.GCD
 {
@@ -59,7 +57,7 @@ namespace AEAssist.AI.Dancer.GCD
             }
             else
             {
-                if (TargetHelper.CheckNeedUseAOEByMe( 5, 5, 2))
+                if (TargetHelper.CheckNeedUseAOEByMe(5, 5, 2))
                 {
                     spell = SpellsDefine.RisingWindmill.GetSpellEntity();
                 }

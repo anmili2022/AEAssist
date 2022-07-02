@@ -1,8 +1,4 @@
-﻿using System;
-using AEAssist.Define;
-using AEAssist.Helper;
-using ff14bot;
-using ff14bot.Managers;
+﻿using AEAssist.Define;
 
 namespace AEAssist.AI.Samurai.SpellQueue
 {

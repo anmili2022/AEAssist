@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot;
-using ff14bot.Enums;
 
 namespace AEAssist.AI
 {
@@ -27,9 +24,9 @@ namespace AEAssist.AI
 
         private Dictionary<Type, IAISpellQueue> AllQueues
             = new Dictionary<Type, IAISpellQueue>();
-        
-        
-        
+
+
+
         public void Init()
         {
             AllQueues.Clear();
@@ -40,12 +37,12 @@ namespace AEAssist.AI
                     continue;
                 if (!baseType.IsAssignableFrom(type))
                     continue;
-                
+
                 AllQueues[type] = Activator.CreateInstance(type) as IAISpellQueue;
                 LogHelper.Debug($"Load IAISpellQueue: {type.Name}");
             }
         }
-        
+
 
         public void ClearApply()
         {
@@ -53,7 +50,7 @@ namespace AEAssist.AI
             AIRoot.GetBattleData<BattleData>().ApplyIndex = 0;
         }
 
-        public void Apply<T>() where T: IAISpellQueue
+        public void Apply<T>() where T : IAISpellQueue
         {
             var type = typeof(T);
             var battleData = AIRoot.GetBattleData<BattleData>();
@@ -62,7 +59,7 @@ namespace AEAssist.AI
                 return;
             }
 
-            LogHelper.Debug("ApplySlotQueue: "+type.Name);
+            LogHelper.Debug("ApplySlotQueue: " + type.Name);
             battleData.CurrApply = queue;
             battleData.ApplyIndex = 0;
         }
@@ -81,7 +78,7 @@ namespace AEAssist.AI
             if (!await spellQueue.ApplySlot())
             {
                 var slotProvider = battleData.CurrApply.SlotQueue[battleData.ApplyIndex];
-                if (slotProvider.Check(battleData.ApplyIndex)<0)
+                if (slotProvider.Check(battleData.ApplyIndex) < 0)
                 {
                     ClearApply();
                     return false;

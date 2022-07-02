@@ -2,7 +2,6 @@
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
-using ff14bot;
 using ff14bot.Enums;
 
 namespace AEAssist.AI.Gunbreaker
@@ -17,6 +16,8 @@ namespace AEAssist.AI.Gunbreaker
 
         public void Init()
         {
+            CountDownHandler.Instance.AddListener(300, () =>
+                SpellsDefine.LightningShot.DoGCD());
             int time = SettingMgr.GetSetting<GunBreakerSettings>().UsePotionEarly;
             if (time > 0)
             {                

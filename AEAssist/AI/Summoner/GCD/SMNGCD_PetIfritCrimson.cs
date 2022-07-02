@@ -1,21 +1,21 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot.Managers;
 using ff14bot;
+using ff14bot.Managers;
+
 namespace AEAssist.AI.Summoner.GCD
 {
     public class SMNGCD_PetIfritCrimson : IAIHandler
     {
-        static 
+        static
         uint spell;
         uint GetSpell()
         {
             if (Core.Me.HasAura(AurasDefine.IfritsFavor))
                 return SpellsDefine.CrimsonCyclone;
-            if (AIRoot.GetBattleData<BattleData>().lastGCDSpell !=null)
-                if (AIRoot.GetBattleData<BattleData>().lastGCDSpell.Id == SpellsDefine.CrimsonCyclone)
-                    return SpellsDefine.CrimsonStrike;
+            if (ActionManager.LastSpellId == SpellsDefine.CrimsonCyclone)
+                return SpellsDefine.CrimsonStrike;
             return 0;
         }
         public int Check(SpellEntity lastSpell)

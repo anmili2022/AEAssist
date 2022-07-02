@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
-using ff14bot;
 using AEAssist.Helper;
 using ff14bot.Managers;
 
@@ -12,7 +11,7 @@ namespace AEAssist.AI.GunBreaker.GCD
         {
             if (ActionResourceManager.Gunbreaker.SecondaryComboStage > 0)
             {
-                if (SpellsDefine.SonicBreak.IsReady()|| (SpellsDefine.DoubleDown.IsReady() && (ActionResourceManager.Gunbreaker.Cartridge>1)))
+                if (SpellsDefine.SonicBreak.IsReady() || (SpellsDefine.DoubleDown.IsReady() && (ActionResourceManager.Gunbreaker.Cartridge > 1)))
                     return -10;
                 if (SpellsDefine.Bloodfest.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds < 2000)
                     return -11;

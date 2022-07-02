@@ -17,22 +17,22 @@ namespace AEAssist.AI.Bard.GCD
 
             var aura = Core.Me.GetAuraById(AurasDefine.BlastArrowReady);
             var tar = Core.Me.CurrentTarget as Character;
-            
+
 
             if (aura.TimespanLeft.TotalMilliseconds <= 2500)
                 return 3;
-            
+
             if (BardSpellHelper.IsTargetNeedIronJaws(Core.Me.CurrentTarget as Character, 3000))
                 return -3;
 
             if (AIRoot.Instance.CloseBurst)
                 return 1;
-            
+
             if (TargetHelper.CheckNeedUseAOE(25, 2, ConstValue.BardAOECount))
                 return 5;
-            
+
             if (BardSpellHelper.Prepare2BurstBuffs()) return -4;
-            
+
             return 0;
         }
 

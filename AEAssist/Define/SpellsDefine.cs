@@ -73,6 +73,17 @@ namespace AEAssist.Define
             FormShift,
             Meditation,
             Mantra,
+
+
+
+            //SMN
+            SearingLight,
+            SummonCarbuncle,
+            RadiantAegis,
+
+
+
+
             
             //GNB
             DoubleDown,
@@ -80,6 +91,7 @@ namespace AEAssist.Define
             BowShock,
             DemonSlice,
             DemonSlaughter
+
 
         };
 

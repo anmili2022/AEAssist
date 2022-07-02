@@ -3,14 +3,14 @@ using PropertyChanged;
 
 namespace AEAssist.TriggerAction
 {
-    [Trigger("LockSpell 锁定技能",Tooltip = "whether to use specify spell",
+    [Trigger("LockSpell 锁定技能", Tooltip = "whether to use specify spell",
         ParamTooltip = "[SpellId],[1/0=lock/unlock]",
         Example = "12345,1")]
     [AddINotifyPropertyChangedInterface]
     public class TriggerAction_LockSpell : ITriggerAction
     {
-        public uint SpellId{ get; set; }
-        public bool Lock{ get; set; }
+        public uint SpellId { get; set; }
+        public bool Lock { get; set; }
 
         public void WriteFromJson(string[] values)
         {
@@ -31,7 +31,7 @@ namespace AEAssist.TriggerAction
 
         public void Check()
         {
-            
+
         }
     }
 }
