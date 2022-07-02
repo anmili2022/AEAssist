@@ -9,11 +9,6 @@ namespace AEAssist.AI.Samurai.Ability
     {
         public int Check(SpellEntity lastSpell)
         {
-            if (ActionResourceManager.Samurai.Kenki >= 90 && ActionResourceManager.Samurai.Kenki <= 100)
-            {
-                return 5;
-            }
-            
             var bd = AIRoot.GetBattleData<SamuraiBattleData>();
 
             if (SamuraiSpellHelper.SenCounts() == 3)
@@ -61,9 +56,12 @@ namespace AEAssist.AI.Samurai.Ability
                 // cooldown
                 if (ActionManager.LastSpellId == SpellsDefine.Kasha)
                 {
-                    LogHelper.Debug("Inside CoolDown");
-                    bd.burstingShintenCount = 0;
-                    return 0;
+                    if (ActionResourceManager.Samurai.Kenki >= 60 && ActionResourceManager.Samurai.Kenki <= 100)
+                    {
+                        LogHelper.Debug("Inside CoolDown");
+                        bd.burstingShintenCount = 0;
+                        return 5;
+                    }
                 }
             }
             return -1;
