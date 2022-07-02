@@ -696,7 +696,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Resource Include="Resources\Spells\Monk\RiddleofEarth.png" />
     <Resource Include="Resources\Spells\Monk\Six-sidedStar.png" />
     <Resource Include="Resources\Images\General\ArrowDownHighlighted.png" />
-    <Content Include="Resources\Images\General\ArrowSidesHighlighted.png" />
+    <Resource Include="Resources\Images\General\ArrowSidesHighlighted.png" />
     <Content Include="Resources\Lan_zh-CN.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

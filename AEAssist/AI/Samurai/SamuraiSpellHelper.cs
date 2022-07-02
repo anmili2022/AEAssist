@@ -476,5 +476,34 @@ namespace AEAssist.AI.Samurai
             if (false) ;
             return false;
         }
+
+        public static bool NeedToShowCombatMessage()
+        {
+            // Gekko
+            if (ActionManager.LastSpellId == SpellsDefine.Jinpu && Core.Me.CurrentTarget.IsBehind)
+            {
+                return false;
+            }
+            
+            // Kasha
+            if (ActionManager.LastSpellId == SpellsDefine.Shifu && Core.Me.CurrentTarget.IsFlanking)
+            {
+                return false;
+            }
+            
+            // Gekko
+            if (ActionManager.LastSpellId == SpellsDefine.Jinpu)
+            {
+                return true;
+            }
+            
+            // Kasha
+            if (ActionManager.LastSpellId == SpellsDefine.Shifu)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
