@@ -10,18 +10,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9d4dd496-53f2-4f45-9759-e61919e0ca0f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AEAssist/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AEAssist/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Machinist/Opener_MCH_70.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Machinist/Opener_MCH_70.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Machinist/Opener_MCH_80.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Machinist/Opener_MCH_80.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Machinist/Opener_MCH_90.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Machinist/Opener_MCH_90.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Reaper/Opener_Reaper_90.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Reaper/Opener_Reaper_90.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Sage/OpenerSageStandard90.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Sage/OpenerSageStandard90.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Sage/OpenerSage_Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Sage/OpenerSage_Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Samurai/Opener_SamuraiStandard_90.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Samurai/Opener_SamuraiStandard_90.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/Helper/DataHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/Helper/DataHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEAssist/View/Tank.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/View/Tank.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/AEAssist/AEAssist.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AEAssist/AEAssist.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/AEAssist/AEAssist.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AEAssist/AEAssist.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/View/SMNSettingView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/View/SMNSettingView.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,41 +18,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/05/758638f4/HitTestableOverlayWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/08/12e77e75/OverlayWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/1d/dffa6fec/Core.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/37/b7d7ee32/CrossRealmPartyMember.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/38/40eb0be2/Character.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/39/d45023a9/GameObjectManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/5d/7a4b0696/OverlayManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/6d/d2b8191a/GamelogManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/71/d93596d6/Auras.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/7a/8efe64d1/IOverlayControlHost.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/85/1d27e831/ActionManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/8d/b43ae4d9/MessageType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/8e/37364d56/GameObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/9b/6649e04c/PartyManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/bc/9e0f450f/TransparentWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/d1/131c914d/PartyMember.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/f2/e87146c8/OverlayControl.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09ceb4f54fe848f78074cee6816a2bc64b5200/f3/caee9903/ChatManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/109beb498e934204be8a5a52f9001eaf363d18/ea/38fba019/Queue`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377d90b6a60246c8b0fcf7d6e7b8f936568ba0/32/a5f277db/__Error.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377d90b6a60246c8b0fcf7d6e7b8f936568ba0/34/6182d5c6/FileIOPermission.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377d90b6a60246c8b0fcf7d6e7b8f936568ba0/a3/da5ef8ef/String.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377d90b6a60246c8b0fcf7d6e7b8f936568ba0/a7/a7499bb1/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7d39612108e2458e94ff49b9df8c12a4381980/f3/95701b93/FontStretch.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7d39612108e2458e94ff49b9df8c12a4381980/2a/fdde9ed0/EventRoute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7d39612108e2458e94ff49b9df8c12a4381980/40/2732006c/UIElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7d39612108e2458e94ff49b9df8c12a4381980/ad/4d4c8a6a/RoutedEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a100808abb8f41cdbec3b8a68145ac9517a2f8/ea/2cab248f/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b04dc0027d9245d59f0781c8c53ad1565fe778/1b/4d583ba5/ToolTipService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b04dc0027d9245d59f0781c8c53ad1565fe778/2e/368b3c68/Panel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b04dc0027d9245d59f0781c8c53ad1565fe778/9e/c6f1b736/Canvas.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b04dc0027d9245d59f0781c8c53ad1565fe778/2f/4304595f/TextBlock.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b04dc0027d9245d59f0781c8c53ad1565fe778/38/46603bd5/ListBox.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b04dc0027d9245d59f0781c8c53ad1565fe778/4c/f8078a18/FileDialog.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b04dc0027d9245d59f0781c8c53ad1565fe778/56/f348577a/Control.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b04dc0027d9245d59f0781c8c53ad1565fe778/cd/383d4d46/Selector.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b04dc0027d9245d59f0781c8c53ad1565fe778/db/e5bc15ff/Window.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b04dc0027d9245d59f0781c8c53ad1565fe778/e9/72339056/FrameworkElement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d672ef0d95b2449089b8789a939dfad252e5a0/5d/f9356efc/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d672ef0d95b2449089b8789a939dfad252e5a0/6e/c661ed96/BindingFlags.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d672ef0d95b2449089b8789a939dfad252e5a0/c7/1e1a495b/Type.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d672ef0d95b2449089b8789a939dfad252e5a0/c9/aa7e8f2d/String.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d672ef0d95b2449089b8789a939dfad252e5a0/e1/90184b93/AttributeUsageAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d672ef0d95b2449089b8789a939dfad252e5a0/fe/a6a571f5/Int32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d672ef0d95b2449089b8789a939dfad252e5a0/9c/14294350/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d672ef0d95b2449089b8789a939dfad252e5a0/be/56cdaaaf/Single.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/AIRoot.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/AIRoot.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/CountDownHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/GunBreakerBattleData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/GunBreakerRotation.cs" root0="FORCE_HIGHLIGHTING" />
@@ -71,13 +43,63 @@
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/GunBreaker_AIPriorityQueue.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/Opener_GunBreaker_90.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/Reaper/Opener_Reaper_90.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/GCD/SageBaseGCD.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/OpenerSageStandard90.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Sage/OpenerSage_Test.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Sage/OpenerSage_Test.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/SageBattleData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Sage/SageRotation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/SageRotation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/SageSpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/AI/Sage/Sage_AIPriorityQueue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_HissatsuKaiten.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_HissatsuSenei.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_HissatsuSenei.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_HissatsuShinten.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_HissatsuShinten.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_Ikishoten.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_Ikishoten.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_Ikishoten.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_MeikyoShisui.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_MeikyoShisui.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_Shoha.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_Shoha.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Ability/SamuraiAbility_TsubameGaeshi.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/GCD/SamuraiGCD_BaseGCDCombo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/GCD/SamuraiGCD_Fillers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/GCD/SamuraiGCD_Fillers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/GCD/SamuraiGCD_Fillers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/GCD/SamuraiGCD_Fillers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/GCD/SamuraiGCD_MidareSetsugekka.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Opener_SamuraiStandard_90.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Opener_SamuraiStandard_90.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/SamuraiBattleData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/SamuraiRotation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/SamuraiSpellHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/SamuraiSpellHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/SamuraiSpellHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/SamuraiSpellHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/SamuraiSpellHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Samurai_AIPriorityQueue.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Samurai_AIPriorityQueue.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Samurai_AIPriorityQueue.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Samurai_AIPriorityQueue.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/AI/Samurai/Samurai_AIPriorityQueue.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/DataBinding/Language.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/Define/SpellsDefine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/Define/SpellsDefine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Gamelog/AEGamelogManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/Helper/GroupHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/Helper/PotionHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/Helper/PotionHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Helper/SpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/MainWindow.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Setting/Setting/GeneralSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/Setting/Setting/SageSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/GeneralSetting/UserControl_General.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/GeneralSetting/UserControl_General.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Hotkey/BuiltinHotkeys/ArmLength.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Black/RiderProjects/AEAssist/AEAssist/AEAssist/View/Overlay/SageOverlayWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Overlay/UIComponent/OverlayUIComponent_BlackMageOverlay2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Overlay/UIComponent/OverlayUIComponent_DancerOverlay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/View/Overlay/UIComponent/OverlayUIComponent_MCHOverlay.cs" root0="FORCE_HIGHLIGHTING" />
@@ -100,20 +122,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "File.Encoding",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Project.AETriggers">
     <configuration name="AEAssistLoader" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -227,5 +249,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#AETriggers.Model" memberName="GroupId" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
