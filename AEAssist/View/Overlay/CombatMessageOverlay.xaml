@@ -26,7 +26,7 @@
         <!-- <Grid.Background> -->
         <!--     <SolidColorBrush Color="White" Opacity="{Binding BaseSettingsInstance.CombatMessageOverlayAdjustable, Converter={StaticResource BooleanToOpaqueConverter}, Mode=OneWay}"/> -->
         <!-- </Grid.Background> -->
-        <Image Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Margin="0,0,15,0" Stretch="Uniform" Source="{Binding CombatOverlayMessage.ImageSource, Mode=OneWay}"/>
+        <Image Width="200" Height="200" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Margin="0,0,15,0" Stretch="Uniform" Source="{Binding CombatOverlayMessage.ImageSource, Mode=OneWay}"/>
         <Viewbox Grid.Column="1" Grid.Row="0" Stretch="Uniform" HorizontalAlignment="Left">
             <TextBlock
                 Text="{Binding CombatOverlayMessage.Message, Mode=OneWay}"
