@@ -727,6 +727,10 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Page Include="View\SMNSettingView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\Style\TabControlStyle1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\WhiteMageSettingView.xaml">
       <SubType>Designer</SubType>
     </Page>

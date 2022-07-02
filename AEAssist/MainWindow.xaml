@@ -15,6 +15,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/AEAssist;component/View/Style/Button.xaml" />
                 <ResourceDictionary Source="/AEAssist;component/View/Style/CheckBox.xaml" />
+                <ResourceDictionary Source="/AEAssist;component/View/Style/TabControlStyle1.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -35,7 +36,7 @@
 
         <StackPanel>
             <Border CornerRadius="3" VerticalAlignment="Top">
-                <TabControl
+                <TabControl Style="{DynamicResource TabControlStyle1}"
                     Background="Transparent"
                     TabStripPlacement="Left"
                     Height="450">
@@ -161,6 +162,19 @@
                         </TabItem.LayoutTransform>
                         <view:WhiteMageSettingView HorizontalAlignment="Center" />
                     </TabItem>
+
+                    <TabItem Width="50" Height="50">
+                        <TabItem.Header>
+                            <Image Margin="5" Source="Resources/jobs/gnb-framed.png" />
+                        </TabItem.Header>
+                        <TabItem.LayoutTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="90" />
+                            </TransformGroup>
+                        </TabItem.LayoutTransform>
+                        <view:GunBreakerSettingView HorizontalAlignment="Center" />
+                    </TabItem>
+                    
                 </TabControl>
             </Border>
             <Border>
