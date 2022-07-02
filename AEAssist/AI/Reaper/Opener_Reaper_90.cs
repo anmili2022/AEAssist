@@ -14,7 +14,7 @@ namespace AEAssist.AI.Reaper
     {
         public int Check()
         {
-            if (PartyManager.NumMembers <= 4)
+            if (PartyManager.NumMembers <= 4 && !Core.Me.CurrentTarget.IsDummy())
                 return -5;
             if (!AEAssist.DataBinding.Instance.Burst)
                 return -100;

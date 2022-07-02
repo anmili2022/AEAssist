@@ -14,7 +14,7 @@ namespace AEAssist.AI.Sage
     {
         public int Check()
         {
-            if (!Core.Me.CurrentTarget.IsBoss() && PartyManager.NumMembers <= 4)
+            if (PartyManager.NumMembers <= 4 && !Core.Me.CurrentTarget.IsDummy())
                 return -5;
 
             return 0;

@@ -9,8 +9,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d4dd496-53f2-4f45-9759-e61919e0ca0f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/AEAssist/Setting/Setting/GeneralSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/Setting/Setting/GeneralSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/AEAssist/Resources/Lan_default.json" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AEAssist/Resources/Lan_default.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AEAssist/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AEAssist/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Machinist/Opener_MCH_70.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Machinist/Opener_MCH_70.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Machinist/Opener_MCH_80.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Machinist/Opener_MCH_80.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Machinist/Opener_MCH_90.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Machinist/Opener_MCH_90.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Reaper/Opener_Reaper_90.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Reaper/Opener_Reaper_90.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Sage/OpenerSageStandard90.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Sage/OpenerSageStandard90.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Sage/OpenerSage_Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Sage/OpenerSage_Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/AI/Samurai/Opener_SamuraiStandard_90.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/AI/Samurai/Opener_SamuraiStandard_90.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/Helper/DataHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/Helper/DataHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEAssist/View/Tank.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AEAssist/View/Tank.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/AEAssist/AEAssist.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AEAssist/AEAssist.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/AEAssist/AEAssist.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Output/AEAssist/AEAssist.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +70,7 @@
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/GunBreakerSpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/GunBreaker_AIPriorityQueue.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/AI/GunBreaker/Opener_GunBreaker_90.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AEAssist/AI/Reaper/Opener_Reaper_90.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AEAssist/AI/Reaper/Opener_Reaper_90.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Gamelog/AEGamelogManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/Helper/SpellHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AEAssist/MainWindow.xaml" root0="FORCE_HIGHLIGHTING" />
@@ -184,7 +195,7 @@
       <workItem from="1656334529249" duration="975000" />
       <workItem from="1656335830876" duration="247000" />
       <workItem from="1656762211447" duration="987000" />
-      <workItem from="1656768712854" duration="291000" />
+      <workItem from="1656768712854" duration="2302000" />
     </task>
     <servers />
   </component>
