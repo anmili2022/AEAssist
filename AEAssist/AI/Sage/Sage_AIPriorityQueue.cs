@@ -19,8 +19,6 @@ namespace AEAssist.AI.Sage
             new SageGCDEukrasianDiagnosis(),
             new SageBaseGCD(),
             new SageGCDDyskrasia(),
-            
-
         };
 
         public List<IAIHandler> AbilityQueue { get; } = new List<IAIHandler>()

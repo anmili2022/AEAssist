@@ -186,9 +186,9 @@ namespace AEAssist
         
         #region PLD
 
-        public string TextBox_PLD_ReserveManaPercentage { get; set; }
-        public string TextBox_PLD_SheltronThreshold { get; set; }
-        public string Textbox_PLD_FightorFlightTiming { get; set; }
+        public string TextBox_ReserveManaPercentage { get; set; }
+        public string TextBox_SheltronThreshold { get; set; }
+        public string Textbox_FightorFlightTiming { get; set; }
         public string Toggle_Requiescat { get; set; }
         public string Toggle_Intervene { get; set; }
         public string Toggle_IronWill { get; set; }
