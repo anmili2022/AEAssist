@@ -118,8 +118,8 @@ namespace AEAssist
             UseMeikyoShisui = true;
             SageSettings.LucidDreamingToggle = true;
             Wildfire = true;
-            SMNSettings.SMNReset();
-            PaladinSettings.PLDReset();
+            SMNSettings.ResetToggles();
+            PaladinSettings.ResetToggles();
         }
 
 

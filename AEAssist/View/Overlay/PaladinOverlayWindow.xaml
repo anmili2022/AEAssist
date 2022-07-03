@@ -80,21 +80,21 @@
                         <CheckBox HorizontalContentAlignment="Center"
                                   Content="{Binding Language.Toggle_IronWill}"
                                   Style="{StaticResource CheckBoxOverlayCustomToggle}"
-                                  IsChecked="{Binding IronWill,Mode=TwoWay}"/>
+                                  IsChecked="{Binding PaladinSettings.IronWill,Mode=TwoWay}"/>
 
 
                         <CheckBox HorizontalContentAlignment="Center"
                                   Content="{Binding Language.Toggle_Intervene}"
                                   Style="{StaticResource CheckBoxOverlayCustomToggle}"
-                                  IsChecked="{Binding Intervene,Mode=TwoWay}"/>
+                                  IsChecked="{Binding PaladinSettings.Intervene,Mode=TwoWay}"/>
                         <CheckBox HorizontalContentAlignment="Center"
                                   Content="{Binding Language.Toggle_Requiescat}"
                                   Style="{StaticResource CheckBoxOverlayCustomToggle}"
-                                  IsChecked="{Binding Requiescat,Mode=TwoWay}"/>
+                                  IsChecked="{Binding PaladinSettings.Requiescat,Mode=TwoWay}"/>
                         <CheckBox HorizontalContentAlignment="Center"
                                   Content="{Binding Language.Toggle_Sheltron}"
                                   Style="{StaticResource CheckBoxOverlayCustomToggle}"
-                                  IsChecked="{Binding Sheltron,Mode=TwoWay}"/>
+                                  IsChecked="{Binding PaladinSettings.Sheltron,Mode=TwoWay}"/>
 
 
                     </WrapPanel>

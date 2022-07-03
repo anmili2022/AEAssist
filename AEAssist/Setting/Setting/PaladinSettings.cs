@@ -29,7 +29,7 @@ namespace AEAssist
         public bool Intervene { get; set; } = true;
 
         public bool Sheltron { get; set; } = true;
-        public void PLDReset()
+        public void ResetToggles()
         {
             Requiescat = true;
             IronWill = true;

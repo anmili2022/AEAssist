@@ -36,7 +36,7 @@ namespace AEAssist
         public bool Crimson { get; set; } = true;
 
         public bool SaveInstantSpells { get; set; } = false;
-        public void SMNReset()
+        public void ResetToggles()
         {
             Crimson = true;
             SaveInstantSpells = false;

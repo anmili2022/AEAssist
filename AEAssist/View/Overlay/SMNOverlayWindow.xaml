@@ -73,12 +73,12 @@
                         <CheckBox  Width="100" HorizontalContentAlignment="Center"
                                   Content="{Binding Language.Toggle_SaveInstantSpells}"
                                   Style="{StaticResource CheckBoxOverlayCustomToggle}"
-                                  IsChecked="{Binding SaveInstantSpells, Mode=TwoWay}"
+                                  IsChecked="{Binding SMNSettings.SaveInstantSpells, Mode=TwoWay}"
                                   ToolTip="{Binding Language.ToolTip_SaveInstantSpells}"/>
                         <CheckBox HorizontalContentAlignment="Center"
                                   Content="{Binding Language.Toggle_CrimsonCyclone}"
                                   Style="{StaticResource CheckBoxOverlayCustomToggle}"
-                                  IsChecked="{Binding Crimson, Mode=TwoWay}"/>
+                                  IsChecked="{Binding SMNSettings.Crimson, Mode=TwoWay}"/>
                     </WrapPanel>
                     <WrapPanel Margin="10">
 
