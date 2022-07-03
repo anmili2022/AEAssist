@@ -3,3 +3,4 @@
 *.zip
 .vs
 Temp*.json
+.idea/.idea.AEAssist/.idea/workspace.xml
