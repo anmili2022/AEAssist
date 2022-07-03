@@ -477,16 +477,10 @@ namespace AEAssist.AI.Samurai
             return false;
         }
 
-        public static bool NeedToShowCombatMessage()
+        public static bool GekkoPOSCheck()
         {
             // Gekko
             if (ActionManager.LastSpellId == SpellsDefine.Jinpu && Core.Me.CurrentTarget.IsBehind)
-            {
-                return false;
-            }
-            
-            // Kasha
-            if (ActionManager.LastSpellId == SpellsDefine.Shifu && Core.Me.CurrentTarget.IsFlanking)
             {
                 return false;
             }
@@ -495,6 +489,17 @@ namespace AEAssist.AI.Samurai
             if (ActionManager.LastSpellId == SpellsDefine.Jinpu)
             {
                 return true;
+            }
+            
+            return false;
+        }
+        
+        public static bool KashaPOSCheck()
+        {
+            // Kasha
+            if (ActionManager.LastSpellId == SpellsDefine.Shifu && Core.Me.CurrentTarget.IsFlanking)
+            {
+                return false;
             }
             
             // Kasha

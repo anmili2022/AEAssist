@@ -27,14 +27,14 @@ namespace AEAssist.AI.Samurai
                  new CombatMessageStrategy(300,
                      "GEKKO => BEHIND !!!",
                      "/AEAssist;component/Resources/Images/General/ArrowDownHighlighted.png",
-                     SamuraiSpellHelper.NeedToShowCombatMessage)
+                     SamuraiSpellHelper.GekkoPOSCheck)
              );
              
              CombatMessageManager.RegisterMessageStrategy(
                  new CombatMessageStrategy(400,
                      "KASHA => SIDE !!!",
                      "/AEAssist;component/Resources/Images/General/ArrowSidesHighlighted.png",
-                     SamuraiSpellHelper.NeedToShowCombatMessage)
+                     SamuraiSpellHelper.KashaPOSCheck)
              );
         }
     }
