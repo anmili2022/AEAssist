@@ -60,6 +60,7 @@ namespace AEAssist
         public MonkSettings MonkSettings => SettingMgr.GetSetting<MonkSettings>();
         public SMNSettings SMNSettings => SettingMgr.GetSetting<SMNSettings>();
         public PaladinSettings PaladinSettings => SettingMgr.GetSetting<PaladinSettings>();
+        public GunBreakerSettings GunBreakerSettings => SettingMgr.GetSetting<GunBreakerSettings>();
         public DebugCenter DebugCenter => DebugCenter.Intance;
         public MeleePosition MeleePosition => MeleePosition.Intance;
 
@@ -184,6 +185,7 @@ namespace AEAssist
             Crimson = true;
             SaveInstantSpells = false;
         }
+
         #endregion
 
         #region PLD
@@ -202,6 +204,11 @@ namespace AEAssist
         }
         #endregion
 
+
+        #region GNB
+        public bool GNBOpen { get; set; }=true;
+        public bool GNBRoughDivide { get; set; } = true;
+        #endregion
 
     }
 }

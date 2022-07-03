@@ -40,5 +40,10 @@ namespace AEAssist.Helper
             return unit != null &&
                    (BossDictionary.ContainsKey(unit.NpcId) || unit.EnglishName.Contains("Dummy"));
         }
+        
+        public static bool IsDummy(this GameObject unit)
+        {
+            return unit != null && unit.EnglishName.Contains("Dummy");
+        }
     }
 }

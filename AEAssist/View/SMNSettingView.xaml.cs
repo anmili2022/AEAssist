@@ -12,9 +12,9 @@ namespace AEAssist.View
 
             var swiftcastOption = new Dictionary<int, string>
             {
-                { 0, "不使用" },
-                { 1, "螺旋气流" },
-                { 2, "螺旋气流/红宝石" }
+                { 0, "None/不使用" },
+                { 1, "Slipstream/螺旋气流" },
+                { 2, "Ruby Catastrophe/螺旋气流/红宝石" }
             };
             SwiftcastOption.ItemsSource = swiftcastOption;
             SwiftcastOption.SelectedIndex = SettingMgr.GetSetting<SMNSettings>().SwiftcastOption;

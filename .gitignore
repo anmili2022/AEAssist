@@ -2,5 +2,4 @@
 **/bin/
 *.zip
 .vs
-.idea
 Temp*.json

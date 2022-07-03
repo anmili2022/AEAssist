@@ -72,6 +72,7 @@ namespace AEAssist
         public string Toggle_SwiftCast { get; set; }
         public string Heal { get; set; }
         public string Half { get; set; }
+        public string UseCDPull { get; set; }
 
         #endregion
 
@@ -218,6 +219,7 @@ namespace AEAssist
         public string Textbox_SMN_SwiftcastOption { get; set; }
         public string Toggle_SMN_Crimson { get; set; }
 
+
         public string TextBox_PLD_ReserveManaPercentage { get; set; }
         public string TextBox_PLD_SheltronThreshold { get; set; }
         public string Textbox_PLD_FightorFlightTiming { get; set; }
@@ -226,5 +228,11 @@ namespace AEAssist
         public string Toggle_IronWill { get; set; }
         public string ToolTip_PLD_FinalBurst { get; set; }
         public string Toggle_Sheltron { get; set; }
-        }
+        #region GNB
+        public string Toggle_GNB_Open { get; set; }
+        public string Toggle_GNB_RoughDivide { get; set; }
+        #endregion
+
+    }
+
 }

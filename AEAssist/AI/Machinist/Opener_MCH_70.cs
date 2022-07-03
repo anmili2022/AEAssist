@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Opener;
+using ff14bot;
 using ff14bot.Enums;
 using ff14bot.Managers;
 
@@ -13,7 +14,7 @@ namespace AEAssist.AI.Machinist
     {
         public int Check()
         {
-            if (PartyManager.NumMembers <= 4)
+            if (PartyManager.NumMembers <= 4 && !Core.Me.CurrentTarget.IsDummy())
                 return -5;
             if (ActionResourceManager.Machinist.Heat >= 50)
                 return -1;

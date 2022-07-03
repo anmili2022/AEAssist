@@ -20,7 +20,7 @@ namespace AEAssist.AI.Sage
                 return -5;
             }
 
-            if (PartyManager.NumMembers <= 4)
+            if (PartyManager.NumMembers <= 4 && !Core.Me.CurrentTarget.IsDummy())
             {
                 LogHelper.Debug("Not running Opener party is less than or equal to 4..");
                 return -5;

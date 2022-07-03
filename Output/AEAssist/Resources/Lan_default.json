@@ -35,6 +35,7 @@
   "Toggle_SwiftCast" : "SwiftCast",
   "Heal" : "Heal",
   "Half" : "Half",
+  "UseCDPull" : "UseCDPull",
   "Toggle_UseEnshroud" : "UseEnshroud",
   "Toggle_UseHarpe" : "UseHarpe",
   "Toggle_UseTrueNorthWhenMissActionDir" : "UseTrueNorthWhenMissActionDir",
@@ -143,5 +144,7 @@
   "Toggle_Intervene" : "Intervene",
   "Toggle_IronWill" : "IronWill",
   "ToolTip_PLD_FinalBurst" : "PLD",
-  "Toggle_Sheltron" : "Sheltron"
+  "Toggle_Sheltron" : "Sheltron",
+  "Toggle_GNB_Open" : "GNB",
+  "Toggle_GNB_RoughDivide" : "GNB"
 }
