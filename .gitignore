@@ -1,6 +1,7 @@
 **/obj/
 **/bin/
 *.zip
+*.rar
 .vs
 Temp*.json
-.idea/.idea.AEAssist/.idea/workspace.xml
+.idea
