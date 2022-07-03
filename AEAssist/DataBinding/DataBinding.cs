@@ -119,7 +119,7 @@ namespace AEAssist
             SageSettings.LucidDreamingToggle = true;
             Wildfire = true;
             SMNSettings.SMNReset();
-            PaladinSettings. PLDReset();
+            PaladinSettings.PLDReset();
         }
 
 
