@@ -9,7 +9,7 @@
              xmlns:style="clr-namespace:AEAssist.View.Style"
              xmlns:generalSetting="clr-namespace:AEAssist.View.GeneralSetting"
              mc:Ignorable="d"
-             Height="350" Width="600">
+             Height="500" Width="600">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
