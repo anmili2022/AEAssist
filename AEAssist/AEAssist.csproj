@@ -191,12 +191,14 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Astrologian\Ability\AstAbilityMinorArcana.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityPlay.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityRedraw.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityUsePotion.cs" />
     <Compile Include="AI\Astrologian\AstBattleData.cs" />
     <Compile Include="AI\Astrologian\AstRotation.cs" />
     <Compile Include="AI\Astrologian\AstSpellHelper.cs" />
     <Compile Include="AI\Astrologian\Ast_AIPriorityQueue.cs" />
     <Compile Include="AI\Astrologian\GCD\AstBaseGCD.cs" />
     <Compile Include="AI\Astrologian\GCD\AstGCDAscend.cs" />
+    <Compile Include="AI\Astrologian\GCD\AstGCDAspectedBenefic.cs" />
     <Compile Include="AI\Astrologian\GCD\AstGCDDot.cs" />
     <Compile Include="AI\Bard\Ability\BardAbility_Barrage.cs" />
     <Compile Include="AI\Bard\Ability\BardAbility_Bloodletter.cs" />

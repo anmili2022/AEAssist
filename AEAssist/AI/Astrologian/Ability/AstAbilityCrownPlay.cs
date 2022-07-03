@@ -17,6 +17,8 @@ namespace AEAssist.AI.Astrologian.Ability
         {
 
             if (!SpellsDefine.CrownPlay.IsReady()) return -1;
+            if (AIRoot.Instance.CloseBurst)
+                return -3;
             if (!(Core.Me.HasAura(AurasDefine.LordOfCrownsDrawn) || Core.Me.HasAura(AurasDefine.LadyOfCrownsDrawn))) return -2;
             if (Core.Me.HasAura(AurasDefine.LordOfCrownsDrawn))
             {

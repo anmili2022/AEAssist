@@ -120,5 +120,6 @@
   
   "Toggle_Requiescat": "安魂祈祷",
   "ToolTip_PLD_FinalBurst": "资源倾斜，目前没用",
-  "Toggle_Sheltron": "盾阵"
+  "Toggle_Sheltron": "盾阵",
+  "ToolTip_Ast_Burst":"关闭后不使用占卜，抽卡，出卡"
 }

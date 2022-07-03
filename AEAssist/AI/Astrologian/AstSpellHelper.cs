@@ -575,5 +575,13 @@ namespace AEAssist.AI.Astrologian
             return null;
             
         }
+        
+        public static async Task<bool> CastEukrasianPrognosis(Character target)
+        {
+            if (!SpellsDefine.EukrasianPrognosis.IsUnlock()) return false;
+            await SageSpellHelper.CastEukrasia();
+            var spell = new SpellEntity(SpellsDefine.EukrasianPrognosis, target as BattleCharacter);
+            return await spell.DoGCD();
+        }
     }
 }

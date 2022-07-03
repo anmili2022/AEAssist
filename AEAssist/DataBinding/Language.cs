@@ -200,6 +200,7 @@ namespace AEAssist
         public string ToolTip_Bard_FinalBurst { get; set; }
         public string ToolTip_Bard_Bloodletter { get; set; }
         public string ToolTip_Bard_Burst { get; set; }
+        public string ToolTip_Ast_Burst { get; set; }
 
         public string ToolTip_MCH_FinalBurst { get; set; }
         public string ToolTip_MCH_WildFireFirst { get; set; }
