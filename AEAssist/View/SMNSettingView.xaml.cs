@@ -14,7 +14,8 @@ namespace AEAssist.View
             {
                 { 0, "None/不使用" },
                 { 1, "Slipstream/螺旋气流" },
-                { 2, "Ruby Catastrophe/螺旋气流/红宝石" }
+                { 2, "Ruby Catastrophe/红宝石" },
+                { 3, "Any/任意"}
             };
             SwiftcastOption.ItemsSource = swiftcastOption;
             SwiftcastOption.SelectedIndex = SettingMgr.GetSetting<SMNSettings>().SwiftcastOption;
