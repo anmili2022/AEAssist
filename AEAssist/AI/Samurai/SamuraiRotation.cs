@@ -10,9 +10,6 @@ namespace AEAssist.AI.Samurai
     public class SamuraiRotation : IRotation
     {
         private readonly AIRoot AiRoot = AIRoot.Instance;
-        private long _lastTime;
-
-        private long randomTime;
 
         public void Init()
         {
