@@ -523,9 +523,9 @@ namespace AEAssist.AI.Monk
             return null;
         }
 
-        private static async Task<SpellEntity> PerfectBalanceOpoOpo(Character target)
+        private static Task<SpellEntity> PerfectBalanceOpoOpo(Character target)
         {
-            return null;
+            return Task.FromResult<SpellEntity>(null);
         }
 
         private static async Task<SpellEntity> PerfectBalanceCoeurl(Character target)

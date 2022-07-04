@@ -12,7 +12,7 @@ namespace AEAssist.AI.Monk.Ability
 
 
 
-        public async Task<SpellEntity> Run()
+        public Task<SpellEntity> Run()
         {
             //
             // var spell = SpellsDefine.Brotherhood.GetSpellEntity();
@@ -22,7 +22,7 @@ namespace AEAssist.AI.Monk.Ability
             // if (ret)
             //     return spell;
             MonkSpellHelper.SetPostion();
-            return null;
+            return Task.FromResult<SpellEntity>(null);
         }
     }
 }
