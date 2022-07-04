@@ -12,7 +12,11 @@ namespace AEAssist.AI.Sage.GCD
     internal class SageGCDEukrasianDiagnosis:IAIHandler
     {
         public int Check(SpellEntity lastSpell)
-        {            
+        {
+            if (!SettingMgr.GetSetting<SageSettings>().Heal)
+            {
+                return -2;
+            }
             if (!MovementManager.IsMoving) return -1;
             return 0;
         }
