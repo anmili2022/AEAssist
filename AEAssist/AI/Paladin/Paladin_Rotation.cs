@@ -17,17 +17,15 @@ namespace AEAssist.AI.Paladin
 
             AEAssist.DataBinding.Instance.EarlyDecisionMode = SettingMgr.GetSetting<PaladinSettings>().EarlyDecisionMode;
         }
-        public async Task<bool> PreCombatBuff()
+        public Task<bool> PreCombatBuff()
         {
-
-            return false;
-
+            return Task.FromResult(false);
         }
 
-        public async Task<bool> NoTarget()
+        public Task<bool> NoTarget()
         {
 
-            return false;
+            return Task.FromResult(false);
         }
 
         public SpellEntity GetBaseGCDSpell()
