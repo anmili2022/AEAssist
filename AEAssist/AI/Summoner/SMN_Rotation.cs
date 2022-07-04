@@ -35,10 +35,10 @@ namespace AEAssist.AI.Summoner
 
         }
 
-        public async Task<bool> NoTarget()
+        public Task<bool> NoTarget()
         {
 
-            return false;
+            return Task.FromResult(false);
         }
 
         public SpellEntity GetBaseGCDSpell()
