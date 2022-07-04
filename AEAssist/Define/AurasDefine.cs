@@ -280,6 +280,7 @@ namespace AEAssist.Define
             EukrasianDosisII = 2615,
             EukrasianDosisIII = 2616,
             EukrasianDiagnosis = 2607,
+            DifferentialDiagnosis = 2608,
             Kerachole = 2618,
             Kerakeia = 2938,
             Physis = 2617,
@@ -327,10 +328,20 @@ namespace AEAssist.Define
             PhantomKamaitachiReady = 2723,
             Bunshin = 1954,
             //MNK
-            DisciplinedFist = 3001;
+            DisciplinedFist = 3001,
+            //AST
+            ArrowDrawn = 915,
+            BalanceDrawn = 913,
+            BoleDrawn = 914,
+            EwerDrawn = 917,
+            SpearDrawn = 916,
+            SpireDrawn = 918,
+            //PLD
+            Sheltron = 1856,
+            HolySheltron = 2674,
+            KnightsResolve = 2675
+            ;
             
-            
- 
         private const int
             Invincibility0 = 981,
             Invincibility1 = 969,
@@ -344,7 +355,7 @@ namespace AEAssist.Define
 
         public const int
 
-            #region PVP Specific
+        #region PVP Specific
 
             PvpSynastrySource = 1336,
             PvpSynastryDestination = 1337,

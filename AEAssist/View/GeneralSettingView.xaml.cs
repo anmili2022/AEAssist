@@ -25,7 +25,7 @@ namespace AEAssist.View
 
             Str_ChoosePotion.ItemsSource = PotionHelper.StrPotions;
             Str_ChoosePotion.SelectedValue = SettingMgr.GetSetting<GeneralSettings>().StrPotionId;
-            
+
             Mind_ChoosePotion.ItemsSource = PotionHelper.MindPotions;
             Mind_ChoosePotion.SelectedValue = SettingMgr.GetSetting<GeneralSettings>().MindPotionId;
 
@@ -35,26 +35,26 @@ namespace AEAssist.View
 
             //Path.Content = dir.FullName;
         }
-        
+
 
         private void SwitchLan_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LanguageHelper.SwitchLan((string) SwitchLan.SelectedValue);
+            LanguageHelper.SwitchLan((string)SwitchLan.SelectedValue);
         }
 
         private void Dex_ChoosePotion_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            SettingMgr.GetSetting<GeneralSettings>().DexPotionId = (int) Dex_ChoosePotion.SelectedValue;
+            SettingMgr.GetSetting<GeneralSettings>().DexPotionId = (int)Dex_ChoosePotion.SelectedValue;
         }
 
         private void Str_ChoosePotion_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            SettingMgr.GetSetting<GeneralSettings>().StrPotionId = (int) Str_ChoosePotion.SelectedValue;
+            SettingMgr.GetSetting<GeneralSettings>().StrPotionId = (int)Str_ChoosePotion.SelectedValue;
         }
-        
+
         private void Mind_ChoosePotion_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            SettingMgr.GetSetting<GeneralSettings>().MindPotionId = (int) Mind_ChoosePotion.SelectedValue;
+            SettingMgr.GetSetting<GeneralSettings>().MindPotionId = (int)Mind_ChoosePotion.SelectedValue;
         }
 
         private void DotBlackList_Add_OnClick(object sender, RoutedEventArgs e)
@@ -93,7 +93,7 @@ namespace AEAssist.View
                     VerticalAlignment = VerticalAlignment.Center
                 });
         }
-        
+
 
         private void LoadTriggerLine_OnClick(object sender, RoutedEventArgs e)
         {

@@ -20,9 +20,9 @@ namespace AEAssist.Define
             ClassJobType.Gunbreaker,
             ClassJobType.BlueMage,
         };
-        
+
         #endregion
-        
+
         // Healers
 
         #region Healers
@@ -37,7 +37,7 @@ namespace AEAssist.Define
             ClassJobType.BlueMage,
             ClassJobType.Sage,
         };
-        
+
         #endregion
 
         // DPS
@@ -65,7 +65,7 @@ namespace AEAssist.Define
         };
 
         #endregion
-        
+
         // RangedDPs
 
         #region RangedDps
@@ -101,7 +101,7 @@ namespace AEAssist.Define
         #endregion
 
         // RangedDps Card
-        
+
         #region RangedDpsCard
 
         private static readonly List<ClassJobType> RangedDpsCard = new List<ClassJobType>()
@@ -127,31 +127,31 @@ namespace AEAssist.Define
             var character = unit as Character;
             return character != null && Tanks.Contains(character.CurrentJob);
         }
-        
+
         public static bool IsHealer(this GameObject unit)
         {
             var character = unit as Character;
             return character != null && Healers.Contains(character.CurrentJob);
         }
-        
+
         public static bool IsDps(this GameObject unit)
         {
             var character = unit as Character;
             return character != null && Dps.Contains(character.CurrentJob);
         }
-        
+
         public static bool IsRangedDps(this GameObject unit)
         {
             var character = unit as Character;
             return character != null && RangedDps.Contains(character.CurrentJob);
         }
-        
+
         public static bool IsBlueMage(this GameObject unit)
         {
             var character = unit as Character;
             return character != null && ClassJobType.BlueMage.Equals(character.CurrentJob);
         }
-        
+
         public static bool IsBlueMageHealer(this GameObject unit)
         {
             var character = unit as Character;
@@ -181,8 +181,8 @@ namespace AEAssist.Define
             var character = unit as Character;
             return character != null && MeleeDps.Contains(character.CurrentJob);
         }
-        
-        
+
+
         public static bool OnPvpMap(this LocalPlayer player)
         {
             return WorldManager.InPvP;

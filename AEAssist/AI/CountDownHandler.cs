@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AEAssist;
 using AEAssist.Helper;
 
 namespace AEAssist.AI

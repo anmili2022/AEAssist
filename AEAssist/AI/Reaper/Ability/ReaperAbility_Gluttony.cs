@@ -28,14 +28,14 @@ namespace AEAssist.AI.Reaper.Ability
 
             if (ActionResourceManager.Reaper.SoulGauge < 50)
                 return -8;
-        
+
             var ret = ReaperSpellHelper.ReadyToEnshroud();
             if (ret >= 0)
                 return -9;
             if (!Core.Me.CanAttackTargetInRange(Core.Me.CurrentTarget))
                 return -10;
-            
-            if (ActionManager.ComboTimeLeft >0 && ActionManager.ComboTimeLeft < 6)
+
+            if (ActionManager.ComboTimeLeft > 0 && ActionManager.ComboTimeLeft < 6)
                 return -11;
 
             return 0;

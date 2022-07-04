@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AEAssist;
 using AEAssist.Define;
 using AEAssist.Gamelog;
 using AEAssist.Helper;
@@ -15,7 +14,7 @@ namespace AEAssist.AI
     public interface IBattleData
     {
     }
-    
+
     public class AIRoot
     {
         public static readonly AIRoot Instance = new AIRoot();
@@ -35,7 +34,7 @@ namespace AEAssist.AI
             get => AEAssist.DataBinding.Instance.Stop;
             set => AEAssist.DataBinding.Instance.Stop = value;
         }
-        
+
         public bool Move
         {
             get => AEAssist.DataBinding.Instance.Move;
@@ -162,11 +161,11 @@ namespace AEAssist.AI
                     GUIHelper.ShowInfo(Language.Instance.Content_AIRoot_NoTarget, 500);
 
                 await RotationManager.Instance.NoTarget();
-                
+
                 return false;
             }
 
-            if (!((Character) Core.Me.CurrentTarget).HasTarget && !CountDownHandler.Instance.CanDoAction
+            if (!((Character)Core.Me.CurrentTarget).HasTarget && !CountDownHandler.Instance.CanDoAction
                                                                && !AEAssist.DataBinding.Instance.Pull)
             {
                 if (CanNotice("key2", 1000))
@@ -174,7 +173,7 @@ namespace AEAssist.AI
                 return false;
             }
 
-           
+
             if (Core.Me.InCombat)
             {
                 if (ClearBattleData) battleData.BattleStartTime = timeNow;
@@ -203,9 +202,9 @@ namespace AEAssist.AI
 
             if (await OpenerMgr.Instance.UseOpener(Core.Me.CurrentJob)) return false;
 
-       
+
             if (await AISpellQueueMgr.Instance.UseSpellQueue()) return false;
-            
+
             var spellQueue = AIRoot.GetBattleData<SpellQueueData>();
             if (await spellQueue.ApplySlot())
             {
@@ -218,7 +217,7 @@ namespace AEAssist.AI
                     battleData.NextSpellSlot = null;
                 }
 
-                
+
                 if (battleData.NextSpellSlot != null)
                 {
                     spellQueue.Add(battleData.NextSpellSlot);
@@ -229,17 +228,20 @@ namespace AEAssist.AI
 
 
             // boss is time to kill (default is 6s),so toggle the FinalBurst
-            if (TTKHelper.CheckFinalBurst(Core.Me.CurrentTarget as Character)) 
+            if (TTKHelper.CheckFinalBurst(Core.Me.CurrentTarget as Character))
                 AEAssist.DataBinding.Instance.FinalBurst = true;
 
             var canUseAbility = true;
             var delta = timeNow - battleData.lastCastTime;
             var coolDown = GetGCDDuration();
-
+            var time = SettingMgr.GetSetting<GeneralSettings>().RegionOfAbility;
+            var RegionOfAbility = coolDown - time;
+            if (RegionOfAbility > delta * 0.33f)
+                RegionOfAbility = delta * 0.33f;
             var canUseGCD = CanUseGCD();
             LogHelper.Debug($"CanUseGCD: {canUseGCD} coolDown: {coolDown} delta {delta}");
 
-            if (!canUseGCD && !Core.Me.IsCasting && battleData.maxAbilityTimes > 0 && coolDown - delta >= coolDown * 0.33f)
+            if (!canUseGCD && !Core.Me.IsCasting && battleData.maxAbilityTimes > 0 && coolDown - delta > RegionOfAbility)
                 canUseAbility = true;
             else
                 // LogHelper.Debug(
@@ -256,7 +258,7 @@ namespace AEAssist.AI
                     if (ret.SpellData != null && ret.IsUnlock())
                     {
                         LogHelper.Debug($"NextGcd: {ret.Id} {ret.SpellData.LocalizedName} CanCast:  {ret.CanCastGCD()}");
-                        if (ret.CanCastGCD()>=0)
+                        if (ret.CanCastGCD() >= 0)
                         {
                             if (!await ret.DoGCD())
                                 ret = null;
@@ -381,7 +383,7 @@ namespace AEAssist.AI
             battleData.maxAbilityTimes--;
             battleData.lastAbilitySpell = ret;
         }
-        
+
         public bool Is2ndAbilityTime(float time = 0.5f)
         {
             if (SettingMgr.GetSetting<GeneralSettings>().MaxAbilityTimsInGCD < 2)

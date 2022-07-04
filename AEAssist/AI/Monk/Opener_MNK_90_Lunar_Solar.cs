@@ -24,6 +24,14 @@ namespace AEAssist.AI.Monk
                 return -4;
             if (!SpellsDefine.PerfectBalance.IsMaxChargeReady())
                 return -6;
+            if (ActionResourceManager.Monk.ActiveNadi != ActionResourceManager.Monk.Nadi.None)
+            {
+                return -5;
+            }
+            if (ActionResourceManager.Monk.ChakraCount < 5)
+            {
+                return -10;
+            }
             return 0;
         }
 
@@ -62,6 +70,7 @@ namespace AEAssist.AI.Monk
             slot.UsePotion = true;
             MeleePosition.Intance.SetPositionToBack(MeleePosition.Priority.High);
             MeleePosition.Intance.ShowMsg();
+            AIRoot.GetBattleData<MonkBattleData>().CurrentBurst = MonkBurst.Even;
         }
 
 
@@ -81,7 +90,14 @@ namespace AEAssist.AI.Monk
         private static void Step2(SpellQueueSlot slot)
         {
             slot.SetGCD(SpellsDefine.Demolish, SpellTargetType.CurrTarget);
-            slot.Abilitys.Enqueue((SpellsDefine.TheForbiddenChakra, SpellTargetType.CurrTarget));
+            if (TargetHelper.CheckNeedUseAOETest(Core.Me.CurrentTarget, 10, 5, 2))
+            {
+                slot.Abilitys.Enqueue((SpellsDefine.Enlightenment, SpellTargetType.CurrTarget));
+            }
+            else
+            {
+                slot.Abilitys.Enqueue((SpellsDefine.TheForbiddenChakra, SpellTargetType.CurrTarget));
+            }
         }
 
 
@@ -114,7 +130,7 @@ namespace AEAssist.AI.Monk
             }
             slot.SetGCD(spell, SpellTargetType.CurrTarget);
             slot.Abilitys.Enqueue((SpellsDefine.RiddleofWind, SpellTargetType.Self));
-            AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo = MonkNadiCombo.Lunar;
+            AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo = MonkNadiCombo.Lunar;
         }
 
 

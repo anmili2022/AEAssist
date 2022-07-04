@@ -3,9 +3,7 @@ using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Managers;
-using ff14bot.Objects;
 
 namespace AEAssist.AI.BlackMage.GCD
 {
@@ -25,7 +23,7 @@ namespace AEAssist.AI.BlackMage.GCD
             {
                 return -10;
             }
-            
+
             // if we didn't learn fire4
             if (!SpellsDefine.Fire4.IsUnlock())
             {
@@ -34,7 +32,7 @@ namespace AEAssist.AI.BlackMage.GCD
                     return 5;
                 }
             }
-            
+
             // if we are in fire 
             if (ActionResourceManager.BlackMage.AstralStacks > 0)
             {
@@ -47,7 +45,7 @@ namespace AEAssist.AI.BlackMage.GCD
                 if (BlackMageHelper.IsMaxAstralStacks() &&
                     Core.Me.HasAura(AurasDefine.FireStarter))
                 {
-                    if (SpellsDefine.Paradox.IsUnlock() && 
+                    if (SpellsDefine.Paradox.IsUnlock() &&
                         BlackMageHelper.IsParadoxReady())
                     {
                         return 2;
@@ -58,9 +56,9 @@ namespace AEAssist.AI.BlackMage.GCD
                         return 3;
                     }
                 }
-                
+
             }
-            
+
             // if we are in ice
             if (ActionResourceManager.BlackMage.UmbralStacks > 0)
             {
@@ -70,7 +68,7 @@ namespace AEAssist.AI.BlackMage.GCD
                     return 2;
                 }
             }
-            
+
             // if we are in nothing, we go to fire
             if (ActionResourceManager.BlackMage.UmbralStacks == 0 &&
                 ActionResourceManager.BlackMage.AstralStacks == 0)

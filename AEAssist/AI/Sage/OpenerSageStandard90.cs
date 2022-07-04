@@ -20,7 +20,7 @@ namespace AEAssist.AI.Sage
                 return -5;
             }
 
-            if (PartyManager.NumMembers <= 4)
+            if (PartyManager.NumMembers <= 4 && !Core.Me.CurrentTarget.IsDummy())
             {
                 LogHelper.Debug("Not running Opener party is less than or equal to 4..");
                 return -5;
@@ -31,7 +31,7 @@ namespace AEAssist.AI.Sage
                 LogHelper.Debug("Not running Opener Phlegma is not ready.");
                 return -5;
             }
-            
+
             return 0;
         }
 
@@ -82,7 +82,7 @@ namespace AEAssist.AI.Sage
                 slot.SetGCD(SpellsDefine.PhlegmaIII, SpellTargetType.CurrTarget);
             else
                 slot.SetGCD(SpellsDefine.DosisIII, SpellTargetType.CurrTarget);
-                
+
         }
 
 
@@ -117,7 +117,7 @@ namespace AEAssist.AI.Sage
         {
             slot.SetGCD(SpellsDefine.DosisIII, SpellTargetType.CurrTarget);
         }
-        
+
         private static void Step10(SpellQueueSlot slot)
         {
             slot.SetGCD(SpellsDefine.ToxikonII, SpellTargetType.CurrTarget);

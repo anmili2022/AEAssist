@@ -9,8 +9,8 @@ namespace AEAssist.AI.Machinist.GCD
     {
         public int Check(SpellEntity lastSpell)
         {
-            if(SpellsDefine.Hypercharge.RecentlyUsed() || 
-               (ActionResourceManager.Machinist.OverheatRemaining.TotalMilliseconds>0 && AIRoot.GetBattleData<MCHBattleData>().HyperchargeGCDCount<5 ))
+            if (SpellsDefine.Hypercharge.RecentlyUsed() ||
+               (ActionResourceManager.Machinist.OverheatRemaining.TotalMilliseconds > 0 && AIRoot.GetBattleData<MCHBattleData>().HyperchargeGCDCount < 5))
             {
                 return 0;
             }

@@ -1,10 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot.Managers;
-
-using ff14bot.Helpers;
-using System.Windows.Media;
 using ff14bot;
 
 namespace AEAssist.AI.Summoner.Ability
@@ -24,7 +20,7 @@ namespace AEAssist.AI.Summoner.Ability
             }
             //if (!spell.IsReady())
             //    return -1;
-          
+
             return 0;
         }
 

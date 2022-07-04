@@ -1,5 +1,3 @@
-﻿using System.Windows.Forms;
-
 namespace AEAssist.AI.Monk
 {
     
@@ -10,9 +8,18 @@ namespace AEAssist.AI.Monk
         None
     }
     
+    public enum MonkBurst
+    {
+        Odd,
+        Even,
+        None
+    }
+    
     public class MonkBattleData : IBattleData
     {
-        public MonkNadiCombo CurrentMonkNadiCombo = MonkNadiCombo.None;
+        public MonkBurst CurrentBurst = MonkBurst.None;
+        public MonkNadiCombo CurrentNadiCombo = MonkNadiCombo.None;
+        public MonkNadiCombo NextNadiCombo = MonkNadiCombo.None;
         public bool RoFBH2 = false;
         public bool DoingOpener = false;
 

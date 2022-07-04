@@ -2,9 +2,6 @@
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot.Managers;
-
-using ff14bot.Helpers;
-using System.Windows.Media;
 namespace AEAssist.AI.Summoner.Ability
 {
     public class SMNAbility_Fester : IAIHandler
@@ -21,7 +18,7 @@ namespace AEAssist.AI.Summoner.Ability
             spell = GetSpell();
             if (!spell.IsReady())
                 return -1;
-            if (ActionResourceManager.Summoner.Aetherflow <=0)
+            if (ActionResourceManager.Summoner.Aetherflow <= 0)
             {
                 return -10;
             }

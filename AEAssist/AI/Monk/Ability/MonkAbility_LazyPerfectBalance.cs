@@ -1,6 +1,5 @@
 using System;
 using System.Threading.Tasks;
-using System.Windows.Media.Animation;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
@@ -17,7 +16,7 @@ namespace AEAssist.AI.Monk.Ability
             {
                 return -5;
             }
-            
+
             if (!AIRoot.Instance.CloseBurst)
                 return -5;
 
@@ -59,14 +58,14 @@ namespace AEAssist.AI.Monk.Ability
             {
                 if (ActionResourceManager.Monk.ActiveNadi == ActionResourceManager.Monk.Nadi.Lunar)
                 {
-                    AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo = MonkNadiCombo.Solar;
+                    AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo = MonkNadiCombo.Solar;
                     return 1;
                 }
                 else if (ActionResourceManager.Monk.ActiveNadi == ActionResourceManager.Monk.Nadi.Solar &&
                          target.HasMyAuraWithTimeleft(AurasDefine.Demolish, 15000) &&
                          Core.Me.HasMyAuraWithTimeleft(AurasDefine.DisciplinedFist, 10000))
                 {
-                    AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo = MonkNadiCombo.Lunar;
+                    AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo = MonkNadiCombo.Lunar;
                     return 1;
                 }
                 else
@@ -74,11 +73,11 @@ namespace AEAssist.AI.Monk.Ability
                     if (target.HasMyAuraWithTimeleft(AurasDefine.Demolish, 15000) &&
                         Core.Me.HasMyAuraWithTimeleft(AurasDefine.DisciplinedFist, 10000))
                     {
-                        AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo = MonkNadiCombo.Lunar;
+                        AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo = MonkNadiCombo.Lunar;
                         return 3;
                     }
 
-                    AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo = MonkNadiCombo.Solar;
+                    AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo = MonkNadiCombo.Solar;
                     return 1;
                 }
 

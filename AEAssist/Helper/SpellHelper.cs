@@ -7,7 +7,6 @@ using AEAssist.Rotations.Core;
 using Buddy.Coroutines;
 using ff14bot;
 using ff14bot.Enums;
-using ff14bot.Helpers;
 using ff14bot.Managers;
 using ff14bot.Objects;
 
@@ -123,7 +122,7 @@ namespace AEAssist.Helper
 
 
 
-            var needTime = (int) spell.AdjustedCastTime.TotalMilliseconds + waitTime;
+            var needTime = (int)spell.AdjustedCastTime.TotalMilliseconds + waitTime;
             SpellEventMgr.Instance.Run(spell.Id);
             if (needTime <= 10)
                 return true;
@@ -175,11 +174,11 @@ namespace AEAssist.Helper
 
             if (spellData.SpellType == SpellType.Ability && !SpellsDefine.AbilityAsGCDSet.Contains(spellData.Id))
                 time = 100;
-            
+
             if (spellData.Cooldown.TotalMilliseconds > time)
                 return false;
             return true;
-            
+
         }
 
         public static bool IsReady(this uint spellId)
@@ -229,7 +228,7 @@ namespace AEAssist.Helper
             var SpellData = spellId.GetSpellEntity().SpellData;
             return SpellData.CoolDownInGCDs(count);
         }
-        
+
         public static bool AbilityCoolDownInNextXGCDsWindow(this SpellData spellData, int count)
         {
             var baseGCDTime = RotationManager.Instance.GetBaseGCDSpell().AdjustedCooldown.TotalMilliseconds;
@@ -243,14 +242,39 @@ namespace AEAssist.Helper
             } 
             return false;
         }
-        
+
         public static bool AbilityCoolDownInNextXGCDsWindow(this uint spellId, int count)
         {
             var SpellData = spellId.GetSpellEntity().SpellData;
             return SpellData.AbilityCoolDownInNextXGCDsWindow(count);
         }
-        
 
+        public static int AbilityComesInNextXGCDsWindow(this SpellData spellData)
+        {
+            var baseGCDTime = RotationManager.Instance.GetBaseGCDSpell().AdjustedCooldown.TotalMilliseconds;
+            var TargetSpellCoolDown = spellData.Cooldown.TotalMilliseconds;
+            if (spellData.Cooldown == TimeSpan.Zero)
+            {
+                return 0;
+            }
+            var delta = TimeHelper.Now() - AIRoot.GetBattleData<BattleData>().lastCastTime;
+            int count = 0;
+            while (true)
+            {
+                if (delta + TargetSpellCoolDown <
+                    baseGCDTime * (count + 1) - SettingMgr.GetSetting<GeneralSettings>().ActionQueueMs)
+                {
+                    return count;
+                }
+                count++;
+            }
+        }
+        
+        public static int AbilityComesInNextXGCDsWindow(this uint spellId)
+        {
+            var SpellData = spellId.GetSpellEntity().SpellData;
+            return SpellData.AbilityComesInNextXGCDsWindow();
+        }
 
         public static Task<bool> DoGCD(this uint spellId)
         {
@@ -266,22 +290,22 @@ namespace AEAssist.Helper
         {
             return spellId.GetSpellEntity().RecentlyUsed();
         }
-        
-        
+
+
         public static uint GetInterruptSpell(ClassJobType job)
         {
             switch (job)
             {
                 case ClassJobType.Machinist:
-                    case ClassJobType.Bard:
-                    case ClassJobType.Dancer:
+                case ClassJobType.Bard:
+                case ClassJobType.Dancer:
                     return SpellsDefine.HeadGraze;
                 case ClassJobType.Paladin:
-                    case ClassJobType.DarkKnight:
-                    case ClassJobType.Warrior:
-                    case ClassJobType.Gunbreaker:
+                case ClassJobType.DarkKnight:
+                case ClassJobType.Warrior:
+                case ClassJobType.Gunbreaker:
                     return SpellsDefine.Interject;
-                
+
             }
 
             return 0;

@@ -3,9 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using Buddy.Coroutines;
 using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Managers;
 using ff14bot.Objects;
 
@@ -217,7 +215,7 @@ namespace AEAssist.AI.WhiteMage
             if (aeroId == 0) return false;
 
             var ttkAero = SettingMgr.GetSetting<WhiteMageSettings>().TTK_Aero;
-            if (Core.Me.ClassLevel<72)
+            if (Core.Me.ClassLevel < 72)
             {
                 ttkAero = 18;
             }
@@ -436,7 +434,7 @@ namespace AEAssist.AI.WhiteMage
         }*/
         public static async Task<SpellEntity> CastTetragrammaton()
         {
-            
+
             if (GroupHelper.InParty)
             {
                 var skillTarget = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && r.CurrentHealthPercent <= SettingMgr.GetSetting<WhiteMageSettings>().TetragrammatonHp);
@@ -448,10 +446,10 @@ namespace AEAssist.AI.WhiteMage
             }
             return null;
         }
-       
+
         public static async Task<SpellEntity> CastDivineBenison()
         {
-            
+
             if (GroupHelper.InParty)
             {
                 var skillTarget = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && r.CurrentHealthPercent <= SettingMgr.GetSetting<WhiteMageSettings>().DivineBenisonHp);

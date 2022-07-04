@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using AEAssist.AI.Bard.Ability;
 using AEAssist.AI.Bard.GCD;
 using AEAssist.Helper;
-using AEAssist;
 using ff14bot.Enums;
 
 namespace AEAssist.AI.Bard

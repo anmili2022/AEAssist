@@ -1,6 +1,5 @@
 using System.Linq;
 using System.Threading.Tasks;
-using AEAssist.AI.Sage;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
@@ -15,7 +14,7 @@ namespace AEAssist.AI.Dancer.Ability
             {
                 return -10;
             }
-            
+
             if (!SpellsDefine.Flourish.IsReady())
             {
                 return -1;
@@ -30,7 +29,7 @@ namespace AEAssist.AI.Dancer.Ability
             {
                 return -2;
             }
-            
+
             var bdls = AIRoot.GetBattleData<BattleData>().lastGCDSpell;
 
             if (Core.Me.HasAura(AurasDefine.FlourshingFlow) && (bdls != SpellsDefine.Fountainfall.GetSpellEntity() &&
@@ -38,13 +37,13 @@ namespace AEAssist.AI.Dancer.Ability
             {
                 return -2;
             }
-            
+
             if (Core.Me.HasAura(AurasDefine.FlourishingSymmetry) && (bdls != SpellsDefine.ReverseCascade.GetSpellEntity() &&
                                                                      bdls != SpellsDefine.RisingWindmill.GetSpellEntity()))
             {
                 return -2;
             }
-            
+
             SpellEntity[] GCDsCanProc =
             {
                 SpellsDefine.Cascade.GetSpellEntity(),
@@ -67,7 +66,7 @@ namespace AEAssist.AI.Dancer.Ability
             }
 
             return 0;
-            
+
         }
 
         public async Task<SpellEntity> Run()

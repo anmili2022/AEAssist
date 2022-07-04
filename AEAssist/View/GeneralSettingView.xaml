@@ -9,7 +9,7 @@
              xmlns:style="clr-namespace:AEAssist.View.Style"
              xmlns:generalSetting="clr-namespace:AEAssist.View.GeneralSetting"
              mc:Ignorable="d"
-             Height="350" Width="600">
+             Height="500" Width="600">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -25,8 +25,7 @@
 
     <TabControl
         TabStripPlacement="Top"
-        Margin="20"
-        Width="500">
+        Margin="20">
         <TabItem Header="Lan">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10">

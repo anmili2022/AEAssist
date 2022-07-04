@@ -1,8 +1,6 @@
 using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot;
-using ff14bot.Managers;
 
 namespace AEAssist.AI.Monk.Ability
 {
@@ -12,7 +10,7 @@ namespace AEAssist.AI.Monk.Ability
         {
             if (AIRoot.Instance.CloseBurst)
                 return -5;
-            
+
             if (!SpellsDefine.RiddleofWind.IsUnlock())
             {
                 return -10;
@@ -26,8 +24,8 @@ namespace AEAssist.AI.Monk.Ability
             return 0;
         }
 
-        
-        
+
+
         public async Task<SpellEntity> Run()
         {
             var spell = SpellsDefine.RiddleofWind.GetSpellEntity();

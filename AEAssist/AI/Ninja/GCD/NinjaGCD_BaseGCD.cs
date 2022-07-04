@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
-using AEAssist.Helper;
 using ff14bot;
 
 namespace AEAssist.AI.Ninja.GCD

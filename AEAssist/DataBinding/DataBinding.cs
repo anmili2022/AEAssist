@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Media;
 using AEAssist.AI;
 using AEAssist.Helper;
-using ff14bot;
-using ff14bot.Managers;
 using PropertyChanged;
-using QuickGraph;
 
 namespace AEAssist
 {
@@ -59,9 +55,12 @@ namespace AEAssist
 
         public SageSettings SageSettings => SettingMgr.GetSetting<SageSettings>();
         public WhiteMageSettings WhiteMageSettings => SettingMgr.GetSetting<WhiteMageSettings>();
+        public AstSettings AstSettings => SettingMgr.GetSetting<AstSettings>();
         public DancerSettings DancerSettings => SettingMgr.GetSetting<DancerSettings>();
         public MonkSettings MonkSettings => SettingMgr.GetSetting<MonkSettings>();
         public SMNSettings SMNSettings => SettingMgr.GetSetting<SMNSettings>();
+        public PaladinSettings PaladinSettings => SettingMgr.GetSetting<PaladinSettings>();
+        public GunBreakerSettings GunBreakerSettings => SettingMgr.GetSetting<GunBreakerSettings>();
         public DebugCenter DebugCenter => DebugCenter.Intance;
         public MeleePosition MeleePosition => MeleePosition.Intance;
 
@@ -119,7 +118,8 @@ namespace AEAssist
             UseMeikyoShisui = true;
             SageSettings.LucidDreamingToggle = true;
             Wildfire = true;
-            SMNReset();
+            SMNSettings.ResetToggles();
+            PaladinSettings.ResetToggles();
         }
 
 
@@ -175,16 +175,10 @@ namespace AEAssist
 
         #endregion
 
-        #region SMN
-
-        public bool Crimson { get; set; } = true;
-
-        public bool SaveInstantSpells { get; set; } = false;
+        #region GNB
+        public bool GNBOpen { get; set; }=true;
+        public bool GNBRoughDivide { get; set; } = true;
         #endregion
-        public void SMNReset()
-        {
-            Crimson = true;
-            SaveInstantSpells = false;
-        }
+
     }
 }

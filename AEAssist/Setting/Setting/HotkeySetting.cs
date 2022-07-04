@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
-using AEAssist.AI;
-using AEAssist;
-using AEAssist.Define;
 using AEAssist.Helper;
-using AEAssist.View;
 using AEAssist.View.Hotkey;
 using AEAssist.View.Hotkey.BuiltinHotkeys;
-using ff14bot.Managers;
-using Newtonsoft.Json;
 using PropertyChanged;
 using HotkeyManager = AEAssist.View.Hotkey.HotkeyManager;
 
@@ -26,9 +19,9 @@ namespace AEAssist
         }
 
         public string StopBtnName { get; set; }
-        
+
         public string MoveBtnName { get; set; }
-        
+
         public string CloseBuffBtnName { get; set; }
 
         public List<HotkeyData> AllHotkeyDatas { get; set; } = new List<HotkeyData>();
@@ -65,7 +58,7 @@ namespace AEAssist
         {
             return this.AllHotkeyDatas.Find(v => v.Name == name);
         }
-        
+
         public HotkeyData GetHotkeyDataByTypeName(string type)
         {
             return this.AllHotkeyDatas.Find(v => v.TypeName == type);
@@ -86,7 +79,7 @@ namespace AEAssist
                 CloseBuffBtnName = Language.Instance.Toggle_BurstOff;
             }
         }
-        
+
         public void RegisHotkey()
         {
             try
@@ -95,7 +88,7 @@ namespace AEAssist
                 if (!UseHotkey)
                     return;
                 HotkeyManager.Instance.RegisterHotkeys();
-             
+
             }
             catch (Exception e)
             {

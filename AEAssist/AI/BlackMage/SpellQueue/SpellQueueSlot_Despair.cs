@@ -1,8 +1,5 @@
 ﻿using System;
 using AEAssist.Define;
-using AEAssist.Helper;
-using ff14bot;
-using ff14bot.Managers;
 
 namespace AEAssist.AI.BlackMage.SpellQueue
 {
@@ -19,7 +16,7 @@ namespace AEAssist.AI.BlackMage.SpellQueue
             slot.SetGCD(GCDSpellId, SpellTargetType.CurrTarget);
             if (BlackMageHelper.GetSpellCastTimeSpan(BlackMageHelper.GetDespair()) == TimeSpan.Zero)
             {
-                slot.Abilitys.Enqueue((SpellsDefine.ManaFont,  SpellTargetType.Self));
+                slot.Abilitys.Enqueue((SpellsDefine.ManaFont, SpellTargetType.Self));
             }
         }
     }

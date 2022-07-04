@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using AEAssist.AI.BlackMage;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Managers;
 
 namespace AEAssist.AI.BlackMage.Ability
 {
@@ -25,9 +23,9 @@ namespace AEAssist.AI.BlackMage.Ability
             // if we have less then 10 seconds before sharpcast overflow
             if (SpellsDefine.Sharpcast.GetSpellEntity().Cooldown < TimeSpan.FromMilliseconds(10000))
             {
-                
+
             }
-            
+
             // we want it to be used on next thunder
             if (!Core.Me.HasAura(AurasDefine.Sharpcast) &&
                 SpellsDefine.Sharpcast.GetSpellEntity().SpellData.Charges > 1
@@ -35,7 +33,7 @@ namespace AEAssist.AI.BlackMage.Ability
             {
                 return 1;
             }
-            
+
 
             return -4;
         }

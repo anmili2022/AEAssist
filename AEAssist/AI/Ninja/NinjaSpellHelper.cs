@@ -65,7 +65,7 @@ namespace AEAssist.AI.Ninja
         //Action Name:Forked Raiju 月影雷兽爪 Action Id:25777
         //Action Name:Fleeting Raiju 月影雷兽牙 Action Id:25778
         //Action Name:Huraijin 风来刃 Action Id:25876
-       private static async Task<SpellEntity> UseAOECombo(GameObject target)
+        private static async Task<SpellEntity> UseAOECombo(GameObject target)
         {
             if (AIRoot.GetBattleData<NinjaBattleData>().CurrCombo != NinjaComboStages.HakkeMujinsatsu
                 || ActionManager.ComboTimeLeft <= 0)
@@ -159,7 +159,7 @@ namespace AEAssist.AI.Ninja
         public static SpellEntity GetBhavacakra(GameObject target)
         {
             //should be TargetHelper.CheckNeedUseAOE(target, 25, 6, 4) in 6.1
-            if (TargetHelper.CheckNeedUseAOE(target, 25, 6,3)) return SpellsDefine.HellfrogMedium.GetSpellEntity();
+            if (TargetHelper.CheckNeedUseAOE(target, 25, 6, 3)) return SpellsDefine.HellfrogMedium.GetSpellEntity();
 
             return SpellsDefine.Bhavacakra.GetSpellEntity();
         }
@@ -184,7 +184,6 @@ namespace AEAssist.AI.Ninja
                                 break;
                             }
                             var spell = DancerSpellHelper.GetDanceStep(step);
-                            int time = 0;
                             while (!await spell.DoGCD())
                             {
                                 await Coroutine.Sleep(retryInterval);

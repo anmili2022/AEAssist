@@ -14,7 +14,7 @@ namespace AEAssist.AI.Machinist
     {
         public int Check()
         {
-            if (PartyManager.NumMembers <= 4)
+            if (PartyManager.NumMembers <= 4 && !Core.Me.CurrentTarget.IsDummy())
                 return -5;
             if (ActionResourceManager.Machinist.Heat >= 50)
                 return -1;

@@ -14,19 +14,19 @@ namespace AEAssist
             Reset();
         }
 
-        public int UserLatencyOffset { get; set; } 
-        [ValueRange(300, 700)] public int ActionQueueMs { get; set; } 
-        [ValueRange(1, 2)] public int MaxAbilityTimsInGCD { get; set; } 
+        public int UserLatencyOffset { get; set; }
+        [ValueRange(300, 700)] public int ActionQueueMs { get; set; }
+        [ValueRange(1, 2)] public int MaxAbilityTimsInGCD { get; set; }
         public int AnimationLockMs { get; set; }
 
         public bool EarlyDecisionMode { get; set; }
 
         public bool OpenTTK { get; set; }
         [ValueRange(1, 30)] public int TimeToKill_TimeInSec { get; set; }
-        [ValueRange(200000, 1000000)] public int TTK_IgnoreDamage { get; set; } 
+        [ValueRange(200000, 1000000)] public int TTK_IgnoreDamage { get; set; }
 
         public bool UsePotion { get; set; }
-        [ValueRange(1000, 5000)] public long UsePotionCountDown { get; set; } 
+        [ValueRange(1000, 5000)] public long UsePotionCountDown { get; set; }
 
         public bool ShowGameLog { get; set; }
         public bool ShowDebugLog { get; set; }
@@ -34,19 +34,19 @@ namespace AEAssist
         public bool ShowToast { get; set; }
 
         public bool ShowBattleTime { get; set; }
-        
+
         public bool UseCombatMessageOverlay { get; set; }
 
         public int DexPotionId { get; set; }
-        
+
         public int MindPotionId { get; set; }
 
         public int StrPotionId { get; set; }
-        
-        
+
+
 
         public HashSet<string> DotBlacklist { get; set; } = new HashSet<string>();
-        public int AutoFinalBurstCheckTime { get; set; } = 6000;
+        public int AutoFinalBurstCheckTime { get; set; } = 7000;
 
         public bool NextAbilityFirst { get; set; }
         public bool AutoSwitchTriggerLine { get; set; }
@@ -65,6 +65,8 @@ namespace AEAssist
         public double OverlayPos_X { get; set; } = 60;
         public double OverlayPos_Y { get; set; } = 60;
 
+        [ValueRange(1500, 1900)] public int RegionOfAbility { get; set; } = 1500;
+
         public void Reset()
         {
             UserLatencyOffset = 50;
@@ -81,7 +83,7 @@ namespace AEAssist
             ShowToast = false;
             EarlyDecisionMode = true;
             AutoFinalBurst = true;
-            AutoFinalBurstCheckTime = 6000;
+            AutoFinalBurstCheckTime = 7000;
 
             DexPotionId = 36105; // 5级巧力
             StrPotionId = 36104; // 5级刚力
@@ -96,7 +98,7 @@ namespace AEAssist
 
         public void OnLoad()
         {
-            
+
         }
     }
 }

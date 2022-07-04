@@ -1,7 +1,5 @@
 using Buddy.Overlay;
 using Buddy.Overlay.Controls;
-using ff14bot;
-using ff14bot.Enums;
 
 namespace AEAssist.View.Overlay.UIComponent
 {
@@ -42,7 +40,7 @@ namespace AEAssist.View.Overlay.UIComponent
                     Width = overlayUc.Width + 5,
                     Height = overlayUc.Height,
                     X = 60,
-                    Y =  60,
+                    Y = 60,
                     AllowMoving = IsHitTestable,
                     AllowResizing = IsHitTestable
                 };
@@ -60,7 +58,7 @@ namespace AEAssist.View.Overlay.UIComponent
                 {
                     _control.DragMove();
                 };
-                
+
                 return _control;
             }
         }

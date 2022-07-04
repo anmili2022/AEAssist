@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Managers;
 using ff14bot.Objects;
 
@@ -15,7 +14,7 @@ namespace AEAssist.AI.Monk.GCD
         {
             if (ActionResourceManager.Monk.BlitzTimer != TimeSpan.Zero)
             {
-                AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo = MonkNadiCombo.None;
+                AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo = MonkNadiCombo.None;
                 return -2;
             }
             if (SpellsDefine.PerfectBalance.RecentlyUsed() || Core.Me.HasAura(AurasDefine.PerfectBalance))

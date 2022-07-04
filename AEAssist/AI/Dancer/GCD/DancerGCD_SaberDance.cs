@@ -1,6 +1,4 @@
 using System.Threading.Tasks;
-using AEAssist.AI.Dancer.SpellQueue;
-using AEAssist.AI.Sage;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
@@ -26,12 +24,12 @@ namespace AEAssist.AI.Dancer.GCD
                 return -1;
             }
             if (AEAssist.DataBinding.Instance.FinalBurst) return 2;
-            
+
             if (ActionResourceManager.Dancer.Esprit >= 85)
             {
                 return 1;
             }
-            
+
             if (AEAssist.DataBinding.Instance.UseFlourish)
             {
                 if (SpellsDefine.Flourish.AbilityCoolDownInNextXGCDsWindow(1) && (!Core.Me.HasMyAura(AurasDefine.FlourshingFlow) &&
@@ -39,8 +37,16 @@ namespace AEAssist.AI.Dancer.GCD
                 {
                     return 1;
                 }
+                // if (SpellsDefine.Flourish.AbilityCoolDownInNextXGCDsWindow(2) && (!Core.Me.HasMyAura(AurasDefine.FlourshingFlow) &&
+                //         !Core.Me.HasMyAura(AurasDefine.FlourishingSymmetry)))
+                // {
+                //     if (ActionResourceManager.Dancer.Esprit < 95)
+                //     {
+                //         return -5;
+                //     }
+                // }
             }
-
+            
             if (!AIRoot.Instance.CloseBurst)
             {
                 if (SpellsDefine.TechnicalStep.CoolDownInGCDs(1) && !SpellsDefine.TechnicalStep.IsReady())
@@ -48,7 +54,7 @@ namespace AEAssist.AI.Dancer.GCD
                     return 2;
                 }
             }
-            
+
             return -4;
         }
 

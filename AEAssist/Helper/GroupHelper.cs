@@ -4,7 +4,6 @@ using System.Linq;
 using AEAssist.Define;
 using ff14bot;
 using ff14bot.Enums;
-using ff14bot.Helpers;
 using ff14bot.Managers;
 using ff14bot.Objects;
 
@@ -23,15 +22,15 @@ namespace AEAssist.Helper
         public static readonly List<Character> CastableAlliesWithin15 = new List<Character>();
         public static readonly List<Character> CastableAlliesWithin12 = new List<Character>();
         public static readonly List<Character> CastableAlliesWithin10 = new List<Character>();
-        
+
         // create pets helper?
-        
+
         public static bool InParty => PartyManager.IsInParty;
         public static bool PartyInCombat => Core.Me.InCombat;
         public static bool InActiveDuty => DutyManager.InInstance && DutyHelper.State() == DutyHelper.States.InProgress;
         public static bool InGcInstance => RaptureAtkUnitManager.Controls.Any(r => r.Name == "GcArmyOrder");
         public static bool OnPvpMap => Core.Me.OnPvpMap();
-        
+
         // Add Allies to the List.
         private static void AddAllyToCastable(Character ally)
         {
@@ -48,7 +47,7 @@ namespace AEAssist.Helper
                 CastableHealers.Add(ally);
             if (ally.IsDps())
                 CastableDps.Add(ally);
-            
+
             var distance = ally.Distance(Core.Me);
             if (distance <= 30) { CastableAlliesWithin30.Add(ally); }
             if (distance <= 25) { CastableAlliesWithin25.Add(ally); }
@@ -57,7 +56,7 @@ namespace AEAssist.Helper
             if (distance <= 12) { CastableAlliesWithin12.Add(ally); }
             if (distance <= 10) { CastableAlliesWithin10.Add(ally); }
         }
-        
+
         private static void ClearCastable()
         {
             DeadAllies.Clear();
@@ -89,7 +88,7 @@ namespace AEAssist.Helper
                     CastableParty.Add(ally);
                 }
             }
-            
+
             foreach (var ally in PartyManager.RawMembers.Select(r => r.BattleCharacter))
             {
                 if (ally == null)
@@ -97,7 +96,7 @@ namespace AEAssist.Helper
 
                 if (!ally.IsTargetable || !ally.InLineOfSight() || ally.Icon == PlayerIcon.Viewing_Cutscene)
                     continue;
-                
+
 
                 if (WorldManager.InPvP)
                 {

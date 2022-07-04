@@ -22,7 +22,7 @@ namespace AETriggers
         private void Confirm_OnClick(object sender, RoutedEventArgs e)
         {
             _action?.Invoke(Name.Text);
-           this.Hide();
+            this.Hide();
         }
 
         private void Cancel_OnClick(object sender, RoutedEventArgs e)

@@ -5,8 +5,6 @@ using System.Linq;
 using System.Windows;
 using AEAssist;
 using AEAssist.View;
-using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson.Serialization.Options;
 using PropertyChanged;
 
 namespace AETriggers
@@ -60,9 +58,9 @@ namespace AETriggers
             {
                 var t = TriggerMgr.Instance.Name2Type[TypeName];
                 var attr = TriggerMgr.Instance.AllAttrs[t];
-                return attr.NeedParams? Visibility.Visible: Visibility.Hidden;
+                return attr.NeedParams ? Visibility.Visible : Visibility.Hidden;
             }
-            
+
 
             public string ParamToolTip()
             {
@@ -104,7 +102,7 @@ namespace AETriggers
             }
         }
 
-        
+
 
         public void Reset()
         {
@@ -138,14 +136,14 @@ namespace AETriggers
                     };
                     foreach (var cond in v.Value.CondTriggers)
                     {
-                        trigger.TriggerConds.Add( ConvertToData(cond) as ITriggerCond);
+                        trigger.TriggerConds.Add(ConvertToData(cond) as ITriggerCond);
                     }
-                
+
                     foreach (var action in v.Value.ActionTriggers)
                     {
-                        trigger.TriggerActions.Add( ConvertToData(action) as ITriggerAction);
+                        trigger.TriggerActions.Add(ConvertToData(action) as ITriggerAction);
                     }
-                
+
                     triggleLine.Triggers.Add(trigger);
                 }
 
@@ -178,7 +176,7 @@ namespace AETriggers
                 return instance as ITriggerBase;
             }
             else
-            { 
+            {
                 trigger.TriggerObj.Check();
                 return trigger.TriggerObj;
             }
@@ -188,7 +186,7 @@ namespace AETriggers
         public void Load(TriggerLine triggerLine)
         {
             this.Reset();
-            
+
             this.Author = triggerLine.Author;
             this.Name = triggerLine.Name;
             this.TargetJob = triggerLine.TargetJob;
@@ -198,7 +196,7 @@ namespace AETriggers
                 this.GroupIds.Add(v.Id);
                 this.AllGroupData[v.Id] = new GroupData();
                 var groupData = this.AllGroupData[v.Id];
-                
+
                 foreach (var cond in v.TriggerConds)
                 {
                     var attr = TriggerMgr.Instance.AllAttrs[cond.GetType()];
@@ -208,7 +206,7 @@ namespace AETriggers
                     {
                         foreach (var p in pack)
                         {
-                            str += p+",";
+                            str += p + ",";
                         }
 
                         str = str.TrimEnd(',');
@@ -224,9 +222,9 @@ namespace AETriggers
                     }
 
                     groupData.CondTriggers.Add(trigger);
-                    
+
                 }
-                
+
                 foreach (var action in v.TriggerActions)
                 {
                     var attr = TriggerMgr.Instance.AllAttrs[action.GetType()];
@@ -236,13 +234,13 @@ namespace AETriggers
                     {
                         foreach (var p in pack)
                         {
-                            str += p+",";
+                            str += p + ",";
                         }
 
                         str = str.TrimEnd(',');
                     }
 
-                
+
                     var trigger = new Trigger(attr.Name)
                     {
                         Param = str
@@ -251,10 +249,10 @@ namespace AETriggers
                     {
                         trigger.TriggerObj = action;
                     }
-                    
+
                     groupData.ActionTriggers.Add(trigger);
                 }
-                
+
             }
         }
 
@@ -288,7 +286,7 @@ namespace AETriggers
         };
 
         // Sort  observalble collection GroupsIds by id.
-        public void SortGroupIds(ObservableCollection <string> groupsIds)
+        public void SortGroupIds(ObservableCollection<string> groupsIds)
         {
             var list = groupsIds.ToList();
             list.Sort();
@@ -299,5 +297,5 @@ namespace AETriggers
             }
         }
     }
-    
+
 }

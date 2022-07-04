@@ -30,7 +30,7 @@ namespace AEAssist.AI.WhiteMage.GCD
 
         public async Task<SpellEntity> Run()
         {
- 
+
             var spell = WhiteMageSpellHelper.GetAero();
             if (spell == null)
                 return null;

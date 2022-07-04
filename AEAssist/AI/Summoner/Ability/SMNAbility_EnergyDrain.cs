@@ -2,9 +2,6 @@
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot.Managers;
-
-using ff14bot.Helpers;
-using System.Windows.Media;
 namespace AEAssist.AI.Summoner.Ability
 {
     public class SMNAbility_EnergyDrain : IAIHandler
@@ -25,7 +22,7 @@ namespace AEAssist.AI.Summoner.Ability
             if (ActionResourceManager.Summoner.Aetherflow != 0)
                 return -10;
 
-            
+
 
             return 0;
         }

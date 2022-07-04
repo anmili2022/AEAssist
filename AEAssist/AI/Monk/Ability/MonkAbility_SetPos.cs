@@ -1,8 +1,5 @@
 using System.Threading.Tasks;
 using AEAssist.Define;
-using AEAssist.Helper;
-using ff14bot;
-using ff14bot.Managers;
 
 namespace AEAssist.AI.Monk.Ability
 {
@@ -13,9 +10,9 @@ namespace AEAssist.AI.Monk.Ability
             return 0;
         }
 
-        
-        
-        public async Task<SpellEntity> Run()
+
+
+        public Task<SpellEntity> Run()
         {
             //
             // var spell = SpellsDefine.Brotherhood.GetSpellEntity();
@@ -25,7 +22,7 @@ namespace AEAssist.AI.Monk.Ability
             // if (ret)
             //     return spell;
             MonkSpellHelper.SetPostion();
-            return null;
+            return Task.FromResult<SpellEntity>(null);
         }
     }
 }

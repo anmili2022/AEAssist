@@ -1,5 +1,4 @@
-﻿using System.CodeDom;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
@@ -32,7 +31,7 @@ namespace AEAssist.AI.Ninja.Ability
             {
                 return 0;
             }
-            
+
             return -4;
         }
 

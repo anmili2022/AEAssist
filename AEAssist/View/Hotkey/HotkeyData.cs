@@ -20,7 +20,7 @@ namespace AEAssist.View.Hotkey
         public string Name { get; set; }
 
         public string TypeName;
-        
+
         public string GetDisplayString()
         {
             var b = $"{Key.ToString()}";

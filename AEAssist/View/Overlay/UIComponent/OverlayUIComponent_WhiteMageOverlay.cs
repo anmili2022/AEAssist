@@ -6,7 +6,7 @@ using ff14bot.Enums;
 namespace AEAssist.View.Overlay.UIComponent
 {
     [Job(ClassJobType.WhiteMage)]
-    internal class OverlayUIComponent_WhiteMageOverlay: OverlayUIComponent
+    internal class OverlayUIComponent_WhiteMageOverlay : OverlayUIComponent
     {
         private OverlayControl _control;
 
