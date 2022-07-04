@@ -13,8 +13,8 @@ namespace AEAssist.AI.Gunbreaker
 
         public void Init()
         {
-            CountDownHandler.Instance.AddListener(300, () =>
-                SpellsDefine.LightningShot.DoGCD());
+            //CountDownHandler.Instance.AddListener(300, () =>
+            //    SpellsDefine.LightningShot.DoGCD());
             int time = SettingMgr.GetSetting<GunBreakerSettings>().UsePotionEarly;
             if (time > 0)
             {                
