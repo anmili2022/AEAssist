@@ -4,7 +4,7 @@ using PropertyChanged;
 
 namespace AEAssist.TriggerCond
 {
-    [Trigger("EnemyHPPct 敌人血量百分比",Tooltip = "the specify value that specify enemy'hp less than\n指定敌人的血量低于多少时",
+    [Trigger("EnemyHPPct 敌人血量百分比", Tooltip = "the specify value that specify enemy'hp less than\n指定敌人的血量低于多少时",
         ParamTooltip = "[enemy name(contains) or NpcId],[Percentage of hp, retain three decimal places (51.123 = 51.123%)],[Time in sec]\n" +
                        "[敌人的名字(包含),或者NpcId],[血量百分比,保留3位小数(51.123 = 51.123%)],[过了多少秒]",
         Example = "10720,50.5,20\n\thydaelyn,50.12,3\n\t海德林,40,0")
@@ -14,7 +14,7 @@ namespace AEAssist.TriggerCond
     {
         [GUILabel("Name/Id")]
         public string Name { get; set; }
-        [GUIFloatRange(0,100)]
+        [GUIFloatRange(0, 100)]
         [GUIToolTip("51.123 = 51.123%")]
         public float HpPct { get; set; } // xx.xxx
         public int delayTime { get; set; }
@@ -46,7 +46,7 @@ namespace AEAssist.TriggerCond
         public void Check()
         {
             if (delayTime < 0) throw new Exception("Must >=0 : " + delayTime);
-            if(HpPct<0 || HpPct>100) throw new Exception("HpPct error : " + HpPct);
+            if (HpPct < 0 || HpPct > 100) throw new Exception("HpPct error : " + HpPct);
         }
     }
 }

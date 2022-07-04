@@ -1,6 +1,5 @@
 using System;
 using System.Threading.Tasks;
-using System.Windows.Media.Animation;
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
@@ -16,7 +15,7 @@ namespace AEAssist.AI.Monk.Ability
         {
             if (AIRoot.Instance.CloseBurst)
                 return -5;
-            
+
             if (!SpellsDefine.PerfectBalance.IsUnlock())
             {
                 return -10;
@@ -41,7 +40,7 @@ namespace AEAssist.AI.Monk.Ability
             {
                 return -4;
             }
-            
+
             if (!MonkSpellHelper.InRaptorForm())
             {
                 return -3;
@@ -154,7 +153,7 @@ namespace AEAssist.AI.Monk.Ability
             }
             //odd window
             else
-            {   
+            {
                 //Pre PB
                 if (SpellsDefine.RiddleofFire.AbilityCoolDownInNextXGCDsWindow(2) && !Core.Me.HasAura(AurasDefine.RiddleOfFire))
                 {

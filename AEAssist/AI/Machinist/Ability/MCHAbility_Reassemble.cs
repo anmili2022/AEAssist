@@ -11,8 +11,8 @@ namespace AEAssist.AI.Machinist.Ability
         {
             if (!SpellsDefine.Reassemble.IsReady())
                 return -1;
-            if (ActionResourceManager.Machinist.OverheatRemaining.TotalMilliseconds > 0 
-                && AIRoot.GetBattleData<MCHBattleData>().HyperchargeGCDCount<5)
+            if (ActionResourceManager.Machinist.OverheatRemaining.TotalMilliseconds > 0
+                && AIRoot.GetBattleData<MCHBattleData>().HyperchargeGCDCount < 5)
                 return -10;
 
             if (!AIRoot.Instance.Is2ndAbilityTime())

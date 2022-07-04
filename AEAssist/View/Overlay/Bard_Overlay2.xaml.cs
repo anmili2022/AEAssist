@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using AEAssist.AI;
 using AEAssist.Define;
 using AEAssist.Helper;
@@ -27,41 +16,41 @@ namespace AEAssist.View.Overlay
         {
             InitializeComponent();
 
-            
+
         }
 
         private void UseAetherialPM1_OnClick(object sender, RoutedEventArgs e)
         {
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne,SpellTargetType.PM1);
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne, SpellTargetType.PM1);
         }
         private void UseAetherialPM2_OnClick(object sender, RoutedEventArgs e)
         {
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne,SpellTargetType.PM2);
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne, SpellTargetType.PM2);
         }
         private void UseAetherialPM3_OnClick(object sender, RoutedEventArgs e)
         {
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne,SpellTargetType.PM3);
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne, SpellTargetType.PM3);
         }
         private void UseAetherialPM4_OnClick(object sender, RoutedEventArgs e)
         {
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne,SpellTargetType.PM4);
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne, SpellTargetType.PM4);
         }
         private void UseAetherialPM5_OnClick(object sender, RoutedEventArgs e)
         {
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne,SpellTargetType.PM5);
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne, SpellTargetType.PM5);
         }
         private void UseAetherialPM6_OnClick(object sender, RoutedEventArgs e)
         {
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne,SpellTargetType.PM6);
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne, SpellTargetType.PM6);
         }
         private void UseAetherialPM7_OnClick(object sender, RoutedEventArgs e)
         {
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne,SpellTargetType.PM7);
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne, SpellTargetType.PM7);
         }
-        
+
         private void UseAetherialPM8_OnClick(object sender, RoutedEventArgs e)
         {
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne,SpellTargetType.PM8);
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.NaturesMinne, SpellTargetType.PM8);
         }
 
         private void RefreshParty_OnClick(object sender, RoutedEventArgs e)
@@ -70,15 +59,15 @@ namespace AEAssist.View.Overlay
             {
                 this.Dispatcher.Invoke(Refresh);
             });
-            
-            
+
+
         }
 
         public void Refresh()
         {
             string GetName(SpellTargetType index)
             {
-                Gamelog.AEGamelogManager.Instance.Index2Characters.TryGetValue((int)index - 1,out var chara);
+                Gamelog.AEGamelogManager.Instance.Index2Characters.TryGetValue((int)index - 1, out var chara);
                 if (!string.IsNullOrEmpty(chara))
                     return chara;
                 return "NULL";
@@ -98,7 +87,7 @@ namespace AEAssist.View.Overlay
             }
             catch (Exception e)
             {
-              LogHelper.Error(e.ToString());
+                LogHelper.Error(e.ToString());
             }
         }
     }

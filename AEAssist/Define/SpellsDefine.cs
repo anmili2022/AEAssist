@@ -73,18 +73,33 @@ namespace AEAssist.Define
             FormShift,
             Meditation,
             Mantra,
+
+
+
+            //SMN
+            SearingLight,
+            SummonCarbuncle,
+            RadiantAegis,
+
+
+
+
             
-            
-            
-            
-            
-            
-            
+            //GNB
+            DoubleDown,
+            FatedCircle,
+            BowShock,
+            DemonSlice,
+            DemonSlaughter
+
+
         };
 
         public static HashSet<uint> IgnoreEarlyDecisionSet = new HashSet<uint>
         {
-            PlentifulHarvest
+            PlentifulHarvest,
+            DoubleDown,
+            SonicBreak
         };
 
 

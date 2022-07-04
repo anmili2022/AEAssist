@@ -1,4 +1,3 @@
-using AEAssist.Define;
 using AEAssist.Utilities.CombatMessages;
 using ff14bot;
 
@@ -6,7 +5,7 @@ namespace AEAssist.AI.Monk
 {
     public class MonkCombatMessageStrategy
     {
-         public static void RegisterCombatMessages()
+        public static void RegisterCombatMessages()
         {
 
             //Highest priority: Don't show anything if we're not in combat
@@ -16,11 +15,11 @@ namespace AEAssist.AI.Monk
                                           () => !Core.Me.InCombat));
 
             // Second priority: Don't show anything if positional requirements are Nulled
-             // CombatMessageManager.RegisterMessageStrategy(
-             //     new CombatMessageStrategy(200,
-             //                               "",
-             //                               "/AEAssist;component/Resources/Images/General/ArrowDownHighlighted.png",
-             //                               () => SettingMgr.GetSetting<MonkSettings>().HidePositionalToastsWithTn && MonkSpellHelper.InRaptorForm() || Core.Me.HasAura(AurasDefine.RiddleOfEarth)));
+            // CombatMessageManager.RegisterMessageStrategy(
+            //     new CombatMessageStrategy(200,
+            //                               "",
+            //                               "/AEAssist;component/Resources/Images/General/ArrowDownHighlighted.png",
+            //                               () => SettingMgr.GetSetting<MonkSettings>().HidePositionalToastsWithTn && MonkSpellHelper.InRaptorForm() || Core.Me.HasAura(AurasDefine.RiddleOfEarth)));
 
             //Third priority (tie): Bootshine
             // CombatMessageManager.RegisterMessageStrategy(

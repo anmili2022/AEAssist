@@ -3,10 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Managers;
-using ff14bot.Objects;
 
 namespace AEAssist.AI.Monk.GCD
 {
@@ -22,7 +19,7 @@ namespace AEAssist.AI.Monk.GCD
             {
                 return -10;
             }
-            if (ActionResourceManager.Monk.BlitzTimer != TimeSpan.Zero || 
+            if (ActionResourceManager.Monk.BlitzTimer != TimeSpan.Zero ||
                 !ActionResourceManager.Monk.MastersGauge.Contains(ActionResourceManager.Monk.Chakra.None))
             {
                 if (AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo != MonkNadiCombo.None)
@@ -48,7 +45,7 @@ namespace AEAssist.AI.Monk.GCD
                 return SpellsDefine.TornadoKick.GetSpellEntity();
             }
             //阴必杀
-            
+
             if (ActionResourceManager.Monk.MastersGauge.Distinct().ToArray().Length == 1)
             {
                 return SpellsDefine.ElixirField.GetSpellEntity();
@@ -66,7 +63,7 @@ namespace AEAssist.AI.Monk.GCD
 
             return SpellsDefine.CelestialRevolution.GetSpellEntity();
         }
-        
+
         public async Task<SpellEntity> Run()
         {
             var spell = GetMasterfulBlitz();

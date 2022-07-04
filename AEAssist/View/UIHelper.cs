@@ -19,10 +19,10 @@ namespace AEAssist.View
             }
             catch (Exception)
             {
-                
+
             }
         }
-        
+
     }
 
     public static class UIHelper
@@ -33,13 +33,13 @@ namespace AEAssist.View
         }
 
         private static bool hasDown = false;
-        
+
         public static void SetToolTipDuration(int time = 60000)
         {
             if (hasDown)
                 return;
             hasDown = true;
-            ToolTipService.ShowDurationProperty.OverrideMetadata(typeof(DependencyObject),new FrameworkPropertyMetadata((object) time));
+            ToolTipService.ShowDurationProperty.OverrideMetadata(typeof(DependencyObject), new FrameworkPropertyMetadata((object)time));
         }
     }
 }

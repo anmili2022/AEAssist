@@ -2,7 +2,6 @@
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
-using ff14bot;
 using ff14bot.Enums;
 
 namespace AEAssist.AI.Samurai
@@ -11,9 +10,6 @@ namespace AEAssist.AI.Samurai
     public class SamuraiRotation : IRotation
     {
         private readonly AIRoot AiRoot = AIRoot.Instance;
-        private long _lastTime;
-
-        private long randomTime;
 
         public void Init()
         {
@@ -21,7 +17,7 @@ namespace AEAssist.AI.Samurai
             DataBinding.Instance.EarlyDecisionMode = SettingMgr.GetSetting<SamuraiSettings>().EarlyDecisionMode;
             LogHelper.Info("EarlyDecisionMode: " + DataBinding.Instance.EarlyDecisionMode);
         }
-        
+
         public Task<bool> PreCombatBuff()
         {
             return Task.FromResult(false);

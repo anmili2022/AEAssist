@@ -11,11 +11,11 @@ namespace AEAssist.AI.Summoner.GCD
         uint spell;
         static public uint GetSpell()
         {
-            if (SMN_SpellHelper.PhoenixTrance()&&SpellsDefine.FountainofFire.IsUnlock())
+            if (SMN_SpellHelper.PhoenixTrance() && SpellsDefine.FountainofFire.IsUnlock())
             {
                 return SMN_SpellHelper.CheckUseAOE() ? SpellsDefine.BrandofPurgatory : SpellsDefine.FountainofFire;
             }
-            if (SpellsDefine.AstralFlow.IsUnlock()) 
+            if (SpellsDefine.AstralFlow.IsUnlock())
             {
                 if (SMN_SpellHelper.CheckUseAOE())
                     return SpellsDefine.AstralFlare;

@@ -1,14 +1,9 @@
 ﻿using System.Threading.Tasks;
+using AEAssist.AI.Summoner.GCD;
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
 using ff14bot.Enums;
-using ff14bot;
-using ff14bot.Managers;
-using ff14bot.Objects;
-using AEAssist.AI.Summoner.GCD;
-using System;
-using Buddy.Coroutines;
 
 namespace AEAssist.AI.Summoner
 {
@@ -19,7 +14,7 @@ namespace AEAssist.AI.Summoner
         {
             //CountDownHandler.Instance.AddListener(1500,
             //    () => PotionHelper.UsePotion(SettingMgr.GetSetting<GeneralSettings>().MindPotionId));
-            
+
 
             CountDownHandler.Instance.AddListener(1200,
                 () => SpellsDefine.Ruin.DoGCD());
@@ -34,16 +29,16 @@ namespace AEAssist.AI.Summoner
                 await summonCarbuncle.DelayedRun();
                 return true;
             }
-                
+
 
             return false;
-            
+
         }
 
-        public async Task<bool> NoTarget()
+        public Task<bool> NoTarget()
         {
-            
-            return false;
+
+            return Task.FromResult(false);
         }
 
         public SpellEntity GetBaseGCDSpell()

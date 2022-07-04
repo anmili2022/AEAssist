@@ -8,20 +8,20 @@ namespace AEAssist.View
         public int MinValue;
         public int MaxValue;
 
-        public GUIIntRangeAttribute(int min ,int max)
+        public GUIIntRangeAttribute(int min, int max)
         {
             this.MinValue = min;
             this.MaxValue = max;
         }
     }
-    
+
     [AttributeUsage(AttributeTargets.Property)]
     public class GUIFloatRangeAttribute : Attribute
     {
         public float MinValue;
         public float MaxValue;
 
-        public GUIFloatRangeAttribute(float min ,float max)
+        public GUIFloatRangeAttribute(float min, float max)
         {
             this.MinValue = min;
             this.MaxValue = max;

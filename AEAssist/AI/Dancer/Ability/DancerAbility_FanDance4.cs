@@ -1,6 +1,4 @@
-using System;
 using System.Threading.Tasks;
-using AEAssist.AI.Sage;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
@@ -20,17 +18,17 @@ namespace AEAssist.AI.Dancer.Ability
                 return -1;
             }
             if (AEAssist.DataBinding.Instance.FinalBurst) return 2;
-            
+
             if (Core.Me.HasAura(AurasDefine.Devilment))
             {
                 return 1;
             }
-            
+
             if (Core.Me.HasAura(AurasDefine.FourfoldFanDance) ||
                 (SpellsDefine.Flourish.RecentlyUsed() && !SpellsDefine.FanDanceIV.RecentlyUsed()))
             {
-                double doubletime = SpellsDefine.Devilment.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds + AIRoot.Instance.GetGCDDuration()*2;
-                int time = (int) doubletime;
+                double doubletime = SpellsDefine.Devilment.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds + AIRoot.Instance.GetGCDDuration() * 2;
+                int time = (int)doubletime;
                 if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.FourfoldFanDance, time))
                 {
                     return -2;

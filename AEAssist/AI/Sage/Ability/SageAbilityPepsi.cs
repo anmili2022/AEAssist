@@ -17,7 +17,7 @@ namespace AEAssist.AI.Sage.Ability
             // TODO: Might need a fix.
             if (!SpellsDefine.Pepsis.IsReady() || !Core.Me.HasAura(AurasDefine.EukrasianPrognosis) ||
                 !Core.Me.HasAura(AurasDefine.EukrasianDiagnosis)) return -1;
-            
+
             return 0;
         }
 

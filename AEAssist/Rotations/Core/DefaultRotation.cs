@@ -19,7 +19,7 @@ namespace AEAssist.Rotations.Core
         {
             return null;
         }
-        
+
         public Task<bool> NoTarget()
         {
             return Task.FromResult(false);

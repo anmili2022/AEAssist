@@ -6,7 +6,7 @@ namespace AEAssist.AI.Sage
     public class SageBattleData : IBattleData
     {
         public readonly Dictionary<uint, bool> lastEukrasianDosisWithObj = new Dictionary<uint, bool>();
-        
+
         public bool IsTargetLastEukrasianDosis()
         {
             var targetId = Core.Me.CurrentTarget.ObjectId;

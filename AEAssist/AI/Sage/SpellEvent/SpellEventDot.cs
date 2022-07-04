@@ -9,9 +9,9 @@ namespace AEAssist.AI.Sage.SpellEvent
     {
         public void Run(uint spellId)
         {
-            if (spellId == SpellsDefine.EukrasianDosis || 
-                spellId == SpellsDefine.EukrasianDosisII || 
-                spellId == SpellsDefine.EukrasianDosisIII )
+            if (spellId == SpellsDefine.EukrasianDosis ||
+                spellId == SpellsDefine.EukrasianDosisII ||
+                spellId == SpellsDefine.EukrasianDosisIII)
                 SageSpellHelper.RecordEukrasianDosis();
             else
                 SageSpellHelper.RemoveRecordEukrasianDosis();

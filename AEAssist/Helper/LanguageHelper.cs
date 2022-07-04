@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using AEAssist;
 using AEAssist.View.Hotkey;
-using AEAssist.View.Hotkey.BuiltinHotkeys;
 
 namespace AEAssist.Helper
 {
@@ -81,7 +79,7 @@ namespace AEAssist.Helper
             }
             catch (Exception e)
             {
-              LogHelper.Error(e.ToString());
+                LogHelper.Error(e.ToString());
             }
         }
 
@@ -111,12 +109,12 @@ namespace AEAssist.Helper
                     continue;
                 v.SetValue(Language.Instance, va);
             }
-            
+
             var hotkeySetting = SettingMgr.GetSetting<HotkeySetting>();
             hotkeySetting.ResetHotkeyName();
 
             HotkeyManager.Instance.RefreshName();
-            
+
             LogHelper.Debug($"Change Language==>{target.LanType} finished");
         }
     }

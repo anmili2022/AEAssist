@@ -25,7 +25,7 @@ namespace AEAssist.AI.WhiteMage
             new WhiteMageGCDRegen(),
             new WhiteMageGCDHoly(),
             new WhiteMageBaseGCD()
-            
+
 
 
         };

@@ -30,7 +30,7 @@ namespace AEAssist.View.Overlay.UIComponent
                     Width = overlayUc.Width + 5,
                     Height = overlayUc.Height,
                     X = SettingMgr.GetSetting<GeneralSettings>().OverlayPos_X,
-                    Y =  SettingMgr.GetSetting<GeneralSettings>().OverlayPos_Y,
+                    Y = SettingMgr.GetSetting<GeneralSettings>().OverlayPos_Y,
                     AllowMoving = true,
                     AllowResizing = false
                 };

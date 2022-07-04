@@ -1,7 +1,5 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using Microsoft.Win32;
 
 namespace AEAssist.View
 {
@@ -11,7 +9,7 @@ namespace AEAssist.View
         {
             InitializeComponent();
         }
-        
+
 
         private void Close_OnClick(object sender, RoutedEventArgs e)
         {

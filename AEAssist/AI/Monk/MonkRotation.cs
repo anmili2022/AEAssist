@@ -19,7 +19,7 @@ namespace AEAssist.AI.Monk
             int ThunderClapTimer = rnd.Next(1800, 2100);
             int CloseUpTimer = rnd.Next(800, 1000);
             CountDownHandler.Instance.AddListener(Timer, () => SpellsDefine.FormShift.DoGCD());
-            CountDownHandler.Instance.AddListener(Timer-2000, () => SpellsDefine.Meditation.DoAbility());
+            CountDownHandler.Instance.AddListener(Timer - 2000, () => SpellsDefine.Meditation.DoAbility());
             if (!ActionManager.CanCastOrQueue(SpellsDefine.Bootshine.GetSpellEntity().SpellData, Core.Me.CurrentTarget))
             {
                 CountDownHandler.Instance.AddListener(CloseUpTimer, () => SpellsDefine.Thunderclap.DoAbility());
@@ -28,14 +28,14 @@ namespace AEAssist.AI.Monk
             LogHelper.Info("EarlyDecisionMode: " + AEAssist.DataBinding.Instance.EarlyDecisionMode);
         }
 
-        public async Task<bool> PreCombatBuff()
+        public Task<bool> PreCombatBuff()
         {
-            return false;
+            return Task.FromResult(false);
         }
 
-        public async Task<bool> NoTarget()
+        public Task<bool> NoTarget()
         {
-            return false;
+            return Task.FromResult(false);
         }
 
         public SpellEntity GetBaseGCDSpell()

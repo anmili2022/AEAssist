@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot;
 
 namespace AEAssist.AI.BlackMage.Ability
 {
@@ -12,7 +11,7 @@ namespace AEAssist.AI.BlackMage.Ability
             // if setting is no burst
             if (AIRoot.Instance.CloseBurst)
                 return -5;
-            
+
             if (!SpellsDefine.LeyLines.IsReady())
             {
                 return -1;

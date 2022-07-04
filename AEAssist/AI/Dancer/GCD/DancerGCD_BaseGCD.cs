@@ -1,7 +1,5 @@
 ﻿using System.Threading.Tasks;
-using AEAssist.AI.Sage;
 using AEAssist.Define;
-using AEAssist.Helper;
 using ff14bot;
 
 namespace AEAssist.AI.Dancer.GCD
@@ -10,7 +8,7 @@ namespace AEAssist.AI.Dancer.GCD
     {
         public int Check(SpellEntity lastGCD)
         {
-            if (Core.Me.HasAura(AurasDefine.StandardStep) || 
+            if (Core.Me.HasAura(AurasDefine.StandardStep) ||
                 Core.Me.HasAura(AurasDefine.TechnicalStep))
             {
                 return -10;
@@ -24,7 +22,7 @@ namespace AEAssist.AI.Dancer.GCD
             // Fountain 喷泉 ST2 :Fountainfall 坠喷泉 
             // Windmill 风车 AOE1 Rising Windmill 升风车 
             // Bladeshower 落刃雨 AOE2 :Bloodshower 落血雨 
-            
+
             return await DancerSpellHelper.BaseGCDCombo(Core.Me.CurrentTarget);
         }
     }

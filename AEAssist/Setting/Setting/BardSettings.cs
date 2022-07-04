@@ -1,5 +1,4 @@
 ﻿using AEAssist.AI.Bard;
-using AEAssist.Define;
 using PropertyChanged;
 
 namespace AEAssist
@@ -13,7 +12,7 @@ namespace AEAssist
         }
 
         public double RestHealthPercent { get; set; }
-        public int ApexArrowValue { get; set; } 
+        public int ApexArrowValue { get; set; }
 
         public SongStrategyEnum CurrentSongPlaylist { get; set; }
 
@@ -23,9 +22,9 @@ namespace AEAssist
 
         public bool UsePeloton { get; set; }
 
-        public bool BuffsDelay2GCD { get; set; } 
+        public bool BuffsDelay2GCD { get; set; }
 
-        public int TTK_IronJaws { get; set; } 
+        public int TTK_IronJaws { get; set; }
 
         public int Dot_TimeLeft { get; set; } = 2500;
 
@@ -54,7 +53,7 @@ namespace AEAssist
 
         public void OnLoad()
         {
-            
+
         }
     }
 }

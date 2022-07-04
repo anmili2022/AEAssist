@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
-using ff14bot;
 using AEAssist.Helper;
+using ff14bot.Managers;
 
 namespace AEAssist.AI.GunBreaker.GCD
 {
@@ -15,8 +15,11 @@ namespace AEAssist.AI.GunBreaker.GCD
             if (!SpellsDefine.DoubleDown.IsReady())
                 return -1;
 
-            if(SpellsDefine.NoMercy.CoolDownInGCDs(4))
+            if (SpellsDefine.NoMercy.CoolDownInGCDs(4))
                 return -2;
+
+            if (ActionResourceManager.Gunbreaker.Cartridge < 2)
+                return -3;
 
             return 0;
         }

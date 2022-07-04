@@ -4,13 +4,13 @@ using PropertyChanged;
 
 namespace AEAssist.TriggerAction
 {
-    [Trigger("BRD/SwitchSong 诗人歌曲控制",Tooltip = "Immediately switch the song. (1 for MB, 2 for AP, 3 for WM). -1=toggle off the song,0 =toggle on ")]
+    [Trigger("BRD/SwitchSong 诗人歌曲控制", Tooltip = "Immediately switch the song. (1 for MB, 2 for AP, 3 for WM). -1=toggle off the song,0 =toggle on ")]
     [AddINotifyPropertyChangedInterface]
     public class TriggerAction_SwitchSong : ITriggerAction
     {
         [GUIToolTip("-1~3.\n(1 for MB, 2 for AP, 3 for WM). -1=toggle off the song,0 =toggle on")]
-        [GUIIntRange(-1,3)]
-        public int index{ get; set; }
+        [GUIIntRange(-1, 3)]
+        public int index { get; set; }
 
         public void WriteFromJson(string[] values)
         {
@@ -18,7 +18,7 @@ namespace AEAssist.TriggerAction
             this.index = index;
             Check();
         }
-        
+
         public string[] Pack2Json()
         {
             return new string[]

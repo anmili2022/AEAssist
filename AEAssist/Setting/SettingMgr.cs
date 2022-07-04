@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using AEAssist.AI;
 using AEAssist.Define;
 using AEAssist.Helper;
-using AEAssist;
-using AEAssist.AI;
 using Newtonsoft.Json;
 
 namespace AEAssist
@@ -17,7 +16,7 @@ namespace AEAssist
         private readonly Dictionary<Type, IBaseSetting> AllSetting = new Dictionary<Type, IBaseSetting>();
 
         private readonly HashSet<Type> AllSettingsType = new HashSet<Type>();
-        
+
         private object LoadSetting(Type type)
         {
             var generalSettingFile = $"{SettingPath}/{type.Name}.json";
@@ -72,7 +71,7 @@ namespace AEAssist
         {
             AllSettingsType.Clear();
             AllSetting.Clear();
-            
+
             var baseType = typeof(IBaseSetting);
             foreach (var type in GetType().Assembly.GetTypes())
             {

@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using AEAssist.Helper;
-using ff14bot.Enums;
-using AEAssist.AI.Summoner.GCD;
 using AEAssist.AI.Summoner.Ability;
+using AEAssist.AI.Summoner.GCD;
+using ff14bot.Enums;
 namespace AEAssist.AI.Summoner
 {
     [Job(ClassJobType.Summoner)]
@@ -13,7 +12,7 @@ namespace AEAssist.AI.Summoner
         {
             new SMNGCD_SummonCarbuncle(),
             new SMNGCD_TranceBase(),
-            new SMNGCD_Aethercharge(),     
+            new SMNGCD_Aethercharge(),
             new SMNGCD_PetGarudaSlipstream(),
             new SMNGCD_PetIfritCrimson(),
             new SMNGCD_PetBase(),

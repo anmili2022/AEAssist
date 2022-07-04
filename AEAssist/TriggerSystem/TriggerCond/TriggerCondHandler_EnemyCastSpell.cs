@@ -24,7 +24,7 @@ namespace AEAssist.TriggerSystem.TriggerCond
                         cond.strs = cond.spellName.Split('|');
                     }
                 }
-                
+
                 foreach (var v in enemys.Values)
                 {
                     if (v.SpellCastInfo == null || !v.IsCasting)
@@ -39,7 +39,7 @@ namespace AEAssist.TriggerSystem.TriggerCond
                         {
                             AIRoot.GetBattleData<BattleData>().RecordCondHitTime(cond);
                             return false;
-                        }   
+                        }
                     }
                 }
             }

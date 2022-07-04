@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Input;
-using System.Windows.Media;
 using AETriggers;
-using NPOI.HSSF.UserModel;
-using NPOI.SS.UserModel;
-using NPOI.XSSF.UserModel;
 using Application = System.Windows.Application;
 using Button = System.Windows.Controls.Button;
 using HorizontalAlignment = System.Windows.HorizontalAlignment;
@@ -19,7 +14,6 @@ using MenuItem = System.Windows.Controls.MenuItem;
 using MessageBox = System.Windows.MessageBox;
 using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
 using SaveFileDialog = Microsoft.Win32.SaveFileDialog;
-using Trigger = AEAssist.Trigger;
 
 namespace AEAssist
 {
@@ -35,7 +29,7 @@ namespace AEAssist
         }
 
         private RenameWindow _renameWindow;
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -45,7 +39,7 @@ namespace AEAssist
                 Load.Content = "加载Excel表";
                 Export.Content = "导出";
             }*/
-            ToolTipService.ShowDurationProperty.OverrideMetadata(typeof(DependencyObject),new FrameworkPropertyMetadata((object) 60000));
+            ToolTipService.ShowDurationProperty.OverrideMetadata(typeof(DependencyObject), new FrameworkPropertyMetadata((object)60000));
             var contextMenu = new System.Windows.Controls.ContextMenu();
             Dictionary<string, MenuItem> _menuItemsDict = new Dictionary<string, MenuItem>();
             Dictionary<string, TriggerAttribute> path2Triggers = new Dictionary<string, TriggerAttribute>();
@@ -56,29 +50,29 @@ namespace AEAssist
                 if (attr.Name.Contains("/"))
                 {
                     var path = "Conds/" + attr.Name;
-                    path2Triggers.Add(path,attr);
+                    path2Triggers.Add(path, attr);
                 }
                 else
                 {
                     var path = "Conds/General/" + attr.Name;
-                    path2Triggers.Add(path,attr);
+                    path2Triggers.Add(path, attr);
                 }
 
-              
+
             }
-            
+
             foreach (var v in TriggerMgr.Instance.AllActionType)
             {
                 var attr = TriggerMgr.Instance.AllAttrs[v];
                 if (attr.Name.Contains("/"))
                 {
                     var path = "Actions/" + attr.Name;
-                    path2Triggers.Add(path,attr);
+                    path2Triggers.Add(path, attr);
                 }
                 else
                 {
                     var path = "Actions/General/" + attr.Name;
-                    path2Triggers.Add(path,attr);
+                    path2Triggers.Add(path, attr);
                 }
             }
 
@@ -105,7 +99,7 @@ namespace AEAssist
                                 Text = afterSplit[i],
                                 TextTrimming = TextTrimming.None,
                                 TextAlignment = TextAlignment.Left,
-                                TextWrapping =  TextWrapping.NoWrap,
+                                TextWrapping = TextWrapping.NoWrap,
                                 HorizontalAlignment = HorizontalAlignment.Left
                             },
                             Height = 20,
@@ -119,14 +113,14 @@ namespace AEAssist
                             var lastLevelMenu = string.Empty;
                             for (int j = 0; j < i; j++)
                             {
-                                lastLevelMenu+= afterSplit[j] + "/";
+                                lastLevelMenu += afterSplit[j] + "/";
                             }
                             if (lastLevelMenu.Length > 0)
                                 lastLevelMenu = lastLevelMenu.Remove(lastLevelMenu.Length - 1);
                             var lastMenu = _menuItemsDict[lastLevelMenu];
                             if (afterSplit[i] == "General")
                             {
-                                lastMenu.Items.Insert(0,menuItem);
+                                lastMenu.Items.Insert(0, menuItem);
                             }
                             else
                             {
@@ -168,10 +162,10 @@ namespace AEAssist
             JobComboBox.SelectedValue = Jobs.Any;
 
             _renameWindow = new RenameWindow();
-            
+
             Entry.Init();
         }
-        
+
         private void Export_OnClick(object sender, RoutedEventArgs e)
         {
             var TriggerLine = DataBinding.Instance.Export();
@@ -221,7 +215,7 @@ namespace AEAssist
         {
             Application.Current.Shutdown();
         }
-        
+
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonDown(e);
@@ -251,7 +245,7 @@ namespace AEAssist
             DataBinding.Instance.GroupIds.Add(newId);
             DataBinding.Instance.AllGroupData[newId] = new DataBinding.GroupData();
             ChooseGroup(newId);
-            
+
         }
 
         private void IdTextBox_OnKeyDown(object sender, KeyEventArgs e)
@@ -270,7 +264,7 @@ namespace AEAssist
                 IdTextBox.Text = "";
             }
         }
-        
+
 
         // private void Main_OnMouseDown(object sender, MouseButtonEventArgs e)
         // {
@@ -287,7 +281,7 @@ namespace AEAssist
 
         private void AuthorTextBox_OnKeyUp(object sender, KeyEventArgs e)
         {
-            
+
         }
 
         private void TriggerOnClickHandler(object sender, RoutedEventArgs e)
@@ -319,9 +313,9 @@ namespace AEAssist
                 var textBlock = stackPanel.Children[0] as TextBlock;
 
                 var oldId = textBlock.Text;
-                var mousePos =  Mouse.GetPosition(this);
+                var mousePos = Mouse.GetPosition(this);
                 var screenPos = this.PointToScreen(mousePos);
-                _renameWindow.Display(screenPos,v=>Rename(oldId,v));
+                _renameWindow.Display(screenPos, v => Rename(oldId, v));
                 //todo: get newId,
             }
             catch (Exception exception)
@@ -330,7 +324,7 @@ namespace AEAssist
             }
         }
 
-        void Rename(string oldId,string newId)
+        void Rename(string oldId, string newId)
         {
             bool currChoosed = false;
             if (DataBinding.Instance.CurrChoosedId == oldId)
@@ -343,9 +337,9 @@ namespace AEAssist
             var oldIndex = DataBinding.Instance.GroupIds.IndexOf(oldId);
 
             DataBinding.Instance.GroupIds.Remove(oldId);
-            var groupData =  DataBinding.Instance.AllGroupData[oldId];
+            var groupData = DataBinding.Instance.AllGroupData[oldId];
             DataBinding.Instance.AllGroupData.Remove(oldId);
-            DataBinding.Instance.GroupIds.Insert(oldIndex,newId);
+            DataBinding.Instance.GroupIds.Insert(oldIndex, newId);
             DataBinding.Instance.AllGroupData[newId] = groupData;
             if (currChoosed)
             {
@@ -432,7 +426,7 @@ namespace AEAssist
             }
             // sort GroupIds collection, and update UI.
             DataBinding.Instance.SortGroupIds(DataBinding.Instance.GroupIds);
-            
+
         }
 
         private void Cond_DeleteTriggerBehavior_OnClick(object sender, RoutedEventArgs e)
@@ -443,7 +437,7 @@ namespace AEAssist
             var content = TriggerContent.Children[0] as DynamicTriggerContent;
             content.Clear();
         }
-        
+
         private void Action_DeleteTriggerBehavior_OnClick(object sender, RoutedEventArgs e)
         {
             var selectedItem = ActionsListView.SelectedValue as DataBinding.Trigger;
@@ -503,8 +497,8 @@ namespace AEAssist
                 return;
             try
             {
-                var dirPath = Directory.GetCurrentDirectory()+ "/Triggerline/";
-                var filePath =dirPath+ "/TempFile_" + DateTimeOffset.Now.ToFileTime()+".json";
+                var dirPath = Directory.GetCurrentDirectory() + "/Triggerline/";
+                var filePath = dirPath + "/TempFile_" + DateTimeOffset.Now.ToFileTime() + ".json";
                 if (!Directory.Exists(dirPath))
                     Directory.CreateDirectory(dirPath);
                 TriggerHelper.SaveTriggerLine(TriggerLine, filePath);
@@ -521,7 +515,7 @@ namespace AEAssist
         private void MainWindow_OnKeyDown(object sender, KeyEventArgs e)
         {
             // The text box grabs all input.
-      
+
 
             // Fetch the actual shortcut key.
             var key = e.Key == Key.System ? e.SystemKey : e.Key;

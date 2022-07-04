@@ -33,7 +33,7 @@ namespace AEAssist.AI.Ninja.GCD
             AISpellQueueMgr.Instance.Apply<SpellQueue_HyoshoRanryu>();
             await Task.CompletedTask;
             return null;
-            
+
         }
     }
 }

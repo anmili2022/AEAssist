@@ -3,10 +3,7 @@ using AEAssist.AI.GeneralAI;
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
-using ff14bot;
 using ff14bot.Enums;
-using ff14bot.Managers;
-using Language = AEAssist.Language;
 
 namespace AEAssist.AI.Bard
 {
@@ -21,7 +18,7 @@ namespace AEAssist.AI.Bard
             AEAssist.DataBinding.Instance.EarlyDecisionMode = SettingMgr.GetSetting<BardSettings>().EarlyDecisionMode;
             LogHelper.Info("EarlyDecisionMode: " + AEAssist.DataBinding.Instance.EarlyDecisionMode);
         }
-        
+
         public async Task<bool> PreCombatBuff()
         {
             if (!SettingMgr.GetSetting<BardSettings>().UsePeloton)

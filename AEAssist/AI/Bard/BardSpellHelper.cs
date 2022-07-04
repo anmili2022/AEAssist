@@ -106,18 +106,18 @@ namespace AEAssist.AI.Bard
         {
             var id = GetWindBiteAura();
             if (id == 0)
-                return true; 
+                return true;
 
-            return target.HasMyAuraWithTimeleft((uint) id);
+            return target.HasMyAuraWithTimeleft((uint)id);
         }
 
         public static bool IsTargetHasAura_VenomousBite(Character target)
         {
             var id = GetVenomousBiteAura();
             if (id == 0)
-                return true; 
+                return true;
 
-            return target.HasMyAuraWithTimeleft((uint) id);
+            return target.HasMyAuraWithTimeleft((uint)id);
         }
 
         public static bool IsTargetNeedIronJaws(Character target, int timeLeft)
@@ -139,15 +139,15 @@ namespace AEAssist.AI.Bard
                 if (AEAssist.DataBinding.Instance.EarlyDecisionMode)
                     timeLeft += SettingMgr.GetSetting<GeneralSettings>().ActionQueueMs;
 
-                return !target.HasMyAuraWithTimeleft((uint) ve_id, timeLeft)
-                       || !target.ContainAura((uint) wind_id, timeLeft);
+                return !target.HasMyAuraWithTimeleft((uint)ve_id, timeLeft)
+                       || !target.ContainAura((uint)wind_id, timeLeft);
             }
 
             var buffCountInEnd = HasBuffsCountInEnd();
             //LogHelper.Info("当前快要结束的Buff数量 : " + buffCountInEnd);
             if (buffCountInEnd >= 1 && !AIRoot.GetBattleData<BardBattleData>().IsTargetLastIronJawWithBuff())
             {
-                if (ttk_ironJaws > 0 && target.HasMyAuraWithTimeleft((uint) ve_id, ttk_ironJaws * 1000) &&
+                if (ttk_ironJaws > 0 && target.HasMyAuraWithTimeleft((uint)ve_id, ttk_ironJaws * 1000) &&
                     TTKHelper.IsTargetTTK(target, ttk_ironJaws, false))
                     return NormalCheck();
                 return true;
@@ -359,7 +359,7 @@ namespace AEAssist.AI.Bard
                     && SpellsDefine.TheWanderersMinuet.GetSpellEntity().Cooldown.TotalMilliseconds > 1000)
                     return -103;
 
-                if (AIRoot.GetBattleData<BardBattleData>().NeedSwitchByNextSongQueue((int) currSong, remainTime))
+                if (AIRoot.GetBattleData<BardBattleData>().NeedSwitchByNextSongQueue((int)currSong, remainTime))
                     return 100;
 
                 switch (currSong)
@@ -387,10 +387,10 @@ namespace AEAssist.AI.Bard
                 && SpellsDefine.MagesBallad.GetSpellEntity().Cooldown.TotalMilliseconds > 1000)
                 return -102;
 
-          
+
             if (currSong != ActionResourceManager.Bard.BardSong.None)
             {
-                if (AIRoot.GetBattleData<BardBattleData>().NeedSwitchByNextSongQueue((int) currSong, remainTime))
+                if (AIRoot.GetBattleData<BardBattleData>().NeedSwitchByNextSongQueue((int)currSong, remainTime))
                     return 201;
 
                 if (remainTime <= ConstValue.SongsTimeLeftCheckWhenCloseBuff) return 202;

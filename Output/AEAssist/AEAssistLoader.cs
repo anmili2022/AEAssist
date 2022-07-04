@@ -55,17 +55,19 @@ namespace AEAssistLoader
                     case ClassJobType.Sage:
                     case ClassJobType.Summoner:
                     case ClassJobType.WhiteMage:
+                    case ClassJobType.Astrologian:
                     case ClassJobType.BlackMage:
                     case ClassJobType.Monk:
                     case ClassJobType.Ninja:
                     case ClassJobType.Gunbreaker:
+                    case ClassJobType.Paladin:
                         Logging.Write(Colors.Red, $@"[AEAssist] {Core.Me.CurrentJob} is only for develop.");
                         return new[] { Core.Me.CurrentJob };
                     default:
-                    {
-                        Logging.Write(Colors.Red, $@"[AEAssist] {Core.Me.CurrentJob} is not supported.");
-                        return new[] { ClassJobType.Adventurer };
-                    }
+                        {
+                            Logging.Write(Colors.Red, $@"[AEAssist] {Core.Me.CurrentJob} is not supported.");
+                            return new[] { ClassJobType.Adventurer };
+                        }
                 }
             }
         }

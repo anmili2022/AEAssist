@@ -11,7 +11,7 @@ namespace AEAssist.AI.Sage.GCD
         {
             // don't cast dosis when moving, instead going to cast other spells.
             if (!MovementManager.IsMoving) return 0;
-            
+
             // Always use Phlegma if there is more than one, no need to spam dosis.
             var phlegmaCharges = DataManager.GetSpellData(SpellsDefine.Phlegma).Charges;
             var phlegmaChargesII = DataManager.GetSpellData(SpellsDefine.PhlegmaII).Charges;
@@ -23,7 +23,7 @@ namespace AEAssist.AI.Sage.GCD
             }
             LogHelper.Debug("Not casting Dosis, since we are moving.");
             return -10;
-            
+
             // // prevent redundant casting
             // var battleData = AIRoot.GetBattleData<BattleData>();
             // if (battleData.lastGCDSpell == SpellsDefine.Dosis.GetSpellEntity() ||
@@ -38,7 +38,7 @@ namespace AEAssist.AI.Sage.GCD
         {
             var spell = SageSpellHelper.GetBaseGcd();
             if (spell == null) return null;
-            var ret = await spell.DoGCD(); 
+            var ret = await spell.DoGCD();
             return ret ? spell : null;
         }
     }

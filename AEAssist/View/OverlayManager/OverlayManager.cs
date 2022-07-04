@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
 using AEAssist.Helper;
 using AEAssist.View.Overlay.UIComponent;
 using Buddy.Overlay;
@@ -18,13 +16,13 @@ namespace AEAssist.View.OverlayManager
             new Dictionary<ClassJobType, List<OverlayUIComponent>>();
 
         private ClassJobType _classJobType;
-        
+
         private HashSet<OverlayUIComponent> _existOverlays = new HashSet<OverlayUIComponent>();
 
         private HashSet<OverlayUIComponent> _delSet = new HashSet<OverlayUIComponent>();
-        
+
         private static OverlayUIComponent_CombatMessage CombatMessageOverlay;
-        
+
         public void Init()
         {
             var baseType = typeof(OverlayUIComponent);
@@ -41,9 +39,9 @@ namespace AEAssist.View.OverlayManager
                 foreach (var v in attrs)
                 {
                     var attr = v as JobAttribute;
-                    if(!AllOverlays.ContainsKey(attr.ClassJobType))
+                    if (!AllOverlays.ContainsKey(attr.ClassJobType))
                         AllOverlays.Add(attr.ClassJobType, new List<OverlayUIComponent>());
-                    AllOverlays[attr.ClassJobType].Add(Activator.CreateInstance(type) as OverlayUIComponent);   
+                    AllOverlays[attr.ClassJobType].Add(Activator.CreateInstance(type) as OverlayUIComponent);
                 }
             }
         }
@@ -64,7 +62,7 @@ namespace AEAssist.View.OverlayManager
         {
             if (!Core.OverlayManager.IsActive)
                 return;
-            if (_existOverlays.Count>0)
+            if (_existOverlays.Count > 0)
             {
                 Close();
             }
@@ -82,7 +80,7 @@ namespace AEAssist.View.OverlayManager
             {
                 foreach (var v in window)
                 {
-                    LogHelper.Info("AddOverlay   "+ v.GetType().Name);
+                    LogHelper.Info("AddOverlay   " + v.GetType().Name);
                     if (_existOverlays.Add(v))
                         Core.OverlayManager.AddUIComponent(v);
                 }
@@ -95,17 +93,17 @@ namespace AEAssist.View.OverlayManager
 
             foreach (var v in _existOverlays)
             {
-                LogHelper.Info("RemoveOverlay   "+ v.GetType().Name);
+                LogHelper.Info("RemoveOverlay   " + v.GetType().Name);
                 Core.OverlayManager.RemoveUIComponent(v);
                 _delSet.Add(v);
             }
-            
+
             foreach (var v in _delSet)
             {
                 _existOverlays.Remove(v);
             }
         }
-        
+
 
         public void RefreshOverlay()
         {
@@ -131,10 +129,10 @@ namespace AEAssist.View.OverlayManager
             {
                 CombatMessageOverlay = new OverlayUIComponent_CombatMessage();
             }
-            
+
             Core.OverlayManager.AddUIComponent(CombatMessageOverlay);
         }
-        
+
         public void StopCombatMessageOverlay()
         {
             if (!Core.OverlayManager.IsActive)

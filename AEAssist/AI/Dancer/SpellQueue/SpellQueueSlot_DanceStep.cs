@@ -1,12 +1,8 @@
-﻿using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
-using AEAssist.AI.Sage;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
 using ff14bot.Managers;
-using ff14bot.Objects;
 
 namespace AEAssist.AI.Dancer.SpellQueue
 {

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Runtime.InteropServices;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
-using Buddy.Coroutines;
 using ff14bot;
 using ff14bot.Enums;
-using ff14bot.Helpers;
 using ff14bot.Managers;
 using ff14bot.Objects;
 
@@ -242,6 +238,7 @@ namespace AEAssist.AI.Monk
                         }
                     }
                 }
+
             }
 
             if (Core.Me.HasMyAura(AurasDefine.LeadenFist) || !SpellsDefine.DragonKick.IsUnlock())
@@ -572,9 +569,9 @@ namespace AEAssist.AI.Monk
             return null;
         }
 
-        private static async Task<SpellEntity> PerfectBalanceOpoOpo(Character target)
+        private static Task<SpellEntity> PerfectBalanceOpoOpo(Character target)
         {
-            return null;
+            return Task.FromResult<SpellEntity>(null);
         }
 
         private static async Task<SpellEntity> PerfectBalanceCoeurl(Character target)

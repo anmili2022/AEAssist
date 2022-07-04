@@ -2,9 +2,6 @@
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot.Managers;
-
-using ff14bot.Helpers;
-using System.Windows.Media;
 namespace AEAssist.AI.Summoner.Ability
 {
     public class SMNAbility_EnkindleBahamut : IAIHandler
@@ -19,7 +16,7 @@ namespace AEAssist.AI.Summoner.Ability
 
 
         //龙神迸发
-        
+
         public int Check(SpellEntity lastSpell)
         {
             spell = GetEnkindleBahamut();

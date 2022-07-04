@@ -31,6 +31,7 @@
   "Toggle_Apex": "Apex",
   "Toggle_ActiveAttack": "Pull",
   "Toggle_LucidDreaming": "Lucid Dreaming",
+  "Toggle_SMN_Crimson": "Crimson",
   "Toggle_SwiftRes": "Swift Res",
   "Toggle_PreferDoubleEnshroud": "2*Enshroud",
   "Toggle_UseHarpe": "Harpe",
@@ -50,8 +51,8 @@
   "Label_CurrTriggerLine": "CurrTriggerLine:",
   "Label_ChoosePotion": "Choose Potion",
   "Label_PotionNum": "Num:",
-  "Label_ChooseResPriority" : "Choose Res Priority",
-  "Label_CombatMessageFontSize" : "Font Size",
+  "Label_ChooseResPriority": "Choose Res Priority",
+  "Label_CombatMessageFontSize": "Font Size",
   "Toggle_PreferGallow": "Prefer Gallow",
   "Btn_LoadTriggerLine": "Load",
   "Btn_ClearTriggerLine": "Clear",
@@ -91,6 +92,7 @@
   "Toggle_DoubleShroundPrefer": "2*Enshroud Prefer",
   "Toggle_WildfireNoDelay": "Wildfire 1st",
   "Combox_Hotkey_ArmLength": "ArmLength/Surecast",
+  "Combox_Hotkey_CrimsonCyclone": "CrimsonCyclone (Dash SMN)",
   "Toggle_NextAbilityFirst": "Ability First",
   "Toggle_KnockAgainstFirst": "ArmLength/Surecast First",
   "Content_ResetSetting": "The old settings have been reset.",
@@ -108,5 +110,7 @@
   "ToolTip_MCH_WildFireFirst": "Normally, the use of Wildfire is delayed due to the high power GCD that is about to cool down, after activation, Wildfire will be used as soon as 50 points of heat are available.\nThis can be set to the default active state. (In the exclusive GUI of MCH.)",
   "ToolTip_MCH_Burst": "If it is off, then battery / wildfire / HyperCharge will not be used",
   "ToolTip_RPR_Burst": "If it is off, then Enshround / ArcaneCircle will not be used",
-  "ToolTip_RPR_DoubleEnshroundPrefer": "Each Arcane Circle window will contain 2 uses of Communio and 1 use of Plentiful Harvest.\nBut if you don't have at least 50 points of blue energy when Arcane Circle cooldowns. Then it will not be used in this way"
+  "ToolTip_RPR_DoubleEnshroundPrefer": "Each Arcane Circle window will contain 2 uses of Communio and 1 use of Plentiful Harvest.\nBut if you don't have at least 50 points of blue energy when Arcane Circle cooldowns. Then it will not be used in this way",
+  "Toggle_GNBO_pen": "LightningShot/RoughDivide",
+  "Toggle_GNB_RoughDivide": "Keep1RoughDivide"
 }

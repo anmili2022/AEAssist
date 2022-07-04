@@ -15,14 +15,14 @@ namespace AEAssist.AI.Ninja
             LogHelper.Info("EarlyDecisionMode: " + AEAssist.DataBinding.Instance.EarlyDecisionMode);
         }
 
-        public async Task<bool> PreCombatBuff()
+        public Task<bool> PreCombatBuff()
         {
-            return false;
+            return Task.FromResult(false);
         }
 
-        public async Task<bool> NoTarget()
+        public Task<bool> NoTarget()
         {
-            return false;
+            return Task.FromResult(false);
         }
 
         public SpellEntity GetBaseGCDSpell()

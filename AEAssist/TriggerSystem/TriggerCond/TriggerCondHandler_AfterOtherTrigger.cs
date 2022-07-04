@@ -13,7 +13,7 @@ namespace AEAssist.TriggerSystem.TriggerCond
             {
                 time = AIRoot.GetBattleData<BattleData>().GetExecutedTriggersTime(cond.TriggerId);
             }
-            else if(cond.Complex == 1)
+            else if (cond.Complex == 1)
             {
                 time = AIRoot.GetBattleData<BattleData>().GetExecutedTriggersTime_And(cond.ComplexTriggers);
             }

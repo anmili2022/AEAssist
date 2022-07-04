@@ -14,7 +14,7 @@ namespace AEAssist.AI.Monk.Ability
         {
             if (AIRoot.Instance.CloseBurst)
                 return -5;
-            
+
             if (!AEAssist.DataBinding.Instance.UseTrueNorth)
                 return -10;
 
@@ -29,7 +29,7 @@ namespace AEAssist.AI.Monk.Ability
             //alway use in the second half of GCD
             if (!AIRoot.Instance.Is2ndAbilityTime())
                 return -11;
-            
+
             var target = Core.Me.CurrentTarget as Character;
 
             if (MonkSpellHelper.InCoeurlForm())
