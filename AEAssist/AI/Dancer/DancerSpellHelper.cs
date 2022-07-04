@@ -153,7 +153,6 @@ namespace AEAssist.AI.Dancer
                                 break;
                             }
                             var spell = DancerSpellHelper.GetDanceStep(step);
-                            int time = 0;
                             while (!await spell.DoGCD())
                             {
                                 await Coroutine.Sleep(retryInterval);
