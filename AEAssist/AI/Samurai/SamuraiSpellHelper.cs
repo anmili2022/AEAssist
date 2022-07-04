@@ -129,346 +129,87 @@ namespace AEAssist.AI.Samurai
             
         }
 
-        public static async Task<SpellEntity> OddMinutesBurst()
+        public static  SpellEntity OddMinutesBurst()
         {
             // https://www.thebalanceffxiv.com/jobs/melee/samurai/basic-guide/
             // get battle time first
-            
-            var checkOddOrEven = CheckOddOrEvenBattleTime();
-            if (checkOddOrEven != 1) return null;
-            
+
             // do odd minute bursts
-                
-            await GetHissatsuShinten().DoAbility();
-                
-            if (SpellsDefine.MidareSetsugekka.IsUnlock())
+
+            if (SenCounts() == 3)
             {
-                if (SpellsDefine.MidareSetsugekka.IsReady())
-                {
-                    await SpellsDefine.MidareSetsugekka.DoGCD();
-                    return SpellsDefine.MidareSetsugekka.GetSpellEntity();
-                }
-            }
-                
-            if (SpellsDefine.KaeshiSetsugekka.IsUnlock())
-            {
-                if (SpellsDefine.KaeshiSetsugekka.IsReady())
-                {
-                    await SpellsDefine.KaeshiSetsugekka.DoAbility();
-                    return SpellsDefine.KaeshiSetsugekka.GetSpellEntity();
-                }
+                return SpellsDefine.MidareSetsugekka.GetSpellEntity();
             }
 
-            if (SpellsDefine.MeikyoShisui.IsUnlock())
+            if (SpellsDefine.MeikyoShisui.RecentlyUsed() || Core.Me.HasMyAura(AurasDefine.MeikyoShisui))
             {
-                if (SpellsDefine.MeikyoShisui.IsReady())
+                if (SenCounts() < 1)
                 {
-                    await SpellsDefine.MeikyoShisui.DoAbility();
-                    return SpellsDefine.MeikyoShisui.GetSpellEntity();
-                }
-            }
-                
-            if (SpellsDefine.Gekko.IsUnlock())
-            {
-                if (SpellsDefine.Gekko.IsReady())
-                {
-                    await SpellsDefine.Gekko.DoGCD();
                     return SpellsDefine.Gekko.GetSpellEntity();
                 }
-            }
-                
-            await GetHissatsuShinten().DoAbility();
-                
-            if (SpellsDefine.Higanbana.IsUnlock())
-            {
-                if (SpellsDefine.Higanbana.IsReady())
-                {
-                    await SpellsDefine.Higanbana.DoGCD();
-                    return SpellsDefine.Higanbana.GetSpellEntity();
-                }
-            }
-                
-            if (SpellsDefine.Gekko.IsUnlock())
-            {
-                if (SpellsDefine.Gekko.IsReady())
-                {
-                    await SpellsDefine.Gekko.DoGCD();
-                    return SpellsDefine.Gekko.GetSpellEntity();
-                }
-            }
-                
-            if (SpellsDefine.Kasha.IsUnlock())
-            {
-                if (SpellsDefine.Kasha.IsReady())
-                {
-                    await SpellsDefine.Kasha.DoGCD();
-                    return SpellsDefine.Kasha.GetSpellEntity();
-                }
-            }
-                
-            if (SpellsDefine.Hakaze.IsUnlock())
-            {
-                if (SpellsDefine.Hakaze.IsReady())
-                {
-                    await SpellsDefine.Hakaze.DoGCD();
-                    return SpellsDefine.Hakaze.GetSpellEntity();
-                }
-            }
-                
-            if (SpellsDefine.Yukikaze.IsUnlock())
-            {
-                if (SpellsDefine.Yukikaze.IsReady())
-                {
-                    await SpellsDefine.Yukikaze.DoGCD();
-                    return SpellsDefine.Yukikaze.GetSpellEntity();
-                }
-            }
-                
-            await GetHissatsuShinten().DoAbility();
-                
-            if (SpellsDefine.MidareSetsugekka.IsUnlock())
-            {
-                if (SpellsDefine.MidareSetsugekka.IsReady())
-                {
-                    await SpellsDefine.MidareSetsugekka.DoGCD();
-                    return SpellsDefine.MidareSetsugekka.GetSpellEntity();
-                }
+
+                return SpellsDefine.Kasha.GetSpellEntity();
             }
 
-            return null;
+            if (ActionManager.LastSpellId == SpellsDefine.Hakaze)
+            {
+                return SpellsDefine.Yukikaze.GetSpellEntity();
+            }
+
+            return SpellsDefine.Hakaze.GetSpellEntity();
         }
         
         public static async Task<SpellEntity> EvenMinutesBurst()
         {
             // https://www.thebalanceffxiv.com/jobs/melee/samurai/basic-guide/
-            // get battle time first
-            var checkOddOrEven = CheckOddOrEvenBattleTime();
-            if (checkOddOrEven != 0) return null;
-            // do Even minute bursts
-                
-            await GetHissatsuShinten().DoAbility();
-                
-            if (SpellsDefine.MidareSetsugekka.IsUnlock())
+            if (SamuraiSpellHelper.SenCounts() == 3)
             {
-                if (SpellsDefine.MidareSetsugekka.IsReady())
-                {
-                    await SpellsDefine.MidareSetsugekka.DoGCD();
-                    return SpellsDefine.MidareSetsugekka.GetSpellEntity();
-                }
-            }
-                
-            if (SpellsDefine.KaeshiSetsugekka.IsUnlock())
-            {
-                if (SpellsDefine.KaeshiSetsugekka.IsReady())
-                {
-                    await SpellsDefine.KaeshiSetsugekka.DoAbility();
-                    return SpellsDefine.KaeshiSetsugekka.GetSpellEntity();
-                }
+                return SpellsDefine.MidareSetsugekka.GetSpellEntity();
             }
 
-            if (SpellsDefine.HissatsuSenei.IsUnlock())
+            if (SpellsDefine.MeikyoShisui.RecentlyUsed() || Core.Me.HasMyAura(AurasDefine.MeikyoShisui))
             {
-                if (SpellsDefine.HissatsuSenei.IsReady())
+                if (SenCounts() < 1)
                 {
-                    await SpellsDefine.HissatsuSenei.DoAbility();
-                    return SpellsDefine.HissatsuSenei.GetSpellEntity();
-                }
-            }
-
-            if (SpellsDefine.MeikyoShisui.IsUnlock())
-            {
-                if (SpellsDefine.MeikyoShisui.IsReady())
-                {
-                    await SpellsDefine.MeikyoShisui.DoAbility();
-                    return SpellsDefine.MeikyoShisui.GetSpellEntity();
-                }
-            }
-                
-            if (SpellsDefine.Gekko.IsUnlock())
-            {
-                if (SpellsDefine.Gekko.IsReady())
-                {
-                    await SpellsDefine.Gekko.DoGCD();
                     return SpellsDefine.Gekko.GetSpellEntity();
                 }
-            }
-                
-            await GetHissatsuShinten().DoAbility();
-                
-            if (SpellsDefine.Higanbana.IsUnlock())
-            {
-                if (SpellsDefine.Higanbana.IsReady())
-                {
-                    await SpellsDefine.Higanbana.DoGCD();
-                    return SpellsDefine.Higanbana.GetSpellEntity();
-                }
-            }
-                
-            if (SpellsDefine.Gekko.IsUnlock())
-            {
-                if (SpellsDefine.Gekko.IsReady())
-                {
-                    await SpellsDefine.Gekko.DoGCD();
-                    return SpellsDefine.Gekko.GetSpellEntity();
-                }
-            }
-            
-            await GetHissatsuShinten().DoAbility();
-            
-            if (SpellsDefine.OgiNamikiri.IsUnlock())
-            {
-                if (SpellsDefine.OgiNamikiri.IsReady())
-                {
-                    await SpellsDefine.OgiNamikiri.DoGCD();
-                    return SpellsDefine.OgiNamikiri.GetSpellEntity();
-                }
-            }
-            
-            if (SpellsDefine.KaeshiNamikiri.IsUnlock())
-            {
-                if (SpellsDefine.KaeshiNamikiri.IsReady())
-                {
-                    await SpellsDefine.KaeshiNamikiri.DoAbility();
-                    return SpellsDefine.KaeshiNamikiri.GetSpellEntity();
-                }
-            }
-                
-            if (SpellsDefine.Kasha.IsUnlock())
-            {
-                if (SpellsDefine.Kasha.IsReady())
-                {
-                    await SpellsDefine.Kasha.DoGCD();
-                    return SpellsDefine.Kasha.GetSpellEntity();
-                }
-            }
-                
-            if (SpellsDefine.Hakaze.IsUnlock())
-            {
-                if (SpellsDefine.Hakaze.IsReady())
-                {
-                    await SpellsDefine.Hakaze.DoGCD();
-                    return SpellsDefine.Hakaze.GetSpellEntity();
-                }
-            }
-                
-            if (SpellsDefine.Yukikaze.IsUnlock())
-            {
-                if (SpellsDefine.Yukikaze.IsReady())
-                {
-                    await SpellsDefine.Yukikaze.DoGCD();
-                    return SpellsDefine.Yukikaze.GetSpellEntity();
-                }
-            }
-                
-            await GetHissatsuShinten().DoAbility();
-                
-            if (SpellsDefine.MidareSetsugekka.IsUnlock())
-            {
-                if (SpellsDefine.MidareSetsugekka.IsReady())
-                {
-                    await SpellsDefine.MidareSetsugekka.DoGCD();
-                    return SpellsDefine.MidareSetsugekka.GetSpellEntity();
-                }
+
+                return SpellsDefine.Kasha.GetSpellEntity();
             }
 
-            return null;
+            if (ActionManager.LastSpellId == SpellsDefine.Hakaze)
+            {
+                return SpellsDefine.Yukikaze.GetSpellEntity();
+            }
+
+            return SpellsDefine.Hakaze.GetSpellEntity();
         }
-        
-        
+
+        public static bool TargetNeedsDot(Character tar)
+        {
+            if (!AEAssist.DataBinding.Instance.UseDot)
+                return false;
+            if (TTKHelper.IsTargetTTK(tar))
+                return false;
+
+            if (DotBlacklistHelper.IsBlackList(Core.Me.CurrentTarget as Character))
+                return false;
+            if (!tar.HasMyAuraWithTimeleft(AurasDefine.Higanbana, 10000))
+            {
+                return true;
+            }
+
+            return false;
+        }
         public static async Task<SpellEntity> FillerRotations()
         {
             var baseGcdTime = RotationManager.Instance.GetBaseGCDSpell().AdjustedCooldown.TotalMilliseconds;
 
             if (Math.Abs(baseGcdTime - 2140) == 0) // 2.14second gcd 2 filler gcd needed
             {
-                if (SpellsDefine.Hakaze.IsUnlock())
+
+                if (ActionManager.LastSpellId == SpellsDefine.Hakaze)
                 {
-                    if (SpellsDefine.Hakaze.IsReady())
-                    {
-                        await SpellsDefine.Hakaze.DoGCD();
-                        return SpellsDefine.Hakaze.GetSpellEntity();
-                    }
-                    
-                }
-                
-                if (SpellsDefine.Yukikaze.IsUnlock())
-                {
-                    if (SpellsDefine.Yukikaze.IsReady())
-                    {
-                        await SpellsDefine.Yukikaze.DoGCD();
-                        return SpellsDefine.Yukikaze.GetSpellEntity();
-                    }
-                    
-                }
-                
-                
-                if (SpellsDefine.Hagakure.IsUnlock())
-                {
-                    if (SpellsDefine.Hagakure.IsReady())
-                    {
-                        await SpellsDefine.Hagakure.DoAbility();
-                        return SpellsDefine.Hagakure.GetSpellEntity();
-                    }
-                    
-                }
-                
-            } else if (Math.Abs(baseGcdTime - 2070) == 0) // 2.07sec gcd 3 filler gcd needed
-            {
-                
-                if (SpellsDefine.Hakaze.IsUnlock())
-                {
-                    if (SpellsDefine.Hakaze.IsReady())
-                    {
-                        await SpellsDefine.Hakaze.DoGCD();
-                        return SpellsDefine.Hakaze.GetSpellEntity();
-                    }
-                    
-                }
-                
-                if (SpellsDefine.Jinpu.IsUnlock())
-                {
-                    if (SpellsDefine.Jinpu.IsReady())
-                    {
-                        await SpellsDefine.Jinpu.DoGCD();
-                        return SpellsDefine.Jinpu.GetSpellEntity();
-                    }
-                    
-                }
-                
-                if (SpellsDefine.Gekko.IsUnlock())
-                {
-                    if (SpellsDefine.Gekko.IsReady())
-                    {
-                        await SpellsDefine.Gekko.DoGCD();
-                        return SpellsDefine.Gekko.GetSpellEntity();
-                    }
-                    
-                }
-                
-                if (SpellsDefine.Hagakure.IsUnlock())
-                {
-                    if (SpellsDefine.Hagakure.IsReady())
-                    {
-                        await SpellsDefine.Hagakure.DoAbility();
-                        return SpellsDefine.Hagakure.GetSpellEntity();
-                    }
-                    
-                }
-                
-            }else if (Math.Abs(baseGcdTime - 2000) == 0) // 2.00 seconds gcd 4 filler gcd needed (get better gear lol)
-            {
-                for (int i = 0; i < 2; i++)
-                {
-                    if (SpellsDefine.Hakaze.IsUnlock())
-                    {
-                        if (SpellsDefine.Hakaze.IsReady())
-                        {
-                            await SpellsDefine.Hakaze.DoGCD();
-                            return SpellsDefine.Hakaze.GetSpellEntity();
-                        }
-                    
-                    }
-                    
                     if (SpellsDefine.Yukikaze.IsUnlock())
                     {
                         if (SpellsDefine.Yukikaze.IsReady())
@@ -478,15 +219,114 @@ namespace AEAssist.AI.Samurai
                         }
                     
                     }
-                    
+                }
+
+                if (ActionManager.LastSpellId == SpellsDefine.Yukikaze)
+                {
                     if (SpellsDefine.Hagakure.IsUnlock())
                     {
                         if (SpellsDefine.Hagakure.IsReady())
                         {
-                            await SpellsDefine.Hagakure.DoGCD();
+                            await SpellsDefine.Hagakure.DoAbility();
                             return SpellsDefine.Hagakure.GetSpellEntity();
                         }
                     
+                    }
+                }
+
+                if (SpellsDefine.Hakaze.IsUnlock())
+                {
+                    if (SpellsDefine.Hakaze.IsReady())
+                    {
+                        await SpellsDefine.Hakaze.DoGCD();
+                        return SpellsDefine.Hakaze.GetSpellEntity();
+                    }
+                    
+                }
+                
+            } else if (Math.Abs(baseGcdTime - 2070) == 0) // 2.07sec gcd 3 filler gcd needed
+            {
+                if (ActionManager.LastSpellId == SpellsDefine.Hakaze)
+                {
+                    if (SpellsDefine.Jinpu.IsUnlock())
+                    {
+                        if (SpellsDefine.Jinpu.IsReady())
+                        {
+                            await SpellsDefine.Jinpu.DoGCD();
+                            return SpellsDefine.Jinpu.GetSpellEntity();
+                        }
+                    
+                    }
+                }
+
+                if (ActionManager.LastSpellId == SpellsDefine.Jinpu)
+                {
+                    if (SpellsDefine.Gekko.IsUnlock())
+                    {
+                        if (SpellsDefine.Gekko.IsReady())
+                        {
+                            await SpellsDefine.Gekko.DoGCD();
+                            return SpellsDefine.Gekko.GetSpellEntity();
+                        }
+                    }
+                }
+
+                if (ActionManager.LastSpellId == SpellsDefine.Gekko)
+                {
+                    if (SpellsDefine.Hagakure.IsUnlock())
+                    {
+                        if (SpellsDefine.Hagakure.IsReady())
+                        {
+                            await SpellsDefine.Hagakure.DoAbility();
+                            return SpellsDefine.Hagakure.GetSpellEntity();
+                        }
+                    }
+                }
+                
+                if (SpellsDefine.Hakaze.IsUnlock())
+                {
+                    if (SpellsDefine.Hakaze.IsReady())
+                    {
+                        await SpellsDefine.Hakaze.DoGCD();
+                        return SpellsDefine.Hakaze.GetSpellEntity();
+                    }
+                }
+                
+            }else if (Math.Abs(baseGcdTime - 2000) == 0) // 2.00 seconds gcd 4 filler gcd needed (get better gear lol)
+            {
+                for (int i = 0; i <= 2; i++)
+                {
+                    if (ActionManager.LastSpellId == SpellsDefine.Hakaze)
+                    {
+                        if (SpellsDefine.Yukikaze.IsUnlock())
+                        {
+                            if (SpellsDefine.Yukikaze.IsReady())
+                            {
+                                await SpellsDefine.Yukikaze.DoGCD();
+                                return SpellsDefine.Yukikaze.GetSpellEntity();
+                            }
+                        }
+                    }
+
+                    if (ActionManager.LastSpellId == SpellsDefine.Yukikaze)
+                    {
+                        if (SpellsDefine.Hagakure.IsUnlock())
+                        {
+                            if (SpellsDefine.Hagakure.IsReady())
+                            {
+                                await SpellsDefine.Hagakure.DoGCD();
+                                return SpellsDefine.Hagakure.GetSpellEntity();
+                            }
+                        }
+                    }
+                    
+                    if (SpellsDefine.Hakaze.IsUnlock())
+                    {
+                        if (SpellsDefine.Hakaze.IsReady())
+                        {
+                            await SpellsDefine.Hakaze.DoGCD();
+                            return SpellsDefine.Hakaze.GetSpellEntity();
+                        }
                     }
                 }
             }
@@ -587,19 +427,18 @@ namespace AEAssist.AI.Samurai
         
         public static SpellEntity GetHissatsuShinten()
         {
-            
-            if (!SpellsDefine.HissatsuShinten.IsUnlock())
+            if (SpellsDefine.HissatsuShinten.IsUnlock())
             {
-                return null;
-            }
-            if (!SpellsDefine.HissatsuShinten.IsReady())
-            {
-                return null;
+                if (SpellsDefine.HissatsuShinten.IsReady())
+                {
+                    if (ActionResourceManager.Samurai.Kenki >= 25)
+                    {
+                        return SpellsDefine.HissatsuShinten.GetSpellEntity();
+                    }
+                }
             }
 
-            if (!ActionManager.CanCastOrQueue(SpellsDefine.HissatsuShinten.GetSpellEntity().SpellData,
-                    Core.Me.CurrentTarget)) return null;
-            return ActionResourceManager.Samurai.Kenki >= 25 ? SpellsDefine.HissatsuShinten.GetSpellEntity() : null;
+            return null;
         }
 
         public static SpellEntity IaijutsuCanSpell()
@@ -664,6 +503,40 @@ namespace AEAssist.AI.Samurai
         public static bool NeedUseKaiten()
         {
             if (false) ;
+            return false;
+        }
+
+        public static bool GekkoPOSCheck()
+        {
+            // Gekko
+            if (ActionManager.LastSpellId == SpellsDefine.Jinpu && Core.Me.CurrentTarget.IsBehind)
+            {
+                return false;
+            }
+            
+            // Gekko
+            if (ActionManager.LastSpellId == SpellsDefine.Jinpu)
+            {
+                return true;
+            }
+            
+            return false;
+        }
+        
+        public static bool KashaPOSCheck()
+        {
+            // Kasha
+            if (ActionManager.LastSpellId == SpellsDefine.Shifu && Core.Me.CurrentTarget.IsFlanking)
+            {
+                return false;
+            }
+            
+            // Kasha
+            if (ActionManager.LastSpellId == SpellsDefine.Shifu)
+            {
+                return true;
+            }
+
             return false;
         }
     }

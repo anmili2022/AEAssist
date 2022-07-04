@@ -10,24 +10,17 @@ namespace AEAssist.AI.Samurai.Ability
     {
         public int Check(SpellEntity lastSpell)
         {
-            //
-            if (Core.Me.HasAura(AurasDefine.MeikyoShisui))
-                return -13;
-            if (Core.Me.IsCasting)
-                return -20;
-            if (Core.Me.HasAura(AurasDefine.Kaiten))
-                return -19;
+            if (!AIRoot.GetBattleData<SamuraiBattleData>().Bursting || !AIRoot.GetBattleData<SamuraiBattleData>().EvenBursting)
+            {
+                return -4;
+            }
             if (!SpellsDefine.MeikyoShisui.IsReady())
                 return -14;
-            if (SamuraiSpellHelper.SenCounts() == 3)
-                return -15;
-            if (ActionManager.LastSpellId == SpellsDefine.Hakaze || ActionManager.LastSpellId == SpellsDefine.Shifu || ActionManager.LastSpellId == SpellsDefine.Jinpu)
-                return -16;
-            if (ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Setsu))
+            if (Core.Me.HasAura(AurasDefine.MeikyoShisui) || SpellsDefine.MeikyoShisui.RecentlyUsed())
             {
-                return 2;
+                return -13;
             }
-            return -1;
+            return 0;
         }
 
         public async Task<SpellEntity> Run()

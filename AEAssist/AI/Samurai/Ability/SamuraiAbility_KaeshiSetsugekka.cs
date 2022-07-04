@@ -8,8 +8,19 @@ namespace AEAssist.AI.Samurai.Ability
     {
         public int Check(SpellEntity lastSpell)
         {
+            if (!SpellsDefine.TsubameGaeshi.IsReady())
+            {
+                return -1;
+            }
+
+            if (lastSpell != SpellsDefine.MidareSetsugekka.GetSpellEntity())
+            {
+                return -1;
+            }
+
             if (!SpellsDefine.KaeshiSetsugekka.IsReady()) return -1;
             
+            AIRoot.GetBattleData<SamuraiBattleData>().Bursting = true;
             return 0;
         }
 

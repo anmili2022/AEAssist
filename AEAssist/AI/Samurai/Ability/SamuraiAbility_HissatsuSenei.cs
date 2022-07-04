@@ -10,11 +10,23 @@ namespace AEAssist.AI.Samurai.Ability
     {
         public int Check(SpellEntity lastSpell)
         {
-            if (ActionResourceManager.Samurai.Kenki >= 25 &&
-                SpellsDefine.HissatsuSenei.GetSpellEntity().IsReady() &&
-                Core.Me.HasAura(AurasDefine.Shifu))
-                return 1;
-            return -1;
+            if (ActionResourceManager.Samurai.Kenki < 25)
+            {
+                return -10;
+            }
+
+            if (!SpellsDefine.HissatsuSenei.GetSpellEntity().IsReady())
+            {
+                return -4;
+            }
+
+            if (AIRoot.GetBattleData<SamuraiBattleData>().Bursting)
+            {
+                AIRoot.GetBattleData<SamuraiBattleData>().EvenBursting = true;
+                return 0;
+            }
+
+            return -4;
         }
 
         public async Task<SpellEntity> Run()

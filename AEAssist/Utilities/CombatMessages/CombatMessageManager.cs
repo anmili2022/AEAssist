@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using AEAssist.AI.Monk;
+using AEAssist.AI.Samurai;
+using AEAssist.View;
+using ff14bot;
 using ff14bot.Enums;
 
 namespace AEAssist.Utilities.CombatMessages
@@ -113,6 +116,7 @@ namespace AEAssist.Utilities.CombatMessages
                     break;
 
                 case ClassJobType.Samurai:
+                    SamuraiCombatMessageStrategy.RegisterCombatMessages();
                     break;
 
                 case ClassJobType.BlueMage:
