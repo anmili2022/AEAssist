@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media;
-using AEAssist;
-using AEAssist.AI.Monk;
 using ff14bot;
 
 namespace AEAssist.Helper
@@ -29,7 +27,7 @@ namespace AEAssist.Helper
                 return;
             if (time > 0)
                 targetShowTime = TimeHelper.Now() + time;
-            DebugCenter.Intance.ShowMsg(msg,check);
+            DebugCenter.Intance.ShowMsg(msg, check);
         }
 
         public static void ShowMessageBox(string msg)

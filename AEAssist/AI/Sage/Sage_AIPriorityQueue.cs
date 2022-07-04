@@ -16,6 +16,7 @@ namespace AEAssist.AI.Sage
             new SageGcdDot(),
             new SageGcdToxikon(),
             new SageGcdPhlegma(),
+            new SageGCDEukrasianDiagnosis(),
             new SageBaseGCD(),
             new SageGCDDyskrasia(),
         };

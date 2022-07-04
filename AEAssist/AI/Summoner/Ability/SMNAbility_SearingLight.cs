@@ -1,10 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot.Managers;
-
-using ff14bot.Helpers;
-using System.Windows.Media;
 namespace AEAssist.AI.Summoner.Ability
 {
     public class SMNAbility_SearingLight : IAIHandler
@@ -21,7 +17,7 @@ namespace AEAssist.AI.Summoner.Ability
         {
             if (!spell.IsReady())
                 return -1;
-          
+
             if (AIRoot.Instance.CloseBurst)
             {
                 return -2;
@@ -29,9 +25,9 @@ namespace AEAssist.AI.Summoner.Ability
 
             if (!AIRoot.Instance.Is2ndAbilityTime())
                 return -3;
-            
+
             var time = AIRoot.Instance.GetGCDDuration() * 0.5f;
-           
+
             if (!CheckAethercharge((int)time))
                 return -4;
 

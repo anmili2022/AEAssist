@@ -2,8 +2,6 @@
 using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Managers;
 
 namespace AEAssist.AI.BlackMage.GCD
@@ -32,7 +30,7 @@ namespace AEAssist.AI.BlackMage.GCD
             {
                 return 0;
             }
-            
+
             // if we are in ice, should before paradox to prevent lag
             // lag -> paradox can't go at the very begining
             if (ActionResourceManager.BlackMage.UmbralStacks > 0 &&
@@ -40,7 +38,7 @@ namespace AEAssist.AI.BlackMage.GCD
             {
                 return 1;
             }
-            
+
             return -4;
         }
 

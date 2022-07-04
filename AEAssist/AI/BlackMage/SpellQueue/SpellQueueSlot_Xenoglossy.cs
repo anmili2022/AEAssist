@@ -33,7 +33,7 @@ namespace AEAssist.AI.BlackMage.SpellQueue
             if (slot.GetGCDSpell() != 0 &&
                 SpellsDefine.ManaFont.IsReady())
             {
-                slot.Abilitys.Enqueue((SpellsDefine.ManaFont,  SpellTargetType.Self));
+                slot.Abilitys.Enqueue((SpellsDefine.ManaFont, SpellTargetType.Self));
             }
         }
     }

@@ -1,5 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace AEAssist.View.GeneralSetting
 {
@@ -9,6 +8,6 @@ namespace AEAssist.View.GeneralSetting
         {
             InitializeComponent();
         }
-        
+
     }
 }

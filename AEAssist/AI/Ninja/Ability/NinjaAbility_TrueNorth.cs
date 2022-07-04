@@ -1,5 +1,4 @@
-﻿using System.CodeDom;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;

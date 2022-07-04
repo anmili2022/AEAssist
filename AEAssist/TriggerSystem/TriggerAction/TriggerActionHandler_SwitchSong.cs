@@ -20,7 +20,7 @@ namespace AEAssist.TriggerSystem.TriggerAction
                 return;
             }
 
-            switch ((ActionResourceManager.Bard.BardSong) t.index)
+            switch ((ActionResourceManager.Bard.BardSong)t.index)
             {
                 case ActionResourceManager.Bard.BardSong.MagesBallad:
                     AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.MagesBallad.GetSpellEntity();

@@ -8,7 +8,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Threading.Tasks;
 using AEAssist.AI;
 using AEAssist.Define;
@@ -32,10 +31,10 @@ namespace AEAssist.Opener
         public Dictionary<(ClassJobType, int, string), IOpener> AllOpeners = new Dictionary<(ClassJobType, int, string), IOpener>();
 
         public Dictionary<ClassJobType, List<OpenerData>> JobOpeners = new Dictionary<ClassJobType, List<OpenerData>>();
-        
+
         public const string DefaultName = "Default";
 
-        public Dictionary<ClassJobType,string> SpecifyOpenerByName=  new Dictionary<ClassJobType, string>();
+        public Dictionary<ClassJobType, string> SpecifyOpenerByName = new Dictionary<ClassJobType, string>();
 
 
         public OpenerMgr()
@@ -57,7 +56,7 @@ namespace AEAssist.Opener
 
                 var attr = attrs[0] as OpenerAttribute;
                 var opener = Activator.CreateInstance(type) as IOpener;
-                var openerKey = (attr.ClassJobType, attr.Level,attr.Name);
+                var openerKey = (attr.ClassJobType, attr.Level, attr.Name);
                 AllOpeners[openerKey] = opener;
 
                 if (!JobOpeners.ContainsKey(attr.ClassJobType))
@@ -66,7 +65,7 @@ namespace AEAssist.Opener
                 {
                     Name = attr.Name
                 });
-                
+
                 LogHelper.Info($"Load Opener: {attr.ClassJobType} Level: {attr.Level} Name {attr.Name}");
             }
         }

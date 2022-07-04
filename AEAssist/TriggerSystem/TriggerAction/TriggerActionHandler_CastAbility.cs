@@ -16,19 +16,19 @@ namespace AEAssist.TriggerSystem.TriggerAction
                     AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(t.SpellId);
                     break;
                 case 1:
-                    AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(t.SpellId,SpellTargetType.Self);
+                    AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(t.SpellId, SpellTargetType.Self);
                     break;
                 case 2:
-                    AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(t.SpellId,SpellTargetType.CurrTarget);
+                    AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(t.SpellId, SpellTargetType.CurrTarget);
                     break;
                 case 3:
                     var currTar = Core.Me.CurrentTarget as BattleCharacter;
                     if (currTar == null || currTar.TargetCharacter == null)
                         break;
                     var tt = currTar.TargetCharacter as BattleCharacter;
-                    if(tt == null)
+                    if (tt == null)
                         break;
-                    AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(t.SpellId,tt);
+                    AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(t.SpellId, tt);
                     break;
             }
         }

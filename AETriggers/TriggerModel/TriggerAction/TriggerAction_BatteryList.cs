@@ -5,13 +5,13 @@ using PropertyChanged;
 
 namespace AEAssist.TriggerAction
 {
-    [Trigger("MCH/BatteryList 机工电量列表",Tooltip = "Specify when the battery will be used later. (Opener is not counted)",
+    [Trigger("MCH/BatteryList 机工电量列表", Tooltip = "Specify when the battery will be used later. (Opener is not counted)",
         Example = "60|80|50")]
     [AddINotifyPropertyChangedInterface]
     [GUIDefault]
     public class TriggerAction_BatteryList : ITriggerAction
     {
-        public List<int> BatteryList{ get; set; } = new List<int>();
+        public List<int> BatteryList { get; set; } = new List<int>();
 
         public void WriteFromJson(string[] values)
         {
@@ -48,7 +48,7 @@ namespace AEAssist.TriggerAction
 
         public void Check()
         {
-            
+
         }
     }
 }

@@ -18,7 +18,7 @@ namespace AEAssist.AI.Monk.Ability
                 return -4;
             if (!PotionHelper.CheckPotion(SettingMgr.GetSetting<GeneralSettings>().StrPotionId))
                 return -6;
-        
+
             if (SpellsDefine.Brotherhood.CoolDownInGCDs(10) && SpellsDefine.RiddleofFire.CoolDownInGCDs(3))
                 return 0;
 

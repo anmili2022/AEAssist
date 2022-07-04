@@ -20,7 +20,7 @@ namespace AEAssist
     public class Entry
     {
         public const string Path = @"Routines\AEAssist";
-        
+
         private static MainWindow _form;
 
         private static MainWindow Form
@@ -59,14 +59,14 @@ namespace AEAssist
                 AIMgrs.Instance.Init();
 
                 UIHelper.SetToolTipDuration();
-                
+
                 LogHelper.Info("Initialized!");
             }
             catch (Exception e)
             {
                 LogHelper.Error(e.ToString());
             }
-            
+
         }
 
         public void Pulse()
@@ -109,12 +109,13 @@ namespace AEAssist
 
         public Composite RestBehavior { get; } = new TreeSharp.Action();
 
-        public Composite PreCombatBuffBehavior{ get; } = new TreeSharp.Action();
-        
+        public Composite PreCombatBuffBehavior { get; } = new TreeSharp.Action();
 
-        public Composite PullBehavior{ get; } = new TreeSharp.Action();
 
-        public Composite HealBehavior{
+        public Composite PullBehavior { get; } = new TreeSharp.Action();
+
+        public Composite HealBehavior
+        {
             get
             {
                 return
@@ -122,9 +123,15 @@ namespace AEAssist
             }
         }
 
-        public Composite CombatBuffBehavior{ get; } = new TreeSharp.Action();
-
-        public Composite CombatBehavior{ get; } = new TreeSharp.Action();
+        public Composite CombatBuffBehavior { get; } = new TreeSharp.Action();
+        
+        public Composite CombatBehavior{
+            get
+            {
+                return
+                    new ActionRunCoroutine(ctx => RotationManager.Instance.Update());
+            }
+        }
         public Composite PullBuffBehavior{ get; } = new TreeSharp.Action();
         #endregion Behavior Composites
     }

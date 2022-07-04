@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using QuickGraph;
 
 namespace AEAssist.View.GeneralSetting
 {
@@ -15,7 +14,7 @@ namespace AEAssist.View.GeneralSetting
         {
             OverlayManager.OverlayManager.Instance.SwitchOverlay();
         }
-        
+
         private void UseCombatMessageOverlay_OnClick(object sender, RoutedEventArgs e)
         {
             if (DataBinding.Instance.GeneralSettings.UseCombatMessageOverlay)

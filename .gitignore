@@ -1,6 +1,7 @@
 **/obj/
 **/bin/
 *.zip
+*.rar
 .vs
-.idea
 Temp*.json
+.idea

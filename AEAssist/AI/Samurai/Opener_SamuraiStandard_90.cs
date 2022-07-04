@@ -26,7 +26,7 @@ namespace AEAssist.AI.Samurai
             if (!SpellsDefine.HissatsuSenei.IsReady())
                 return -4;
 
-            if (!Core.Me.CurrentTarget.IsBoss() && PartyManager.NumMembers <= 4)
+            if (PartyManager.NumMembers <= 4 && !Core.Me.CurrentTarget.IsDummy())
                 return -5;
 
             return 0;

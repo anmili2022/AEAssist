@@ -2,6 +2,6 @@
 {
     public class BlackMage_BattleData : IBattleData
     {
-        
+
     }
 }

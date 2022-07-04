@@ -3,11 +3,11 @@ using PropertyChanged;
 
 namespace AEAssist.TriggerAction
 {
-    [Trigger("SwitchBurst 控制爆发",ParamTooltip = "0 = off, 1 = on")]
+    [Trigger("SwitchBurst 控制爆发", ParamTooltip = "0 = off, 1 = on")]
     [AddINotifyPropertyChangedInterface]
     public class TriggerAction_SwitchBurst : ITriggerAction
     {
-        public bool value{ get; set; }
+        public bool value { get; set; }
 
         public void WriteFromJson(string[] values)
         {
@@ -15,7 +15,7 @@ namespace AEAssist.TriggerAction
 
             value = va == 1;
         }
-        
+
         public string[] Pack2Json()
         {
             return new string[]
@@ -26,7 +26,7 @@ namespace AEAssist.TriggerAction
 
         public void Check()
         {
-            
+
         }
     }
 }

@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Helpers;
 using ff14bot.Managers;
 
 namespace AEAssist.AI.BlackMage.GCD
@@ -22,8 +21,8 @@ namespace AEAssist.AI.BlackMage.GCD
             {
                 return -2;
             }
-            
-            
+
+
             // check if there is enough targets for us to do aoe
             var aoeCount = TargetHelper.GetNearbyEnemyCount(Core.Me.CurrentTarget, 25, 5);
             if (aoeCount >= 3)
@@ -35,7 +34,7 @@ namespace AEAssist.AI.BlackMage.GCD
                     // if we are in fire 
                     if (ActionResourceManager.BlackMage.AstralStacks > 0)
                     {
-                        if (ActionResourceManager.BlackMage.UmbralHearts > 0 && Core.Me.CurrentMana >= 1500+800)
+                        if (ActionResourceManager.BlackMage.UmbralHearts > 0 && Core.Me.CurrentMana >= 1500 + 800)
                         {
                             return 1;
                         }
@@ -55,7 +54,7 @@ namespace AEAssist.AI.BlackMage.GCD
                             return 2;
                         }
                     }
-            
+
                     // if we are in nothing, we go to fire
                     if (ActionResourceManager.BlackMage.UmbralStacks == 0 &&
                         ActionResourceManager.BlackMage.AstralStacks == 0)

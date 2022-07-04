@@ -24,10 +24,10 @@ namespace AEAssist.AI.Bard.Ability
 
             if (BardSpellHelper.HasBuffsCount() >= BardSpellHelper.UnlockBuffsCount())
                 return 4;
-    
+
             if (BardSpellHelper.Prepare2BurstBuffs())
                 return -4;
-            
+
             if (Core.Me.ClassLevel >= 84 &&
                 ActionResourceManager.Bard.ActiveSong == ActionResourceManager.Bard.BardSong.ArmysPaeon)
                 return -5;

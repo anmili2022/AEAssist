@@ -1,5 +1,4 @@
 ﻿using AEAssist.Helper;
-using AEAssist.View.OverlayManager;
 using Buddy.Overlay;
 using Buddy.Overlay.Controls;
 using ff14bot.Enums;

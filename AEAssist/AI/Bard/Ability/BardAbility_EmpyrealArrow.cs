@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
-using AEAssist;
 
 namespace AEAssist.AI.Bard.Ability
 {

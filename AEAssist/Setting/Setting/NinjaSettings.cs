@@ -18,7 +18,7 @@ namespace AEAssist
 
         public void OnLoad()
         {
-            
+
         }
 
         public bool EarlyDecisionMode { get; set; }

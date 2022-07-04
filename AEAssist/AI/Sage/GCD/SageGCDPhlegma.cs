@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
@@ -8,6 +9,30 @@ namespace AEAssist.AI.Sage.GCD
 {
     public class SageGcdPhlegma : IAIHandler
     {
+        private bool IfRaidBuffs()
+        {
+            List<uint> raidbuffs = new List<uint>
+            {
+                AurasDefine.BattleLitany,
+                AurasDefine.Brotherhood,
+                AurasDefine.ArcaneCircle,
+                AurasDefine.BattleVoice,
+                AurasDefine.SearingLight,
+                AurasDefine.Embolden,
+                AurasDefine.Divination,
+                AurasDefine.VulnerabilityTrickAttack,
+                AurasDefine.Divination
+            };
+            if (Core.Me.HasAnyAura(raidbuffs))
+            {                
+                return true;
+            }
+            if (Core.Me.CurrentTarget.HasAnyAura(raidbuffs))
+            {
+                return true;
+            }
+            return false;
+        }
         public int Check(SpellEntity lastSpell)
         {
             var phlegmaCheck = SageSpellHelper.GetPhlegma();
@@ -20,7 +45,7 @@ namespace AEAssist.AI.Sage.GCD
             var phlegmaCharges = DataManager.GetSpellData(SpellsDefine.Phlegma).Charges;
             var phlegmaChargesII = DataManager.GetSpellData(SpellsDefine.PhlegmaII).Charges;
             var phlegmaChargesIII = DataManager.GetSpellData(SpellsDefine.PhlegmaIII).Charges;
-            
+
             LogHelper.Debug("Current Phlegma Charge is: " + phlegmaChargesIII);
 
             if (phlegmaCharges == 0 || phlegmaChargesII == 0 || phlegmaChargesIII == 0)
@@ -28,7 +53,10 @@ namespace AEAssist.AI.Sage.GCD
                 LogHelper.Debug("Phlegma has 0 charges meaning is not ready so skip it.");
                 return -1;
             }
-
+            if (IfRaidBuffs())
+            {
+                return 0;
+            }
             // If we are not moving check how many charges left for phlegma; don't waste it keep it for movement.
             if (MovementManager.IsMoving) return 0;
             if (!(phlegmaCharges < 2) && !(phlegmaChargesII < 2) && !(phlegmaChargesIII < 2)) return 0;
@@ -46,14 +74,14 @@ namespace AEAssist.AI.Sage.GCD
                     var spellData = SageSpellHelper.GetPhlegma();
                     if (spellData == null)
                     {
-                        LogHelper.Error("Failed to get spell returning null;"); 
+                        LogHelper.Error("Failed to get spell returning null;");
                         return null;
                     }
                     LogHelper.Debug("Doing Phlegma AOE");
                     if (await spellData.DoGCD()) return spellData;
                 }
             }
-            
+
             var spell = SageSpellHelper.GetPhlegma();
             if (spell == null) return null;
             var ret = await spell.DoGCD();

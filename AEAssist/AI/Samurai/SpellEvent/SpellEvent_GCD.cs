@@ -1,6 +1,5 @@
 ﻿using AEAssist.Define;
 using ff14bot.Managers;
-using AEAssist.Helper;
 
 namespace AEAssist.AI.Samurai.SpellEvent
 {
@@ -26,8 +25,8 @@ namespace AEAssist.AI.Samurai.SpellEvent
                 if (ActionManager.LastSpell == DataManager.GetSpellData(SpellsDefine.Hakaze))
                     gcd = 1;
 
-                battleData.GCDCounts = 0+gcd;
-                return ;
+                battleData.GCDCounts = 0 + gcd;
+                return;
             }
             battleData.GCDCounts++;
             //LogHelper.Info(battleData.GCDCounts.ToString());

@@ -22,7 +22,7 @@ namespace AEAssist.AI.Summoner.GCD
         public async Task<SpellEntity> Run()
         {
             if (await spell.DoGCD()) return spell.GetSpellEntity();
-            
+
             return null;
         }
     }
