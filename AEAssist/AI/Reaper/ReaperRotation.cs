@@ -12,9 +12,6 @@ namespace AEAssist.AI.Reaper
     public class ReaperRotation : IRotation
     {
         private readonly AIRoot AiRoot = AIRoot.Instance;
-        private long _lastTime;
-
-        private long randomTime;
 
         public void Init()
         {
@@ -35,7 +32,6 @@ namespace AEAssist.AI.Reaper
             if (await SpellsDefine.Soulsow.DoGCD())
             {
                 GUIHelper.ShowInfo(Language.Instance.Content_Reaper_PreCombat2, 500, false);
-                randomTime = 0;
                 return true;
             }
 
