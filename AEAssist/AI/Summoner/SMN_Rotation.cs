@@ -3,7 +3,9 @@ using AEAssist.AI.Summoner.GCD;
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
+using ff14bot;
 using ff14bot.Enums;
+using ff14bot.Managers;
 
 namespace AEAssist.AI.Summoner
 {
@@ -24,7 +26,7 @@ namespace AEAssist.AI.Summoner
         public async Task<bool> PreCombatBuff()
         {
             var summonCarbuncle = new SMNGCD_SummonCarbuncle();
-            if (summonCarbuncle.Check(null) >= 0)
+            if (summonCarbuncle.Check(null) >= 0 && !Core.Me.IsMounted)
             {
                 await summonCarbuncle.DelayedRun();
                 return true;
