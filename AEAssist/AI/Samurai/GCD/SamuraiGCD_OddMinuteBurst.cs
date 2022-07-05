@@ -13,18 +13,20 @@ namespace AEAssist.AI.Samurai.GCD
             {
                 return -10;
             }
+            
+            if (lastSpell == SpellsDefine.MidareSetsugekka.GetSpellEntity())
+            {
+                bd.Bursting = false;
+                bd.EvenBursting = false;
+            }
 
             if (!bd.EvenBursting)
             {
                 return 1;
             }
 
-            if (lastSpell == SpellsDefine.MidareSetsugekka.GetSpellEntity())
-            {
-                bd.Bursting = false;
-                bd.EvenBursting = false;
-            }
-            return 0;
+           
+            return -1;
         }
 
         public async Task<SpellEntity> Run()
