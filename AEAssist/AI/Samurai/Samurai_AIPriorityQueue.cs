@@ -22,6 +22,7 @@ namespace AEAssist.AI.Samurai
         public List<IAIHandler> AbilityQueue { get; } = new List<IAIHandler>
         {
             new SamuraiAbility_HissatsuShinten(),
+            new SamuraiAbility_HissatsuKyuten(),
             new SamuraiGCD_Dot(),
             new SamuraiGCD_OgiNamikiriCombo(),
             new SamuraiAbility_HissatsuKaiten(),

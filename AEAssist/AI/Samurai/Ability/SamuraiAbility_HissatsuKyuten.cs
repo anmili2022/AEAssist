@@ -11,6 +11,11 @@ namespace AEAssist.AI.Samurai.Ability
         {
             if (!SpellsDefine.HissatsuKyuten.IsReady()) return -1;
             if (ActionResourceManager.Samurai.Kenki < 25) return -1;
+            var needUseAoe = TargetHelper.CheckNeedUseAOE(0, 5);
+            if (!needUseAoe)
+            {
+                return -1;
+            }
             return 0;
         }
 
