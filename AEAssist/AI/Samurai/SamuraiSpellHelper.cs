@@ -279,75 +279,50 @@ namespace AEAssist.AI.Samurai
 
             return -1;
         }
-        
-        
+
         
         public static async Task<SpellEntity> AoEGCD()
         {
 
-            if (TargetHelper.CheckNeedUseAOE(8, 5))
+            var lastGcd = ActionManager.LastSpellId;
+
+            if (SenCounts() == 2)
             {
-                if (SpellsDefine.Fuga.IsUnlock())
+                return SpellsDefine.TenkaGoken.GetSpellEntity();
+            }
+            
+            if (SpellsDefine.MeikyoShisui.IsReady())
+            {
+                await SpellsDefine.MeikyoShisui.DoAbility();
+            }
+
+            if (Core.Me.HasAura(AurasDefine.MeikyoShisui))
+            {
+                if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Ka))
                 {
-                    if (SpellsDefine.Fuga.IsReady())
-                    {
-                        await SpellsDefine.Fuga.DoGCD();
-                        return SpellsDefine.Fuga.GetSpellEntity();
-                    }
+                    return SpellsDefine.Oka.GetSpellEntity();
+                }
+                
+                if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Getsu))
+                {
+                    return SpellsDefine.Mangetsu.GetSpellEntity();
                 }
             }
             
-            if (TargetHelper.CheckNeedUseAOE(0, 5))
+            if (lastGcd == SpellsDefine.Fuga)
             {
-                if (SpellsDefine.Oka.IsUnlock())
+                if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Ka))
                 {
-                    if (SpellsDefine.Oka.IsReady())
-                    {
-                        await SpellsDefine.Oka.DoGCD();
-                        return SpellsDefine.Oka.GetSpellEntity();
-                    }
+                    return SpellsDefine.Oka.GetSpellEntity();
                 }
-            }
-            
-            if (TargetHelper.CheckNeedUseAOE(8, 5))
-            {
-                if (SpellsDefine.Fuga.IsUnlock())
+                
+                if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Getsu))
                 {
-                    if (SpellsDefine.Fuga.IsReady())
-                    {
-                        await SpellsDefine.Fuga.DoGCD();
-                        return SpellsDefine.Fuga.GetSpellEntity();
-                    }
-                }
-            }
-            
-            if (TargetHelper.CheckNeedUseAOE(0, 5))
-            {
-                if (SpellsDefine.Mangetsu.IsUnlock())
-                {
-                    if (SpellsDefine.Mangetsu.IsReady())
-                    {
-                        await SpellsDefine.Mangetsu.DoGCD();
-                        return SpellsDefine.Mangetsu.GetSpellEntity();
-                    }
+                    return SpellsDefine.Mangetsu.GetSpellEntity();
                 }
             }
 
-            await GetHissatsuShinten().DoAbility();
-            
-            if (TargetHelper.CheckNeedUseAOE(0, 5))
-            {
-                if (SpellsDefine.TenkaGoken.IsUnlock())
-                {
-                    if (SpellsDefine.TenkaGoken.IsReady())
-                    {
-                        await SpellsDefine.TenkaGoken.DoGCD();
-                        return SpellsDefine.TenkaGoken.GetSpellEntity();
-                    }
-                }
-            }
-            
-            return null;
+            return SpellsDefine.Fuga.GetSpellEntity();
         }
         
         public static SpellEntity GetHissatsuShinten()
