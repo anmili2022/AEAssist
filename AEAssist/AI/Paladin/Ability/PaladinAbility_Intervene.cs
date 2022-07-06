@@ -18,16 +18,18 @@ namespace AEAssist.AI.Paladin.Ability
                 return -2;
             if (MovementManager.IsMoving)
                 return -3;
+            
             if (Paladin_SpellHelper.OutOfMeleeRange())
-                return 2;
-            if (AIRoot.Instance.CloseBurst)
-                if (spell.GetSpellEntity().SpellData.Charges > 1.9)
-                    return 1;
-                else return -4;
+                //return 2;
+                return -5;
+            
             if (SpellsDefine.FightorFlight.IsReady()||SpellsDefine.FightorFlight.CoolDownInGCDs(3))
                 return -2;
-            
-            
+
+            if (spell.GetSpellEntity().SpellData.Charges > 1.9)
+                return 1;
+            if (AIRoot.Instance.CloseBurst)
+                return -4;
             return 0;
         }
 

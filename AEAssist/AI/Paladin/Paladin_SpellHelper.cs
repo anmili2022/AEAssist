@@ -19,6 +19,10 @@ namespace AEAssist.AI.Paladin
             if (Core.Me.HasAura(AurasDefine.FightOrFight))
                 return false;
 
+            //If we have requiescat, we are not using fightorflight even it is ready
+            if (Core.Me.HasAura(AurasDefine.Requiescat))
+                return false;
+            
             if (SpellsDefine.FightorFlight.CoolDownInGCDs(3))
                 return true;
 
@@ -85,7 +89,6 @@ namespace AEAssist.AI.Paladin
                     return 3;
             }
         }
-
 
 
     }
