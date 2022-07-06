@@ -14,7 +14,10 @@ namespace AEAssist.AI.Samurai.Ability
             var needUseAoe = TargetHelper.CheckNeedUseAOE(2, 5);
             if (needUseAoe)
             {
-                return 0;
+                if (SpellsDefine.MeikyoShisui.IsReady())
+                {
+                    return 0;
+                }
             }
             
             if (!AIRoot.GetBattleData<SamuraiBattleData>().Bursting || !AIRoot.GetBattleData<SamuraiBattleData>().EvenBursting)
