@@ -26,6 +26,9 @@ namespace AEAssist.AI.Paladin.GCD
             if (!spell.IsReady())
                 return -1;
 
+            //Prevent queue stuck here when insufficient mana
+            if (Core.Me.CurrentMana < SpellsDefine.HolySpirit.GetSpellEntity().SpellData.Cost)
+                return -2;
 
             //超出距离只能打远程
             if (Paladin_SpellHelper.OutOfMeleeRange())
