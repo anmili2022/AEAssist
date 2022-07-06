@@ -2,6 +2,7 @@
 using System.Windows;
 using AEAssist.AI;
 using AEAssist.Helper;
+using AEAssist.View.OverlayManager;
 using PropertyChanged;
 
 namespace AEAssist
@@ -125,6 +126,11 @@ namespace AEAssist
 
         public void Update()
         {
+            if (GeneralSettings.UseCombatMessageOverlay)
+            {
+                OverlayManager.Instance.StartCombatMessageOverlay();
+            }
+            
             if (GeneralSettings.ShowBattleTime)
                 TimeStr =
                     $"{Language.Instance.Content_BattleTime}:  {AIRoot.GetBattleData<BattleData>().CurrBattleTimeInMs / 1000}";
