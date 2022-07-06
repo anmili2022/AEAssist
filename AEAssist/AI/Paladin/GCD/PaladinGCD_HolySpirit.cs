@@ -26,6 +26,7 @@ namespace AEAssist.AI.Paladin.GCD
             if (!spell.IsReady())
                 return -1;
 
+
             //超出距离只能打远程
             if (Paladin_SpellHelper.OutOfMeleeRange())
                 return 2;
@@ -75,6 +76,10 @@ namespace AEAssist.AI.Paladin.GCD
         }
         static bool LastGCD()
         {
+            // This would be -30000 at the moment the buff is given, maybe RB bug
+            if (Core.Me.GetAuraById(AurasDefine.Requiescat).TimespanLeft.TotalMilliseconds < 0)
+                return false;
+            
             return Core.Me.GetAuraById(AurasDefine.Requiescat).TimespanLeft.TotalMilliseconds - 100 < AIRoot.Instance.GetGCDDuration();
         }
 
