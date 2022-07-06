@@ -8,7 +8,7 @@ namespace AEAssist.AI.Samurai.GCD
     {
         public int Check(SpellEntity lastSpell)
         {
-            var needUseAoe = TargetHelper.CheckNeedUseAOE(2, 5);
+            var needUseAoe = TargetHelper.CheckNeedUseAOE(4, 8);
             if (!needUseAoe)
             {
                 return -1;
