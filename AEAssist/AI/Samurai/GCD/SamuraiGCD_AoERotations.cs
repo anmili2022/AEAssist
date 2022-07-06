@@ -19,7 +19,14 @@ namespace AEAssist.AI.Samurai.GCD
         public async Task<SpellEntity> Run()
         {
             // AoERotations
-            return await SamuraiSpellHelper.AoEGCD();
+            
+            var spell = SamuraiSpellHelper.AoEGCD();
+            if (spell == null)
+                return null;
+            var ret = await spell.DoGCD();
+            if (ret)
+                return spell;
+            return null;
         }
     }
 }

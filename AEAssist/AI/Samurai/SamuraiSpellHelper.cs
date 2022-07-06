@@ -279,9 +279,8 @@ namespace AEAssist.AI.Samurai
 
             return -1;
         }
-
         
-        public static async Task<SpellEntity> AoEGCD()
+        public static SpellEntity AoEGCD()
         {
 
             var lastGcd = ActionManager.LastSpellId;
@@ -289,11 +288,6 @@ namespace AEAssist.AI.Samurai
             if (SenCounts() == 2)
             {
                 return SpellsDefine.TenkaGoken.GetSpellEntity();
-            }
-            
-            if (SpellsDefine.MeikyoShisui.IsReady())
-            {
-                await SpellsDefine.MeikyoShisui.DoAbility();
             }
 
             if (Core.Me.HasAura(AurasDefine.MeikyoShisui))

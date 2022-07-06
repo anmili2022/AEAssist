@@ -10,6 +10,13 @@ namespace AEAssist.AI.Samurai.Ability
     {
         public int Check(SpellEntity lastSpell)
         {
+            
+            var needUseAoe = TargetHelper.CheckNeedUseAOE(2, 5);
+            if (needUseAoe)
+            {
+                return 0;
+            }
+            
             if (!AIRoot.GetBattleData<SamuraiBattleData>().Bursting || !AIRoot.GetBattleData<SamuraiBattleData>().EvenBursting)
             {
                 return -4;
