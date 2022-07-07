@@ -29,7 +29,7 @@ namespace AEAssist.AI.Summoner.GCD
                 return -1;
             if (spell == SpellsDefine.CrimsonStrike && !Core.Me.CanAttackTargetInRange(Core.Me.CurrentTarget, 3))
                 return -5;
-            if (!SettingMgr.GetSetting<SMNSettings>().Crimson)
+            if (!DataBinding.Instance.SMNSettings.Crimson)
             {
                 return -6;
             }

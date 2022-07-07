@@ -13,9 +13,10 @@ namespace AEAssist.AI.Paladin.Ability
         {
             if (!spell.IsReady())
                 return -1;
-            if (SettingMgr.GetSetting<PaladinSettings>().IronWill && !Core.Me.HasMyAura(AurasDefine.IronWill))
+            
+            if (DataBinding.Instance.PaladinSettings.IronWill && !Core.Me.HasMyAura(AurasDefine.IronWill))
                 return 1;
-            if (!SettingMgr.GetSetting<PaladinSettings>().IronWill && Core.Me.HasMyAura(AurasDefine.IronWill))
+            if (!DataBinding.Instance.PaladinSettings.IronWill && Core.Me.HasMyAura(AurasDefine.IronWill))
                 return 0;
             return -1;
         }

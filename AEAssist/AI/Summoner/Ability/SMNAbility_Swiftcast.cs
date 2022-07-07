@@ -21,10 +21,10 @@ namespace AEAssist.AI.Summoner.Ability
             }
 
 
-            if (SMN_SpellHelper.Garuda() && Core.Me.HasAura(AurasDefine.GarudasFavor) && (SettingMgr.GetSetting<SMNSettings>().SwiftcastOption == 1 || SettingMgr.GetSetting<SMNSettings>().SwiftcastOption == 3))
+            if (SMN_SpellHelper.Garuda() && Core.Me.HasAura(AurasDefine.GarudasFavor) && (DataBinding.Instance.SMNSettings.SwiftcastOption == 1 || DataBinding.Instance.SMNSettings.SwiftcastOption == 3))
                 return 1;
 
-            if (SMN_SpellHelper.Ifrit() && SettingMgr.GetSetting<SMNSettings>().SwiftcastOption > 1)
+            if (SMN_SpellHelper.Ifrit() && DataBinding.Instance.SMNSettings.SwiftcastOption > 1)
                 return 2;
 
             return -99;

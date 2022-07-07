@@ -32,7 +32,7 @@ namespace AEAssist.AI.Summoner
 
         public static bool NotMovingWhileSavingInstantSpells()
         {
-            return SettingMgr.GetSetting<SMNSettings>().SaveInstantSpells && (MovementManager.IsMoving);
+            return DataBinding.Instance.SMNSettings.SaveInstantSpells && (MovementManager.IsMoving);
         }
 
 

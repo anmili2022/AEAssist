@@ -19,7 +19,7 @@ namespace AEAssist.AI.Summoner.GCD
             if (!SpellsDefine.Swiftcast.CoolDownInGCDs(3))
                 return false;
 
-            if (SettingMgr.GetSetting<SMNSettings>().SwiftcastOption == 0)
+            if (DataBinding.Instance.SMNSettings.SwiftcastOption == 0)
                 return false;
 
             return true;
@@ -31,7 +31,7 @@ namespace AEAssist.AI.Summoner.GCD
         {
 
 
-            if (SettingMgr.GetSetting<SMNSettings>().SaveInstantSpells)
+            if (DataBinding.Instance.SMNSettings.SaveInstantSpells)
             {
                 if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.AvailablePetFlags.Ifrit))
                     return SMN_SpellHelper.GetIfrit();

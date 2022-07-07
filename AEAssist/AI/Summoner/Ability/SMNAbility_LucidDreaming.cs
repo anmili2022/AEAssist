@@ -13,7 +13,8 @@ namespace AEAssist.AI.Summoner.Ability
         {
             if (!spell.IsReady())
                 return -1;
-            if (Core.Me.CurrentManaPercent >= SettingMgr.GetSetting<SMNSettings>().LucidDreamingPercentage)
+            
+            if (Core.Me.CurrentManaPercent >= DataBinding.Instance.SMNSettings.LucidDreamingPercentage)
                 return -10;
 
             return 0;

@@ -15,7 +15,7 @@ namespace AEAssist.AI.Paladin
             //    () => PotionHelper.UsePotion(SettingMgr.GetSetting<GeneralSettings>().MindPotionId));
 
 
-            AEAssist.DataBinding.Instance.EarlyDecisionMode = SettingMgr.GetSetting<PaladinSettings>().EarlyDecisionMode;
+            AEAssist.DataBinding.Instance.EarlyDecisionMode = DataBinding.Instance.PaladinSettings.EarlyDecisionMode;
         }
         public Task<bool> PreCombatBuff()
         {

@@ -21,7 +21,7 @@ namespace AEAssist.AI.Summoner
             CountDownHandler.Instance.AddListener(1200,
                 () => SpellsDefine.Ruin.DoGCD());
 
-            AEAssist.DataBinding.Instance.EarlyDecisionMode = SettingMgr.GetSetting<SMNSettings>().EarlyDecisionMode;
+            AEAssist.DataBinding.Instance.EarlyDecisionMode = DataBinding.Instance.SMNSettings.EarlyDecisionMode;
         }
         public async Task<bool> PreCombatBuff()
         {
