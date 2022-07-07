@@ -18,7 +18,13 @@ namespace AEAssist.AI.Summoner
 
 
             CountDownHandler.Instance.AddListener(1000,
-                () => SpellsDefine.Ruin.DoGCD());
+                () =>
+                {
+                    SpellsDefine.Ruin.DoGCD();
+                    if (SpellsDefine.SearingLight.IsReady())
+                        SpellsDefine.SearingLight.DoAbility();
+                    return SpellsDefine.Ruin.DoGCD();
+                });
 
             DataBinding.Instance.EarlyDecisionMode = DataBinding.Instance.SMNSettings.EarlyDecisionMode;
         }

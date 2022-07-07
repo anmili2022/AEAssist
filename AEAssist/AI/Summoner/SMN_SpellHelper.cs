@@ -65,11 +65,11 @@ namespace AEAssist.AI.Summoner
         public static int PetRemaining()
         {
             var rtn = 0;
-            if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.ActivePetType.Titan))
+            if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.AvailablePetFlags.Titan))
                 rtn++;
-            if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.ActivePetType.Ifrit))
+            if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.AvailablePetFlags.Ifrit))
                 rtn++;
-            if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.ActivePetType.Garuda))
+            if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.AvailablePetFlags.Garuda))
                 rtn++;
             return rtn;
         }

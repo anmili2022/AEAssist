@@ -30,13 +30,21 @@ namespace AEAssist.AI.Summoner.Ability
 
             if (!spell.IsReady())
                 return -1;
-
-            if (ActionResourceManager.Summoner.TranceTimer <= (int)AIRoot.Instance.GetGCDDuration() * 2 )
+            if (ActionResourceManager.Summoner.TranceTimer <= 0 || SMN_SpellHelper.AnyPet())
+            {
+                return -2;
+            }
+            
+            if (ActionResourceManager.Summoner.TranceTimer <= (int)AIRoot.Instance.GetGCDDuration() * 2)
+            {
+                LogHelper.Info($"{ActionResourceManager.Summoner.TranceTimer} is less than {(int)AIRoot.Instance.GetGCDDuration() * 2}");
                 return 1;
 
-            if (SMN_SpellHelper.WaitForPotion())
-                return -6;
+            }
 
+
+            if (SMN_SpellHelper.WaitForPotion() && !SMN_SpellHelper.PhoenixTrance())
+                return -6;
             return 0;
         }
 

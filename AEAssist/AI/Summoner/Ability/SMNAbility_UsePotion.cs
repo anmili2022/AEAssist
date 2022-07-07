@@ -19,7 +19,7 @@ namespace AEAssist.AI.Summoner.Ability
                 return -4;
             if (!PotionHelper.CheckPotion(SettingMgr.GetSetting<GeneralSettings>().IntPotionId))
                 return -6;
-
+            
             if (ActionResourceManager.Summoner.TranceTimer >= (int)AIRoot.Instance.GetGCDDuration() *2 && !SMN_SpellHelper.AnyPet() && !SMN_SpellHelper.PhoenixTrance())
                 return 0;
 

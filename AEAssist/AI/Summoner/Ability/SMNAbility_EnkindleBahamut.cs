@@ -27,9 +27,14 @@ namespace AEAssist.AI.Summoner.Ability
                 return -2;
             }
             if (ActionResourceManager.Summoner.TranceTimer <= (int)AIRoot.Instance.GetGCDDuration() * 2)
+            {
+                LogHelper.Info($"{ActionResourceManager.Summoner.TranceTimer} is less than {(int)AIRoot.Instance.GetGCDDuration() * 2}");
                 return 1;
+                
+            }
 
-            if (SMN_SpellHelper.WaitForPotion())
+
+            if (SMN_SpellHelper.WaitForPotion() && !SMN_SpellHelper.PhoenixTrance())
                 return -6;
             return 0;
         }

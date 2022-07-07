@@ -477,6 +477,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Samurai\Samurai_AIPriorityQueue.cs" />
     <Compile Include="AI\SpellHistoryMgr.cs" />
     <Compile Include="AI\SpellQueueData.cs" />
+    <Compile Include="AI\Summoner\Ability\SMNAbility_UsePotion.cs" />
     <Compile Include="AI\Summoner\Ability\SMNAbility_Deathflare.cs" />
     <Compile Include="AI\Summoner\Ability\SMNAbility_LucidDreaming.cs" />
     <Compile Include="AI\Summoner\Ability\SMNAbility_EnkindleBahamut.cs" />

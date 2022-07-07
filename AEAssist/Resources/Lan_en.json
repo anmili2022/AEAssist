@@ -119,7 +119,7 @@
   "Toggle_SMN_SaveInstantSpells": "Save Instant Spells",
   "ToolTip_SMN_SaveInstantSpells": "No Instant Spells unless they are cooldown soon or you are moving",
   "Textbox_SMN_SwiftcastOption": "Switftcase Option",
-  "Toggle_SMN_Crimson": "Crimson Cyclone",
+  "Toggle_SMN_CrimsonCyclone": "Crimson Cyclone",
  
   "TextBox_PLD_ReserveManaPercentage": "Reserve Mana %",
   "TextBox_PLD_SheltronThreshold": "Use Sheltron Threshold",
