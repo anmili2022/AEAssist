@@ -147,7 +147,7 @@ namespace AEAssist.AI
                     return await ApplySlot();
                 }
                 LogHelper.Debug(
-                    $"Slot Abilitys: {slot.Abilitys.Count} UsePostion: {slot.UsePotion}");
+                    $"Slot Abilitys: {slot.Abilitys.Count} UsePotion: {slot.UsePotion}");
                 if (slot.Abilitys.Count == 0)
                 {
                     if (slot.UsePotion)
