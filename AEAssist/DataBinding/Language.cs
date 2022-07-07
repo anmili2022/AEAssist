@@ -106,30 +106,23 @@ namespace AEAssist
         
         #endregion
        
-        public string Toggle_UseMeikyoShisui { get; set; }
+        
 
+        
+        public string QQGroup { get; set; }
+        public string SaveSetting { get; set; }
+
+        #region Overlay General
         public string Button_ReloadTriggerLine { get; set; }
-        
-        
-        public string Toggle_Battery { get; set; }
+        public string SetTriggerLine { get; set; }
 
-        public string Toggle_Heat { get; set; }
+        public string ClearTriggerLine { get; set; }
+        public string Toggle_FinalBurst { get; set; }
         
-        
-        
-        #region Casters
-
-        // Casters Roles Defaults
-        public string Toggle_LucidDreaming { get; set; }
-        public string Toggle_SwiftRes { get; set; }
-        public string Toggle_Esuna { get; set; }
-        public string Toggle_SureCast { get; set; }
-        public string Toggle_SwiftCast { get; set; }
-        public string Heal { get; set; }
-        public string Half { get; set; }
-        public string UseCDPull { get; set; }
-
         #endregion
+
+        
+
 
         #region PhysRange
         // PhysRange Roles Defaults
@@ -155,7 +148,22 @@ namespace AEAssist
         public string Textbox_Bard_DotTimeLeft { get; set; }
         public string Textbox_Bard_EmpyrealArrow { get; set; }
         public string Textbox_BardApexWaitBuffs { get; set; }
+        public string ToolTip_Bard_FinalBurst { get; set; }
+        public string ToolTip_Bard_Bloodletter { get; set; }
+        public string ToolTip_Bard_Burst { get; set; }
 
+        public string Toggle_Bloodletter { get; set; }
+
+        #endregion
+
+        #region MCH
+        public string Toggle_Battery { get; set; }
+        public string Toggle_Heat { get; set; }
+        public string Toggle_WildfireNoDelay { get; set; }
+        public string Toggle_Wildfire { get; set; }
+        public string ToolTip_MCH_FinalBurst { get; set; }
+        public string ToolTip_MCH_WildFireFirst { get; set; }
+        public string ToolTip_MCH_Burst { get; set; }
         #endregion
         
         #region RPR
@@ -202,13 +210,27 @@ namespace AEAssist
         public string Toggle_GNB_RoughDivide { get; set; }
         #endregion
 
-        public string Toggle_UseTrueNorthWhenMissActionDir { get; set; }
-        public string Toggle_WildfireNoDelay { get; set; }
-        public string Toggle_Wildfire { get; set; }
-        
-        public string SetTriggerLine { get; set; }
 
-        public string ClearTriggerLine { get; set; }
+        #region Healer
+
+        // Casters Roles Defaults
+        public string Toggle_LucidDreaming { get; set; }
+        public string Toggle_SwiftRes { get; set; }
+        public string Toggle_Esuna { get; set; }
+        public string Toggle_SureCast { get; set; }
+        public string Toggle_SwiftCast { get; set; }
+        public string Heal { get; set; }
+        public string Half { get; set; }
+        public string UseCDPull { get; set; }
+
+        #endregion
+
+
+        //Please put the following in the order of the class and inside its own region
+
+        public string Toggle_UseTrueNorthWhenMissActionDir { get; set; }
+
+        public string Toggle_UseMeikyoShisui { get; set; }
 
         public string Combox_Hotkey_Stop { get; set; }
         public string Combox_Hotkey_Move { get; set; }
@@ -219,11 +241,9 @@ namespace AEAssist
         public string Combox_Hotkey_ArmLength { get; set; }
         public string Combox_Hotkey_Surecast { get; set; }
 
-        public string Btn_LoadTriggerLine { get; set; }
-        public string Btn_ClearTriggerLine { get; set; }
+        
 
-        public string QQGroup { get; set; }
-        public string SaveSetting { get; set; }
+     
 
         public string Content_ResetSetting { get; set; }
         public string Content_CoolDown { get; set; }
@@ -251,8 +271,8 @@ namespace AEAssist
 
         public string Btn_ApplyHotkey { get; set; }
 
-        public string Toggle_FinalBurst { get; set; }
-        public string Toggle_Bloodletter { get; set; }
+        public string Btn_LoadTriggerLine { get; set; }
+        public string Btn_ClearTriggerLine { get; set; }
 
         public string Label_OverlayScale { get; set; }
 
@@ -268,13 +288,9 @@ namespace AEAssist
         public string TextBox_Regen { get; set; }
         public string TextBox_AfflatusSolace { get; set; }
 
-        public string ToolTip_Bard_FinalBurst { get; set; }
-        public string ToolTip_Bard_Bloodletter { get; set; }
-        public string ToolTip_Bard_Burst { get; set; }
+       
 
-        public string ToolTip_MCH_FinalBurst { get; set; }
-        public string ToolTip_MCH_WildFireFirst { get; set; }
-        public string ToolTip_MCH_Burst { get; set; }
+        
     }
 
 }
