@@ -34,7 +34,7 @@ namespace AEAssist.AI.Summoner.GCD
         public async Task<SpellEntity> DelayedRun()
         {
             spell.GetSpellEntity().SpellTargetType = SpellTargetType.Self;
-            int randomTimer = new Random().Next(2000, 4000);
+            int randomTimer = new Random().Next(4000, 6000);
 
             await Coroutine.Sleep(randomTimer);
             if (Check(null) >= 0)

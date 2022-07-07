@@ -4,6 +4,7 @@ using AEAssist.Helper;
 using AEAssist.Rotations.Core;
 using ff14bot;
 using ff14bot.Enums;
+using ff14bot.Managers;
 using System.Threading.Tasks;
 
 namespace AEAssist.AI.Summoner
@@ -20,9 +21,8 @@ namespace AEAssist.AI.Summoner
             CountDownHandler.Instance.AddListener(1000,
                 () =>
                 {
-                    SpellsDefine.Ruin.DoGCD();
-                    if (SpellsDefine.SearingLight.IsReady())
-                        SpellsDefine.SearingLight.DoAbility();
+                    
+                    
                     return SpellsDefine.Ruin.DoGCD();
                 });
 
