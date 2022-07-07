@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Windows.Media;
-using Clio.Utilities;
+﻿using Clio.Utilities;
 using ff14bot;
 using ff14bot.AClasses;
 using ff14bot.Enums;
 using ff14bot.Helpers;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using System.Windows.Media;
 using TreeSharp;
 
 namespace AEAssistLoader

@@ -43,6 +43,8 @@ namespace AEAssist
 
         public int StrPotionId { get; set; }
 
+        public int IntPotionId { get; set; }
+
 
 
         public HashSet<string> DotBlacklist { get; set; } = new HashSet<string>();
