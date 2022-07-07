@@ -31,12 +31,11 @@ namespace AEAssist.AI.Summoner.Ability
             if (!spell.IsReady())
                 return -1;
 
-            if (ActionResourceManager.Summoner.TranceTimer <= 0 || SMN_SpellHelper.AnyPet())
-            {
-                return -3;
-            }
+            if (ActionResourceManager.Summoner.TranceTimer <= (int)AIRoot.Instance.GetGCDDuration() * 2 )
+                return 1;
 
-
+            if (SMN_SpellHelper.WaitForPotion())
+                return -6;
 
             return 0;
         }

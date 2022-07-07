@@ -23,6 +23,7 @@ namespace AEAssist.AI.Summoner
 
         public List<IAIHandler> AbilityQueue { get; } = new List<IAIHandler>()
         {
+            new SMNAbility_UsePotion(),
             new SMNAbility_Swiftcast(),
             new SMNAbility_SearingLight(),
             new SMNAbility_PetTitanMountainBuster(),

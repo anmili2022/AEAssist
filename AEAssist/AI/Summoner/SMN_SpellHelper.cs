@@ -1,6 +1,7 @@
 ﻿using AEAssist.AI.Summoner.GCD;
 using AEAssist.Define;
 using AEAssist.Helper;
+using ff14bot;
 using ff14bot.Managers;
 
 namespace AEAssist.AI.Summoner
@@ -25,6 +26,8 @@ namespace AEAssist.AI.Summoner
                 return true;
             return false;
         }
+
+        //this is true from the end of bahamut trance to the end of phoenix trance
         public static bool PhoenixTrance()
         {
             return ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.AvailablePetFlags.Phoenix);
@@ -32,7 +35,7 @@ namespace AEAssist.AI.Summoner
 
         public static bool NotMovingWhileSavingInstantSpells()
         {
-            return DataBinding.Instance.SMNSettings.SaveInstantSpells && (MovementManager.IsMoving);
+            return DataBinding.Instance.SMNSettings.SaveInstantSpells && (!MovementManager.IsMoving);
         }
 
 
@@ -100,6 +103,17 @@ namespace AEAssist.AI.Summoner
         public static bool SummonedPetRecently()
         {
             return GetTitan().GetSpellEntity().RecentlyUsed(2500) || GetIfrit().GetSpellEntity().RecentlyUsed(2500) || GetGaruda().GetSpellEntity().RecentlyUsed(2500) || SMNGCD_Aethercharge.GetSpell().RecentlyUsed() || SpellsDefine.SummonPhoenix.GetSpellEntity().RecentlyUsed(2500);
+        }
+
+        public static bool WaitForPotion()
+        {
+            if (!DataBinding.Instance.GeneralSettings.UsePotion)
+                return false;
+            if (Core.Me.HasMyAura(AurasDefine.Medicated))
+                return false;
+            if (!PotionHelper.CheckPotion(SettingMgr.GetSetting<GeneralSettings>().IntPotionId))
+                return false;
+            return true;
         }
     }
 }

@@ -36,7 +36,8 @@ namespace AEAssist.AI.Summoner.Ability
 
                 return -2;
             }
-
+            if (SMN_SpellHelper.WaitForPotion())
+                return -6;
             return 0;
         }
 

@@ -21,7 +21,8 @@ namespace AEAssist.AI.Summoner.Ability
             // 有豆子先把豆子打完
             if (ActionResourceManager.Summoner.Aetherflow != 0)
                 return -10;
-
+            if (SMN_SpellHelper.WaitForPotion())
+                return -6;
 
 
             return 0;

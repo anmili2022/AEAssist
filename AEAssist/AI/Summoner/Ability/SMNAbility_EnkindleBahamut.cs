@@ -26,10 +26,11 @@ namespace AEAssist.AI.Summoner.Ability
             {
                 return -2;
             }
-            if (SMN_SpellHelper.Debugging)
-            {
-                LogHelper.Debug("trance time:" + ActionResourceManager.Summoner.TranceTimer);
-            }
+            if (ActionResourceManager.Summoner.TranceTimer <= (int)AIRoot.Instance.GetGCDDuration() * 2)
+                return 1;
+
+            if (SMN_SpellHelper.WaitForPotion())
+                return -6;
             return 0;
         }
 

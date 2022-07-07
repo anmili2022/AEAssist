@@ -17,10 +17,10 @@ namespace AEAssist.AI.Summoner
             //    () => PotionHelper.UsePotion(SettingMgr.GetSetting<GeneralSettings>().MindPotionId));
 
 
-            CountDownHandler.Instance.AddListener(1200,
+            CountDownHandler.Instance.AddListener(1000,
                 () => SpellsDefine.Ruin.DoGCD());
 
-            AEAssist.DataBinding.Instance.EarlyDecisionMode = DataBinding.Instance.SMNSettings.EarlyDecisionMode;
+            DataBinding.Instance.EarlyDecisionMode = DataBinding.Instance.SMNSettings.EarlyDecisionMode;
         }
         public async Task<bool> PreCombatBuff()
         {
