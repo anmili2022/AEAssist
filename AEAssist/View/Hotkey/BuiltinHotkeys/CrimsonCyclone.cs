@@ -15,7 +15,7 @@ namespace AEAssist.View.Hotkey.BuiltinHotkeys
 
         public string GetDisplayString()
         {
-            return Language.Instance.Combox_Hotkey_CrimsonCyclone;
+            return Language.Instance.Combox_Hotkey_SMN_CrimsonCyclone;
         }
     }
 }

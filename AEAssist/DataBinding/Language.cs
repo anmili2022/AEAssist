@@ -175,25 +175,25 @@ namespace AEAssist
 
         public string ToolTip_SMN_FinalBurst { get; set; }
 
-        public string Toggle_SaveInstantSpells { get; set; }
-        public string ToolTip_SaveInstantSpells { get; set; }
-        public string Textbox_SwiftcastOption { get; set; }
-        public string Toggle_CrimsonCyclone { get; set; }
+        public string Toggle_SMN_SaveInstantSpells { get; set; }
+        public string ToolTip_SMN_SaveInstantSpells { get; set; }
+        public string Textbox_SMN_SwiftcastOption { get; set; }
+        public string Toggle_SMN_CrimsonCyclone { get; set; }
         
-        public string Combox_Hotkey_CrimsonCyclone { get; set; }
+        public string Combox_Hotkey_SMN_CrimsonCyclone { get; set; }
         
         #endregion
         
         #region PLD
 
-        public string TextBox_ReserveManaPercentage { get; set; }
-        public string TextBox_SheltronThreshold { get; set; }
-        public string Textbox_FightorFlightTiming { get; set; }
-        public string Toggle_Requiescat { get; set; }
-        public string Toggle_Intervene { get; set; }
-        public string Toggle_IronWill { get; set; }
+        public string TextBox_PLD_ReserveManaPercentage { get; set; }
+        public string TextBox_PLD_SheltronThreshold { get; set; }
+        public string Textbox_PLD_FightorFlightTiming { get; set; }
+        public string Toggle_PLD_Requiescat { get; set; }
+        public string Toggle_PLD_Intervene { get; set; }
+        public string Toggle_PLD_IronWill { get; set; }
         public string ToolTip_PLD_FinalBurst { get; set; }
-        public string Toggle_Sheltron { get; set; }
+        public string Toggle_PLD_Sheltron { get; set; }
 
         #endregion
         
