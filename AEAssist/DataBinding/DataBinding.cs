@@ -64,6 +64,7 @@ namespace AEAssist
         public GunBreakerSettings GunBreakerSettings => SettingMgr.GetSetting<GunBreakerSettings>();
         public DebugCenter DebugCenter => DebugCenter.Intance;
         public MeleePosition MeleePosition => MeleePosition.Intance;
+        public WarriorSettings WarriorSettings => SettingMgr.GetSetting<WarriorSettings>();
 
         public HotkeySetting HotkeySetting => SettingMgr.GetSetting<HotkeySetting>();
         public AEAssist.View.Hotkey.HotkeyManager HotkeyManager => AEAssist.View.Hotkey.HotkeyManager.Instance;

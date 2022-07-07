@@ -34,8 +34,6 @@
     <WarningLevel>4</WarningLevel>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  
-  
   <!-- Post build event Close RebornBuddy and copy output files to rebornbuddy folder Make sure you are running the IDE as adminstrator if rebornbuddy is admin. Also edit the bat file and change it to your own custom directory.
     Doesn't work. Stick to harmony solution.-->
   <!--<PropertyGroup>
@@ -501,6 +499,24 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Summoner\SMN_BattleData.cs" />
     <Compile Include="AI\Summoner\SMN_Rotation.cs" />
     <Compile Include="AI\Summoner\SMN_SpellHelper.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_Blank.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_CircleofScorn.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_FightorFlight.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_Intervene.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_IronWill.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_Requiescat.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_Sheltron.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_SpiritsWithin.cs" />
+    <Compile Include="AI\Warrior\GCD\WarriorGCD_Base.cs" />
+    <Compile Include="AI\Warrior\GCD\WarriorGCD_BladeofXX.cs" />
+    <Compile Include="AI\Warrior\GCD\WarriorGCD_Blank.cs" />
+    <Compile Include="AI\Warrior\GCD\WarriorGCD_Dot.cs" />
+    <Compile Include="AI\Warrior\GCD\WarriorGCD_HolySpirit.cs" />
+    <Compile Include="AI\Warrior\GCD\WarriorGCD_Ranged.cs" />
+    <Compile Include="AI\Warrior\Warrior_AIPriorityQueue.cs" />
+    <Compile Include="AI\Warrior\Warrior_BattleData.cs" />
+    <Compile Include="AI\Warrior\Warrior_Rotation.cs" />
+    <Compile Include="AI\Warrior\Warrior_SpellHelper.cs" />
     <Compile Include="AI\WhiteMage\Ability\WhiteMageAbilityAssize.cs" />
     <Compile Include="AI\WhiteMage\Ability\WhiteMageAbilityTetragrammaton.cs" />
     <Compile Include="AI\WhiteMage\Ability\WhiteMageAbilityThinAir.cs" />
@@ -554,6 +570,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="Setting\Setting\MCHSettings.cs" />
     <Compile Include="Setting\Setting\MonkSettings.cs" />
     <Compile Include="Setting\Setting\NinjaSettings.cs" />
+    <Compile Include="Setting\Setting\WarriorSettings.cs" />
     <Compile Include="Setting\Setting\ReaperSettings.cs" />
     <Compile Include="Setting\Setting\SageSettings.cs" />
     <Compile Include="Setting\Setting\PaladinSettings.cs" />
