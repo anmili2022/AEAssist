@@ -35,7 +35,7 @@ namespace AEAssist.AI.Summoner.GCD
             {
                 if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.AvailablePetFlags.Ifrit))
                     return SMN_SpellHelper.GetIfrit();
-                if (AIRoot.Instance.CloseBurst || !SMNGCD_Aethercharge.GetSpell().CoolDownInGCDs(8))
+                if (AIRoot.Instance.CloseBurst || !SMNGCD_Aethercharge.GetSpell().CoolDownInGCDs(SMN_SpellHelper.PetRemaining()*4))
                     return 0;
             }
 
