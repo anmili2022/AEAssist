@@ -80,6 +80,7 @@ namespace AEAssist.Define
             SearingLight,
             SummonCarbuncle,
             RadiantAegis,
+            Rekindle,
 
 
 

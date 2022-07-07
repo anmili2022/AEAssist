@@ -8,16 +8,27 @@ namespace AEAssist.AI.Summoner.Ability
 
     public class SMNAbility_Deathflare : IAIHandler
     {
-        uint spell = SpellsDefine.Deathflare;
-        //死星核爆
-        public int Check(SpellEntity lastSpell)
+        uint spell;
+        
+        uint GetSpell()
         {
             if (SMN_SpellHelper.PhoenixTrance())
+                return SpellsDefine.Rekindle;
+            
+            return SpellsDefine.Deathflare;
+        }
+        
+        public int Check(SpellEntity lastSpell)
+        {
+            spell = GetSpell();
+            if (SMN_SpellHelper.PhoenixTrance())
             {
-                return -4;
+                //only at last gcd to cast to self
+                if (ActionResourceManager.Summoner.TranceTimer > (int)AIRoot.Instance.GetGCDDuration())
+                    return -4;
             }
 
-            if (!SpellsDefine.Deathflare.IsReady())
+            if (!spell.IsReady())
                 return -1;
 
             if (ActionResourceManager.Summoner.TranceTimer <= 0 || SMN_SpellHelper.AnyPet())
@@ -31,7 +42,8 @@ namespace AEAssist.AI.Summoner.Ability
         }
 
         public async Task<SpellEntity> Run()
-        {
+        {   
+            
             if (await spell.DoAbility()) return spell.GetSpellEntity();
 
             return null;
