@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using AEAssist.Define;
+﻿using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Opener;
 using ff14bot;
 using ff14bot.Enums;
 using ff14bot.Managers;
+using System;
+using System.Collections.Generic;
 
 namespace AEAssist.AI.Samurai
 {
@@ -88,51 +88,51 @@ namespace AEAssist.AI.Samurai
             slot.SetGCD(SpellsDefine.Gekko, SpellTargetType.CurrTarget);
             slot.Abilitys.Enqueue((SpellsDefine.HissatsuShinten, SpellTargetType.CurrTarget));
         }
-        
+
         private static void Step6(SpellQueueSlot slot)
         {
             slot.SetGCD(SpellsDefine.Higanbana, SpellTargetType.CurrTarget);
         }
-        
+
         private static void Step7(SpellQueueSlot slot)
         {
             slot.SetGCD(SpellsDefine.Kasha, SpellTargetType.CurrTarget);
             slot.Abilitys.Enqueue((SpellsDefine.HissatsuShinten, SpellTargetType.CurrTarget));
         }
-        
+
         private static void Step8(SpellQueueSlot slot)
         {
             slot.SetGCD(SpellsDefine.OgiNamikiri, SpellTargetType.CurrTarget);
         }
-        
+
         private static void Step9(SpellQueueSlot slot)
         {
             slot.Abilitys.Enqueue((SpellsDefine.KaeshiNamikiri, SpellTargetType.CurrTarget));
             slot.Abilitys.Enqueue((SpellsDefine.Shoha, SpellTargetType.CurrTarget));
         }
-        
+
         private static void Step10(SpellQueueSlot slot)
         {
             slot.SetGCD(SpellsDefine.Gekko, SpellTargetType.CurrTarget);
             slot.Abilitys.Enqueue((SpellsDefine.HissatsuShinten, SpellTargetType.CurrTarget));
         }
-        
+
         private static void Step11(SpellQueueSlot slot)
         {
             slot.SetGCD(SpellsDefine.Hakaze, SpellTargetType.CurrTarget);
         }
-        
+
         private static void Step12(SpellQueueSlot slot)
         {
             slot.SetGCD(SpellsDefine.Yukikaze, SpellTargetType.CurrTarget);
             slot.Abilitys.Enqueue((SpellsDefine.HissatsuShinten, SpellTargetType.CurrTarget));
         }
-        
+
         private static void Step13(SpellQueueSlot slot)
         {
             slot.SetGCD(SpellsDefine.MidareSetsugekka, SpellTargetType.CurrTarget);
         }
-        
+
         private static void Step14(SpellQueueSlot slot)
         {
             slot.Abilitys.Enqueue((SpellsDefine.KaeshiSetsugekka, SpellTargetType.CurrTarget));

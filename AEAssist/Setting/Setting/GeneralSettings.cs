@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using AEAssist.Properties;
+﻿using AEAssist.Properties;
 using PropertyChanged;
+using System.Collections.Generic;
 
 namespace AEAssist
 {

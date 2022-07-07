@@ -1,11 +1,11 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using AEAssist.Define;
+﻿using AEAssist.Define;
 using AEAssist.Helper;
 using Buddy.Coroutines;
 using ff14bot;
 using ff14bot.Managers;
 using ff14bot.Objects;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AEAssist.AI.Sage
 {
@@ -533,15 +533,15 @@ namespace AEAssist.AI.Sage
         public static async Task<SpellEntity> CastEukrasianDiagnosisTest()
         {
             //if (!SpellsDefine.EukrasianDiagnosis.IsUnlock()) return null;
-            
+
             //var spell = new SpellEntity(SpellsDefine.EukrasianDiagnosis, target as BattleCharacter);
             //return await spell.DoGCD();
 
             if (GroupHelper.InParty)
             {
                 var skillTarget = GroupHelper.CastableAlliesWithin30.
-                    Where(r => r.CurrentHealth > 0 
-                               && !r.HasAura(AurasDefine.EukrasianDiagnosis) 
+                    Where(r => r.CurrentHealth > 0
+                               && !r.HasAura(AurasDefine.EukrasianDiagnosis)
                                && !r.HasAura(AurasDefine.DifferentialDiagnosis)).
                     OrderBy(GetHealth);
                 if (!SpellsDefine.EukrasianDiagnosis.IsUnlock()) return null;
@@ -553,8 +553,8 @@ namespace AEAssist.AI.Sage
         }
         public static float GetHealth(Character c)
         {
-                return c.CurrentHealthPercent;
-        } 
+            return c.CurrentHealthPercent;
+        }
         public static async Task<bool> CastEukrasianPrognosis(Character target)
         {
             if (!SpellsDefine.EukrasianPrognosis.IsUnlock()) return false;

@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
-using AEAssist.Define;
+﻿using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot.Managers;
+using System.Threading.Tasks;
 
 namespace AEAssist.AI.Samurai.Ability
 {
@@ -25,39 +25,39 @@ namespace AEAssist.AI.Samurai.Ability
             {
                 if (bd.Bursting)
                 {
-                
+
                     if (bd.burstingShintenCount > 3)
                     {
                         return -1;
                     }
-                    
-                    if (lastSpell == SpellsDefine.Kasha.GetSpellEntity() || 
+
+                    if (lastSpell == SpellsDefine.Kasha.GetSpellEntity() ||
                         lastSpell == SpellsDefine.Gekko.GetSpellEntity()
                         || lastSpell == SpellsDefine.Yukikaze.GetSpellEntity())
                     {
-                        
+
                         bd.burstingShintenCount++;
                         return 1;
                     }
                 }
-                
+
                 if (bd.EvenBursting)
                 {
                     if (bd.burstingShintenCount > 4)
                     {
                         return -2;
                     }
-                    
-                    if (lastSpell == SpellsDefine.Kasha.GetSpellEntity() || 
+
+                    if (lastSpell == SpellsDefine.Kasha.GetSpellEntity() ||
                         lastSpell == SpellsDefine.Gekko.GetSpellEntity()
                         || lastSpell == SpellsDefine.Yukikaze.GetSpellEntity())
                     {
-                        
+
                         bd.burstingShintenCount++;
                         return 2;
                     }
                 }
-                
+
                 // cooldown
                 if (ActionManager.LastSpellId == SpellsDefine.Kasha)
                 {

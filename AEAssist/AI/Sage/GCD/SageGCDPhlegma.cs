@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using AEAssist.Define;
+﻿using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
 using ff14bot.Managers;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace AEAssist.AI.Sage.GCD
 {
@@ -24,7 +24,7 @@ namespace AEAssist.AI.Sage.GCD
                 AurasDefine.Divination
             };
             if (Core.Me.HasAnyAura(raidbuffs))
-            {                
+            {
                 return true;
             }
             if (Core.Me.CurrentTarget.HasAnyAura(raidbuffs))

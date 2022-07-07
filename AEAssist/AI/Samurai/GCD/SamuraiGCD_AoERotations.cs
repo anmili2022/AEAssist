@@ -1,6 +1,6 @@
-using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
+using System.Threading.Tasks;
 
 namespace AEAssist.AI.Samurai.GCD
 {
@@ -19,7 +19,7 @@ namespace AEAssist.AI.Samurai.GCD
         public async Task<SpellEntity> Run()
         {
             // AoERotations
-            
+
             var spell = SamuraiSpellHelper.AoEGCD();
             if (spell == null)
                 return null;

@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using AEAssist.AI.Summoner.Ability;
+﻿using AEAssist.AI.Summoner.Ability;
 using AEAssist.AI.Summoner.GCD;
 using ff14bot.Enums;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 namespace AEAssist.AI.Summoner
 {
     [Job(ClassJobType.Summoner)]

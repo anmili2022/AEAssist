@@ -1,6 +1,6 @@
-using System.Threading.Tasks;
 using AEAssist.Define;
 using ff14bot;
+using System.Threading.Tasks;
 
 namespace AEAssist.AI.Samurai.GCD
 {
@@ -20,7 +20,7 @@ namespace AEAssist.AI.Samurai.GCD
         {
             // CoolDownPhase
             // return await SamuraiSpellHelper.CoolDownPhaseGCD(Core.Me.CurrentTarget);
-            
+
             var spell = SamuraiSpellHelper.CoolDownPhaseGCD(Core.Me.CurrentTarget);
             if (spell == null)
                 return null;

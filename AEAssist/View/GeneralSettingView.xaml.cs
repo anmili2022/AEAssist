@@ -1,9 +1,9 @@
-﻿using System.Collections.ObjectModel;
+﻿using AEAssist.Helper;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using AEAssist.Helper;
 
 namespace AEAssist.View
 {

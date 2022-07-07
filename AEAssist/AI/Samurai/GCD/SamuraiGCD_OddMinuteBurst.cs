@@ -1,6 +1,6 @@
-using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
+using System.Threading.Tasks;
 
 namespace AEAssist.AI.Samurai.GCD
 {
@@ -13,7 +13,7 @@ namespace AEAssist.AI.Samurai.GCD
             {
                 return -10;
             }
-            
+
             if (lastSpell == SpellsDefine.MidareSetsugekka.GetSpellEntity())
             {
                 bd.Bursting = false;
@@ -25,7 +25,7 @@ namespace AEAssist.AI.Samurai.GCD
                 return 1;
             }
 
-           
+
             return -1;
         }
 

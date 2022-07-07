@@ -1,14 +1,14 @@
-﻿using System.Threading.Tasks;
-using AEAssist.Define;
+﻿using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
+using System.Threading.Tasks;
 
 namespace AEAssist.AI.Warrior.Ability
 {
     public class WarriorAbility_IronWill : IAIHandler
     {
         uint spell = SpellsDefine.IronWill;
-       
+
         public int Check(SpellEntity lastSpell)
         {
             if (!spell.IsReady())

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Windows;
-using AEAssist.AI;
+﻿using AEAssist.AI;
 using AEAssist.Helper;
 using AEAssist.View.OverlayManager;
 using PropertyChanged;
+using System;
+using System.Windows;
 
 namespace AEAssist
 {
@@ -131,7 +131,7 @@ namespace AEAssist
             {
                 OverlayManager.Instance.StartCombatMessageOverlay();
             }
-            
+
             if (GeneralSettings.ShowBattleTime)
                 TimeStr =
                     $"{Language.Instance.Content_BattleTime}:  {AIRoot.GetBattleData<BattleData>().CurrBattleTimeInMs / 1000}";
@@ -183,7 +183,7 @@ namespace AEAssist
         #endregion
 
         #region GNB
-        public bool GNBOpen { get; set; }=true;
+        public bool GNBOpen { get; set; } = true;
         public bool GNBRoughDivide { get; set; } = true;
         #endregion
 

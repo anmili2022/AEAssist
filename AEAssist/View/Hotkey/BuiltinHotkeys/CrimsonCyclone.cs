@@ -9,7 +9,7 @@ namespace AEAssist.View.Hotkey.BuiltinHotkeys
                 SettingMgr.GetSetting<SMNSettings>().Crimson = true;
                 return;
             }
-            
+
             SettingMgr.GetSetting<SMNSettings>().Crimson = false;
         }
 

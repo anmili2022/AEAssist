@@ -1,11 +1,10 @@
-﻿using System.Threading.Tasks;
-using AEAssist.AI.Summoner.GCD;
+﻿using AEAssist.AI.Summoner.GCD;
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
 using ff14bot;
 using ff14bot.Enums;
-using ff14bot.Managers;
+using System.Threading.Tasks;
 
 namespace AEAssist.AI.Summoner
 {

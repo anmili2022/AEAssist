@@ -1,8 +1,8 @@
-﻿using System.Threading.Tasks;
-using AEAssist.Define;
+﻿using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
 using ff14bot.Managers;
+using System.Threading.Tasks;
 
 namespace AEAssist.AI.Warrior.GCD
 {
@@ -14,7 +14,7 @@ namespace AEAssist.AI.Warrior.GCD
             if (SpellsDefine.HolySpirit.IsUnlock())
             {
                 if (!MovementManager.IsMoving)
-                    if (Core.Me.CurrentMana > SettingMgr.GetSetting<WarriorSettings>().ReserveManaPercentage* Core.Me.MaxMana / 100.0 + SpellsDefine.HolySpirit.GetSpellEntity().SpellData.Cost)
+                    if (Core.Me.CurrentMana > SettingMgr.GetSetting<WarriorSettings>().ReserveManaPercentage * Core.Me.MaxMana / 100.0 + SpellsDefine.HolySpirit.GetSpellEntity().SpellData.Cost)
                         return SpellsDefine.HolySpirit;
             }
 

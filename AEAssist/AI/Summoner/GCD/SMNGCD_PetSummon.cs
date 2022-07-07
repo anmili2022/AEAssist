@@ -1,13 +1,13 @@
-﻿using System.Threading.Tasks;
-using AEAssist.Define;
+﻿using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot.Managers;
+using System.Threading.Tasks;
 namespace AEAssist.AI.Summoner.GCD
 {
     public class SMNGCD_PetSummon : IAIHandler
     {
         uint spell;
-        
+
 
         static bool SwiftcastingSlipStream()
         {

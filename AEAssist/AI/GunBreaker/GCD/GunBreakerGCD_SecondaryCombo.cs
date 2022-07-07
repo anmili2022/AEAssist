@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
-using AEAssist.Define;
+﻿using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot.Managers;
+using System.Threading.Tasks;
 
 namespace AEAssist.AI.GunBreaker.GCD
 {
@@ -38,7 +38,7 @@ namespace AEAssist.AI.GunBreaker.GCD
             if (SpellsDefine.NoMercy.GetSpellEntity().SpellData.Charges < 0.5)
                 return 1;
 
-            if (SpellsDefine.NoMercy.GetSpellEntity().SpellData.CoolDownInGCDs(4) && SpellsDefine.NoMercy.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds !=0)
+            if (SpellsDefine.NoMercy.GetSpellEntity().SpellData.CoolDownInGCDs(4) && SpellsDefine.NoMercy.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds != 0)
                 return -5;
             return 0;
         }

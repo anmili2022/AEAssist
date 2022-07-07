@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using AEAssist.AI.Warrior.Ability;
+﻿using AEAssist.AI.Warrior.Ability;
 using AEAssist.AI.Warrior.GCD;
 using ff14bot.Enums;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 namespace AEAssist.AI.Warrior
 {
     [Job(ClassJobType.Warrior)]

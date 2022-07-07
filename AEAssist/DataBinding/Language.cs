@@ -40,7 +40,7 @@ namespace AEAssist
         public string TabItem_TriggerLine { get; set; }
 
         public string TabItem_SongSetting { get; set; }
-        
+
         public string Btn_SwitchOverlay { get; set; }
         public string Btn_Reset { get; set; }
         public string Btn_Close { get; set; }
@@ -96,19 +96,19 @@ namespace AEAssist
 
         public string Toggle_EarlyDecisionMode { get; set; }
         public string Toggle_StrongGCDCheckTime { get; set; }
-        
+
         public string Toggle_UseHotkey { get; set; }
         public string Toggle_UseTTK { get; set; }
 
         public string Toggle_Potion { get; set; }
-        
-        public string Toggle_ActiveAttack { get; set; }
-        
-        #endregion
-       
-        
 
-        
+        public string Toggle_ActiveAttack { get; set; }
+
+        #endregion
+
+
+
+
         public string QQGroup { get; set; }
         public string SaveSetting { get; set; }
 
@@ -118,10 +118,10 @@ namespace AEAssist
 
         public string ClearTriggerLine { get; set; }
         public string Toggle_FinalBurst { get; set; }
-        
+
         #endregion
 
-        
+
 
 
         #region PhysRange
@@ -129,20 +129,20 @@ namespace AEAssist
         public string Toggle_UsePoleton { get; set; }
 
         #endregion
-        
-        
+
+
         #region Bard
 
         public string Toggle_Apex { get; set; }
         public string Toggle_Bard_Delay1GCDToUseBuffs { get; set; }
-        
+
         public string SongSettingToolTips { get; set; }
         public string SongSetting_WM { get; set; }
         public string SongSetting_MB { get; set; }
         public string SongSetting_AP { get; set; }
-        
+
         public string Bard_SwitchSong { get; set; }
-        
+
         public string Textbox_Bard_ApexArrow_SoulVoiceGauge { get; set; }
         public string Textbox_Bard_TTK2BuffEnhancedIronJaw { get; set; }
         public string Textbox_Bard_DotTimeLeft { get; set; }
@@ -165,19 +165,19 @@ namespace AEAssist
         public string ToolTip_MCH_WildFireFirst { get; set; }
         public string ToolTip_MCH_Burst { get; set; }
         #endregion
-        
+
         #region RPR
 
         public string Toggle_UseEnshroud { get; set; }
         public string Toggle_UseHarpe { get; set; }
         public string Toggle_PreferDoubleEnshroud { get; set; }
         public string Toggle_PreferGallow { get; set; }
-        
+
         public string ToolTip_RPR_DoubleEnshroundPrefer { get; set; }
         public string ToolTip_RPR_Burst { get; set; }
 
         #endregion
-        
+
         #region SMN
         public string ToolTip_SMN_Burst { get; set; }
 
@@ -187,11 +187,11 @@ namespace AEAssist
         public string ToolTip_SMN_SaveInstantSpells { get; set; }
         public string Textbox_SMN_SwiftcastOption { get; set; }
         public string Toggle_SMN_CrimsonCyclone { get; set; }
-        
+
         public string Combox_Hotkey_SMN_CrimsonCyclone { get; set; }
-        
+
         #endregion
-        
+
         #region PLD
 
         public string TextBox_PLD_ReserveManaPercentage { get; set; }
@@ -204,7 +204,7 @@ namespace AEAssist
         public string Toggle_PLD_Sheltron { get; set; }
 
         #endregion
-        
+
         #region GNB
         public string Toggle_GNB_Open { get; set; }
         public string Toggle_GNB_RoughDivide { get; set; }
@@ -241,9 +241,9 @@ namespace AEAssist
         public string Combox_Hotkey_ArmLength { get; set; }
         public string Combox_Hotkey_Surecast { get; set; }
 
-        
 
-     
+
+
 
         public string Content_ResetSetting { get; set; }
         public string Content_CoolDown { get; set; }
@@ -288,9 +288,9 @@ namespace AEAssist
         public string TextBox_Regen { get; set; }
         public string TextBox_AfflatusSolace { get; set; }
 
-       
 
-        
+
+
     }
 
 }

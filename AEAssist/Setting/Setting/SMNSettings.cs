@@ -32,7 +32,7 @@ namespace AEAssist
             NextPet = 0;
             LucidDreamingPercentage = 50;
         }
-        
+
         public bool Crimson { get; set; } = true;
 
         public bool SaveInstantSpells { get; set; } = false;
