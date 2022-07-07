@@ -27,6 +27,10 @@ namespace AEAssist.AI.Summoner.Ability
             if (SMN_SpellHelper.Ifrit() && DataBinding.Instance.SMNSettings.SwiftcastOption > 1)
                 return 2;
 
+            //ensure next one will be ready on time
+            if (DataBinding.Instance.SMNSettings.SwiftcastOption == 1 && SMN_SpellHelper.Ifrit())
+                return 3;
+            
             return -99;
         }
 
