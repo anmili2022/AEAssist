@@ -21,8 +21,7 @@ namespace AEAssist.AI.Summoner
             CountDownHandler.Instance.AddListener(1000,
                 () =>
                 {
-                    
-                    
+                    AIRoot.Instance.RecordGCD(SpellsDefine.Ruin.GetSpellEntity());
                     return SpellsDefine.Ruin.DoGCD();
                 });
 

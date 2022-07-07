@@ -496,6 +496,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Summoner\GCD\SMNGCD_Aethercharge.cs" />
     <Compile Include="AI\Summoner\GCD\SMNGCD_Base.cs" />
     <Compile Include="AI\Summoner\GCD\SMNGCD_SummonCarbuncle.cs" />
+    <Compile Include="AI\Summoner\Opener_SMN_90.cs" />
     <Compile Include="AI\Summoner\SMN_AIPriorityQueue.cs" />
     <Compile Include="AI\Summoner\SMN_BattleData.cs" />
     <Compile Include="AI\Summoner\SMN_Rotation.cs" />
