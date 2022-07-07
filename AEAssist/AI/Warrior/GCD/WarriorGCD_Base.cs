@@ -12,16 +12,22 @@ namespace AEAssist.AI.Warrior.GCD
         uint spell;
         static public uint GetSpell()
         {
-
-            if (Warrior_SpellHelper.CheckUseAOE() && SpellsDefine.TotalEclipse.IsUnlock())//判断是否需要AOE 并且 AOE技能是否已学习
+            var aoeChecker = TargetHelper.CheckNeedUseAOE(5, 5, ConstValue.WhiteMageAOECount);
+            
+            
+            if (aoeChecker && SpellsDefine.Overpower.IsUnlock())//判断是否需要AOE 并且 AOE技能(超压斧)是否已学习
                 return GetAOE();
-            if (ActionResourceManager.Warrior.BeastGauge >= 50 && Core.Me.HasMyAuraWithTimeleft(AurasDefine.InnerRelease, 1000))
-                //兽魂量普是否大于等于50 或者 原初的解放BUFF大于1秒
-                return FellCleave();//裂石飞环
+
+            LogHelper.Debug("look this："+Core.Me.HasMyAuraWithTimeleft(AurasDefine.InnerRelease, 1000).ToString()+":"+ ActionResourceManager.Warrior.BeastGauge.ToString());
+
+            if (ActionResourceManager.Warrior.BeastGauge >= 50 || Core.Me.HasMyAuraWithTimeleft(AurasDefine.InnerRelease, 1000))
+            //if (ActionResourceManager.Warrior.BeastGauge >= 50)
+            //兽魂量普是否大于等于50 或者 原初的解放BUFF大于1秒
+            return FellCleave();//裂石飞环
             else
                 return GetSingleTarget();
         }
-        public static uint FellCleave()
+        public static uint FellCleave()//裂石飞环
         {
             if (SpellsDefine.FellCleave.IsUnlock())//裂石飞环是否已学习
                 return SpellsDefine.FellCleave;
@@ -81,11 +87,16 @@ namespace AEAssist.AI.Warrior.GCD
         }
         public static uint GetAOE()
         {
+            if (ActionResourceManager.Warrior.BeastGauge >= 50)
+                if (SpellsDefine.Decimate.IsUnlock())
+                    return SpellsDefine.Decimate;//地毁人亡
+                else
+                    return SpellsDefine.SteelCyclone;//钢铁旋风
 
-            if (ActionManager.LastSpellId == SpellsDefine.TotalEclipse && SpellsDefine.Prominance.IsUnlock())
-                return SpellsDefine.Prominance;
+            if (ActionManager.LastSpellId == SpellsDefine.Overpower && SpellsDefine.MythrilTempest.IsUnlock())
+                return SpellsDefine.MythrilTempest;//秘银风暴
 
-            return SpellsDefine.TotalEclipse;
+            return SpellsDefine.Overpower;//超压斧
 
         }
 
