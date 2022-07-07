@@ -20,9 +20,10 @@ namespace AEAssist.AI.Summoner.GCD
                 return -4;
             }
 
-            //如果必须要读条 还有平a没打的话 先打平a
-            if (!Core.Me.HasAura(AurasDefine.Swiftcast) && MovementManager.IsMoving && SMNGCD_PetBase.GetSingleTarget().IsReady())
+            //如果必须要读条且正在移动就不使用
+            if (!Core.Me.HasAura(AurasDefine.Swiftcast) && MovementManager.IsMoving)
                 return -5;
+
             return 0;
         }
 

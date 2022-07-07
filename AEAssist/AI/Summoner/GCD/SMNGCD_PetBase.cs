@@ -26,6 +26,8 @@ namespace AEAssist.AI.Summoner.GCD
             if (ActionResourceManager.Summoner.PetTimer <= 0)
                 return -3;
             spell = GetSpell();
+            if (spell == 0)
+                return -4;
             if (!spell.IsReady())
             {
                 return -1;
@@ -44,6 +46,8 @@ namespace AEAssist.AI.Summoner.GCD
         {
             if (SMN_SpellHelper.Ifrit())
             {
+                if (MovementManager.IsMoving)
+                    return 0;
                 if (SpellsDefine.RubyRite.IsUnlock())
                     return SpellsDefine.RubyRite;
 
@@ -93,6 +97,8 @@ namespace AEAssist.AI.Summoner.GCD
         {
             if (SMN_SpellHelper.Ifrit())
             {
+                if (MovementManager.IsMoving)
+                    return 0;
                 if (SpellsDefine.RubyDisaster.IsUnlock())
                     return SpellsDefine.RubyDisaster;
 

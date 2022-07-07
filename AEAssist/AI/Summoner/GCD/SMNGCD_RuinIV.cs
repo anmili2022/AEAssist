@@ -12,7 +12,7 @@ namespace AEAssist.AI.Summoner.GCD
         {
             if (!spell.IsReady())
                 return -1;
-            if ((AIRoot.Instance.CloseBurst || DataBinding.Instance.SMNSettings.SaveInstantSpells) && !SpellsDefine.EnergyDrain.CoolDownInGCDs(2))
+            if ((AIRoot.Instance.CloseBurst || SMN_SpellHelper.NotMovingWhileSavingInstantSpells()) && !SpellsDefine.EnergyDrain.CoolDownInGCDs(2))
             {
 
                 return -2;

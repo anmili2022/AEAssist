@@ -55,7 +55,7 @@ namespace AEAssist.AI.Summoner.GCD
         {
             spell = GetSpell();
             if (spell == 0)
-                return -1;
+                return -2;
             if (!spell.IsReady())
                 return -1;
 
