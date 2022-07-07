@@ -1,5 +1,8 @@
-﻿using AEAssist.Helper;
+﻿using AEAssist.AI.Summoner.GCD;
+using AEAssist.Define;
+using AEAssist.Helper;
 using ff14bot.Managers;
+
 namespace AEAssist.AI.Summoner
 {
     public static class SMN_SpellHelper
@@ -13,6 +16,12 @@ namespace AEAssist.AI.Summoner
             if (GameObjectManager.PetObjectId != GameObjectManager.EmptyGameObject)
                 return true;
             if (AnyPet())
+                return true;
+            if (SummonedPetRecently())
+                return true;
+            if (PetRemaining() != 0)
+                return true;
+            if (PhoenixTrance())
                 return true;
             return false;
         }
@@ -48,6 +57,49 @@ namespace AEAssist.AI.Summoner
         public static bool Garuda()
         {
             return ActionResourceManager.Summoner.ActivePet == ActionResourceManager.Summoner.ActivePetType.Garuda;
+        }
+
+        public static int PetRemaining()
+        {
+            var rtn = 0;
+            if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.ActivePetType.Titan))
+                rtn++;
+            if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.ActivePetType.Ifrit))
+                rtn++;
+            if (ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.ActivePetType.Garuda))
+                rtn++;
+            return rtn;
+        }
+        public static uint GetIfrit()
+        {
+            if (SpellsDefine.SummonIfrit2.IsUnlock())
+                return SpellsDefine.SummonIfrit2;
+            if (SpellsDefine.SummonIfrit.IsUnlock())
+                return SpellsDefine.SummonIfrit;
+            return SpellsDefine.SummonRuby;
+        }
+
+        public static uint GetTitan()
+        {
+            if (SpellsDefine.SummonTitan2.IsUnlock())
+                return SpellsDefine.SummonTitan2;
+            if (SpellsDefine.SummonTitan.IsUnlock())
+                return SpellsDefine.SummonTitan;
+            return SpellsDefine.SummonTopaz;
+        }
+
+        public static uint GetGaruda()
+        {
+            if (SpellsDefine.SummonGaruda2.IsUnlock())
+                return SpellsDefine.SummonGaruda2;
+            if (SpellsDefine.SummonGaruda.IsUnlock())
+                return SpellsDefine.SummonGaruda;
+            return SpellsDefine.SummonEmerald;
+        }
+
+        public static bool SummonedPetRecently()
+        {
+            return GetTitan().GetSpellEntity().RecentlyUsed(2500) || GetIfrit().GetSpellEntity().RecentlyUsed(2500) || GetGaruda().GetSpellEntity().RecentlyUsed(2500) || SMNGCD_Aethercharge.GetSpell().RecentlyUsed() || SpellsDefine.SummonPhoenix.GetSpellEntity().RecentlyUsed(2500);
         }
     }
 }
