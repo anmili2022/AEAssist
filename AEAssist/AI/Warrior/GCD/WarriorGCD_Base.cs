@@ -12,13 +12,10 @@ namespace AEAssist.AI.Warrior.GCD
         uint spell;
         static public uint GetSpell()
         {
-            var aoeChecker = TargetHelper.CheckNeedUseAOE(5, 5, ConstValue.WhiteMageAOECount);
-            
+            var aoeChecker = TargetHelper.CheckNeedUseAOE(5, 5, ConstValue.WhiteMageAOECount);       
             
             if (aoeChecker && SpellsDefine.Overpower.IsUnlock())//判断是否需要AOE 并且 AOE技能(超压斧)是否已学习
                 return GetAOE();
-
-            LogHelper.Debug("look this："+Core.Me.HasMyAuraWithTimeleft(AurasDefine.InnerRelease, 1000).ToString()+":"+ ActionResourceManager.Warrior.BeastGauge.ToString());
 
             if (ActionResourceManager.Warrior.BeastGauge >= 50 || Core.Me.HasMyAuraWithTimeleft(AurasDefine.InnerRelease, 1000))
             //if (ActionResourceManager.Warrior.BeastGauge >= 50)
@@ -40,7 +37,7 @@ namespace AEAssist.AI.Warrior.GCD
         public int Check(SpellEntity lastSpell)
         {
             spell = GetSpell();
-                      
+            LogHelper.Debug("look this：" + spell.ToString());
             if (!spell.IsReady())
                 return -1;
             return 0;

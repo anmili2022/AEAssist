@@ -505,7 +505,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Warrior\Ability\WarriorAbility_Intervene.cs" />
     <Compile Include="AI\Warrior\Ability\WarriorAbility_IronWill.cs" />
     <Compile Include="AI\Warrior\Ability\WarriorAbility_Requiescat.cs" />
-    <Compile Include="AI\Warrior\Ability\WarriorAbility_Sheltron.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_defense.cs" />
     <Compile Include="AI\Warrior\Ability\WarriorAbility_SpiritsWithin.cs" />
     <Compile Include="AI\Warrior\GCD\WarriorGCD_Base.cs" />
     <Compile Include="AI\Warrior\GCD\WarriorGCD_BladeofXX.cs" />
@@ -608,6 +608,13 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="Utilities\CombatMessages\ICombatMessageStrategy.cs" />
     <Compile Include="View\BardSettingView.xaml.cs">
       <DependentUpon>BardSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_WarriorOverlay.cs" />
+    <Compile Include="View\Overlay\WarriorOverlayWindow.xaml.cs">
+      <DependentUpon>WarriorOverlayWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WarriorSettingView.xaml.cs">
+      <DependentUpon>WarriorSettingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Hotkey\BuiltinHotkeys\CrimsonCyclone.cs" />
     <Compile Include="View\Overlay\PaladinOverlayWindow.xaml.cs">
@@ -818,6 +825,14 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Resource Include="Resources\Spells\WhiteMage\PlenaryIndulgence.png" />
     <Resource Include="Resources\Spells\WhiteMage\PresenceofMind.png" />
     <Resource Include="Resources\Spells\WhiteMage\ThinAir.png" />
+    <Page Include="View\Overlay\WarriorOverlayWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="View\WarriorSettingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Overlay\PaladinOverlayWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

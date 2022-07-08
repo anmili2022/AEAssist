@@ -103,9 +103,13 @@ namespace AEAssist
         public string Toggle_Potion { get; set; }
         
         public string Toggle_ActiveAttack { get; set; }
+
+        #endregion
+
+        #region Warrior
+        public string WarriorDefenseMode { get; set; }
         
         #endregion
-       
         public string Toggle_UseMeikyoShisui { get; set; }
 
         public string Button_ReloadTriggerLine { get; set; }
