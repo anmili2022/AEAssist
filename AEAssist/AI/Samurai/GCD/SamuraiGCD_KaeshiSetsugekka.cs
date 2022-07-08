@@ -9,22 +9,13 @@ namespace AEAssist.AI.Samurai.GCD
     {
         public int Check(SpellEntity lastSpell)
         {
-            LogHelper.Info("Checking Kaeshi");
-            if (AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo == SamuraiComboStages.MidareSetsuGekka)
+            if (AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo == SamuraiComboStages.MidareSetsuGekka
+                && SpellsDefine.TsubameGaeshi.GetSpellEntity().SpellData.Charges >= 1
+                )
             {
-                LogHelper.Info("Ok let's use it.");
-                // AIRoot.GetBattleData<SamuraiBattleData>().Bursting = true;
+                AIRoot.GetBattleData<SamuraiBattleData>().Bursting = true;
                 return 0;
             }
-            LogHelper.Info(SpellsDefine.TsubameGaeshi.GetSpellEntity().SpellData.Charges.ToString(CultureInfo.InvariantCulture));
-            if (SpellsDefine.TsubameGaeshi.GetSpellEntity().SpellData.Charges == 0)
-            {
-                // Not ready.
-                LogHelper.Info("Note ready..");
-                AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.None;
-                return -1;
-            }
-            
             return -1;
         }
 

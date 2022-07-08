@@ -28,17 +28,6 @@ namespace AEAssist.AI.Samurai
             //         SpellsDefine.KaeshiSetsugekka.GetSpellEntity().DoAbility();
             //     } 
             // }
-            var midareSetsugekkaCount = AIRoot.GetBattleData<SamuraiBattleData>().MidareSetsugekkaCount;
-            if (SenCounts() == 3)
-            {
-                if (midareSetsugekkaCount < 1)
-                {
-                    
-                    // AIRoot.GetBattleData<SamuraiBattleData>().MidareSetsugekkaCount++;
-                    return GetMidareSetsuGekka();
-                }
-                
-            }
             
             if (lastGcd == SpellsDefine.Jinpu)
             {
@@ -79,15 +68,8 @@ namespace AEAssist.AI.Samurai
         public static  SpellEntity OddMinutesBurst()
         {
             // https://www.thebalanceffxiv.com/jobs/melee/samurai/basic-guide/
-            // get battle time first
 
             // do odd minute bursts
-
-            if (SenCounts() == 3)
-            {
-                return GetMidareSetsuGekka();
-            }
-
             if (SpellsDefine.MeikyoShisui.RecentlyUsed() || Core.Me.HasMyAura(AurasDefine.MeikyoShisui))
             {
                 if (SenCounts() < 1)
@@ -113,11 +95,6 @@ namespace AEAssist.AI.Samurai
         public static SpellEntity EvenMinutesBurst()
         {
             // https://www.thebalanceffxiv.com/jobs/melee/samurai/basic-guide/
-            if (SenCounts() == 3)
-            {
-                return GetMidareSetsuGekka();
-            }
-
             if (SpellsDefine.MeikyoShisui.RecentlyUsed() || Core.Me.HasMyAura(AurasDefine.MeikyoShisui))
             {
                 if (SenCounts() < 1)
@@ -288,7 +265,7 @@ namespace AEAssist.AI.Samurai
         }
 
 
-        private static SpellEntity GetMidareSetsuGekka()
+        public static SpellEntity GetMidareSetsuGekka()
         {
             if (SenCounts() == 3 && !MovementManager.IsMoving)
             {
@@ -298,27 +275,6 @@ namespace AEAssist.AI.Samurai
             return null;
         }
 
-        public static int CheckOddOrEvenBattleTime()
-        {
-            var currentBattleTime = AIRoot.GetBattleData<BattleData>().CurrBattleTimeInMs;
-            var battleTimeInMinutes = currentBattleTime / 60000;
-            var reminderInMinutes = battleTimeInMinutes % 2;
-            
-            // ODD
-            if (reminderInMinutes == 1)
-            {
-                return 1;
-            }
-            
-            // EVEN 
-            if (reminderInMinutes == 0)
-            {
-                return 0;
-            }
-
-            return -1;
-        }
-        
         public static SpellEntity AoEGCD()
         {
 

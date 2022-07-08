@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Threading.Tasks;
 using AEAssist.Define;
 using AEAssist.Helper;
@@ -9,15 +10,19 @@ namespace AEAssist.AI.Samurai.GCD
     {
         public int Check(SpellEntity lastSpell)
         {
-            // Pause for second to use Tsubame ability..
-            if (AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo == SamuraiComboStages.MidareSetsuGekka)
+
+            if (SamuraiSpellHelper.SenCounts() == 3)
+            {
+                return -1;
+            }
+            
+            if (AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo == SamuraiComboStages.MidareSetsuGekka
+                && SpellsDefine.TsubameGaeshi.GetSpellEntity().SpellData.Charges >= 1)
             {
                 LogHelper.Info("Pausing for a bit.");
                 return -1;
             }
-            
-            LogHelper.Info("Current combo: " + AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo);
-            
+
             return 0;
         }
 
