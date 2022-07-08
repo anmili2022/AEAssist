@@ -30,7 +30,13 @@ namespace AEAssist.AI.Samurai.GCD
 
         public async Task<SpellEntity> Run()
         {
-            return await SamuraiSpellHelper.EvenMinutesBurst();
+            var spell = SamuraiSpellHelper.EvenMinutesBurst();
+            if (spell == null)
+                return null;
+            var ret = await spell.DoGCD();
+            if (ret)
+                return spell;
+            return null;
         }
     }
 }

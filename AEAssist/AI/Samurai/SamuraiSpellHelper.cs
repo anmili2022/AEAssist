@@ -1,12 +1,12 @@
 ﻿
 using AEAssist.Define;
+using System;
+using System.Threading.Tasks;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
 using ff14bot;
 using ff14bot.Managers;
 using ff14bot.Objects;
-using System;
-using System.Threading.Tasks;
 
 namespace AEAssist.AI.Samurai
 {
@@ -18,43 +18,65 @@ namespace AEAssist.AI.Samurai
             // Hakaze -> Yukikaze -> Hakaze -> Jinpu -> Gekko -> Hakaze -> Shifu -> Kasha -> Midare Setsugekka -> repeat
             // refer to the balance level 90 samurai
             var lastGcd = ActionManager.LastSpellId;
+            
 
+            // if (AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo == SamuraiComboStages.MidareSetsuGekka)
+            // {
+            //     if (SpellsDefine.KaeshiSetsugekka.IsReady())
+            //     {
+            //         AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.KaeshiSetsugekka;
+            //         SpellsDefine.KaeshiSetsugekka.GetSpellEntity().DoAbility();
+            //     } 
+            // }
+            var midareSetsugekkaCount = AIRoot.GetBattleData<SamuraiBattleData>().MidareSetsugekkaCount;
             if (SenCounts() == 3)
             {
-                return SpellsDefine.MidareSetsugekka.GetSpellEntity();
+                if (midareSetsugekkaCount < 1)
+                {
+                    
+                    // AIRoot.GetBattleData<SamuraiBattleData>().MidareSetsugekkaCount++;
+                    return GetMidareSetsuGekka();
+                }
+                
             }
-
+            
             if (lastGcd == SpellsDefine.Jinpu)
             {
+                AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Gekko;
                 return SpellsDefine.Gekko.GetSpellEntity();
             }
 
             if (lastGcd == SpellsDefine.Shifu)
             {
+                AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Kasha;
                 return SpellsDefine.Kasha.GetSpellEntity();
             }
-
+            
             if (lastGcd == SpellsDefine.Hakaze)
             {
                 if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Setsu))
                 {
+                    AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Yukikaze;
                     return SpellsDefine.Yukikaze.GetSpellEntity();
                 }
                 if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Getsu))
                 {
+                    AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Jinpu;
                     return SpellsDefine.Jinpu.GetSpellEntity();
                 }
                 if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Ka))
                 {
+                    AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Shifu;
                     return SpellsDefine.Shifu.GetSpellEntity();
                 }
             }
-
+            
+            AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Hakaze;
             return SpellsDefine.Hakaze.GetSpellEntity();
-
+            
         }
 
-        public static SpellEntity OddMinutesBurst()
+        public static  SpellEntity OddMinutesBurst()
         {
             // https://www.thebalanceffxiv.com/jobs/melee/samurai/basic-guide/
             // get battle time first
@@ -63,51 +85,58 @@ namespace AEAssist.AI.Samurai
 
             if (SenCounts() == 3)
             {
-                return SpellsDefine.MidareSetsugekka.GetSpellEntity();
+                return GetMidareSetsuGekka();
             }
 
             if (SpellsDefine.MeikyoShisui.RecentlyUsed() || Core.Me.HasMyAura(AurasDefine.MeikyoShisui))
             {
                 if (SenCounts() < 1)
                 {
+                    AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Gekko;   
                     return SpellsDefine.Gekko.GetSpellEntity();
                 }
-
+                
+                AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Kasha;
                 return SpellsDefine.Kasha.GetSpellEntity();
             }
 
             if (ActionManager.LastSpellId == SpellsDefine.Hakaze)
             {
+                AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Yukikaze;
                 return SpellsDefine.Yukikaze.GetSpellEntity();
             }
-
+            
+            AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Hakaze;
             return SpellsDefine.Hakaze.GetSpellEntity();
         }
-
-        public static Task<SpellEntity> EvenMinutesBurst()
+        
+        public static SpellEntity EvenMinutesBurst()
         {
             // https://www.thebalanceffxiv.com/jobs/melee/samurai/basic-guide/
-            if (SamuraiSpellHelper.SenCounts() == 3)
+            if (SenCounts() == 3)
             {
-                return Task.FromResult(SpellsDefine.MidareSetsugekka.GetSpellEntity());
+                return GetMidareSetsuGekka();
             }
 
             if (SpellsDefine.MeikyoShisui.RecentlyUsed() || Core.Me.HasMyAura(AurasDefine.MeikyoShisui))
             {
                 if (SenCounts() < 1)
                 {
-                    return Task.FromResult(SpellsDefine.Gekko.GetSpellEntity());
+                    AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Gekko;
+                    return SpellsDefine.Gekko.GetSpellEntity();
                 }
-
-                return Task.FromResult(SpellsDefine.Kasha.GetSpellEntity());
+                
+                AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Kasha;
+                return SpellsDefine.Kasha.GetSpellEntity();
             }
 
             if (ActionManager.LastSpellId == SpellsDefine.Hakaze)
             {
-                return Task.FromResult(SpellsDefine.Yukikaze.GetSpellEntity());
+                AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Yukikaze;
+                return SpellsDefine.Yukikaze.GetSpellEntity();
             }
-
-            return Task.FromResult(SpellsDefine.Hakaze.GetSpellEntity());
+            AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Hakaze;
+            return SpellsDefine.Hakaze.GetSpellEntity();
         }
 
         public static bool TargetNeedsDot(Character tar)
@@ -142,7 +171,7 @@ namespace AEAssist.AI.Samurai
                             await SpellsDefine.Yukikaze.DoGCD();
                             return SpellsDefine.Yukikaze.GetSpellEntity();
                         }
-
+                    
                     }
                 }
 
@@ -155,7 +184,7 @@ namespace AEAssist.AI.Samurai
                             await SpellsDefine.Hagakure.DoAbility();
                             return SpellsDefine.Hagakure.GetSpellEntity();
                         }
-
+                    
                     }
                 }
 
@@ -166,11 +195,10 @@ namespace AEAssist.AI.Samurai
                         await SpellsDefine.Hakaze.DoGCD();
                         return SpellsDefine.Hakaze.GetSpellEntity();
                     }
-
+                    
                 }
-
-            }
-            else if (Math.Abs(baseGcdTime - 2070) == 0) // 2.07sec gcd 3 filler gcd needed
+                
+            } else if (Math.Abs(baseGcdTime - 2070) == 0) // 2.07sec gcd 3 filler gcd needed
             {
                 if (ActionManager.LastSpellId == SpellsDefine.Hakaze)
                 {
@@ -181,7 +209,7 @@ namespace AEAssist.AI.Samurai
                             await SpellsDefine.Jinpu.DoGCD();
                             return SpellsDefine.Jinpu.GetSpellEntity();
                         }
-
+                    
                     }
                 }
 
@@ -208,7 +236,7 @@ namespace AEAssist.AI.Samurai
                         }
                     }
                 }
-
+                
                 if (SpellsDefine.Hakaze.IsUnlock())
                 {
                     if (SpellsDefine.Hakaze.IsReady())
@@ -217,9 +245,8 @@ namespace AEAssist.AI.Samurai
                         return SpellsDefine.Hakaze.GetSpellEntity();
                     }
                 }
-
-            }
-            else if (Math.Abs(baseGcdTime - 2000) == 0) // 2.00 seconds gcd 4 filler gcd needed (get better gear lol)
+                
+            }else if (Math.Abs(baseGcdTime - 2000) == 0) // 2.00 seconds gcd 4 filler gcd needed (get better gear lol)
             {
                 for (int i = 0; i <= 2; i++)
                 {
@@ -246,7 +273,7 @@ namespace AEAssist.AI.Samurai
                             }
                         }
                     }
-
+                    
                     if (SpellsDefine.Hakaze.IsUnlock())
                     {
                         if (SpellsDefine.Hakaze.IsReady())
@@ -261,18 +288,28 @@ namespace AEAssist.AI.Samurai
         }
 
 
+        private static SpellEntity GetMidareSetsuGekka()
+        {
+            if (SenCounts() == 3 && !MovementManager.IsMoving)
+            {
+                AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.MidareSetsuGekka;
+                return SpellsDefine.MidareSetsugekka.GetSpellEntity();
+            }
+            return null;
+        }
+
         public static int CheckOddOrEvenBattleTime()
         {
             var currentBattleTime = AIRoot.GetBattleData<BattleData>().CurrBattleTimeInMs;
             var battleTimeInMinutes = currentBattleTime / 60000;
             var reminderInMinutes = battleTimeInMinutes % 2;
-
+            
             // ODD
             if (reminderInMinutes == 1)
             {
                 return 1;
             }
-
+            
             // EVEN 
             if (reminderInMinutes == 0)
             {
@@ -281,7 +318,7 @@ namespace AEAssist.AI.Samurai
 
             return -1;
         }
-
+        
         public static SpellEntity AoEGCD()
         {
 
@@ -298,20 +335,20 @@ namespace AEAssist.AI.Samurai
                 {
                     return SpellsDefine.Oka.GetSpellEntity();
                 }
-
+                
                 if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Getsu))
                 {
                     return SpellsDefine.Mangetsu.GetSpellEntity();
                 }
             }
-
+            
             if (lastGcd == SpellsDefine.Fuga)
             {
                 if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Ka))
                 {
                     return SpellsDefine.Oka.GetSpellEntity();
                 }
-
+                
                 if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Getsu))
                 {
                     return SpellsDefine.Mangetsu.GetSpellEntity();
@@ -320,7 +357,7 @@ namespace AEAssist.AI.Samurai
 
             return SpellsDefine.Fuga.GetSpellEntity();
         }
-
+        
         public static SpellEntity GetHissatsuShinten()
         {
             if (SpellsDefine.HissatsuShinten.IsUnlock())
@@ -360,48 +397,6 @@ namespace AEAssist.AI.Samurai
             return counts;
         }
 
-        public static bool IaijutsuCanSpellTime()
-        {
-            var target = Core.Me as GameObject;
-            if (Core.Me.HasAura(AurasDefine.MeikyoShisui))
-                return false;
-            return true;
-        }
-
-        public static SpellEntity GetIaijutsuSpell()
-        {
-            var spell = SpellsDefine.MidareSetsugekka;
-            var Sen = SenCounts();
-            var ta = Core.Me.CurrentTarget as Character;
-            // if (spell.Cooldown.TotalSeconds != 0 && Core.Me.HasAura(AurasDefine.OgiReady) && ta.HasMyAura(AurasDefine.Higanbana))
-            //     return SpellsDefine.OgiNamikiri;
-            if (Sen == 0) return null;
-            if (Sen == 1) spell = SpellsDefine.Higanbana;
-            if (Sen == 2)
-            {
-                if (TargetHelper.CheckNeedUseAOE(Core.Me.CurrentTarget, 5, 5))
-                    return SpellsDefine.TenkaGoken.GetSpellEntity();
-                return null;
-            }
-
-            return spell.GetSpellEntity();
-        }
-
-        public static SpellEntity KaeshiCanSpell()
-        {
-            if (AIRoot.GetBattleData<SamuraiBattleData>().KaeshiSpell == KaeshiSpell.MidareSetsugekka)
-                return SpellsDefine.KaeshiSetsugekka.GetSpellEntity();
-            if (AIRoot.GetBattleData<SamuraiBattleData>().KaeshiSpell == KaeshiSpell.OgiNamikiri)
-                return SpellsDefine.KaeshiNamikiri.GetSpellEntity();
-            return null;
-        }
-
-        public static bool NeedUseKaiten()
-        {
-            // if (false) ;
-            return false;
-        }
-
         public static bool GekkoPOSCheck()
         {
             // Gekko
@@ -409,16 +404,16 @@ namespace AEAssist.AI.Samurai
             {
                 return false;
             }
-
+            
             // Gekko
             if (ActionManager.LastSpellId == SpellsDefine.Jinpu)
             {
                 return true;
             }
-
+            
             return false;
         }
-
+        
         public static bool KashaPOSCheck()
         {
             // Kasha
@@ -426,7 +421,7 @@ namespace AEAssist.AI.Samurai
             {
                 return false;
             }
-
+            
             // Kasha
             if (ActionManager.LastSpellId == SpellsDefine.Shifu)
             {

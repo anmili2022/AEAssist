@@ -1,6 +1,7 @@
-using AEAssist.Define;
-using ff14bot;
 using System.Threading.Tasks;
+using AEAssist.Define;
+using AEAssist.Helper;
+using ff14bot;
 
 namespace AEAssist.AI.Samurai.GCD
 {
@@ -8,19 +9,22 @@ namespace AEAssist.AI.Samurai.GCD
     {
         public int Check(SpellEntity lastSpell)
         {
-            // var checkOddOrEvenBattleTime = SamuraiSpellHelper.CheckOddOrEvenBattleTime();
-            // if (checkOddOrEvenBattleTime == 1 || checkOddOrEvenBattleTime == 0)
-            // {
-            //     return -1;
-            // }
+            // Pause for second to use Tsubame ability..
+            if (AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo == SamuraiComboStages.MidareSetsuGekka)
+            {
+                LogHelper.Info("Pausing for a bit.");
+                return -1;
+            }
+            
+            LogHelper.Info("Current combo: " + AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo);
+            
             return 0;
         }
 
         public async Task<SpellEntity> Run()
         {
             // CoolDownPhase
-            // return await SamuraiSpellHelper.CoolDownPhaseGCD(Core.Me.CurrentTarget);
-
+            
             var spell = SamuraiSpellHelper.CoolDownPhaseGCD(Core.Me.CurrentTarget);
             if (spell == null)
                 return null;

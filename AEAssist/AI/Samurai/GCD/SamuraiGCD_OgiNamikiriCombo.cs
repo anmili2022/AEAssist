@@ -30,5 +30,6 @@ namespace AEAssist.AI.Samurai.GCD
             await Task.CompletedTask;
             return null;
         }
+        
     }
 }

@@ -1,6 +1,7 @@
+using System.Threading.Tasks;
+using AEAssist.AI.Samurai.SpellQueue;
 using AEAssist.Define;
 using AEAssist.Helper;
-using System.Threading.Tasks;
 
 namespace AEAssist.AI.Samurai.Ability
 {
@@ -8,28 +9,22 @@ namespace AEAssist.AI.Samurai.Ability
     {
         public int Check(SpellEntity lastSpell)
         {
-            if (!SpellsDefine.TsubameGaeshi.IsReady())
+            LogHelper.Info("Checking Kaeshi");
+            if (AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo == SamuraiComboStages.MidareSetsuGekka)
             {
-                return -1;
+                AIRoot.GetBattleData<SamuraiBattleData>().Bursting = true;
+                return 0;
             }
 
-            if (lastSpell != SpellsDefine.MidareSetsugekka.GetSpellEntity())
-            {
-                return -1;
-            }
+            return -1;
 
-            if (!SpellsDefine.KaeshiSetsugekka.IsReady()) return -1;
-
-            AIRoot.GetBattleData<SamuraiBattleData>().Bursting = true;
-            return 0;
         }
 
         public async Task<SpellEntity> Run()
         {
-            var spell = SpellsDefine.KaeshiSetsugekka.GetSpellEntity();
-            if (spell == null) return null;
-            if (await spell.DoAbility())
-                return spell;
+            AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.KaeshiSetsugekka;
+            AISpellQueueMgr.Instance.Apply<SpellQueue_SetsugekkaCombo>();
+            await Task.CompletedTask;
             return null;
         }
     }
