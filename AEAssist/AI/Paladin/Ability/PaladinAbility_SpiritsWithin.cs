@@ -20,7 +20,7 @@ namespace AEAssist.AI.Paladin.Ability
                 return -1;
             if (AIRoot.Instance.CloseBurst)
                 return -2;
-            if (Paladin_SpellHelper.FightorFlightCooldownSoon())
+            if (Paladin_SpellHelper.FightorFlightInGCD())
                 return -3;
             if (Paladin_SpellHelper.OutOfMeleeRange())
                 return -4;

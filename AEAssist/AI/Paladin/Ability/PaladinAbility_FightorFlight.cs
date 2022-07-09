@@ -23,17 +23,24 @@ namespace AEAssist.AI.Paladin.Ability
             if (!AIRoot.Instance.Is2ndAbilityTime())
                 return -3;
 
-            if (ActionManager.ComboTimeLeft <= 0)
-                return -4;
-            if (DataBinding.Instance.PaladinSettings.FightorFlightTiming == 1 && ActionManager.LastSpellId != SpellsDefine.FastBlade)
-                return -4;
-            if (DataBinding.Instance.PaladinSettings.FightorFlightTiming == 2 && ActionManager.LastSpellId != SpellsDefine.RiotBlade)
-                return -4;
-
             if (Core.Me.HasAura(AurasDefine.Requiescat))
                 return -5;
             if (Paladin_SpellHelper.OutOfMeleeRange())
                 return -6;
+            
+            if (ActionManager.ComboTimeLeft <= 0)
+                return -7;
+            
+            if (!Paladin_SpellHelper.CheckUseAOE())
+            {
+                if (DataBinding.Instance.PaladinSettings.FightorFlightTiming == 1 && ActionManager.LastSpellId != SpellsDefine.FastBlade)
+                    return -4;
+                if (DataBinding.Instance.PaladinSettings.FightorFlightTiming == 2 && ActionManager.LastSpellId != SpellsDefine.RiotBlade)
+                    return -4;
+            }
+                
+
+            
             return 0;
         }
 
