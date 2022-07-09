@@ -41,7 +41,7 @@ namespace AEAssist.AI.Summoner
 
         private static void pre1(SpellQueueSlot slot) 
         { 
-            if (AIRoot.GetBattleData<BattleData>().CurrBattleTimeInMs<=0)
+            if (AIRoot.GetBattleData<BattleData>().lastGCDSpell == null || DataBinding.Instance.SMNSettings.DelayOpeningBurst)
                 slot.SetGCD(SpellsDefine.Ruin3, SpellTargetType.CurrTarget);
         }
         private static void pre2(SpellQueueSlot slot)

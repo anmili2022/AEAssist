@@ -119,7 +119,6 @@ namespace AEAssist.AI.Summoner
         }
         public async static Task<bool> CountDownOpener()
         {
-
             await SpellsDefine.Ruin3.DoGCD();
             AIRoot.Instance.RecordGCD(SpellsDefine.Ruin3.GetSpellEntity());
             int time = 1000;
