@@ -25,6 +25,7 @@ namespace AEAssist
 
         public int LucidDreamingPercentage { get; set; }
 
+        public bool DelayOpeningBurst { get; set; }
         public void Reset()
         {
             EarlyDecisionMode = true;

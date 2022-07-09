@@ -7,7 +7,7 @@ namespace AEAssist.AI.Summoner.Ability
     public class SMNAbility_EnergyDrain : IAIHandler
     {
         uint spell;
-        uint GetSpell()
+        public static uint GetSpell()
         {
             if (SMN_SpellHelper.CheckUseAOE() && SpellsDefine.EnergySiphon.IsUnlock())
                 return SpellsDefine.EnergySiphon;

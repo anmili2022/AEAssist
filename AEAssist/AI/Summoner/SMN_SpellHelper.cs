@@ -1,8 +1,10 @@
 ﻿using AEAssist.AI.Summoner.GCD;
 using AEAssist.Define;
 using AEAssist.Helper;
+using Buddy.Coroutines;
 using ff14bot;
 using ff14bot.Managers;
+using System.Threading.Tasks;
 
 namespace AEAssist.AI.Summoner
 {
@@ -115,5 +117,27 @@ namespace AEAssist.AI.Summoner
                 return false;
             return true;
         }
+        public async static Task<bool> CountDownOpener()
+        {
+
+            await SpellsDefine.Ruin.DoGCD();
+            int time = 0;
+
+            await Coroutine.Sleep(1200);
+            if (!SpellsDefine.SearingLight.IsReady() || !HasCarbuncle())
+                return false;
+            if (DataBinding.Instance.SMNSettings.DelayOpeningBurst)
+                return false;
+            do
+            {
+                await Coroutine.Sleep(50);
+                time += 50;
+                ActionManager.DoAction(SpellsDefine.SearingLight, Core.Me);
+            }
+            while (SpellsDefine.SearingLight.GetSpellEntity().Cooldown.TotalMilliseconds <= 0 && time < 3000);
+
+            return time >= 3000;
+        }
+
     }
 }

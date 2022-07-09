@@ -1,5 +1,6 @@
 ﻿using AEAssist.AI.Summoner.Ability;
 using AEAssist.AI.Summoner.GCD;
+using AEAssist.Helper;
 using ff14bot.Enums;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -36,7 +37,7 @@ namespace AEAssist.AI.Summoner
         };
         public Task<bool> UsePotion()
         {
-            return Task.FromResult(false);
+            return PotionHelper.UsePotion(SettingMgr.GetSetting<GeneralSettings>().IntPotionId);
         }
     }
 }

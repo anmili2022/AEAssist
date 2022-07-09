@@ -2,9 +2,11 @@
 using AEAssist.Define;
 using AEAssist.Helper;
 using AEAssist.Rotations.Core;
+using Buddy.Coroutines;
 using ff14bot;
 using ff14bot.Enums;
 using ff14bot.Managers;
+using System;
 using System.Threading.Tasks;
 
 namespace AEAssist.AI.Summoner
@@ -16,14 +18,10 @@ namespace AEAssist.AI.Summoner
         {
             //CountDownHandler.Instance.AddListener(1500,
             //    () => PotionHelper.UsePotion(SettingMgr.GetSetting<GeneralSettings>().MindPotionId));
-
-
-            CountDownHandler.Instance.AddListener(1000,
-                () =>
-                {
-                    AIRoot.Instance.RecordGCD(SpellsDefine.Ruin.GetSpellEntity());
-                    return SpellsDefine.Ruin.DoGCD();
-                });
+            int castTime = (int)SpellsDefine.Ruin3.GetSpellEntity().SpellData.AdjustedCastTime.TotalMilliseconds;
+            int randomTimer = new Random().Next(castTime-500, castTime);
+            CountDownHandler.Instance.AddListener(randomTimer,
+                async () => await SMN_SpellHelper.CountDownOpener());
 
             DataBinding.Instance.EarlyDecisionMode = DataBinding.Instance.SMNSettings.EarlyDecisionMode;
         }

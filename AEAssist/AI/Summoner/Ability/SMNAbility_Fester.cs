@@ -7,7 +7,7 @@ namespace AEAssist.AI.Summoner.Ability
     public class SMNAbility_Fester : IAIHandler
     {
         uint spell;
-        uint GetSpell()
+        public static uint GetSpell()
         {
             if (SMN_SpellHelper.CheckUseAOE() && SpellsDefine.Painflare.IsUnlock())
                 return SpellsDefine.Painflare;
@@ -28,11 +28,11 @@ namespace AEAssist.AI.Summoner.Ability
             }
             if (AIRoot.Instance.CloseBurst)
             {
-                if (SpellsDefine.EnergyDrain.IsReady())
-                    return 0;
+                //if (SpellsDefine.EnergyDrain.IsReady())
+                //    return 0;
 
-                if (SpellsDefine.EnergyDrain.CoolDownInGCDs(ActionResourceManager.Summoner.Aetherflow))
-                    return 0;
+                //if (SpellsDefine.EnergyDrain.CoolDownInGCDs(ActionResourceManager.Summoner.Aetherflow))
+                //    return 0;
 
                 return -2;
             }
