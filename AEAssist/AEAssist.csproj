@@ -278,6 +278,12 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Dancer\SpellQueue\SpellQueueSlot_DanceFinish.cs" />
     <Compile Include="AI\Dancer\SpellQueue\SpellQueueSlot_DanceStep.cs" />
     <Compile Include="AI\Dancer\SpellQueue\SpellQueue_Dance.cs" />
+    <Compile Include="AI\DarkKnight\Ability\DarkKnight_defense.cs" />
+    <Compile Include="AI\DarkKnight\DarkKnight_AIPriorityQueue.cs" />
+    <Compile Include="AI\DarkKnight\DarkKnight_BattleData.cs" />
+    <Compile Include="AI\DarkKnight\DarkKnight_Rotation.cs" />
+    <Compile Include="AI\DarkKnight\DarkKnight_SpellHelper.cs" />
+    <Compile Include="AI\DarkKnight\GCD\DarkKnightGCD_Base.cs" />
     <Compile Include="AI\GeneralAI\PhysicsRangeDPSHelper.cs" />
     <Compile Include="AI\GunBreaker\Ability\GunBreakerAbility_Bloodfest.cs" />
     <Compile Include="AI\GunBreaker\Ability\GunBreakerAbility_BlastingZone.cs" />
@@ -565,6 +571,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="Setting\Setting\AstSettings.cs" />
     <Compile Include="Setting\Setting\BlackMageSetting.cs" />
     <Compile Include="Setting\Setting\DancerSettings.cs" />
+    <Compile Include="Setting\Setting\DarkKnightSettings.cs" />
     <Compile Include="Setting\Setting\GunBreakerSettings.cs" />
     <Compile Include="Setting\Setting\HotkeySetting.cs" />
     <Compile Include="Setting\Setting\MCHSettings.cs" />
