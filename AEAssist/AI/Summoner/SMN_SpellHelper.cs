@@ -120,10 +120,11 @@ namespace AEAssist.AI.Summoner
         public async static Task<bool> CountDownOpener()
         {
 
-            await SpellsDefine.Ruin.DoGCD();
-            int time = 0;
+            await SpellsDefine.Ruin3.DoGCD();
+            AIRoot.Instance.RecordGCD(SpellsDefine.Ruin3.GetSpellEntity());
+            int time = 1000;
 
-            await Coroutine.Sleep(1200);
+            await Coroutine.Sleep(1000);
             if (!SpellsDefine.SearingLight.IsReady() || !HasCarbuncle())
                 return false;
             if (DataBinding.Instance.SMNSettings.DelayOpeningBurst)
