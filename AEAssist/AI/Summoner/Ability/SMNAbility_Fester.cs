@@ -19,12 +19,14 @@ namespace AEAssist.AI.Summoner.Ability
             if (!spell.IsReady())
                 return -1;
             if (ActionResourceManager.Summoner.Aetherflow <= 0)
-            {
                 return -10;
-            }
+
             if (lastSpell == SpellsDefine.Painflare.GetSpellEntity() || lastSpell == SpellsDefine.Fester.GetSpellEntity())
-            {
                 return -4;
+
+            if (SpellsDefine.SearingLight.IsUnlock() && SpellsDefine.SearingLight.GetSpellEntity().Cooldown.TotalMilliseconds <= SpellsDefine.EnergyDrain.GetSpellEntity().Cooldown.TotalMilliseconds && ActionResourceManager.Summoner.Aetherflow == 1)
+            {
+                return -5;
             }
             if (AIRoot.Instance.CloseBurst)
             {
