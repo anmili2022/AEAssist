@@ -11,15 +11,15 @@ namespace AEAssist.AI.Scholar.Ability
         uint spell;
         static public uint GetSpell()
         {
+            if (GameObjectManager.PetObjectId == GameObjectManager.EmptyGameObject) return 0;
             if (SpellsDefine.Dissipation.IsReady() && ActionResourceManager.Scholar.Aetherflow == 0)//转化判定
-                if (SpellsDefine.Dissipation.IsUnlock())
                     return SpellsDefine.Dissipation;
             return 0;
         }
         public int Check(SpellEntity lastSpell)
         {
             spell = GetSpell();
-            
+            if (spell == 0) return -1;
             if (!spell.IsReady())
                 return -1;
             //LogHelper.Debug("NO10:" + spell.ToString());
@@ -28,9 +28,10 @@ namespace AEAssist.AI.Scholar.Ability
 
         public async Task<SpellEntity> Run()
         {
-            if (await spell.DoAbility()) return spell.GetSpellEntity();
-
-            return null;
+            var spell = SpellsDefine.Dissipation.GetSpellEntity();
+            if (spell == null) return null;
+            var ret = await spell.DoAbility();
+            return ret ? spell : null;
         }
     }
 

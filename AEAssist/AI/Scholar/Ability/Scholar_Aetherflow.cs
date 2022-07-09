@@ -12,14 +12,13 @@ namespace AEAssist.AI.Scholar.Ability
         static public uint GetSpell()
         {
             if (SpellsDefine.Aetherflow.IsReady() && ActionResourceManager.Scholar.Aetherflow == 0)//以太超流判定
-                if (SpellsDefine.Aetherflow.IsUnlock())
                     return SpellsDefine.Aetherflow;
             return 0;
         }
         public int Check(SpellEntity lastSpell)
         {
             spell = GetSpell();
-            
+            if (spell==0) return -1;
             if (!spell.IsReady())
                 return -1;
             //LogHelper.Debug("NO10:" + spell.ToString());

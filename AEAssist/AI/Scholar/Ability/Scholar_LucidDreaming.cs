@@ -8,28 +8,20 @@ namespace AEAssist.AI.Scholar.Ability
 {
     public class ScholarAbility_LucidDreaming : IAIHandler
     {
-        uint spell;
-        static public uint GetSpell()
-        {
-            if (SpellsDefine.LucidDreaming.IsReady() && Core.Me.CurrentManaPercent >= SettingMgr.GetSetting<WhiteMageSettings>().LucidDreamingTrigger+2000)
-                return SpellsDefine.LucidDreaming;//醒梦
-            return 0;
-        }
         public int Check(SpellEntity lastSpell)
         {
-            spell = GetSpell();
-            
-            if (!spell.IsReady())
-                return -1;
-            //LogHelper.Debug("NO10:" + spell.ToString());
-            return 0;
+            //LogHelper.Info($"{Core.Me.CurrentManaPercent}");
+            if (SpellsDefine.LucidDreaming.IsReady() && Core.Me.CurrentManaPercent <= 60)
+                return 0;//醒梦
+            return -1;
         }
 
         public async Task<SpellEntity> Run()
         {
-            if (await spell.DoAbility()) return spell.GetSpellEntity();
-
-            return null;
+            var spell = SpellsDefine.LucidDreaming.GetSpellEntity();
+            if (spell == null) return null;
+            var ret = await spell.DoAbility();
+            return ret ? spell : null;
         }
     }
 
