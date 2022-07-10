@@ -13,8 +13,12 @@ namespace AEAssist.AI.Samurai.GCD
                 && SpellsDefine.TsubameGaeshi.GetSpellEntity().SpellData.Charges >= 1
                 )
             {
-                AIRoot.GetBattleData<SamuraiBattleData>().Bursting = true;
-                return 0;
+                // Only use it during odd or even bursts.
+                if (AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase == SamuraiPhase.OddMinutesBurstPhase
+                    || AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase == SamuraiPhase.EvenMinutesBurstPhase)
+                {
+                    return 0;
+                }
             }
             return -1;
         }

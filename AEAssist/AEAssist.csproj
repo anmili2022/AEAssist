@@ -406,7 +406,6 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Samurai\Ability\SamuraiAbility_KaeshiGoken.cs" />
     <Compile Include="AI\Samurai\Ability\SamuraiAbility_KaeshiHiganbana.cs" />
     <Compile Include="AI\Samurai\Ability\SamuraiAbility_KaeshiNamikiri.cs" />
-    <Compile Include="AI\Samurai\Ability\SamuraiAbility_KaeshiSetsugekka.cs" />
     <Compile Include="AI\Samurai\Ability\SamuraiAbility_Meditate.cs" />
     <Compile Include="AI\Samurai\Ability\SamuraiAbility_ShohaII.cs" />
     <Compile Include="AI\Samurai\Ability\SamuraiAbility_ThirdEye.cs" />

@@ -12,7 +12,6 @@ namespace AEAssist.AI.Samurai.Ability
             {
                 return -1;
             }
-            AIRoot.GetBattleData<SamuraiBattleData>().Bursting = true;
             return 0;
         }
 

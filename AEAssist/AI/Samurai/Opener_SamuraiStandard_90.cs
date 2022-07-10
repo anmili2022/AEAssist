@@ -14,20 +14,20 @@ namespace AEAssist.AI.Samurai
     {
         public int Check()
         {
-            if (!Core.Me.HasMyAuraWithTimeleft(AurasDefine.MeikyoShisui))
-            {
-                return -1;
-            }
-            
-            if (!SpellsDefine.MeikyoShisui.IsReady())
-                return -2;
-            if (!SpellsDefine.Ikishoten.IsReady())
-                return -3;
-            if (!SpellsDefine.HissatsuSenei.IsReady())
-                return -4;
-            
-            if (PartyManager.NumMembers <= 4 && !Core.Me.CurrentTarget.IsDummy())
-                return -5;
+            // if (!Core.Me.HasMyAuraWithTimeleft(AurasDefine.MeikyoShisui))
+            // {
+            //     return -1;
+            // }
+            //
+            // if (!SpellsDefine.MeikyoShisui.IsReady())
+            //     return -2;
+            // if (!SpellsDefine.Ikishoten.IsReady())
+            //     return -3;
+            // if (!SpellsDefine.HissatsuSenei.IsReady())
+            //     return -4;
+            //
+            // if (PartyManager.NumMembers <= 4 && !Core.Me.CurrentTarget.IsDummy())
+            //     return -5;
 
             return -1;
         }

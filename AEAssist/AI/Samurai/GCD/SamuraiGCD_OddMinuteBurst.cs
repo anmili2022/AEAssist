@@ -9,24 +9,27 @@ namespace AEAssist.AI.Samurai.GCD
         public int Check(SpellEntity lastSpell)
         {
             var bd = AIRoot.GetBattleData<SamuraiBattleData>();
-            if (!bd.Bursting)
+            if (SamuraiSpellHelper.SenCounts() == 3)
             {
-                return -10;
+                return -1;
             }
 
-            if (lastSpell == SpellsDefine.MidareSetsugekka.GetSpellEntity())
+            if (AIRoot.GetBattleData<SamuraiBattleData>().higanBanaCount < 1)
             {
-                bd.Bursting = false;
-                bd.EvenBursting = false;
+                if (SamuraiSpellHelper.SenCounts() == 1)
+                {
+                    return -1;
+                }   
             }
 
-            if (!bd.EvenBursting)
+            if (bd.CurrPhase != SamuraiPhase.OddMinutesBurstPhase)
             {
-                return 1;
+                return -1;
             }
 
-
-            return -1;
+            
+            LogHelper.Info("We are in OddBurst now");
+            return 0;
         }
 
         public async Task<SpellEntity> Run()
@@ -36,7 +39,10 @@ namespace AEAssist.AI.Samurai.GCD
                 return null;
             var ret = await spell.DoGCD();
             if (ret)
+            {
+                AIRoot.GetBattleData<SamuraiBattleData>().higanBanaCount++;
                 return spell;
+            }
             return null;
         }
     }

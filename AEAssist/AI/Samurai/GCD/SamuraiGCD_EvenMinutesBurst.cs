@@ -9,20 +9,9 @@ namespace AEAssist.AI.Samurai.GCD
         public int Check(SpellEntity lastSpell)
         {
             var bd = AIRoot.GetBattleData<SamuraiBattleData>();
-            if (!bd.Bursting)
+            if (bd.CurrPhase == SamuraiPhase.EvenMinutesBurstPhase)
             {
-                return -10;
-            }
-
-            if (lastSpell == SpellsDefine.MidareSetsugekka.GetSpellEntity())
-            {
-                bd.Bursting = false;
-                bd.EvenBursting = false;
-            }
-
-            if (bd.EvenBursting)
-            {
-                return 1;
+                return 0;
             }
 
             return -1;
