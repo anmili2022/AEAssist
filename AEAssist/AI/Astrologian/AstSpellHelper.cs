@@ -574,5 +574,18 @@ namespace AEAssist.AI.Astrologian
             return null;
 
         }
+
+        public static async Task<SpellEntity> CastAspectedBenefic()
+        {
+            if (GroupHelper.InParty)
+            {
+                var skillTarget = GroupHelper.CastableAlliesWithin30.Where(r => r.CurrentHealth > 0 && !r.HasAura(AurasDefine.AspectedBenefic)).OrderBy(GetCurrentHealthPercent);
+                //await CastDivineBenison(skillTarget);
+                if (!SpellsDefine.AspectedBenefic.IsUnlock()) return null;
+                var spell = new SpellEntity(SpellsDefine.AspectedBenefic, skillTarget.FirstOrDefault() as BattleCharacter);                
+                await spell.DoGCD();
+            }
+            return null;
+        }
     }
 }

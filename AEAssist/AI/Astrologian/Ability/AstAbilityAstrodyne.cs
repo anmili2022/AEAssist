@@ -15,6 +15,8 @@ namespace AEAssist.AI.Astrologian.Ability
             //{
             //return -4;
             //}
+            if (AIRoot.Instance.CloseBurst)
+                return -2;
             if (AIRoot.GetBattleData<AstBattleData>().AstNum < 3)
             {
                 LogHelper.Debug("印" + Convert.ToString(AIRoot.GetBattleData<AstBattleData>().AstNum));

@@ -9,7 +9,10 @@ namespace AEAssist.AI.Astrologian.Ability
         public int Check(SpellEntity lastSpell)
         {
             if (!SpellsDefine.Divination.IsReady()) return -1;
+            if (AIRoot.Instance.CloseBurst)
+                return -2;
             return 0;
+
         }
 
         public async Task<SpellEntity> Run()
