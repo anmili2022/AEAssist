@@ -22,7 +22,7 @@ namespace AEAssist.AI.Astrologian.GCD
             LogHelper.Debug("刷吉星");
             //Character character = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && !r.HasAura(AurasDefine.EukrasianDiagnosis) && !r.HasAura(AurasDefine.DifferentialDiagnosis));
             //var spell = SageSpellHelper.CastEukrasianDiagnosis(character);
-            return AstSpellHelper.;
+            return AstSpellHelper.CastAspectedBenefic();
 
         }
     }

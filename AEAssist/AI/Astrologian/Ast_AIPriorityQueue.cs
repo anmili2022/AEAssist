@@ -19,6 +19,7 @@ namespace AEAssist.AI.Astrologian
             //new SageGcdPhlegma(),
             new AstBaseGCD(),
             //new SageGCDDyskrasia(),
+            new AstGCDAspectedBenefic(),
         };
 
         public List<IAIHandler> AbilityQueue { get; } = new List<IAIHandler>()

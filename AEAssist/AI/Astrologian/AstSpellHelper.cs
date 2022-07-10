@@ -575,13 +575,18 @@ namespace AEAssist.AI.Astrologian
             return null;
             
         }
-        
-        public static async Task<bool> CastEukrasianPrognosis(Character target)
+
+        public static async Task<SpellEntity> CastAspectedBenefic()
         {
-            if (!SpellsDefine.EukrasianPrognosis.IsUnlock()) return false;
-            await SageSpellHelper.CastEukrasia();
-            var spell = new SpellEntity(SpellsDefine.EukrasianPrognosis, target as BattleCharacter);
-            return await spell.DoGCD();
+            if (GroupHelper.InParty)
+            {
+                var skillTarget = GroupHelper.CastableAlliesWithin30.Where(r => r.CurrentHealth > 0 && !r.HasAura(AurasDefine.AspectedBenefic)).OrderBy(GetCurrentHealthPercent);
+                //await CastDivineBenison(skillTarget);
+                if (!SpellsDefine.AspectedBenefic.IsUnlock()) return null;
+                var spell = new SpellEntity(SpellsDefine.AspectedBenefic, skillTarget.FirstOrDefault() as BattleCharacter);                
+                await spell.DoGCD();
+            }
+            return null;
         }
     }
 }
