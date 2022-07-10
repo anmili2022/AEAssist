@@ -3,9 +3,9 @@
 namespace AEAssist
 {
     [AddINotifyPropertyChangedInterface]
-    public class WarriorSettings : IBaseSetting
+    public class DarkKnightSettings : IBaseSetting
     {
-        public WarriorSettings()
+        public DarkKnightSettings()
         {
             Reset();
         }
@@ -17,29 +17,23 @@ namespace AEAssist
 
         public int SheltronThreshold { get; set; }
 
-        public bool WarriorDefenseMode { get; set; }//战士自动防御模式
+        public bool DarkKnightDefenseMode { get; set; }//黑骑自动防御模式
         public void Reset()
         {
             ReserveManaPercentage = 40;
             FightorFlightTiming = 1;
             SheltronThreshold = 95;
-            WarriorDefenseMode = true;
+            DarkKnightDefenseMode = true;
         }
         
         public bool IronWill { get; set; } = true;
         public bool Intervene { get; set; } = true;
 
-        public bool WarriorRampart { get; set; } = true;//铁壁
-        public bool WarriorBloodwhetting { get; set; } = true;//原初的血气
-        public bool WarriorVengeance { get; set; } = true;//复仇
 
         public void ResetToggles()
         {
             //Requiescat = true;
-            WarriorDefenseMode = true;
-            WarriorRampart = true;
-            WarriorVengeance = true;
-            WarriorBloodwhetting = true;
+            DarkKnightDefenseMode = true;
         }
 
         public void OnLoad()
