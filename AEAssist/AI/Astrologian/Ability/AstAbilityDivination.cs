@@ -8,6 +8,7 @@ namespace AEAssist.AI.Astrologian.Ability
     {
         public int Check(SpellEntity lastSpell)
         {
+            if (!SettingMgr.GetSetting<AstSettings>().DivinationToggle) return -3;
             if (!SpellsDefine.Divination.IsReady()) return -1;
             if (AIRoot.Instance.CloseBurst)
                 return -2;

@@ -32,6 +32,12 @@ namespace AEAssist
         public int LucidDreamingTrigger { get; set; } = ConstValue.LucidDreamingDefaultRefresh;
         public bool LucidDreamingToggle { get; set; } = true;
         public bool SwiftResToggle { get; set; } = true;
+
+        public bool DivinationToggle { get; set; } = true;
+        public bool LighSpeedToggle { get; set; } = true;
+        public bool NeutralSectToggle { get; set; } = true;
+        public bool HoroScopeToggle { get; set; } = true;
+        
         public bool AstHalfCard { get; set; } = true;
         public bool Heal { get; set; } = true;
         public bool EarlyDecisionMode { get; set; }

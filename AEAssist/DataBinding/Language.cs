@@ -232,6 +232,13 @@ namespace AEAssist
 
         #endregion
 
+        #region AST
+
+        public string Toggle_Divination { get; set; }
+        public string Toggle_LightSpeed { get; set; }
+
+        #endregion
+
 
         //Please put the following in the order of the class and inside its own region
 
