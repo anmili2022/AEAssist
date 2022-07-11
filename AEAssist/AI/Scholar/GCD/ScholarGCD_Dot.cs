@@ -26,29 +26,14 @@ namespace AEAssist.AI.Scholar.GCD
         {
             schdot = GetAura();
             spell = SpellsDefine.Bio;
-            //if (!SpellsDefine.GoringBlade.IsUnlock())
-            //    return -2;
-
-            //if (!DataBinding.Instance.UseDot)
-            //    return -3;
-
-            //if (!Scholar_SpellHelper.NeedRenewDot(spell))
-            //    return -4;
 
             var target = Core.Me.CurrentTarget as Character;
             if (target == null)
                 return -2;
             //LogHelper.Info($"dot {target.HasAura(schdot)}");
             if (target.HasMyAura(schdot))
-                if (!target.HasMyAuraWithTimeleft(schdot, 3000))//id，剩余时间
-                {
-                    //LogHelper.Info($"renewing dot.");
-                }
-                else
-                { 
-                    //LogHelper.Info($"Target's dot expires in {target.GetAuraById(schdot).TimeLeft} ms, no dot.");
+                if (target.HasMyAuraWithTimeleft(schdot, 3000))//id，剩余时间
                     return -2;
-                }
 
 
             if (!spell.IsReady())

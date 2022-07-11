@@ -595,6 +595,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="Setting\Setting\AstSettings.cs" />
     <Compile Include="Setting\Setting\BlackMageSetting.cs" />
     <Compile Include="Setting\Setting\DancerSettings.cs" />
+    <Compile Include="Setting\Setting\RedMageSettings.cs" />
     <Compile Include="Setting\Setting\ScholarSettings.cs" />
     <Compile Include="Setting\Setting\DarkKnightSettings.cs" />
     <Compile Include="Setting\Setting\GunBreakerSettings.cs" />
