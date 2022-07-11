@@ -15,10 +15,14 @@ namespace AEAssist.AI.Summoner.GCD
                 return -3;
             if (!spell.IsReady())
                 return -1;
-            if (SpellsDefine.Swiftcast.IsReady() && !AIRoot.Instance.CloseBurst)
+            if (!AIRoot.Instance.CloseBurst)
             {
-                return -4;
+                if (SpellsDefine.Swiftcast.IsReady())
+                    return -4;
+                if (SpellsDefine.Swiftcast.CoolDownInGCDs(ActionResourceManager.Summoner.ElementalAttunement / 2))
+                    return -4;
             }
+
 
             //如果必须要读条且正在移动就不使用
             if (!Core.Me.HasAura(AurasDefine.Swiftcast) && MovementManager.IsMoving)

@@ -15,7 +15,6 @@ namespace AEAssist.AI.Summoner
 
         public static bool HasCarbuncle()
         {
-
             if (GameObjectManager.PetObjectId != GameObjectManager.EmptyGameObject)
                 return true;
             if (AnyPet())
