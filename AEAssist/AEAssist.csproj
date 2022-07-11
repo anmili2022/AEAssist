@@ -377,6 +377,13 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Paladin\Paladin_SpellHelper.cs" />
     <Compile Include="AI\Reaper\SpellEvent\SpellEvent_EnshourdGCD.cs" />
     <Compile Include="AI\Reaper\SpellEvent\SpellEvent_Lemure.cs" />
+    <Compile Include="AI\RedMage\Ability\RedMage_AbilityBase.cs" />
+    <Compile Include="AI\RedMage\GCD\RedMageGCD_Base.cs" />
+    <Compile Include="AI\RedMage\GCD\RedMageGCD_Moulinet.cs" />
+    <Compile Include="AI\RedMage\RedMage_AIPriorityQueue.cs" />
+    <Compile Include="AI\RedMage\RedMage_BattleData.cs" />
+    <Compile Include="AI\RedMage\RedMage_Rotation.cs" />
+    <Compile Include="AI\RedMage\RedMage_SpellHelper.cs" />
     <Compile Include="AI\Sage\Ability\SageAbilityHaima.cs" />
     <Compile Include="AI\Sage\Ability\SageAbilityHolos.cs" />
     <Compile Include="AI\Sage\Ability\SageAbilityIxochole.cs" />
