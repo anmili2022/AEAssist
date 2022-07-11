@@ -15,7 +15,7 @@ namespace AEAssist.AI.RedMage
             //    () => PotionHelper.UsePotion(SettingMgr.GetSetting<GeneralSettings>().MindPotionId));
 
 
-            AEAssist.DataBinding.Instance.EarlyDecisionMode = SettingMgr.GetSetting<RedMageSettings>().EarlyDecisionMode;
+            //AEAssist.DataBinding.Instance.EarlyDecisionMode = SettingMgr.GetSetting<RedMageSettings>().EarlyDecisionMode;
         }
         public Task<bool> PreCombatBuff()
         {
