@@ -64,6 +64,8 @@ namespace AEAssistLoader
                     case ClassJobType.Warrior:
                     case ClassJobType.DarkKnight:
                     case ClassJobType.Scholar:
+                    case ClassJobType.RedMage:
+
 
                         Logging.Write(Colors.Red, $@"[AEAssist] {Core.Me.CurrentJob} is only for develop.");
                         return new[] { Core.Me.CurrentJob };
