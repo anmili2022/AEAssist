@@ -97,7 +97,7 @@ namespace AEAssist.Helper
             IntPotions.Add(new PotionData
             {
                 ID = 36112,
-                Name = "Grade 6 INT/6智益力"
+                Name = "Grade 6 INT/6级智力"
             });
             IntPotions.Add(new PotionData
             {
