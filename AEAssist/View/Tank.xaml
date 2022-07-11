@@ -33,7 +33,7 @@
                                 <RotateTransform Angle="90" />
                             </TransformGroup>
                         </TabItem.LayoutTransform>
-                        <local:GunBreakerSettingView HorizontalAlignment="Center" />
+                        <local:GunBreakerSettingView HorizontalAlignment="Center" Margin="0,0,0,29" Width="373" />
                     </TabItem>
                     <TabItem Width="50" Height="50">
                         <TabItem.Header>
