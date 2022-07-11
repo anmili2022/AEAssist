@@ -104,22 +104,22 @@
                         
                         <Button Style="{StaticResource ImageButton}"
                                 Width="30" Height="30" Margin="5,2,5,2" Name="UseSuperbolide" Click="UseSuperbolide_OnClick">
-                            <Image Source="../../Resources/Spells/TankRoleActions/GunBreaker/Superbolide.png" Stretch="Uniform" />
+                            <Image Source="../../Resources/Spells/GunBreaker/Superbolide.png" Stretch="Uniform" />
                         </Button>
 
                         <Button Style="{StaticResource ImageButton}"
                                 Width="30" Height="30" Margin="5,2,5,2" Name="UseNebula" Click="UseNebula_OnClick">
-                            <Image Source="../../Resources/Spells/TankRoleActions/GunBreaker/Nebula.png" Stretch="Uniform" />
+                            <Image Source="../../Resources/Spells/GunBreaker/Nebula.png" Stretch="Uniform" />
                         </Button>
 
                         <Button Style="{StaticResource ImageButton}"
                                 Width="30" Height="30" Margin="5,2,5,2" Name="UseCamouflage" Click="UseCamouflage_OnClick">
-                            <Image Source="../../Resources/Spells/TankRoleActions/GunBreaker/Camouflage.png" Stretch="Uniform" />
+                            <Image Source="../../Resources/Spells//GunBreaker/Camouflage.png" Stretch="Uniform" />
                         </Button>
 
                         <Button Style="{StaticResource ImageButton}"
                                 Width="30" Height="30" Margin="5,2,5,2" Name="UseHeartOfCorundum" Click="UseHeartOfCorundum_OnClick">
-                            <Image Source="../../Resources/Spells/TankRoleActions/GunBreaker/HeartOfCorundum.png" Stretch="Uniform" />
+                            <Image Source="../../Resources/Spells/GunBreaker/HeartOfCorundum.png" Stretch="Uniform" />
                         </Button>
                     </WrapPanel>
                 </WrapPanel>
