@@ -9,7 +9,7 @@ namespace AEAssist.AI.GunBreaker.Ability
     {
         public int Check(SpellEntity lastSpell)
         {
-            if (TargetHelper.GetTargetDistanceFromMeTest(Core.Me, Core.Me.CurrentTarget) > 4)
+            if (TargetHelper.GetTargetDistanceFromMeTest(Core.Me, Core.Me.CurrentTarget) > SettingMgr.GetSetting<GunBreakerSettings>().NotUseRoughDivide)
                 return -2;
             if (DataBinding.Instance.GNBRoughDivide)
             {
