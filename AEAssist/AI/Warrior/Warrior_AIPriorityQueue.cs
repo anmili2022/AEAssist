@@ -13,19 +13,19 @@ namespace AEAssist.AI.Warrior
             //new WarriorGCD_BldeofXX(),
             //new WarriorGCD_HolySpirit(),
             //new WarriorGCD_Ranged(),
-            //new WarriorGCD_Dot(),
+            new WarriorGCD_PrimalRend(),
             new WarriorGCD_Base()
         };
 
         public List<IAIHandler> AbilityQueue { get; } = new List<IAIHandler>()
         {
-            //new WarriorAbility_IronWill(),
-            //new WarriorAbility_FightorFlight(),
-            //new WarriorAbility_Requiescat(),
-            //new WarriorAbility_SpiritsWithin(),
-            //new WarriorAbility_CircleofScorn(),
-            //new WarriorAbility_Intervene(),
-            new WarriorAbility_defense()
+            new WarriorAbility_Onslaught(),//猛攻
+            new WarriorAbility_Infuriate(),//战嚎
+            new WarriorAbility_InnerRelease(),//原初的解放
+            new WarriorAbility_Equilibrium(),//泰然自若
+            new WarriorAbility_Upheaval(),//动乱
+            new WarriorAbility_Orogeny(),//群山隆起
+            new WarriorAbility_defense()//自主防御
         };
         public Task<bool> UsePotion()
         {
