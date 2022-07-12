@@ -154,7 +154,7 @@ namespace AEAssist.AI.RedMage.GCD
             if (spell == SpellsDefine.Verflare && !SpellsDefine.Verflare.IsUnlock()) 
                 spell = SpellsDefine.Jolt;
 
-            LogHelper.Info($"TThere next is   {spell.ToString()},lastspell is {ActionManager.LastSpellId.ToString()}.");
+            //LogHelper.Info($"TThere next is   {spell.ToString()},lastspell is {ActionManager.LastSpellId.ToString()}.");
             if (!spell.IsReady())
                 return -1;
             return 0;

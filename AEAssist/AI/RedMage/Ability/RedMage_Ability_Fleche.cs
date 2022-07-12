@@ -1,21 +1,21 @@
-﻿using AEAssist.Define;
+﻿using System.Threading.Tasks;
+using AEAssist.Define;
 using AEAssist.Helper;
-using System.Threading.Tasks;
-namespace AEAssist.AI.Warrior.Ability
+using ff14bot;
+using ff14bot.Managers;
+
+namespace AEAssist.AI.RedMage.Ability
 {
-    public class WarriorAbility_Blank : IAIHandler
+    public class RedMageAbility_Fleche : IAIHandler
     {
         uint spell;
-        static public uint GetSpell()
-        {
-            return 0;
-        }
+
         public int Check(SpellEntity lastSpell)
         {
-            spell = GetSpell();
-
+            spell = SpellsDefine.Fleche;
             if (!spell.IsReady())
                 return -1;
+            //LogHelper.Debug("NO10:" + spell.ToString());
             return 0;
         }
 

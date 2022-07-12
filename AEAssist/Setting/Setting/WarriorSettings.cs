@@ -12,22 +12,18 @@ namespace AEAssist
 
         public bool EarlyDecisionMode { get; set; }
 
-        public int ReserveManaPercentage { get; set; }
-        public int FightorFlightTiming { get; set; }
-
-        public int SheltronThreshold { get; set; }
-
+        public bool WarriorPrimalRend { get; set; }//蛮荒崩裂
+        public bool WarriorOnslaught { get; set; }//猛攻
+        public bool WarriorInnerRelease { get; set; }//原初的解放
         public bool WarriorDefenseMode { get; set; }//战士自动防御模式
         public void Reset()
         {
-            ReserveManaPercentage = 40;
-            FightorFlightTiming = 1;
-            SheltronThreshold = 95;
+            WarriorPrimalRend = true;
+            WarriorOnslaught = false;
+            EarlyDecisionMode = false;
             WarriorDefenseMode = true;
+            WarriorInnerRelease = true;
         }
-        
-        public bool IronWill { get; set; } = true;
-        public bool Intervene { get; set; } = true;
 
         public bool WarriorRampart { get; set; } = true;//铁壁
         public bool WarriorBloodwhetting { get; set; } = true;//原初的血气
@@ -35,11 +31,11 @@ namespace AEAssist
 
         public void ResetToggles()
         {
-            //Requiescat = true;
-            WarriorDefenseMode = true;
             WarriorRampart = true;
             WarriorVengeance = true;
             WarriorBloodwhetting = true;
+
+            WarriorOnslaught = false;
         }
 
         public void OnLoad()

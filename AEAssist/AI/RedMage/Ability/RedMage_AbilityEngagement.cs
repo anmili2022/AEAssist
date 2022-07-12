@@ -6,7 +6,7 @@ using ff14bot.Managers;
 
 namespace AEAssist.AI.RedMage.Ability
 {
-    public class RedMageAbility_AbilityBase : IAIHandler
+    public class RedMageAbility_AbilityAcceleration : IAIHandler
     {
         uint spell;
         static public uint GetSpell()
