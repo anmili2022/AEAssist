@@ -79,6 +79,11 @@
                                   Style="{StaticResource CheckBoxOverlayCustomToggle}"
                                   IsChecked="{Binding GNBRoughDivide,Mode=TwoWay}" />
 
+                        <CheckBox HorizontalContentAlignment="Center"
+                                  Content="ManualControl"
+                                  Style="{StaticResource CheckBoxOverlayCustomToggle}"
+                                  IsChecked="{Binding GNBManualControl,Mode=TwoWay}" />
+
                     </WrapPanel>
                     <WrapPanel Margin="10">
                         <Button Style="{StaticResource ImageButton}"

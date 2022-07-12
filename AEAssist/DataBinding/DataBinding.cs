@@ -185,6 +185,7 @@ namespace AEAssist
         #region GNB
         public bool GNBOpen { get; set; } = true;
         public bool GNBRoughDivide { get; set; } = true;
+        public bool GNBManualControl { get; set; } = false;
         #endregion
 
     }

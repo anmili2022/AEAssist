@@ -7,8 +7,8 @@ using System.Collections.Generic;
 
 namespace AEAssist.AI.Gunbreaker
 {
-    [Opener(ClassJobType.Gunbreaker, 90)]
-    public class Opener_GunBreaker_90 : IOpener
+    [Opener(ClassJobType.Gunbreaker, 90, "2GCD")]
+    public class Opener_GunBreaker_90_2GCD : IOpener
     {
         public int Check()
         {
@@ -34,6 +34,7 @@ namespace AEAssist.AI.Gunbreaker
             //StepPre,
             Step0,
             Step1,
+            Step1_5,
             Step2,
             Step3,
             Step4,
@@ -50,18 +51,28 @@ namespace AEAssist.AI.Gunbreaker
         private static void Step0(SpellQueueSlot slot)
         {
             slot.SetGCD(SpellsDefine.KeenEdge, SpellTargetType.CurrTarget);
-            slot.Abilitys.Enqueue((SpellsDefine.Bloodfest, SpellTargetType.CurrTarget));
-            slot.Abilitys.Enqueue((SpellsDefine.NoMercy, SpellTargetType.Self));
+            slot.UsePotion = true;
+            //slot.Abilitys.Enqueue((SpellsDefine.Bloodfest, SpellTargetType.CurrTarget));
+            //slot.Abilitys.Enqueue((SpellsDefine.NoMercy, SpellTargetType.Self));
         }
 
 
         private static void Step1(SpellQueueSlot slot)
         {
-            slot.SetGCD(SpellsDefine.GnashingFang, SpellTargetType.CurrTarget);
-            slot.Abilitys.Enqueue((SpellsDefine.BlastingZone, SpellTargetType.CurrTarget));
-            slot.Abilitys.Enqueue((SpellsDefine.JugularRip, SpellTargetType.CurrTarget));
+            slot.SetGCD(SpellsDefine.BrutalShell, SpellTargetType.CurrTarget);
+            slot.Abilitys.Enqueue((SpellsDefine.Bloodfest, SpellTargetType.CurrTarget));
+            slot.Abilitys.Enqueue((SpellsDefine.NoMercy, SpellTargetType.Self));
+            //slot.SetGCD(SpellsDefine.GnashingFang, SpellTargetType.CurrTarget);
+            //slot.Abilitys.Enqueue((SpellsDefine.BlastingZone, SpellTargetType.CurrTarget));
+            //slot.Abilitys.Enqueue((SpellsDefine.JugularRip, SpellTargetType.CurrTarget));
         }
 
+        private static void Step1_5(SpellQueueSlot slot)
+        {
+            slot.SetGCD(SpellsDefine.GnashingFang, SpellTargetType.CurrTarget);
+            slot.Abilitys.Enqueue((SpellsDefine.JugularRip, SpellTargetType.CurrTarget));
+            slot.Abilitys.Enqueue((SpellsDefine.BlastingZone, SpellTargetType.CurrTarget));
+        }
 
         private static void Step2(SpellQueueSlot slot)
         {

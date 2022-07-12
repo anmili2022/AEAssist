@@ -304,6 +304,10 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\GunBreaker\GunBreakerRotation.cs" />
     <Compile Include="AI\GunBreaker\GunBreakerSpellHelper.cs" />
     <Compile Include="AI\GunBreaker\GunBreaker_AIPriorityQueue.cs" />
+    <Compile Include="AI\GunBreaker\Opener_GunBreaker_90_2GCD.cs" />
+    <Compile Include="AI\GunBreaker\Opener_GunBreaker_90_4GCD.cs" />
+    <Compile Include="AI\GunBreaker\SpellEvent\SpellEvent_A_State.cs" />
+    <Compile Include="AI\GunBreaker\SpellEvent\SpellEvent_A_State_Off.cs" />
     <Compile Include="AI\Machinist\SpellEvent\SpellEvent_Hypercharge.cs" />
     <Compile Include="AI\Machinist\SpellEvent\SpellEvent_UnderHyperChargetGCD.cs" />
     <Compile Include="AI\Machinist\SpellEvent\SpellEvent_UseBattery.cs" />
