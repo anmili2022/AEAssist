@@ -114,6 +114,9 @@
   "Toggle_GNBO_pen": "LightningShot/RoughDivide",
   "Toggle_GNB_RoughDivide": "Keep1RoughDivide",
 
+  "Toggle_Flourish": "Flourish",
+  "Toggle_SaberDance": "Saber Dance",
+  
   "ToolTip_SMN_Burst": "No aethercharge",
   "ToolTip_SMN_FinalBurst": "Not implemented",
   "Toggle_SMN_SaveInstantSpells": "Save Instant Spells",

@@ -169,6 +169,12 @@ namespace AEAssist
         public string ToolTip_MCH_WildFireFirst { get; set; }
         public string ToolTip_MCH_Burst { get; set; }
         #endregion
+        
+        #region DNC
+        public string Toggle_Flourish { get; set; }
+        public string Toggle_SaberDance { get; set; }
+
+        #endregion
 
         #region RPR
 
