@@ -165,6 +165,7 @@ namespace AEAssist
         #region Dancer
 
         public bool UseFlourish { get; set; } = true;
+        public bool UseSaberDance { get; set; } = true;
 
         #endregion
 
