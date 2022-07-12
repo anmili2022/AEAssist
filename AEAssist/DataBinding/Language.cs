@@ -215,7 +215,10 @@ namespace AEAssist
         #endregion
         #region Warrior
         public string WarriorDefenseMode { get; set; }
-
+        public string WarriorOnslaught { get; set; }
+        public string WarriorInnerRelease { get; set; }
+        public string WarriorPrimalRend { get; set; }
+        
         #endregion
 
         #region Healer

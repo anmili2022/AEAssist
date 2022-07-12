@@ -6,17 +6,14 @@ using ff14bot.Managers;
 
 namespace AEAssist.AI.RedMage.Ability
 {
-    public class RedMageAbility_AbilityBase : IAIHandler
+    public class RedMageAbility_Engagement : IAIHandler
     {
         uint spell;
-        static public uint GetSpell()
-        {
-            return 0;
-        }
+
         public int Check(SpellEntity lastSpell)
         {
-            spell = GetSpell();
-            if (spell==0) return 0;
+            spell = SpellsDefine.Engagement;
+            if (RedMage_SpellHelper.OutOfMeleeRange()) return -1;
             if (!spell.IsReady())
                 return -1;
             //LogHelper.Debug("NO10:" + spell.ToString());

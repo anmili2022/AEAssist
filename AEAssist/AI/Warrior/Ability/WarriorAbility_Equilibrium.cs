@@ -2,24 +2,19 @@
 using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Managers;
 
-namespace AEAssist.AI.RedMage.Ability
+namespace AEAssist.AI.Warrior.Ability
 {
-    public class RedMageAbility_AbilityBase : IAIHandler
+    public class WarriorAbility_Equilibrium : IAIHandler
     {
-        uint spell;
-        static public uint GetSpell()
-        {
-            return 0;
-        }
+        uint spell = SpellsDefine.Equilibrium;
+
         public int Check(SpellEntity lastSpell)
         {
-            spell = GetSpell();
-            if (spell==0) return 0;
+            if (Core.Me.CurrentHealthPercent > 30) return -1;
+
             if (!spell.IsReady())
                 return -1;
-            //LogHelper.Debug("NO10:" + spell.ToString());
             return 0;
         }
 
@@ -30,5 +25,4 @@ namespace AEAssist.AI.RedMage.Ability
             return null;
         }
     }
-
 }

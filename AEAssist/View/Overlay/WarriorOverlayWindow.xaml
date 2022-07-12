@@ -55,12 +55,24 @@
                                   Content="{Binding Language.WarriorDefenseMode}"
                                   Style="{StaticResource CheckBoxOverlayCustomToggle}"
                                   IsChecked="{Binding WarriorSettings.WarriorDefenseMode,Mode=TwoWay}" />
+                        <CheckBox HorizontalContentAlignment="Center"
+                                  Content="{Binding Language.WarriorOnslaught}"
+                                  Style="{StaticResource CheckBoxOverlayCustomToggle}"
+                                  IsChecked="{Binding WarriorSettings.WarriorOnslaught,Mode=TwoWay}" />
+                        <CheckBox HorizontalContentAlignment="Center"
+                                  Content="{Binding Language.WarriorInnerRelease}"
+                                  Style="{StaticResource CheckBoxOverlayCustomToggle}"
+                                  IsChecked="{Binding WarriorSettings.WarriorInnerRelease,Mode=TwoWay}" />
+                        <CheckBox HorizontalContentAlignment="Center"
+                                  Content="{Binding Language.WarriorPrimalRend}"
+                                  Style="{StaticResource CheckBoxOverlayCustomToggle}"
+                                  IsChecked="{Binding WarriorSettings.WarriorPrimalRend,Mode=TwoWay}" />
                     </WrapPanel>
                     <WrapPanel Margin="10">
                         <Button Style="{StaticResource ImageButton}"
                                 Width="30" Height="30" Margin="2" Name="UsePotion"
                                 Click="UsePotion_OnClick">
-                            <Image Source="../../Resources/Spells/MindPotion.png" Stretch="Uniform" />
+                            <Image Source="../../Resources/Spells/Potion.png" Stretch="Uniform" />
 
                         </Button>
                     </WrapPanel>

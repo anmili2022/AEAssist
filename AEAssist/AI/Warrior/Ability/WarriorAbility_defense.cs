@@ -16,7 +16,7 @@ namespace AEAssist.AI.Warrior.Ability
             
             if (Core.Me.HasAura(AurasDefine.StemTheFlow) || Core.Me.HasAura(AurasDefine.Rampart) || Core.Me.HasAura(AurasDefine.Vengeance))
                 //自身拥有原初的血潮，铁壁，复仇时 不释放防御技能
-                return SpellsDefine.Upheaval;
+                return 0;
             
             if (Core.Me.CurrentHealthPercent < 45)//复仇判定
                 if (SpellsDefine.Vengeance.IsUnlock())//复仇学习检测
@@ -28,26 +28,17 @@ namespace AEAssist.AI.Warrior.Ability
                 return SpellsDefine.Rampart;
             
             if (Core.Me.CurrentHealthPercent < 75)//原初的血气判定
-                if (SpellsDefine.Bloodwhetting.IsUnlock())//原初的血气学习检测
-                    return SpellsDefine.Bloodwhetting;
-                else
-                    return SpellsDefine.RawIntuition;//原初的直觉
+               return SpellsDefine.RawIntuition;//原初的直觉
             
-            return SpellsDefine.Upheaval;
+            return 0;
         }
         public int Check(SpellEntity lastSpell)
         {
-            if (!SettingMgr.GetSetting<WarriorSettings>().WarriorBloodwhetting)
-                return -5;
-            
-            if (!SettingMgr.GetSetting<WarriorSettings>().WarriorRampart)
-                return -5;
-            
-            if (!SettingMgr.GetSetting<WarriorSettings>().WarriorVengeance)
+            if (!SettingMgr.GetSetting<WarriorSettings>().WarriorDefenseMode)
                 return -5;
             
             spell = GetSpell();
-            
+            if (spell == 0) return -5;
             if (!spell.IsReady())
                 return -1;
             //LogHelper.Debug("NO10:" + spell.ToString());

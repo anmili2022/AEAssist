@@ -377,6 +377,10 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Paladin\Paladin_SpellHelper.cs" />
     <Compile Include="AI\Reaper\SpellEvent\SpellEvent_EnshourdGCD.cs" />
     <Compile Include="AI\Reaper\SpellEvent\SpellEvent_Lemure.cs" />
+    <Compile Include="AI\RedMage\Ability\RedMage_Ability_ContreSixte.cs" />
+    <Compile Include="AI\RedMage\Ability\RedMage_Ability_Fleche.cs" />
+    <Compile Include="AI\RedMage\Ability\RedMage_AbilityEngagement.cs" />
+    <Compile Include="AI\RedMage\Ability\RedMage_AbilityAcceleration.cs" />
     <Compile Include="AI\RedMage\Ability\RedMage_AbilityBase.cs" />
     <Compile Include="AI\RedMage\GCD\RedMageGCD_Base.cs" />
     <Compile Include="AI\RedMage\GCD\RedMageGCD_Moulinet.cs" />
@@ -530,16 +534,16 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Summoner\SMN_BattleData.cs" />
     <Compile Include="AI\Summoner\SMN_Rotation.cs" />
     <Compile Include="AI\Summoner\SMN_SpellHelper.cs" />
-    <Compile Include="AI\Warrior\Ability\WarriorAbility_Blank.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_InnerRelease.cs" />
     <Compile Include="AI\Warrior\Ability\WarriorAbility_CircleofScorn.cs" />
     <Compile Include="AI\Warrior\Ability\WarriorAbility_defense.cs" />
-    <Compile Include="AI\Warrior\Ability\WarriorAbility_FightorFlight.cs" />
-    <Compile Include="AI\Warrior\Ability\WarriorAbility_Intervene.cs" />
-    <Compile Include="AI\Warrior\Ability\WarriorAbility_IronWill.cs" />
-    <Compile Include="AI\Warrior\Ability\WarriorAbility_Requiescat.cs" />
-    <Compile Include="AI\Warrior\Ability\WarriorAbility_SpiritsWithin.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_Onslaught.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_Infuriate.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_Orogeny.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_Upheaval.cs" />
+    <Compile Include="AI\Warrior\Ability\WarriorAbility_Equilibrium.cs" />
     <Compile Include="AI\Warrior\GCD\WarriorGCD_Base.cs" />
-    <Compile Include="AI\Warrior\GCD\WarriorGCD_BladeofXX.cs" />
+    <Compile Include="AI\Warrior\GCD\WarriorGCD_PrimalRend.cs" />
     <Compile Include="AI\Warrior\GCD\WarriorGCD_Blank.cs" />
     <Compile Include="AI\Warrior\GCD\WarriorGCD_Dot.cs" />
     <Compile Include="AI\Warrior\GCD\WarriorGCD_HolySpirit.cs" />
@@ -596,6 +600,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="Setting\Setting\AstSettings.cs" />
     <Compile Include="Setting\Setting\BlackMageSetting.cs" />
     <Compile Include="Setting\Setting\DancerSettings.cs" />
+    <Compile Include="Setting\Setting\RedMageSettings.cs" />
     <Compile Include="Setting\Setting\ScholarSettings.cs" />
     <Compile Include="Setting\Setting\DarkKnightSettings.cs" />
     <Compile Include="Setting\Setting\GunBreakerSettings.cs" />
@@ -641,6 +646,9 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="Utilities\CombatMessages\ICombatMessageStrategy.cs" />
     <Compile Include="View\BardSettingView.xaml.cs">
       <DependentUpon>BardSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Overlay\PositionOverlayWindow.xaml.cs">
+      <DependentUpon>PositionOverlayWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_WarriorOverlay.cs" />
     <Compile Include="View\Overlay\WarriorOverlayWindow.xaml.cs">
@@ -862,9 +870,13 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Resource Include="Resources\Spells\WhiteMage\PlenaryIndulgence.png" />
     <Resource Include="Resources\Spells\WhiteMage\PresenceofMind.png" />
     <Resource Include="Resources\Spells\WhiteMage\ThinAir.png" />
-    <Page Include="View\Overlay\WarriorOverlayWindow.xaml">
+    <Page Include="View\Overlay\PositionOverlayWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="View\Overlay\WarriorOverlayWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\WarriorSettingView.xaml">
       <Generator>MSBuild:Compile</Generator>

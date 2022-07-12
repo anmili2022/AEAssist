@@ -13,7 +13,7 @@ namespace AEAssist.AI.RedMage
             //new RedMageGCD_BldeofXX(),
             //new RedMageGCD_HolySpirit(),
             //new RedMageGCD_Ranged(),
-            //new RedMageGCD_Dot(),
+            //new RedMageGCD_Moulinet(),
             new RedMageGCD_Base()
         };
 
