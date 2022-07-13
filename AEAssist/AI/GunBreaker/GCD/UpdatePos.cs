@@ -10,9 +10,24 @@ namespace AEAssist.AI.GunBreaker.GCD
     {
         public int Check(SpellEntity lastSpell)
         {
+            var dis = (int)Math.Round(TargetHelper.GetTargetDistanceFromMeTest(Core.Me, Core.Me.CurrentTarget) * 100);
             if (Core.Me.HasTarget)
             {
-                MeleePosition.Intance.TargetDistance = (int)Math.Round(TargetHelper.GetTargetDistanceFromMeTest(Core.Me, Core.Me.CurrentTarget) * 100);
+                if (dis<250)
+                {
+                    MeleePosition.Intance.IsTargetDistanceSafe = System.Windows.Media.Brushes.Green;
+                }
+                else if(dis>=250 && dis <300)
+                {
+                    MeleePosition.Intance.IsTargetDistanceSafe = System.Windows.Media.Brushes.Yellow;
+                }
+                else if(dis>=300 && dis < 340)
+                {
+                    MeleePosition.Intance.IsTargetDistanceSafe = System.Windows.Media.Brushes.Red;
+                }
+                else if (dis >= 340)
+                    MeleePosition.Intance.IsTargetDistanceSafe = System.Windows.Media.Brushes.DarkRed;
+                MeleePosition.Intance.TargetDistance = dis;
             }
             return -1;
         }
