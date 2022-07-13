@@ -17,7 +17,7 @@ namespace AEAssist.AI.Paladin.Ability
             if (AIRoot.Instance.CloseBurst)
                 return -2;
 
-            if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.FightOrFight, 30000 - 5 * (int)AIRoot.Instance.GetGCDDuration()))
+            if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.FightOrFight, 30000 - 5 * (int)AIRoot.Instance.GetGCDDuration()) || Core.Me.GetAuraById(AurasDefine.FightOrFight).TimespanLeft.TotalMilliseconds <= 0)
                 return -3;
 
             if (Paladin_SpellHelper.OutOfMeleeRange())
