@@ -10,6 +10,10 @@ namespace AEAssist.AI.Astrologian.Ability
         {
             if (!SettingMgr.GetSetting<AstSettings>().DivinationToggle) return -3;
             if (!SpellsDefine.Divination.IsReady()) return -1;
+            if (!SettingMgr.GetSetting<AstSettings>().divination)
+            {
+                return -3;
+            }
             if (AIRoot.Instance.CloseBurst)
                 return -2;
             return 0;

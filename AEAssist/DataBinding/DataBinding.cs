@@ -65,6 +65,7 @@ namespace AEAssist
         public DebugCenter DebugCenter => DebugCenter.Intance;
         public MeleePosition MeleePosition => MeleePosition.Intance;
         public WarriorSettings WarriorSettings => SettingMgr.GetSetting<WarriorSettings>();
+        public RedMageSettings RedMageSettings => SettingMgr.GetSetting<RedMageSettings>();
 
         public HotkeySetting HotkeySetting => SettingMgr.GetSetting<HotkeySetting>();
         public AEAssist.View.Hotkey.HotkeyManager HotkeyManager => AEAssist.View.Hotkey.HotkeyManager.Instance;
@@ -185,6 +186,7 @@ namespace AEAssist
         #region GNB
         public bool GNBOpen { get; set; } = true;
         public bool GNBRoughDivide { get; set; } = true;
+        public bool GNBManualControl { get; set; } = false;
         #endregion
 
     }

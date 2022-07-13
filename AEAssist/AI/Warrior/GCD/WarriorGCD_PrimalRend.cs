@@ -1,7 +1,9 @@
-﻿using AEAssist.Define;
+﻿using System.Threading.Tasks;
+using AEAssist.Define;
 using AEAssist.Helper;
+using ff14bot;
 using ff14bot.Managers;
-using System.Threading.Tasks;
+using ff14bot.Objects;
 
 namespace AEAssist.AI.Warrior.GCD
 {
@@ -11,10 +13,10 @@ namespace AEAssist.AI.Warrior.GCD
 
         public int Check(SpellEntity lastSpell)
         {
-            if (!SpellsDefine.PrimalRend.IsUnlock())
-                return -2;
+            spell = SpellsDefine.PrimalRend;
             if (!SettingMgr.GetSetting<WarriorSettings>().WarriorPrimalRend)
                 return -5;
+            if (!Core.Me.HasMyAura(AurasDefine.PrimalRendReady)) return -1;
             if (!spell.IsReady())
                 return -1;
             return 0;

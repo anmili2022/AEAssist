@@ -1,6 +1,10 @@
-﻿using AEAssist.Define;
+﻿using System.Threading.Tasks;
+using AEAssist.Define;
 using AEAssist.Helper;
-using System.Threading.Tasks;
+using ff14bot;
+using ff14bot.Managers;
+using ff14bot.Objects;
+
 namespace AEAssist.AI.Warrior.Ability
 {
     public class WarriorAbility_InnerRelease : IAIHandler
@@ -11,6 +15,8 @@ namespace AEAssist.AI.Warrior.Ability
         {
             spell = SpellsDefine.InnerRelease;
             if (SpellsDefine.Infuriate.IsReady()) return -1;//打完战嚎再放原初的解放
+            if (!Core.Me.HasMyAura(AurasDefine.SurgingTempest)) return -1;//没有红斩BUFF就不放
+            if (Core.Me.HasMyAura(AurasDefine.NascentChaos)) return -1;//有战嚎BUFF就不放
             if (!SpellsDefine.InnerRelease.IsUnlock()) spell = SpellsDefine.Berserk;
             if (!spell.IsReady())
                 return -1;

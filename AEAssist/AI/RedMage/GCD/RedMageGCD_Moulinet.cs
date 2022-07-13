@@ -20,10 +20,12 @@ namespace AEAssist.AI.RedMage.GCD
 
             if (ActionManager.LastSpellId == SpellsDefine.Moulinet && R)//Moulinet-划圆斩
                 spell = SpellsDefine.Moulinet;
-            spell = 0; 
+            if (MovementManager.IsMoving && R) spell = SpellsDefine.Moulinet;
 
+            spell = 0;
+            //LogHelper.Info($"The next spell is   {spell.ToString()},lastspell is {ActionManager.LastSpell.ToString()}.");
             if (spell==0)
-                return 0;
+                return -1;
             if (!spell.IsReady())
                 return -1;
             return 0;

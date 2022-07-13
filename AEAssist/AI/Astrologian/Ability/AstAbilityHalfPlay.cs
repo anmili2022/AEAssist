@@ -1,6 +1,7 @@
 ﻿using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
+using ff14bot.Managers;
 using System.Threading.Tasks;
 
 namespace AEAssist.AI.Astrologian.Ability
@@ -13,17 +14,27 @@ namespace AEAssist.AI.Astrologian.Ability
             if (!SpellsDefine.Play.IsReady()) return -1;
             if (AIRoot.Instance.CloseBurst)
                 return -2;
-            if (!(Core.Me.HasAura(AurasDefine.ArrowDrawn) || Core.Me.HasAura(AurasDefine.BalanceDrawn) || Core.Me.HasAura(AurasDefine.SpearDrawn) || Core.Me.HasAura(AurasDefine.BoleDrawn) && Core.Me.HasAura(AurasDefine.EwerDrawn) || Core.Me.HasAura(AurasDefine.SpireDrawn))) return -2;
-
+            if (ActionResourceManager.CostTypesStruct.offset_C == 0 || ActionResourceManager.CostTypesStruct.offset_C == 112 || ActionResourceManager.CostTypesStruct.offset_C == 128) return -2;
+            
             if (SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds > 55 && SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds < 65)
             {
-                if (SettingMgr.GetSetting<AstSettings>().AstHalfCard)
+                //if (SettingMgr.GetSetting<AstSettings>().AstHalfCard)
+                //{
+                    //SettingMgr.GetSetting<AstSettings>().AstHalfCard = false;
+                    //return 0;
+                //}
+                if (SpellsDefine.Draw.IsMaxChargeReady(1))
                 {
-                    SettingMgr.GetSetting<AstSettings>().AstHalfCard = false;
                     return 0;
                 }
 
             }
+            
+            //if (SpellsDefine.Draw.IsMaxChargeReady(0.1f))
+            //{
+                //LogHelper.Debug("即将溢出，发卡");
+                //return 0;
+            //}
             return -3;
 
         }

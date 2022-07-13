@@ -62,13 +62,20 @@ namespace AEAssist.AI.Paladin
             if (target == null)
                 return false;
             var dotTime = 0.0;
-            target.CharacterAuras.Aggregate((time, aura) => {
-                if (aura.CasterId == Core.Player.ObjectId)
-                    if (aura.Id == AurasDefine.GoringBlade || aura.Id == AurasDefine.BladeOfValor)
-                        if (aura.TimespanLeft.TotalMilliseconds >= 0)
-                            dotTime += aura.TimespanLeft.TotalMilliseconds;
-                return time;
-            });
+
+            if (target.Auras.Count() == 0)
+                return true;
+            //target.Auras.Aggregate((time, aura) => {
+            //    if (aura.CasterId == Core.Player.ObjectId)
+            //        if (aura.Id == AurasDefine.GoringBlade || aura.Id == AurasDefine.BladeOfValor)
+            //            if (aura.TimespanLeft.TotalMilliseconds >= 0)
+            //                dotTime += aura.TimespanLeft.TotalMilliseconds;
+            //    return time;
+            //});
+            if (target.HasMyAura(AurasDefine.GoringBlade))
+                dotTime += (target.GetAuraById(AurasDefine.GoringBlade).TimespanLeft.TotalMilliseconds);
+            if (target.HasMyAura(AurasDefine.BladeOfValor))
+                dotTime += (target.GetAuraById(AurasDefine.BladeOfValor).TimespanLeft.TotalMilliseconds);
 
             return dotTime < 2 * AIRoot.Instance.GetGCDDuration();
         }

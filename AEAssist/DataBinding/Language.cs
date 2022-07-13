@@ -218,7 +218,13 @@ namespace AEAssist
         public string WarriorOnslaught { get; set; }
         public string WarriorInnerRelease { get; set; }
         public string WarriorPrimalRend { get; set; }
-        
+
+        #endregion
+
+        #region RedMage
+        public string Engagement { get; set; }
+        public string Fleche { get; set; }
+        public string ContreSixte { get; set; }
         #endregion
 
         #region Healer
@@ -230,7 +236,9 @@ namespace AEAssist
         public string Toggle_SureCast { get; set; }
         public string Toggle_SwiftCast { get; set; }
         public string Heal { get; set; }
-        public string Half { get; set; }
+        public string Divination { get; set; }
+
+        public string Lightspeed { get; set; }
         public string UseCDPull { get; set; }
 
         #endregion
