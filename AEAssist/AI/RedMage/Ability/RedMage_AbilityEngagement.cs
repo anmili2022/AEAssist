@@ -15,7 +15,7 @@ namespace AEAssist.AI.RedMage.Ability
         }
         public int Check(SpellEntity lastSpell)
         {
-            spell = GetSpell();
+            spell = 0;
             if (spell==0) return 0;
             if (!spell.IsReady())
                 return -1;

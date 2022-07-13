@@ -12,6 +12,8 @@ namespace AEAssist.AI.RedMage.Ability
 
         public int Check(SpellEntity lastSpell)
         {
+            if (!SettingMgr.GetSetting<RedMageSettings>().Fleche)
+                return -5;
             spell = SpellsDefine.Fleche;
             if (!spell.IsReady())
                 return -1;

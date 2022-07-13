@@ -21,6 +21,10 @@ namespace AEAssist.AI.Warrior.Ability
 
             if (Warrior_SpellHelper.OutOfMeleeRange())
                 return -4;
+
+
+            if (!Core.Me.HasMyAura(AurasDefine.SurgingTempest)) return -1;//没有红斩BUFF就不放
+
             return 0;
         }
 
