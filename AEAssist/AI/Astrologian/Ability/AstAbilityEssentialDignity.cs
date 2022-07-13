@@ -13,6 +13,7 @@ namespace AEAssist.AI.Astrologian.Ability
             {
                 return -5;
             }
+            
             if (!SpellsDefine.EssentialDignity.IsReady()) return -1;
             var skillTarget = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && r.CurrentHealthPercent <= 30f);
             if (skillTarget == null)
