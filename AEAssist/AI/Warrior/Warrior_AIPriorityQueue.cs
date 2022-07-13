@@ -3,6 +3,7 @@ using AEAssist.AI.Warrior.GCD;
 using ff14bot.Enums;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
 namespace AEAssist.AI.Warrior
 {
     [Job(ClassJobType.Warrior)]
@@ -12,8 +13,8 @@ namespace AEAssist.AI.Warrior
         {
             //new WarriorGCD_BldeofXX(),
             //new WarriorGCD_HolySpirit(),
-            //new WarriorGCD_Ranged(),
-            new WarriorGCD_PrimalRend(),
+            new WarriorGCD_InnerBeast(),//狂魂-裂石飞环
+            new WarriorGCD_PrimalRend(),//蛮荒崩裂
             new WarriorGCD_Base()
         };
 
@@ -21,9 +22,10 @@ namespace AEAssist.AI.Warrior
         {
             new WarriorAbility_Onslaught(),//猛攻
             new WarriorAbility_Infuriate(),//战嚎
+            new WarriorAbility_Upheaval(),//动乱
             new WarriorAbility_InnerRelease(),//原初的解放
             new WarriorAbility_Equilibrium(),//泰然自若
-            new WarriorAbility_Upheaval(),//动乱
+            
             new WarriorAbility_Orogeny(),//群山隆起
             new WarriorAbility_defense()//自主防御
         };
