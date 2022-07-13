@@ -12,8 +12,10 @@ namespace AEAssist.AI.RedMage.Ability
 
         public int Check(SpellEntity lastSpell)
         {
+            if (!SettingMgr.GetSetting<RedMageSettings>().ContreSixte)
+                return -5;
             spell = SpellsDefine.ContreSixte;
-            if (!RedMage_SpellHelper.CheckUseAOE()) return -1;
+            //if (!RedMage_SpellHelper.CheckUseAOE()) return -1;
             if (!spell.IsReady())
                 return -1;
             //LogHelper.Debug("NO10:" + spell.ToString());

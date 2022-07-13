@@ -218,7 +218,13 @@ namespace AEAssist
         public string WarriorOnslaught { get; set; }
         public string WarriorInnerRelease { get; set; }
         public string WarriorPrimalRend { get; set; }
-        
+
+        #endregion
+
+        #region RedMage
+        public string Engagement { get; set; }
+        public string Fleche { get; set; }
+        public string ContreSixte { get; set; }
         #endregion
 
         #region Healer

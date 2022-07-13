@@ -24,6 +24,7 @@
                         </TabItem.LayoutTransform>
                         <local:SMNSettingView HorizontalAlignment="Center" />
                     </TabItem>
+
                 </TabControl>
             </Border>
         </StackPanel>

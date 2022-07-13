@@ -543,7 +543,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Warrior\Ability\WarriorAbility_Equilibrium.cs" />
     <Compile Include="AI\Warrior\GCD\WarriorGCD_Base.cs" />
     <Compile Include="AI\Warrior\GCD\WarriorGCD_PrimalRend.cs" />
-    <Compile Include="AI\Warrior\GCD\WarriorGCD_Blank.cs" />
+    <Compile Include="AI\Warrior\GCD\WarriorGCD_InnerBeast.cs" />
     <Compile Include="AI\Warrior\GCD\WarriorGCD_Dot.cs" />
     <Compile Include="AI\Warrior\GCD\WarriorGCD_HolySpirit.cs" />
     <Compile Include="AI\Warrior\GCD\WarriorGCD_Ranged.cs" />
@@ -649,7 +649,11 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="View\Overlay\PositionOverlayWindow.xaml.cs">
       <DependentUpon>PositionOverlayWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_RedMageOverlay.cs" />
     <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_WarriorOverlay.cs" />
+    <Compile Include="View\Overlay\RedMageOverlayWindow.xaml.cs">
+      <DependentUpon>RedMageOverlayWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Overlay\WarriorOverlayWindow.xaml.cs">
       <DependentUpon>WarriorOverlayWindow.xaml</DependentUpon>
     </Compile>
@@ -866,6 +870,10 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Resource Include="Resources\Spells\WhiteMage\PresenceofMind.png" />
     <Resource Include="Resources\Spells\WhiteMage\ThinAir.png" />
     <Page Include="View\Overlay\PositionOverlayWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Overlay\RedMageOverlayWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
