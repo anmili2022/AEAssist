@@ -81,14 +81,13 @@
                                   Style="{StaticResource CheckBoxOverlayCustomToggle}"
                                   IsChecked="{Binding AstSettings.Heal,Mode=TwoWay}" />
                         <CheckBox HorizontalContentAlignment="Center"
-                                  Content="{Binding Language.Half}"
+                                  Content="{Binding Language.Divination}"
                                   Style="{StaticResource CheckBoxOverlayCustomToggle}"
-                                  IsChecked="{Binding AstSettings.AstHalfCard,Mode=TwoWay}" />
+                                  IsChecked="{Binding AstSettings.divination,Mode=TwoWay}" />
                         <CheckBox HorizontalContentAlignment="Center"
-                                  Content="{Binding HotkeySetting.CloseBuffBtnName}"
+                                  Content="{Binding Language.Lightspeed}"
                                   Style="{StaticResource CheckBoxOverlayCustomToggle}"
-                                  IsChecked="{Binding Burst,Mode=TwoWay}"
-                                  ToolTip="{Binding Language.ToolTip_Ast_Burst}"/>
+                                  IsChecked="{Binding AstSettings.lightspeed,Mode=TwoWay}" />
                     </WrapPanel>
                     <WrapPanel Margin="10">
                         <Button Style="{StaticResource ImageButton}"
@@ -146,8 +145,19 @@
                             <Image Source="../../Resources/Spells/Ast/AspectedHelios.png"
                                    Stretch="Uniform" />
                         </Button>
+                        
                     </StackPanel>
-<!--
+                    <StackPanel Margin="5" Background="Purple" Orientation="Horizontal">
+                        <Button Style="{StaticResource ImageButton}"
+                                Width="40" Height="40" Margin="6,2,6,2" Name="BeneficII"
+                                ToolTip="Use Benefic II"
+                                Click="UseBeneficII_OnClick">
+                            <Image Source="../../Resources/Spells/Ast/BeneficII.png"
+                                   Stretch="Uniform" />
+                        </Button>
+
+                    </StackPanel>
+                    <!--
                     <StackPanel Margin="5" Background="Purple" Orientation="Horizontal">
                         <Button Style="{StaticResource ImageButton}"
                                 Width="40" Height="40" Margin="6,2,6,2" Name="UseAfflatusRapture"

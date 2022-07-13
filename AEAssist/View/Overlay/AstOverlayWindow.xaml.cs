@@ -63,13 +63,21 @@ namespace AEAssist.View.Overlay
         private void UseHelios_OnClick(object sender, RoutedEventArgs e)
         {
             //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
-            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.Helios.GetSpellEntity();
+            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = new SpellEntity(SpellsDefine.Helios, SpellTargetType.Self);
+                //SpellsDefine.Helios.GetSpellEntity();
         }
         // AspectedHelios
         private void UseAspectedHelios_OnClick(object sender, RoutedEventArgs e)
         {
             //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
-            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.AspectedHelios.GetSpellEntity();
+            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = new SpellEntity(SpellsDefine.AspectedHelios, SpellTargetType.Self);
+            //SpellsDefine.AspectedHelios.GetSpellEntity();
+        }
+        private void UseBeneficII_OnClick(object sender, RoutedEventArgs e)
+        {
+            //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
+            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = new SpellEntity(SpellsDefine.Benefic2, SpellTargetType.Self);
+            //SpellsDefine.AspectedHelios.GetSpellEntity();
         }
         // Assize
         /*private void UseAssize_OnClick(object sender, RoutedEventArgs e)

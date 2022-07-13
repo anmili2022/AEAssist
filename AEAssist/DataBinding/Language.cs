@@ -230,7 +230,9 @@ namespace AEAssist
         public string Toggle_SureCast { get; set; }
         public string Toggle_SwiftCast { get; set; }
         public string Heal { get; set; }
-        public string Half { get; set; }
+        public string Divination { get; set; }
+
+        public string Lightspeed { get; set; }
         public string UseCDPull { get; set; }
 
         #endregion

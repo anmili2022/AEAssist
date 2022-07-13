@@ -273,9 +273,18 @@ namespace AEAssist.AI.Astrologian
                 //var skillTarget = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && r.CurrentHealthPercent <= SettingMgr.GetSetting<WhiteMageSettings>().TetragrammatonHp);
                 if (!SpellsDefine.Draw.IsUnlock()) return null;
                 var spell = new SpellEntity(SpellsDefine.Play, skillTarget.FirstOrDefault() as BattleCharacter);
-                AIRoot.GetBattleData<AstBattleData>().AstNum = AIRoot.GetBattleData<AstBattleData>().AstNum + 1;
                 await spell.DoAbility();
                 //await CastTetragrammaton(skillTarget);
+            }
+            else
+            {
+                if (!Core.Me.HasAura(AurasDefine.TheArrow) && !Core.Me.HasAura(AurasDefine.TheBalance) && !Core.Me.HasAura(AurasDefine.TheBole) && !Core.Me.HasAura(AurasDefine.TheEwer) && !Core.Me.HasAura(AurasDefine.TheSpear) && !Core.Me.HasAura(AurasDefine.TheSpire))
+                {
+                    if (!SpellsDefine.Draw.IsUnlock()) return null;
+                    var spell = new SpellEntity(SpellsDefine.Play, Core.Me as BattleCharacter);
+                    await spell.DoAbility();
+                }
+                
             }
             return null;
         }
@@ -303,6 +312,15 @@ namespace AEAssist.AI.Astrologian
                 await spell.DoAbility();
                 //await CastTetragrammaton(skillTarget);
             }
+            else
+            {
+                if (!Core.Me.HasAura(AurasDefine.TheArrow) && !Core.Me.HasAura(AurasDefine.TheBalance) && !Core.Me.HasAura(AurasDefine.TheBole) && !Core.Me.HasAura(AurasDefine.TheEwer) && !Core.Me.HasAura(AurasDefine.TheSpear) && !Core.Me.HasAura(AurasDefine.TheSpire))
+                {
+                    if (!SpellsDefine.Draw.IsUnlock()) return null;
+                    var spell = new SpellEntity(SpellsDefine.Play, Core.Me as BattleCharacter);
+                    await spell.DoAbility();
+                }
+            }
             return null;
         }
         public static async Task<SpellEntity> CastMeleeCardHalf()
@@ -329,6 +347,15 @@ namespace AEAssist.AI.Astrologian
                 await spell.DoAbility();
                 //await CastTetragrammaton(skillTarget);
             }
+            else
+            {
+                if (!Core.Me.HasAura(AurasDefine.TheArrow) && !Core.Me.HasAura(AurasDefine.TheBalance) && !Core.Me.HasAura(AurasDefine.TheBole) && !Core.Me.HasAura(AurasDefine.TheEwer) && !Core.Me.HasAura(AurasDefine.TheSpear) && !Core.Me.HasAura(AurasDefine.TheSpire))
+                {
+                    if (!SpellsDefine.Draw.IsUnlock()) return null;
+                    var spell = new SpellEntity(SpellsDefine.Play, Core.Me as BattleCharacter);
+                    await spell.DoAbility();
+                }
+            }
             return null;
         }
         public static async Task<SpellEntity> CastRangedCardHalf()
@@ -354,6 +381,15 @@ namespace AEAssist.AI.Astrologian
                 AIRoot.GetBattleData<AstBattleData>().AstNum = AIRoot.GetBattleData<AstBattleData>().AstNum + 1;
                 await spell.DoAbility();
                 //await CastTetragrammaton(skillTarget);
+            }
+            else
+            {
+                if (!Core.Me.HasAura(AurasDefine.TheArrow) && !Core.Me.HasAura(AurasDefine.TheBalance) && !Core.Me.HasAura(AurasDefine.TheBole) && !Core.Me.HasAura(AurasDefine.TheEwer) && !Core.Me.HasAura(AurasDefine.TheSpear) && !Core.Me.HasAura(AurasDefine.TheSpire))
+                {
+                    if (!SpellsDefine.Draw.IsUnlock()) return null;
+                    var spell = new SpellEntity(SpellsDefine.Play, Core.Me as BattleCharacter);
+                    await spell.DoAbility();
+                }
             }
             return null;
         }
@@ -569,6 +605,20 @@ namespace AEAssist.AI.Astrologian
                 //await CastDivineBenison(skillTarget);
                 if (!SpellsDefine.Exaltation.IsUnlock()) return null;
                 var spell = new SpellEntity(SpellsDefine.Exaltation, skillTarget.FirstOrDefault() as BattleCharacter);
+                await spell.DoAbility();
+            }
+            return null;
+
+        }
+        public static async Task<SpellEntity> CastSynastry()
+        {
+
+            if (GroupHelper.InParty)
+            {
+                var skillTarget = GroupHelper.CastableAlliesWithin30.Where(r => r.CurrentHealth > 0 && r.IsTank()).OrderBy(GetCurrentHealthPercent);
+                //await CastDivineBenison(skillTarget);
+                if (!SpellsDefine.Synastry.IsUnlock()) return null;
+                var spell = new SpellEntity(SpellsDefine.Synastry, skillTarget.FirstOrDefault() as BattleCharacter);
                 await spell.DoAbility();
             }
             return null;

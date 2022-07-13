@@ -17,6 +17,9 @@ namespace AEAssist.AI.Astrologian
             new AstGCDDot(),
             //new SageGcdToxikon(),
             //new SageGcdPhlegma(),
+            new AstAspectedAstHelios(),
+            new AstHelios(),
+            new AstAOE(),
             new AstBaseGCD(),
             //new SageGCDDyskrasia(),
             new AstGCDAspectedBenefic(),
@@ -24,9 +27,11 @@ namespace AEAssist.AI.Astrologian
 
         public List<IAIHandler> AbilityQueue { get; } = new List<IAIHandler>()
         {
+            new AstAbilityCelestialOpposition(),
             new AstAbilityLightspeed(),
             new AstAbilityCelestialIntersection(),
             new AstAbilityEssentialDignity(),
+            new AstAbilitySynastry(),
             new AstAbilityExaltation(),
             new AstAbilityAstrodyne(),            
             new AstAbilityDraw(),

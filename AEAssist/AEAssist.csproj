@@ -179,11 +179,13 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     </Compile>
     <Compile Include="AI\AIMgrs.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityAstrodyne.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityCelestialOpposition.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityCelestialIntersection.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityCrownPlay.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityDivination.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityDraw.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityEssentialDignity.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilitySynastry.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityExaltation.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityHalfPlay.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityLightspeed.cs" />
@@ -196,6 +198,9 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Astrologian\AstRotation.cs" />
     <Compile Include="AI\Astrologian\AstSpellHelper.cs" />
     <Compile Include="AI\Astrologian\Ast_AIPriorityQueue.cs" />
+    <Compile Include="AI\Astrologian\GCD\AstAOE.cs" />
+    <Compile Include="AI\Astrologian\GCD\AstAspectedHelios .cs" />
+    <Compile Include="AI\Astrologian\GCD\AstHelios.cs" />
     <Compile Include="AI\Astrologian\GCD\AstBaseGCD.cs" />
     <Compile Include="AI\Astrologian\GCD\AstGCDAscend.cs" />
     <Compile Include="AI\Astrologian\GCD\AstGCDAspectedBenefic.cs" />
@@ -824,6 +829,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="Setting\Setting\BardSettings.cs" />
     <Compile Include="Setting\Setting\GeneralSettings.cs" />
     <Compile Include="Setting\Setting\VersionSetting.cs" />
+    <Resource Include="Resources\Spells\Ast\BeneficII.png" />
     <Resource Include="Resources\Spells\GunBreaker\Camouflage.png" />
     <Resource Include="Resources\Spells\GunBreaker\Nebula.png" />
     <Resource Include="Resources\Spells\GunBreaker\Superbolide.png" />
