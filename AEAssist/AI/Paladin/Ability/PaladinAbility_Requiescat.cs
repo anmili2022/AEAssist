@@ -16,6 +16,7 @@ namespace AEAssist.AI.Paladin.Ability
 
             if (AIRoot.Instance.CloseBurst)
                 return -2;
+
             if (Core.Me.HasAura(AurasDefine.FightOrFight))
             {
                 var fof = Core.Me.GetAuraById(AurasDefine.FightOrFight);
