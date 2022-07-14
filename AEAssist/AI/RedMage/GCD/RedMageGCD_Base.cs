@@ -21,7 +21,7 @@ namespace AEAssist.AI.RedMage.GCD
         static public uint GetSpell()
         {
             var aoeChecker = TargetHelper.CheckNeedUseAOE(5, 5, ConstValue.RedMageAOECount);
-            LogHelper.Info($"AOE is {aoeChecker.ToString()}.");
+            //LogHelper.Info($"AOE is {aoeChecker.ToString()}.");
             if (aoeChecker)//判断是否需要AOE
                 return GetAOE();
             else
@@ -30,7 +30,7 @@ namespace AEAssist.AI.RedMage.GCD
 
         public static uint GetSingleTarget()
         {
-            bool InRange = Core.Me.CanAttackTargetInRange(Core.Me.CurrentTarget, 6);
+            bool InRange = Core.Me.CanAttackTargetInRange(Core.Me.CurrentTarget, 3);
             var spell = ActionManager.LastSpellId;
             var MyAura = Core.Me.HasMyAura(AurasDefine.Dualcast);
             if (spell == SpellsDefine.Jolt2)
@@ -143,18 +143,24 @@ namespace AEAssist.AI.RedMage.GCD
             }
         }
         public int Check(SpellEntity lastSpell)
-        {
-
-            
+        {            
             spell = GetSpell();
             //LogHelper.Debug("look this：" + spell.ToString());
-
+            //LogHelper.Info($"The next spell is   {spell.ToString()},lastspell is {ActionManager.LastSpell.ToString()}.");
             if (spell == SpellsDefine.Verholy && !SpellsDefine.Verholy.IsUnlock()) 
                 spell = SpellsDefine.Jolt;
             if (spell == SpellsDefine.Verflare && !SpellsDefine.Verflare.IsUnlock()) 
                 spell = SpellsDefine.Jolt;
+            if (spell == SpellsDefine.Scatter && !Core.Me.HasMyAura(AurasDefine.Dualcast))
+                return -1;
 
-            LogHelper.Info($"TThere next is   {spell.ToString()},lastspell is {ActionManager.LastSpellId.ToString()}.");
+            if (spell == SpellsDefine.Jolt && Core.Me.HasMyAura(AurasDefine.Dualcast))
+                if (RenMageMana())
+                    spell= SpellsDefine.Veraero;//赤疾风
+                else
+                    spell= SpellsDefine.Verthunder;//赤闪雷
+
+            //LogHelper.Info($"释放技能 ：{spell.ToString()}.");
             if (!spell.IsReady())
                 return -1;
             return 0;

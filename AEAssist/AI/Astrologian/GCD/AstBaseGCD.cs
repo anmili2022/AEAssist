@@ -1,6 +1,7 @@
 ﻿using AEAssist.Define;
 using ff14bot.Managers;
 using System.Threading.Tasks;
+using ff14bot;
 
 namespace AEAssist.AI.Astrologian.GCD
 {
@@ -9,8 +10,15 @@ namespace AEAssist.AI.Astrologian.GCD
         public int Check(SpellEntity lastSpell)
         {
 
-            if (!MovementManager.IsMoving) return 0;
-            return -10;
+            if (MovementManager.IsMoving)
+            {
+                if (!Core.Me.HasAura(AurasDefine.Lightspeed))
+                {
+                    return -1;
+                }
+
+            }
+            return 0;
 
         }
         public async Task<SpellEntity> Run()

@@ -8,7 +8,12 @@ namespace AEAssist.AI.Astrologian.Ability
     {
         public int Check(SpellEntity lastSpell)
         {
+            if (!SettingMgr.GetSetting<AstSettings>().LighSpeedToggle) return -3;
             if (!SpellsDefine.Lightspeed.IsReady()) return -1;
+            if (!SettingMgr.GetSetting<AstSettings>().lightspeed)
+            {
+                return -3;
+            }
             if (AIRoot.Instance.CloseBurst)
                 return -2;
             if (SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds > 3) return -2;

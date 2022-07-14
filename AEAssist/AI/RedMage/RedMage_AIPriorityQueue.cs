@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using AEAssist.AI.RedMage.Ability;
+﻿using AEAssist.AI.RedMage.Ability;
 using AEAssist.AI.RedMage.GCD;
 using ff14bot.Enums;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace AEAssist.AI.RedMage
 {
     [Job(ClassJobType.RedMage)]
@@ -13,19 +14,17 @@ namespace AEAssist.AI.RedMage
             //new RedMageGCD_BldeofXX(),
             //new RedMageGCD_HolySpirit(),
             //new RedMageGCD_Ranged(),
-            //new RedMageGCD_Moulinet(),
+            new RedMageGCD_Moulinet(),
             new RedMageGCD_Base()
         };
 
         public List<IAIHandler> AbilityQueue { get; } = new List<IAIHandler>()
         {
-            //new RedMageAbility_IronWill(),
-            //new RedMageAbility_FightorFlight(),
-            //new RedMageAbility_Requiescat(),
-            //new RedMageAbility_SpiritsWithin(),
-            //new RedMageAbility_CircleofScorn(),
-            //new RedMageAbility_Intervene(),
-            new RedMageAbility_AbilityBase()
+            //促进
+            //鼓励
+            new RedMageAbility_ContreSixte(),//六分反击
+            new RedMageAbility_Engagement(),//交剑
+            new RedMageAbility_Fleche()//飞刺
         };
         public Task<bool> UsePotion()
         {

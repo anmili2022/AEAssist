@@ -19,16 +19,20 @@ namespace AEAssist.AI.Astrologian.Ability
             //LogHelper.Debug("有卡不抽");
             //return -2;
             //}
-            if (ActionResourceManager.Astrologian.Arcana != 0)
-            {
-                if (!(Core.Me.HasAura(AurasDefine.ArrowDrawn) || Core.Me.HasAura(AurasDefine.BalanceDrawn) || Core.Me.HasAura(AurasDefine.SpearDrawn) || Core.Me.HasAura(AurasDefine.BoleDrawn) || Core.Me.HasAura(AurasDefine.EwerDrawn) || Core.Me.HasAura(AurasDefine.SpireDrawn)))
-                {
-                    LogHelper.Debug("没卡抽卡");
-                    return 0;
+            //if (ActionResourceManager.Astrologian.Arcana != 0)
+            //{
+                //if (!(Core.Me.HasAura(AurasDefine.ArrowDrawn) || Core.Me.HasAura(AurasDefine.BalanceDrawn) || Core.Me.HasAura(AurasDefine.SpearDrawn) || Core.Me.HasAura(AurasDefine.BoleDrawn) || Core.Me.HasAura(AurasDefine.EwerDrawn) || Core.Me.HasAura(AurasDefine.SpireDrawn)))
+                //{
+                    //LogHelper.Debug("没卡抽卡");
+                    //return 0;
                     //AurasDefine.TheBalance;
-                }
-                LogHelper.Debug("有卡不抽");
-                return -2;
+                //}
+                //LogHelper.Debug("有卡不抽");
+                //return -2;
+            //}
+            if (ActionResourceManager.CostTypesStruct.offset_C == 0 || ActionResourceManager.CostTypesStruct.offset_C == 112 || ActionResourceManager.CostTypesStruct.offset_C == 128)
+            {
+                return 0;
             }
             /*
             if (Core.Me.HasAura(AurasDefine.ArrowDrawn) || Core.Me.HasAura(AurasDefine.BalanceDrawn) || Core.Me.HasAura(AurasDefine.SpearDrawn) || Core.Me.HasAura(AurasDefine.BoleDrawn) && Core.Me.HasAura(AurasDefine.EwerDrawn) || Core.Me.HasAura(AurasDefine.SpireDrawn))
@@ -44,11 +48,12 @@ namespace AEAssist.AI.Astrologian.Ability
                 //AurasDefine.TheBalance;
             }
             */
-            return 0;
+            return -2;
         }
 
         public async Task<SpellEntity> Run()
         {
+            /*
             LogHelper.Debug("开始");
             LogHelper.Debug(Convert.ToString(SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds));
             LogHelper.Debug(Convert.ToString(ActionResourceManager.Astrologian.Arcana));
@@ -56,6 +61,7 @@ namespace AEAssist.AI.Astrologian.Ability
             LogHelper.Debug(Convert.ToString(ActionResourceManager.Astrologian.UniqueSeals));
             LogHelper.Debug(Convert.ToString(ActionResourceManager.Astrologian.DivinationSeals));
             LogHelper.Debug(Convert.ToString(ActionResourceManager.Astrologian.Timer));
+            */
             var spell = SpellsDefine.Draw.GetSpellEntity();
             if (spell == null) return null;
             var ret = await spell.DoAbility();

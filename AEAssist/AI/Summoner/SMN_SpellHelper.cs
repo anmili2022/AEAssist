@@ -114,6 +114,8 @@ namespace AEAssist.AI.Summoner
                 return false;
             if (!PotionHelper.CheckPotion(SettingMgr.GetSetting<GeneralSettings>().IntPotionId))
                 return false;
+            if (!(ActionResourceManager.Summoner.TranceTimer >= (int)AIRoot.Instance.GetGCDDuration() * 2 && !SMN_SpellHelper.AnyPet() && !SMN_SpellHelper.PhoenixTrance()))
+                return false;
             return true;
         }
         public async static Task<bool> CountDownOpener()

@@ -1,19 +1,16 @@
 ﻿using AEAssist.Define;
 using AEAssist.Helper;
+using ff14bot;
 using System.Threading.Tasks;
 namespace AEAssist.AI.Warrior.GCD
 {
-    public class WarriorGCD_Blank : IAIHandler
+    public class WarriorGCD_InnerBeast : IAIHandler
     {
-        uint spell;
-        static public uint GetSpell()
-        {
-            return 0;
-        }
+        uint spell = SpellsDefine.InnerBeast;//狂魂
         public int Check(SpellEntity lastSpell)
         {
-            spell = GetSpell();
-
+            if (!Core.Me.HasMyAura(AurasDefine.NascentChaos)) return -1;//没有战嚎BUFF就不放
+            if (!Core.Me.HasMyAura(AurasDefine.SurgingTempest)) return -1;//没有红斩BUFF就不放
             if (!spell.IsReady())
                 return -1;
             return 0;

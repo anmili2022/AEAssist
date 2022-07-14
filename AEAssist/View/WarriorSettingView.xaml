@@ -32,8 +32,8 @@
                           HorizontalAlignment="Left"
                           IsChecked="{Binding WarriorSettings.EarlyDecisionMode,Mode=TwoWay}" />
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10">
-                    <Label Content="需要手动释放的技能" Width="180" Height="25" />
-                    <Label Content="猛攻，动乱，摆脱，原初的勇猛" Width="180" Height="25" />
+                    <Label Content="测试中，基本循环没问题了" Width="180" Height="25" />
+                    <Label Content="" Width="180" Height="25" />
                 </StackPanel>
             </StackPanel>
         </TabItem>

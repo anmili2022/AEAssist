@@ -5,7 +5,7 @@ using ff14bot.Enums;
 using System;
 using System.Collections.Generic;
 
-namespace AEAssist.AI.Monk
+namespace AEAssist.AI.Gunbreaker
 {
     [Opener(ClassJobType.Gunbreaker, 90)]
     public class Opener_GunBreaker_90 : IOpener

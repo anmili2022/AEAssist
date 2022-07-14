@@ -1,18 +1,17 @@
-﻿using AEAssist.Define;
+﻿using System.Threading.Tasks;
+using AEAssist.Define;
 using AEAssist.Helper;
-using System.Threading.Tasks;
+using ff14bot;
+
 namespace AEAssist.AI.Warrior.Ability
 {
-    public class WarriorAbility_Blank : IAIHandler
+    public class WarriorAbility_Equilibrium : IAIHandler
     {
-        uint spell;
-        static public uint GetSpell()
-        {
-            return 0;
-        }
+        uint spell = SpellsDefine.Equilibrium;
+
         public int Check(SpellEntity lastSpell)
         {
-            spell = GetSpell();
+            if (Core.Me.CurrentHealthPercent > 30) return -1;
 
             if (!spell.IsReady())
                 return -1;
@@ -26,5 +25,4 @@ namespace AEAssist.AI.Warrior.Ability
             return null;
         }
     }
-
 }

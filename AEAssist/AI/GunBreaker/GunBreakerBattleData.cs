@@ -1,6 +1,7 @@
 ﻿namespace AEAssist.AI.GunBreaker
 {
-    internal class GunBreakerBattleData
+    public class GunBreakerBattleData:IBattleData
     {
+        public bool A_State =false;
     }
 }

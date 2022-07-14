@@ -13,6 +13,10 @@ namespace AEAssist.AI.Astrologian.GCD
     {
         public int Check(SpellEntity lastSpell)
         {
+            if (!SettingMgr.GetSetting<AstSettings>().Heal)
+            {
+                return -5;
+            }
             if (!MovementManager.IsMoving) return -1;
             return 0;
         }

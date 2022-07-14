@@ -28,10 +28,17 @@ namespace AEAssist
         }
         public int Dot_TimeLeft { get; set; } = ConstValue.AuraTick;
         public int TTK_Aero { get; set; }
-
+        public bool divination { get; set; } = true;
+        public bool lightspeed { get; set; } = true;
         public int LucidDreamingTrigger { get; set; } = ConstValue.LucidDreamingDefaultRefresh;
         public bool LucidDreamingToggle { get; set; } = true;
         public bool SwiftResToggle { get; set; } = true;
+
+        public bool DivinationToggle { get; set; } = true;
+        public bool LighSpeedToggle { get; set; } = true;
+        public bool NeutralSectToggle { get; set; } = true;
+        public bool HoroScopeToggle { get; set; } = true;
+        
         public bool AstHalfCard { get; set; } = true;
         public bool Heal { get; set; } = true;
         public bool EarlyDecisionMode { get; set; }
