@@ -12,7 +12,7 @@ namespace AEAssist.AI.GunBreaker.GCD
         {
             if (ActionResourceManager.Gunbreaker.Cartridge == 0)
                 return -5;
-            if (TargetHelper.CheckNeedUseAOEByMe(5, 5, 2))
+            if (TargetHelper.CheckNeedUseAOEByMe(5, 5, 3))
                 return -4;
             //子弹将要溢出
             if (ActionManager.LastSpell.Id == SpellsDefine.BrutalShell)
@@ -29,6 +29,8 @@ namespace AEAssist.AI.GunBreaker.GCD
             //在无情中 泻子弹
             if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.NoMercy))
             {
+                if (SpellsDefine.GnashingFang.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds < 5000)
+                    return -10;
                 if (Core.Me.ClassLevel < 90)
                     return 5;
                 if (SpellsDefine.DoubleDown.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds == 0 && ActionResourceManager.Gunbreaker.Cartridge > 1)
@@ -53,6 +55,8 @@ namespace AEAssist.AI.GunBreaker.GCD
         public async Task<SpellEntity> Run()
         {
             var spell = SpellsDefine.BurstStrike.GetSpellEntity();
+            if (TargetHelper.GetNearbyEnemyCountTest(Core.Me,5,5) == 2)
+                spell=SpellsDefine.FatedCircle.GetSpellEntity();
             if (await spell.DoGCD())
                 return spell;
             return null;
