@@ -131,12 +131,12 @@
   "Toggle_GNB_Open": "起手远程/突进",
   "Toggle_GNB_RoughDivide": "保留一层突进",
 
-  "WarriorDefenseMode": "自动防御"
-  "WarriorOnslaught": "猛攻"
-  "WarriorInnerRelease": "原初的解放"
-  "WarriorPrimalRend": "蛮荒崩裂"
+  "WarriorDefenseMode": "自动防御",
+  "WarriorOnslaught": "猛攻",
+  "WarriorInnerRelease": "原初的解放",
+  "WarriorPrimalRend": "蛮荒崩裂",
   
-  "Engagement": "交剑"
-  "Fleche": "飞刺"
+  "Engagement": "交剑",
+  "Fleche": "飞刺",
   "ContreSixte": "六分反击"
 }
