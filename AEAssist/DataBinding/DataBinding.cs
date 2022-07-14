@@ -110,6 +110,7 @@ namespace AEAssist
             UseSoulGauge = true;
             UseAOE = true;
             UseFlourish = true;
+            UseSaberDance = true;
             LazyOn = false;
             TimeStr = "";
             UseBattery = true;

@@ -14,7 +14,7 @@ namespace AEAssist.AI.Monk.GCD
         {
             if (ActionResourceManager.Monk.BlitzTimer != TimeSpan.Zero)
             {
-                AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo = MonkNadiCombo.None;
+                AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo = MonkNadiCombo.None;
                 return -2;
             }
             if (SpellsDefine.PerfectBalance.RecentlyUsed() || Core.Me.HasAura(AurasDefine.PerfectBalance))

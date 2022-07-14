@@ -1,6 +1,5 @@
 ﻿using AEAssist.Define;
 using AEAssist.Helper;
-using AEAssist.Rotations.Core;
 using ff14bot;
 using ff14bot.Enums;
 using ff14bot.Managers;
@@ -33,19 +32,15 @@ namespace AEAssist.AI.Monk
             {
                 return;
             }
-
-            if (Core.Me.HasAura(AurasDefine.RiddleOfFire) &&
-                !Core.Me.HasMyAuraWithTimeleft(AurasDefine.RiddleOfFire, 3000))
+            if (AIRoot.GetBattleData<MonkBattleData>().RoFBH2)
             {
-                AIRoot.GetBattleData<MonkBattleData>().RoFBH2 = false;
-                AIRoot.GetBattleData<MonkBattleData>().CurrentBurst = MonkBurst.None;
-            }
+                if (Core.Me.HasAura(AurasDefine.RiddleOfFire) &&
+                    !Core.Me.HasMyAuraWithTimeleft(AurasDefine.RiddleOfFire, 3000))
+                {
+                    AIRoot.GetBattleData<MonkBattleData>().RoFBH2 = false;
+                }
 
-            if (!Core.Me.HasAura(AurasDefine.RiddleOfFire) && SpellsDefine.RiddleofFire.CoolDownInGCDs(7))
-            {
-                IsEvenBurst();
             }
-
             if (!Core.Me.HasTarget)
             {
                 MeleePosition.Intance.SetPositionToNone();
@@ -75,7 +70,7 @@ namespace AEAssist.AI.Monk
 
             if (SpellsDefine.PerfectBalance.RecentlyUsed() || Core.Me.HasMyAura(AurasDefine.PerfectBalance))
             {
-                var currentNadi = AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo;
+                var currentNadi = AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo;
                 if (currentNadi == MonkNadiCombo.Lunar)
                 {
                     MeleePosition.Intance.SetPositionToNone(priority);
@@ -108,7 +103,6 @@ namespace AEAssist.AI.Monk
                     MeleePosition.Intance.ShowMsg();
                     return;
                 }
-
                 if (target.HasMyAuraWithTimeleft(AurasDefine.Demolish, 6000) == false)
                 {
                     MeleePosition.Intance.SetPositionToBack(priority);
@@ -123,46 +117,11 @@ namespace AEAssist.AI.Monk
                 MeleePosition.Intance.ShowMsg();
                 return;
             }
-
             MeleePosition.Intance.SetPositionToSide(priority);
             MeleePosition.Intance.ShowMsg();
             return;
         }
 
-        public static void IsEvenBurst()
-        {
-            // if we have two stacks of pb comes up during rof, then it is even
-            // rof -> 20s -> 11 gcd
-            // rof CD + 7 gcd -> how many stacks of pb
-            // if 2 > even burst
-            // if 1 > odd burst
-            if (AIRoot.GetBattleData<MonkBattleData>().CurrentBurst != MonkBurst.None)
-            {
-                return;
-            }
-            int gcdsUntilRof = SpellsDefine.RiddleofFire.AbilityComesInNextXGCDsWindow();
-            int gcdsUntilDeadline = gcdsUntilRof + 7;
-            var baseGCDTime = RotationManager.Instance.GetBaseGCDSpell().AdjustedCooldown.TotalMilliseconds;
-            var delta = TimeHelper.Now() - AIRoot.GetBattleData<BattleData>().lastCastTime;
-            var timeUntilNextGCD = baseGCDTime - delta;
-            var msUntilDeadline = timeUntilNextGCD + baseGCDTime * gcdsUntilDeadline;
-            if (SpellsDefine.PerfectBalance.GetSpellEntity().SpellData.Cooldown.TotalMilliseconds < msUntilDeadline)
-            {
-                if (AIRoot.GetBattleData<MonkBattleData>().CurrentBurst == MonkBurst.None)
-                {
-                    AIRoot.GetBattleData<MonkBattleData>().CurrentBurst = MonkBurst.Even;
-                }
-            }
-            else
-            {
-                if (AIRoot.GetBattleData<MonkBattleData>().CurrentBurst == MonkBurst.None)
-                {
-                    AIRoot.GetBattleData<MonkBattleData>().CurrentBurst = MonkBurst.Odd;
-                }
-            }
-            return;
-        }
-        
         public static bool InCoeurlForm()
         {
             if (Core.Me.HasMyAura(AurasDefine.CoeurlForm))
@@ -276,8 +235,7 @@ namespace AEAssist.AI.Monk
                 }
 
                 //Pre Rof
-                if (!Core.Me.HasMyAura(AurasDefine.RiddleOfFire) &&
-                    SpellsDefine.RiddleofFire.AbilityCoolDownInNextXGCDsWindow(5))
+                if (!Core.Me.HasMyAura(AurasDefine.RiddleOfFire) && SpellsDefine.RiddleofFire.AbilityCoolDownInNextXGCDsWindow(5))
                 {
                     //Even Window
                     if (SpellsDefine.Brotherhood.AbilityCoolDownInNextXGCDsWindow(10))
@@ -307,6 +265,7 @@ namespace AEAssist.AI.Monk
                             }
                         }
                     }
+
                 }
 
                 if (Core.Me.HasMyAura(AurasDefine.RiddleOfFire))
@@ -442,18 +401,12 @@ namespace AEAssist.AI.Monk
             {
                 return false;
             }
-
-            if (TargetHelper.CheckNeedUseAOEByMe(5, 5, 5))
-            {
-                return false;
-            }
-
             var target = Core.Me.CurrentTarget as Character;
 
             if (DotBlacklistHelper.IsBlackList(target))
                 return false;
 
-            if (TTKHelper.IsTargetTTK(target, 11, false))
+            if (TTKHelper.IsTargetTTK(target))
             {
                 return false;
             }
@@ -625,7 +578,7 @@ namespace AEAssist.AI.Monk
         {
             if (!SpellsDefine.ElixirField.IsUnlock())
             {
-                AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo = MonkNadiCombo.Lunar;
+                AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo = MonkNadiCombo.Lunar;
             }
             else
             {
@@ -633,33 +586,33 @@ namespace AEAssist.AI.Monk
                 if (ActionResourceManager.Monk.ActiveNadi == ActionResourceManager.Monk.Nadi.Both ||
                     ActionResourceManager.Monk.ActiveNadi == ActionResourceManager.Monk.Nadi.Solar)
                 {
-                    AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo = MonkNadiCombo.Lunar;
+                    AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo = MonkNadiCombo.Lunar;
                 }
                 //有阴打阳
                 else if (ActionResourceManager.Monk.ActiveNadi == ActionResourceManager.Monk.Nadi.Lunar)
                 {
-                    AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo = MonkNadiCombo.Solar;
+                    AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo = MonkNadiCombo.Solar;
                 }
                 //什么都没有 
                 //todo 如果时间都够 怎么接下来打阳
                 else if (ActionResourceManager.Monk.ActiveNadi == ActionResourceManager.Monk.Nadi.None &&
-                         AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo == MonkNadiCombo.None)
+                         AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo == MonkNadiCombo.None)
                 {
                     //如果双buff时间都够 打阴
                     if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.DisciplinedFist, 7000) &&
                         target.HasMyAuraWithTimeleft(AurasDefine.Demolish, 9000))
                     {
-                        AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo = MonkNadiCombo.Lunar;
+                        AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo = MonkNadiCombo.Lunar;
                     }
                     //如果时间不够打阳
                     else
                     {
-                        AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo = MonkNadiCombo.Solar;
+                        AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo = MonkNadiCombo.Solar;
                     }
                 }
             }
 
-            if (AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo == MonkNadiCombo.Solar)
+            if (AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo == MonkNadiCombo.Solar)
             {
                 return await UseSolarNadiCombo(target);
             }

@@ -47,7 +47,7 @@ namespace AEAssist.AI.Monk.Ability
             }
 
             if (Core.Me.HasAura(AurasDefine.PerfectBalance) &&
-                AIRoot.GetBattleData<MonkBattleData>().CurrentNadiCombo == MonkNadiCombo.Solar)
+                AIRoot.GetBattleData<MonkBattleData>().CurrentMonkNadiCombo == MonkNadiCombo.Solar)
             {
                 if (!ActionResourceManager.Monk.MastersGauge.Contains(ActionResourceManager.Monk.Chakra.OpoOpo))
                 {
