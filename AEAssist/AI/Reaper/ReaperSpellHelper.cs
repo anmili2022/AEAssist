@@ -241,22 +241,22 @@ namespace AEAssist.AI.Reaper
         public static bool GibbetPOSCheck()
         {
             // Gibbet
-            if (Core.Me.HasAura(AurasDefine.EnhancedGibbet) && Core.Me.CurrentTarget.IsFlanking)
+            if (Core.Me.HasAura(AurasDefine.EnhancedGibbet) && !Core.Me.CurrentTarget.IsFlanking)
             {
-                return false;
+                return true;
             }
-
-            return true;
+            return false;
         }
         
         public static bool GallowsPOSCheck()
         {
-            // Gibbet
-            if (Core.Me.HasAura(AurasDefine.EnhancedGallows) && Core.Me.CurrentTarget.IsBehind)
+            // Gallows
+            if (Core.Me.HasAura(AurasDefine.EnhancedGallows) && !Core.Me.CurrentTarget.IsBehind)
             {
-                return false;
+                return true;
             }
-            return true;
+            
+            return false;
         }
     }
 }
