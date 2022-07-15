@@ -26,14 +26,14 @@ namespace AEAssist.AI.Reaper
                 new CombatMessageStrategy(300,
                     "GALLOW => BEHIND !!!",
                     "/AEAssist;component/Resources/Images/General/ArrowDownHighlighted.png",
-                    () => Core.Me.HasAura(AurasDefine.EnhancedGallows))
+                    ReaperSpellHelper.GallowsPOSCheck)
             );
 
             CombatMessageManager.RegisterMessageStrategy(
                 new CombatMessageStrategy(400,
                     "GIBBET => SIDE !!!",
                     "/AEAssist;component/Resources/Images/General/ArrowSidesHighlighted.png",
-                    () => Core.Me.HasAura(AurasDefine.EnhancedGibbet))
+                    ReaperSpellHelper.GibbetPOSCheck)
             );
         }
     }
