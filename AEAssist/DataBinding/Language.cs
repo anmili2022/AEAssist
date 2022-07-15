@@ -227,6 +227,17 @@ namespace AEAssist
         public string ContreSixte { get; set; }
         #endregion
 
+        #region Dragoon
+        public string LifeSurge { get; set; }
+        public string LanceCharge { get; set; }
+        public string SpineshatterDive { get; set; }
+        public string DragonfireDive { get; set; }
+        public string BattleLitany { get; set; }
+        public string Jump { get; set; }
+        public string WyrmwindThrust { get; set; }
+        public string Geirskogul { get; set; }
+        #endregion
+
         #region Healer
 
         // Casters Roles Defaults
