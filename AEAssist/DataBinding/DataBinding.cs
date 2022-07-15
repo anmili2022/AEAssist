@@ -66,6 +66,7 @@ namespace AEAssist
         public MeleePosition MeleePosition => MeleePosition.Intance;
         public WarriorSettings WarriorSettings => SettingMgr.GetSetting<WarriorSettings>();
         public RedMageSettings RedMageSettings => SettingMgr.GetSetting<RedMageSettings>();
+        public DragoonSettings DragoonSettings => SettingMgr.GetSetting<DragoonSettings>();
 
         public HotkeySetting HotkeySetting => SettingMgr.GetSetting<HotkeySetting>();
         public AEAssist.View.Hotkey.HotkeyManager HotkeyManager => AEAssist.View.Hotkey.HotkeyManager.Instance;
