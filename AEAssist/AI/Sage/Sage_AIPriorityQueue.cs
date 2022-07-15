@@ -13,12 +13,12 @@ namespace AEAssist.AI.Sage
         public List<IAIHandler> GCDQueue { get; } = new List<IAIHandler>()
         {
             new SageGCDEgeiro(),
+            new SageGCDDyskrasia(),
             new SageGcdDot(),
             new SageGcdToxikon(),
             new SageGcdPhlegma(),
             new SageGCDEukrasianDiagnosis(),
             new SageBaseGCD(),
-            new SageGCDDyskrasia(),
         };
 
         public List<IAIHandler> AbilityQueue { get; } = new List<IAIHandler>()

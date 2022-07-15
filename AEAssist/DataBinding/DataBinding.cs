@@ -111,6 +111,7 @@ namespace AEAssist
             UseSoulGauge = true;
             UseAOE = true;
             UseFlourish = true;
+            UseSaberDance = true;
             LazyOn = false;
             TimeStr = "";
             UseBattery = true;
@@ -173,6 +174,7 @@ namespace AEAssist
         #region Dancer
 
         public bool UseFlourish { get; set; } = true;
+        public bool UseSaberDance { get; set; } = true;
 
         #endregion
 

@@ -31,10 +31,6 @@ namespace AEAssist.AI.Sage.GCD
             {
                 return true;
             }
-            //if (PotionHelper.CheckPotion(SettingMgr.GetSetting<GeneralSettings>().MindPotionId))
-            //{
-                //return true;
-            //}
             return false;
         }
         public int Check(SpellEntity lastSpell)
