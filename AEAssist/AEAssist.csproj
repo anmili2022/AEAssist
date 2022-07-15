@@ -384,6 +384,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Paladin\Paladin_BattleData.cs" />
     <Compile Include="AI\Paladin\Paladin_Rotation.cs" />
     <Compile Include="AI\Paladin\Paladin_SpellHelper.cs" />
+    <Compile Include="AI\Reaper\OpenerReaperEarlyEnshroud90.cs" />
     <Compile Include="AI\Reaper\ReaperCombatMessageStrategy.cs" />
     <Compile Include="AI\Reaper\SpellEvent\SpellEvent_EnshourdGCD.cs" />
     <Compile Include="AI\Reaper\SpellEvent\SpellEvent_Lemure.cs" />
@@ -422,7 +423,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Sage\GCD\SageGCDPhlegma.cs" />
     <Compile Include="AI\Sage\GCD\SageGCDToxikon.cs" />
     <Compile Include="AI\Sage\OpenerSageStandard90.cs" />
-    <Compile Include="AI\Sage\OpenerSageSagePneuma90cs.cs" />
+    <Compile Include="AI\Sage\OpenerSagePneuma90.cs" />
     <Compile Include="AI\Sage\SageBattleData.cs" />
     <Compile Include="AI\Sage\SageRotation.cs" />
     <Compile Include="AI\Sage\SageSpellHelper.cs" />
