@@ -190,6 +190,23 @@ namespace AEAssist
         public bool GNBOpen { get; set; } = true;
         public bool GNBRoughDivide { get; set; } = true;
         public bool GNBManualControl { get; set; } = false;
+
+        public float gnbdis;
+        private string gNBdisg;
+
+        public float Gnbdis
+        {
+            get
+            {
+                return gnbdis;
+            }
+            set
+            {
+                gnbdis = value;
+                LogHelper.Info($"{GNBdisg}");
+            }
+        }
+        public string GNBdisg { get => gNBdisg; set => gNBdisg = value; }
         #endregion
 
     }
