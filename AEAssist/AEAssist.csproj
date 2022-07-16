@@ -456,10 +456,12 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Samurai\SpellQueue\SpellQueueSlot_KaeshiSetsugekka.cs" />
     <Compile Include="AI\Samurai\SpellQueue\SpellQueue_OgiNamikiriCombo.cs" />
     <Compile Include="AI\Samurai\SpellQueue\SpellQueue_SetsugekkaCombo.cs" />
+    <Compile Include="AI\Scholar\Ability\Scholar_ChainStratagem.cs" />
     <Compile Include="AI\Scholar\Ability\Scholar_EnergyDrain2.cs" />
     <Compile Include="AI\Scholar\Ability\Scholar_Aetherflow.cs" />
     <Compile Include="AI\Scholar\Ability\Scholar_Dissipation.cs" />
     <Compile Include="AI\Scholar\Ability\Scholar_LucidDreaming.cs" />
+    <Compile Include="AI\Scholar\GCD\ScholarGCD_SummonEos.cs" />
     <Compile Include="AI\Scholar\GCD\ScholarGCD_Dot.cs" />
     <Compile Include="AI\Scholar\GCD\ScholarGCD_Base.cs" />
     <Compile Include="AI\Scholar\Scholar_AIPriorityQueue.cs" />
