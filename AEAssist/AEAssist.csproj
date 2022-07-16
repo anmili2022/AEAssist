@@ -667,6 +667,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="View\BardSettingView.xaml.cs">
       <DependentUpon>BardSettingView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Converters\RangeToBooleanConverter.cs" />
     <Compile Include="View\Overlay\PositionOverlayWindow.xaml.cs">
       <DependentUpon>PositionOverlayWindow.xaml</DependentUpon>
     </Compile>
