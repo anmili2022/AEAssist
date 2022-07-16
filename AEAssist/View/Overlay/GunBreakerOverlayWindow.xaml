@@ -18,8 +18,16 @@
             </ResourceDictionary.MergedDictionaries>
 
             <BooleanToVisibilityConverter x:Key="BoolToVis" />
-            
+
             <view:RangeToBooleanConverter x:Key="conv" />
+            <Style x:Key="TextBlock1" TargetType="{x:Type TextBlock}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=Opacity, RelativeSource={RelativeSource Self}, Converter={StaticResource conv}}"
+                                             Value="True">
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
             <SolidColorBrush x:Key="ProgressBar.Progress" Color="#FF06B025"/>
             <SolidColorBrush x:Key="ProgressBar.Background" Color="#FFE6E6E6"/>
             <SolidColorBrush x:Key="ProgressBar.Border" Color="#FFBCBCBC"/>
@@ -53,14 +61,15 @@
                                 </VisualStateManager.VisualStateGroups>
                                 <Border Background="Green" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                                     <Grid>
-                                        <Rectangle Fill="Green" HorizontalAlignment="Left"/>
-                                        <Rectangle Fill="Yellow" Width="50" HorizontalAlignment="Right"/>
+                                        <Rectangle Fill="#FF75E475" HorizontalAlignment="Left" Width="130"/>
+                                        <Rectangle Fill="Yellow" HorizontalAlignment="Right" Width="90"/>
+                                        <Rectangle Fill="Red" Width="70" HorizontalAlignment="Right"/>
                                     </Grid>
                                 </Border>
-                                <Rectangle x:Name="PART_Track"/>
-                                <Grid x:Name="PART_Indicator" ClipToBounds="true" HorizontalAlignment="Left">
+                                <Rectangle x:Name="PART_Track" d:IsHidden="True"/>
+                                <Grid x:Name="PART_Indicator" ClipToBounds="true" HorizontalAlignment="Left" d:IsHidden="True">
                                     <Rectangle x:Name="Indicator" Fill="Green"/>
-                                    <Rectangle x:Name="Animation" Fill="Yellow" RenderTransformOrigin="0.5,0.5">
+                                    <Rectangle x:Name="Animation" Fill="Green" RenderTransformOrigin="0.5,0.5">
                                         <Rectangle.RenderTransform>
                                             <TransformGroup>
                                                 <ScaleTransform/>
@@ -83,10 +92,6 @@
                                 <Trigger Property="IsIndeterminate" Value="true">
                                     <Setter Property="Visibility" TargetName="Indicator" Value="Collapsed"/>
                                 </Trigger>
-                                <DataTrigger  Binding="{Binding Path=Value, RelativeSource={RelativeSource Self},Converter={StaticResource conv}}" 
-                                              Value="True">
-                                    <Setter Property="Fill" TargetName="Indicator" Value="red" />
-                                </DataTrigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Setter.Value>
@@ -110,12 +115,12 @@
             </Border.Background>
             <StackPanel>
                 <Grid>
-                    <ProgressBar Style="{DynamicResource ProgressBarStyle1}" x:Name = "MeleeDistance" Value = "{Binding MeleePosition.TargetDistance}" Margin = "5" Maximum = "400"
+                    <ProgressBar Style="{DynamicResource ProgressBarStyle1}" x:Name = "MeleeDistance" Value = "{Binding MeleePosition.TargetDistance}" Margin = "5" Maximum = "440"
                          Height = "30" IsIndeterminate = "False" 
                          BorderThickness="3"
                          Width = "220">
                     </ProgressBar>
-                    <TextBlock Text="{Binding GNBdisg,Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <TextBlock x:Name="test" Text="{Binding GNBdisg,Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="1">
                         <TextBlock.Background>
                             <SolidColorBrush Color="#FFF3E7E7" Opacity="0"/>
                         </TextBlock.Background>

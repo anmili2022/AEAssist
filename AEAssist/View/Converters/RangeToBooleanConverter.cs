@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
+using AEAssist.Helper;
 
 namespace AEAssist.View
 {
@@ -12,7 +13,8 @@ namespace AEAssist.View
     {
         public object Convert(object value, Type targetType,object parameter, CultureInfo culture)
         {
-            return ((double)value) < 3.0;
+            LogHelper.Info("比较值{value}");
+            return ((double)value) < 300;
         }
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
