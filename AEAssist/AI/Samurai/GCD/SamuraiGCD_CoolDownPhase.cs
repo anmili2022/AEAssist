@@ -26,7 +26,7 @@ namespace AEAssist.AI.Samurai.GCD
             // {
             //     return -1;
             // }
-
+            LogHelper.Info("We are in COOLDOWn NOW");
             return 0;
         }
 
