@@ -11,6 +11,7 @@ namespace AEAssist.AI.Samurai.GCD
             var bd = AIRoot.GetBattleData<SamuraiBattleData>();
             if (bd.CurrPhase == SamuraiPhase.EvenMinutesBurstPhase)
             {
+                LogHelper.Info("We are in EVEN BURST NOW");
                 return 0;
             }
 
