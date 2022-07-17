@@ -18,10 +18,16 @@ namespace AEAssist.AI.Samurai.Ability
                     return 0;
                 }
             }
+
+            if (AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase == SamuraiPhase.CooldownPhase)
+            {
+                return -1;
+            }
             
             if (!SpellsDefine.MeikyoShisui.IsReady())
                 return -14;
-            if (Core.Me.HasAura(AurasDefine.MeikyoShisui) || SpellsDefine.MeikyoShisui.RecentlyUsed())
+            
+            if (Core.Me.HasAura(AurasDefine.MeikyoShisui))
             {
                 return -13;
             }
@@ -29,8 +35,9 @@ namespace AEAssist.AI.Samurai.Ability
             if (AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase == SamuraiPhase.OddMinutesBurstPhase  
                 || AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase == SamuraiPhase.EvenMinutesBurstPhase)
             {
-                if (SpellsDefine.MeikyoShisui.GetSpellEntity().SpellData.Charges > 1)
+                if (SpellsDefine.MeikyoShisui.GetSpellEntity().SpellData.Charges >= 1)
                 {
+                    LogHelper.Info("Use Meikyo...");
                     return 0;
                 }
                 
