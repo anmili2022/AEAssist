@@ -34,7 +34,9 @@ namespace AEAssist.AI.Samurai.Ability
             var spell = SpellsDefine.HissatsuSenei.GetSpellEntity();
             if (spell == null) return null;
             if (await spell.DoAbility())
+            {
                 return spell;
+            }
             return null;
         }
     }
