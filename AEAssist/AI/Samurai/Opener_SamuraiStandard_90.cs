@@ -29,7 +29,7 @@ namespace AEAssist.AI.Samurai
             // if (PartyManager.NumMembers <= 4 && !Core.Me.CurrentTarget.IsDummy())
             //     return -5;
 
-            return -1;
+            return 0;
         }
 
         public List<Action<SpellQueueSlot>> Openers { get; } = new List<Action<SpellQueueSlot>>()
