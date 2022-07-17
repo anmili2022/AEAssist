@@ -23,6 +23,11 @@ namespace AEAssist.AI.Samurai.Ability
                 AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase = SamuraiPhase.CooldownPhase;
                 return -1;
             }
+
+            if (AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase == SamuraiPhase.EvenMinutesBurstPhase)
+            {
+                return 0;
+            }
             
             if (SpellsDefine.Ikishoten.GetSpellEntity().IsReady() &&
                 ActionResourceManager.Samurai.Kenki < 50)
