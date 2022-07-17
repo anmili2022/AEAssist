@@ -40,7 +40,6 @@ namespace AEAssist.AI.Samurai.GCD
             var ret = await spell.DoGCD();
             if (ret)
             {
-                AIRoot.GetBattleData<SamuraiBattleData>().higanBanaCount++;
                 return spell;
             }
             return null;

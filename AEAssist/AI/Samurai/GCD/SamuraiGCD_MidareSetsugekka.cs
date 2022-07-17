@@ -9,7 +9,8 @@ namespace AEAssist.AI.Samurai.GCD
     {
         public int Check(SpellEntity lastSpell)
         {
-            LogHelper.Info("Current Phase: " + AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase);
+            // LogHelper.Info("Current Phase: " + AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase);
+            // LogHelper.Info("MidareCount = " + AIRoot.GetBattleData<SamuraiBattleData>().MidareSetsugekkaCount);
             if (SamuraiSpellHelper.SenCounts() == 3)
             {
                 if (AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase == SamuraiPhase.CooldownPhase)
@@ -28,7 +29,7 @@ namespace AEAssist.AI.Samurai.GCD
                 
                 if (AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase == SamuraiPhase.OddMinutesBurstPhase)
                 {
-                    if (AIRoot.GetBattleData<SamuraiBattleData>().MidareSetsugekkaCount < 2)
+                    if (AIRoot.GetBattleData<SamuraiBattleData>().MidareSetsugekkaCount < 1)
                     {
                         AIRoot.GetBattleData<SamuraiBattleData>().MidareSetsugekkaCount++;
                         return 0;   
@@ -41,6 +42,17 @@ namespace AEAssist.AI.Samurai.GCD
                 }
                 
                 // otherwise it's even.
+                
+                if (AIRoot.GetBattleData<SamuraiBattleData>().MidareSetsugekkaCount > 1)
+                {
+                    AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase = SamuraiPhase.CooldownPhase;
+                    
+                    // reset count
+                    AIRoot.GetBattleData<SamuraiBattleData>().MidareSetsugekkaCount = 0;
+                    return -1;
+                }
+                
+                AIRoot.GetBattleData<SamuraiBattleData>().MidareSetsugekkaCount++;
                 return 0;
             }
 
@@ -49,14 +61,11 @@ namespace AEAssist.AI.Samurai.GCD
 
         public async Task<SpellEntity> Run()
         {
-            var spell = SamuraiSpellHelper.CoolDownPhaseGCD(Core.Me.CurrentTarget);
+            var spell = SamuraiSpellHelper.GetMidareSetsuGekka();
             if (spell == null)
                 return null;
-            var ret = await SamuraiSpellHelper.GetMidareSetsuGekka().DoGCD();
-            if (ret)
-                return spell;
-            return null;
-            
+            var ret = await spell.DoGCD();
+            return ret ? spell : null;
         }
     }
 }
