@@ -10,7 +10,8 @@ namespace AEAssist.AI.Astrologian.Ability
     {
         public int Check(SpellEntity lastSpell)
         {
-
+            if (AEAssist.DataBinding.Instance.FinalBurst)
+                return 0;
             if (!SpellsDefine.Play.IsReady()) return -1;
             if (AIRoot.Instance.CloseBurst)
                 return -2;

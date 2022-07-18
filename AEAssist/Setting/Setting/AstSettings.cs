@@ -41,6 +41,7 @@ namespace AEAssist
         
         public bool AstHalfCard { get; set; } = true;
         public bool Heal { get; set; } = true;
+        public bool GcdHeal { get; set; } = true;
         public bool EarlyDecisionMode { get; set; }
         public string AstOpener { get; set; } = "Default";
         public int AstResPriority { get; set; } = 0;
