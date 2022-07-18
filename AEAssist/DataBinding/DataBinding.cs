@@ -53,7 +53,7 @@ namespace AEAssist
         public MCHSettings MCHSettings => SettingMgr.GetSetting<MCHSettings>();
 
         public SamuraiSettings SamuraiSettings => SettingMgr.GetSetting<SamuraiSettings>();
-
+        public ScholarSettings SchSettings => SettingMgr.GetSetting<ScholarSettings>();
         public SageSettings SageSettings => SettingMgr.GetSetting<SageSettings>();
         public WhiteMageSettings WhiteMageSettings => SettingMgr.GetSetting<WhiteMageSettings>();
         public AstSettings AstSettings => SettingMgr.GetSetting<AstSettings>();

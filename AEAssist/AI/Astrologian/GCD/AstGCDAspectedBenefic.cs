@@ -12,11 +12,7 @@ namespace AEAssist.AI.Astrologian.GCD
     internal class AstGCDAspectedBenefic:IAIHandler
     {
         public int Check(SpellEntity lastSpell)
-        {
-            if (!SettingMgr.GetSetting<AstSettings>().GcdHeal)
-            {
-                return -5;
-            }
+        {            
             if (!MovementManager.IsMoving) return -1;
             return 0;
         }

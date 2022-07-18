@@ -12,6 +12,8 @@ namespace AEAssist.AI.Astrologian.Ability
         {
 
             if (!SpellsDefine.Play.IsReady()) return -1;
+            if (AEAssist.DataBinding.Instance.FinalBurst)
+                return 0;
             if (AIRoot.Instance.CloseBurst)
                 return -2;
             if (ActionResourceManager.CostTypesStruct.offset_C == 0 || ActionResourceManager.CostTypesStruct.offset_C == 112 || ActionResourceManager.CostTypesStruct.offset_C == 128) return -2;
