@@ -83,11 +83,11 @@
                         <CheckBox HorizontalContentAlignment="Center"
                                   Content="{Binding Language.Divination}"
                                   Style="{StaticResource CheckBoxOverlayCustomToggle}"
-                                  IsChecked="{Binding AstSettings.divination,Mode=TwoWay}" />
+                                  IsChecked="{Binding AstSettings.Divination,Mode=TwoWay}" />
                         <CheckBox HorizontalContentAlignment="Center"
                                   Content="{Binding Language.Lightspeed}"
                                   Style="{StaticResource CheckBoxOverlayCustomToggle}"
-                                  IsChecked="{Binding AstSettings.lightspeed,Mode=TwoWay}" />
+                                  IsChecked="{Binding AstSettings.Lightspeed,Mode=TwoWay}" />
                         <CheckBox HorizontalContentAlignment="Center"
                                   Content="{Binding Language.GcdHeal}"
                                   Style="{StaticResource CheckBoxOverlayCustomToggle}"

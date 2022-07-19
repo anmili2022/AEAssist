@@ -25,10 +25,10 @@ namespace AEAssist.AI.Astrologian.GCD
             {
                 return -1;
             }
-            if (Core.Me.HasAura(AurasDefine.NeutralSect))
-            {
-                return 0;
-            }
+            //if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.NeutralSect,15))
+            //{
+                //return 0;
+            //}
             if (!SettingMgr.GetSetting<AstSettings>().GcdHeal)
             {
                 return -5;

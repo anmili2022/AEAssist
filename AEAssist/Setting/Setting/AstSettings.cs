@@ -28,8 +28,8 @@ namespace AEAssist
         }
         public int Dot_TimeLeft { get; set; } = ConstValue.AuraTick;
         public int TTK_Aero { get; set; }
-        public bool divination { get; set; } = true;
-        public bool lightspeed { get; set; } = true;
+        public bool Divination { get; set; } = false;
+        public bool Lightspeed { get; set; } = false;
         public int LucidDreamingTrigger { get; set; } = ConstValue.LucidDreamingDefaultRefresh;
         public bool LucidDreamingToggle { get; set; } = true;
         public bool SwiftResToggle { get; set; } = true;

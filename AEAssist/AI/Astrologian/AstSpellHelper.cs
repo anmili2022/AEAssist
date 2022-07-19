@@ -637,5 +637,13 @@ namespace AEAssist.AI.Astrologian
             }
             return false;
         }
+        public static async Task<bool> CastNeutralSect()
+        {
+            if (!SpellsDefine.NeutralSect.IsUnlock()) return false;
+            var spell1 = new SpellEntity(SpellsDefine.NeutralSect, Core.Me as BattleCharacter);
+            //var spell2 = new SpellEntity(SpellsDefine.AspectedHelios, Core.Me as BattleCharacter);
+            //await spell1.DoAbility();            
+            return await spell1.DoGCD();
+        }
     }
 }

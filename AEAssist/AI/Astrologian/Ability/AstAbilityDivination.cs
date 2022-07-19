@@ -8,9 +8,14 @@ namespace AEAssist.AI.Astrologian.Ability
     {
         public int Check(SpellEntity lastSpell)
         {
-            if (!SettingMgr.GetSetting<AstSettings>().DivinationToggle) return -3;
+            //if (!SettingMgr.GetSetting<AstSettings>().DivinationToggle) return -3;
             if (!SpellsDefine.Divination.IsReady()) return -1;
-            if (!SettingMgr.GetSetting<AstSettings>().divination)
+            if (AIRoot.GetBattleData<BattleData>().CurrBattleTimeInMs < 5000)
+            {
+                return -7;
+            }           
+
+            if (!SettingMgr.GetSetting<AstSettings>().Divination)
             {
                 return -3;
             }

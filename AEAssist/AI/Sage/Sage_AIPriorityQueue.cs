@@ -25,7 +25,7 @@ namespace AEAssist.AI.Sage
         {
          new SageAbilityLucidDreaming(),
          new SageAbilityUsePotion(),
-         new SageAbilityKardia()
+         //new SageAbilityKardia()
         };
         public async Task<bool> UsePotion()
         {
