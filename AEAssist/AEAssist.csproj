@@ -452,12 +452,11 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Samurai\GCD\SamuraiGCD_AoERotations.cs" />
     <Compile Include="AI\Samurai\GCD\SamuraiGCD_CoolDownPhase.cs" />
     <Compile Include="AI\Samurai\GCD\SamuraiGCD_Dot.cs" />
-    <Compile Include="AI\Samurai\GCD\SamuraiGCD_EvenMinutesBurst.cs" />
     <Compile Include="AI\Samurai\GCD\SamuraiGCD_Fillers.cs" />
     <Compile Include="AI\Samurai\GCD\SamuraiGCD_Higanbana.cs" />
     <Compile Include="AI\Samurai\GCD\SamuraiGCD_KaeshiSetsugekka.cs" />
     <Compile Include="AI\Samurai\GCD\SamuraiGCD_MidareSetsugekka.cs" />
-    <Compile Include="AI\Samurai\GCD\SamuraiGCD_OddMinuteBurst.cs" />
+    <Compile Include="AI\Samurai\GCD\SamuraiGCD_OddEvenBurst.cs" />
     <Compile Include="AI\Samurai\GCD\SamuraiGCD_OgiNamikiriCombo.cs" />
     <Compile Include="AI\Samurai\SamuraiCombatMessageStrategy.cs" />
     <Compile Include="AI\Samurai\Opener_SamuraiStandard_90.cs" />

@@ -19,16 +19,6 @@ namespace AEAssist.AI.Samurai
             // refer to the balance level 90 samurai
             var lastGcd = ActionManager.LastSpellId;
             
-
-            // if (AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo == SamuraiComboStages.MidareSetsuGekka)
-            // {
-            //     if (SpellsDefine.KaeshiSetsugekka.IsReady())
-            //     {
-            //         AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.KaeshiSetsugekka;
-            //         SpellsDefine.KaeshiSetsugekka.GetSpellEntity().DoAbility();
-            //     } 
-            // }
-            
             if (lastGcd == SpellsDefine.Jinpu)
             {
                 AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Gekko;
@@ -65,11 +55,11 @@ namespace AEAssist.AI.Samurai
             
         }
 
-        public static  SpellEntity OddMinutesBurst()
+        public static  SpellEntity Burst()
         {
             // https://www.thebalanceffxiv.com/jobs/melee/samurai/basic-guide/
 
-            // do odd minute bursts
+            // do odd minute or even minute burst
             if (Core.Me.HasMyAura(AurasDefine.MeikyoShisui))
             {
                 if (SenCounts() < 1 && AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo != SamuraiComboStages.HiganBana)
@@ -78,52 +68,12 @@ namespace AEAssist.AI.Samurai
                     return SpellsDefine.Gekko.GetSpellEntity();
                 }
                 
-                if (AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo == SamuraiComboStages.HiganBana)
-                {
-                    if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Getsu))
-                    {
-                        AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Gekko;
-                        return SpellsDefine.Gekko.GetSpellEntity();
-                    }
-                }
-                
-                if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Ka))
-                {
-                    AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Kasha;
-                    return SpellsDefine.Kasha.GetSpellEntity();
-                }
-            }
-
-            if (ActionManager.LastSpellId == SpellsDefine.Hakaze)
-            {
-                AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Yukikaze;
-                return SpellsDefine.Yukikaze.GetSpellEntity();
-            }
-            
-            AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Hakaze;
-            return SpellsDefine.Hakaze.GetSpellEntity();
-        }
-        
-        public static SpellEntity EvenMinutesBurst()
-        {
-            // https://www.thebalanceffxiv.com/jobs/melee/samurai/basic-guide/
-            if (SpellsDefine.MeikyoShisui.RecentlyUsed())
-            {
-                if (SenCounts() < 1 && AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo != SamuraiComboStages.HiganBana)
+                if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Getsu))
                 {
                     AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Gekko;
                     return SpellsDefine.Gekko.GetSpellEntity();
                 }
                 
-                if (AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo == SamuraiComboStages.HiganBana)
-                {
-                    if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Getsu))
-                    {
-                        AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Gekko;
-                        return SpellsDefine.Gekko.GetSpellEntity();
-                    }
-                }
-                
                 if (!ActionResourceManager.Samurai.Sen.HasFlag(ActionResourceManager.Samurai.Iaijutsu.Ka))
                 {
                     AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Kasha;
@@ -133,9 +83,18 @@ namespace AEAssist.AI.Samurai
 
             if (ActionManager.LastSpellId == SpellsDefine.Hakaze)
             {
+                // fallback if we don't have filler or the aura:
+                if (!Core.Me.HasMyAura(AurasDefine.MeikyoShisui) 
+                    && AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo == SamuraiComboStages.Yukikaze)
+                {
+                    AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase = SamuraiPhase.CooldownPhase;
+                    return null;
+                }
+                
                 AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Yukikaze;
                 return SpellsDefine.Yukikaze.GetSpellEntity();
             }
+            
             AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.Hakaze;
             return SpellsDefine.Hakaze.GetSpellEntity();
         }
@@ -297,6 +256,15 @@ namespace AEAssist.AI.Samurai
                 return SpellsDefine.MidareSetsugekka.GetSpellEntity();
             }
             return null;
+        }
+        
+        public static SpellEntity GetOgiNamikiri()
+        {
+            if (!SpellsDefine.OgiNamikiri.IsUnlock()) return null;
+            if (MovementManager.IsMoving || !SpellsDefine.OgiNamikiri.IsReady()) return null;
+            
+            AIRoot.GetBattleData<SamuraiBattleData>().CurrCombo = SamuraiComboStages.OgiNamiKiri;
+            return SpellsDefine.OgiNamikiri.GetSpellEntity();
         }
 
         public static SpellEntity AoEGCD()

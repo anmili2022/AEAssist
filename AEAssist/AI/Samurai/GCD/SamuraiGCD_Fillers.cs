@@ -14,8 +14,7 @@ namespace AEAssist.AI.Samurai.GCD
             // var battleTime = AIRoot.GetBattleData<BattleData>().CurrBattleTimeInMs;
             // var totalGcdTimeMs = baseGcdTime * minimumGcdOneMin;
 
-            if (AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase == SamuraiPhase.EvenMinutesBurstPhase
-                || AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase == SamuraiPhase.OddMinutesBurstPhase)
+            if (AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase == SamuraiPhase.Filler)
             {
                 LogHelper.Info("we are in fillers now?");
                 return 0;
