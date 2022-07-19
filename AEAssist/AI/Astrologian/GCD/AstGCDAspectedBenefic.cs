@@ -17,12 +17,12 @@ namespace AEAssist.AI.Astrologian.GCD
             return 0;
         }
 
-        public Task<SpellEntity> Run()
+        public async Task<SpellEntity> Run()
         {
             LogHelper.Debug("刷吉星");
-            //Character character = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && !r.HasAura(AurasDefine.EukrasianDiagnosis) && !r.HasAura(AurasDefine.DifferentialDiagnosis));
-            //var spell = SageSpellHelper.CastEukrasianDiagnosis(character);
-            return AstSpellHelper.CastAspectedBenefic();
+            var spell = SpellsDefine.AspectedBenefic.GetSpellEntity();
+            var ret = await AstSpellHelper.CastAspectedBenefic();
+            return ret ? spell : null;            
 
         }
     }

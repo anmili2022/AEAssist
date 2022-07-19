@@ -41,38 +41,57 @@ namespace AEAssist.AI.Astrologian.Ability
 
         }
 
-        public Task<SpellEntity> Run()
+        public async Task<SpellEntity> Run()
         {
             if (Core.Me.HasAura(AurasDefine.BalanceDrawn))
             {
                 LogHelper.Debug("发近战太阳神");
-                return AstSpellHelper.CastMeleeCardHalf();
+                var spell = SpellsDefine.Play.GetSpellEntity();
+                var ret = await AstSpellHelper.CastMeleeCardHalf();
+                return ret ? spell : null;
+                //return AstSpellHelper.CastMeleeCard();
             }
             if (Core.Me.HasAura(AurasDefine.BoleDrawn))
             {
                 LogHelper.Debug("发远程世界树");
-                return AstSpellHelper.CastRangedCardHalf();
+                var spell = SpellsDefine.Play.GetSpellEntity();
+                var ret = await AstSpellHelper.CastRangedCardHalf();
+                return ret ? spell : null;
+                //return AstSpellHelper.CastRangedCard();
             }
             if (Core.Me.HasAura(AurasDefine.ArrowDrawn))
             {
                 LogHelper.Debug("发近战放浪神");
-                return AstSpellHelper.CastMeleeCardHalf();
+                var spell = SpellsDefine.Play.GetSpellEntity();
+                var ret = await AstSpellHelper.CastMeleeCardHalf();
+                return ret ? spell : null;
+                //return AstSpellHelper.CastMeleeCard();
             }
             if (Core.Me.HasAura(AurasDefine.SpearDrawn))
             {
                 LogHelper.Debug("发近战战争神");
-                return AstSpellHelper.CastMeleeCardHalf();
+                var spell = SpellsDefine.Play.GetSpellEntity();
+                var ret = await AstSpellHelper.CastMeleeCardHalf();
+                return ret ? spell : null;
+                //return AstSpellHelper.CastMeleeCard();
             }
             if (Core.Me.HasAura(AurasDefine.EwerDrawn))
             {
                 LogHelper.Debug("发远程河流神");
-                return AstSpellHelper.CastRangedCardHalf();
+                var spell = SpellsDefine.Play.GetSpellEntity();
+                var ret = await AstSpellHelper.CastRangedCardHalf();
+                return ret ? spell : null;
+                //return AstSpellHelper.CastRangedCard();
             }
             if (Core.Me.HasAura(AurasDefine.SpireDrawn))
             {
                 LogHelper.Debug("发远程建筑神");
-                return AstSpellHelper.CastRangedCardHalf();
+                var spell = SpellsDefine.Play.GetSpellEntity();
+                var ret = await AstSpellHelper.CastRangedCardHalf();
+                return ret ? spell : null;
+                //return AstSpellHelper.CastRangedCard();
             }
+
             return null;
         }
     }
