@@ -18,7 +18,7 @@ namespace AEAssist.AI.Astrologian.Ability
             if (!(Core.Me.HasAura(AurasDefine.ArrowDrawn) || Core.Me.HasAura(AurasDefine.BalanceDrawn) || Core.Me.HasAura(AurasDefine.SpearDrawn) || Core.Me.HasAura(AurasDefine.BoleDrawn) || Core.Me.HasAura(AurasDefine.EwerDrawn) || Core.Me.HasAura(AurasDefine.SpireDrawn))) return -2;
             if (AEAssist.DataBinding.Instance.FinalBurst)
                 return 0;
-            if (SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds < 70 && SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds >= 5)
+            if (SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds < 90 && SpellsDefine.Divination.GetSpellEntity().Cooldown.TotalSeconds >= 7)
             {
 
                 if (SpellsDefine.Draw.IsMaxChargeReady(0.1f))

@@ -670,9 +670,13 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
       <DependentUpon>BardSettingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Converters\RangeToBooleanConverter.cs" />
+    <Compile Include="View\Overlay\SchOverlayWindow.xaml.cs">
+      <DependentUpon>SchOverlayWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Overlay\PositionOverlayWindow.xaml.cs">
       <DependentUpon>PositionOverlayWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_SchOverlay.cs" />
     <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_RedMageOverlay.cs" />
     <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_DragoonOverlay.cs" />
     <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_WarriorOverlay.cs" />
@@ -902,6 +906,10 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Resource Include="Resources\Spells\WhiteMage\PlenaryIndulgence.png" />
     <Resource Include="Resources\Spells\WhiteMage\PresenceofMind.png" />
     <Resource Include="Resources\Spells\WhiteMage\ThinAir.png" />
+    <Page Include="View\Overlay\SchOverlayWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Overlay\PositionOverlayWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

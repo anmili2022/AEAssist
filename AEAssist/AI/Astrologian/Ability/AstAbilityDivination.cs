@@ -10,7 +10,7 @@ namespace AEAssist.AI.Astrologian.Ability
         {
             //if (!SettingMgr.GetSetting<AstSettings>().DivinationToggle) return -3;
             if (!SpellsDefine.Divination.IsReady()) return -1;
-            if (AIRoot.GetBattleData<BattleData>().CurrBattleTimeInMs < 5000)
+            if (AIRoot.GetBattleData<BattleData>().CurrBattleTimeInMs < 4000)
             {
                 return -7;
             }           
