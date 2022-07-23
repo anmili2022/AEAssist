@@ -203,7 +203,6 @@ namespace AEAssist
             set
             {
                 gnbdis = value;
-                LogHelper.Info($"{GNBdisg}");
             }
         }
         public string GNBdisg { get => gNBdisg; set => gNBdisg = value; }
