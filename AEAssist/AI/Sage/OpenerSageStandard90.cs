@@ -78,11 +78,12 @@ namespace AEAssist.AI.Sage
 
         private static void Step4(SpellQueueSlot slot)
         {
-            if (Core.Me.Distance(Core.Me.CurrentTarget) <= 8.3)
-                slot.SetGCD(SpellsDefine.PhlegmaIII, SpellTargetType.CurrTarget);
-            else
+            if (!ActionManager.CanCastOrQueue(SageSpellHelper.GetPhlegma().SpellData, Core.Me.CurrentTarget))
+            {
                 slot.SetGCD(SpellsDefine.DosisIII, SpellTargetType.CurrTarget);
-
+            }
+            
+            slot.SetGCD(SpellsDefine.PhlegmaIII, SpellTargetType.CurrTarget);
         }
 
 
@@ -94,10 +95,12 @@ namespace AEAssist.AI.Sage
 
         private static void Step6(SpellQueueSlot slot)
         {
-            if (Core.Me.Distance(Core.Me.CurrentTarget) < 8.3)
-                slot.SetGCD(SpellsDefine.PhlegmaIII, SpellTargetType.CurrTarget);
-            else
+            if (!ActionManager.CanCastOrQueue(SageSpellHelper.GetPhlegma().SpellData, Core.Me.CurrentTarget))
+            {
                 slot.SetGCD(SpellsDefine.DosisIII, SpellTargetType.CurrTarget);
+            }
+            
+            slot.SetGCD(SpellsDefine.PhlegmaIII, SpellTargetType.CurrTarget);
         }
 
 
