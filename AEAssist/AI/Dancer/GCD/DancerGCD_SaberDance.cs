@@ -18,7 +18,7 @@ namespace AEAssist.AI.Dancer.GCD
             {
                 return -3;
             }
-            
+
             if (Core.Me.HasAura(AurasDefine.StandardStep) ||
                 Core.Me.HasAura(AurasDefine.TechnicalStep))
             {
@@ -37,8 +37,7 @@ namespace AEAssist.AI.Dancer.GCD
 
             if (AEAssist.DataBinding.Instance.UseFlourish)
             {
-                if (SpellsDefine.Flourish.AbilityCoolDownInNextXGCDsWindow(1) && (!Core.Me.HasMyAura(AurasDefine.FlourshingFlow) &&
-                                                                !Core.Me.HasMyAura(AurasDefine.FlourishingSymmetry)))
+                if (SpellsDefine.Flourish.AbilityCoolDownInNextXGCDsWindow(1))
                 {
                     return 1;
                 }
@@ -51,7 +50,7 @@ namespace AEAssist.AI.Dancer.GCD
                 //     }
                 // }
             }
-            
+
             if (!AIRoot.Instance.CloseBurst)
             {
                 if (SpellsDefine.TechnicalStep.CoolDownInGCDs(1) && !SpellsDefine.TechnicalStep.IsReady())
