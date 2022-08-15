@@ -95,7 +95,7 @@ namespace AEAssist.Helper
             var list = TargetMgr.Instance.EnemysIn25;
             var count = 0;
             foreach (var v in list)
-                if (v.Value.Distance(target) <= damageRange)
+                if (v.Value.Distance(target)-v.Value.CombatReach <= damageRange)
                     count++;
 
             return count;
