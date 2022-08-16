@@ -28,7 +28,7 @@ namespace AEAssist.AI.Samurai.GCD
             }
 
             
-            LogHelper.Info("We are in OddBurst now");
+            //LogHelper.Info("We are in OddBurst now");
             return 0;
         }
 
