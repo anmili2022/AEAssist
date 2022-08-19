@@ -21,7 +21,6 @@ namespace AEAssist.AI.Bard.Ability
             if (AIRoot.Instance.CloseBurst)
                 return 3;
 
-
             if (BardSpellHelper.HasBuffsCount() >= BardSpellHelper.UnlockBuffsCount())
                 return 4;
 
@@ -38,10 +37,12 @@ namespace AEAssist.AI.Bard.Ability
         public async Task<SpellEntity> Run()
         {
             var SpellEntity = SpellsDefine.Bloodletter.GetSpellEntity();
-            if (SpellsDefine.RainofDeath.IsReady() &&
-                TargetHelper.CheckNeedUseAOE(25, 8, ConstValue.BardAOECount))
+            if (TargetHelper.CheckNeedUseAOE(25, 8, ConstValue.BardAOECount))
+            {
+                if (!SpellsDefine.RainofDeath.IsReady())
+                    return null;
                 SpellEntity = SpellsDefine.RainofDeath.GetSpellEntity();
-
+            }
             if (await SpellEntity.DoAbility()) return SpellEntity;
 
             return null;

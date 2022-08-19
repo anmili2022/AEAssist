@@ -56,86 +56,23 @@ namespace AEAssist.View.Overlay
         // Macrocosmos
         private void UseMacrocosmos_OnClick(object sender, RoutedEventArgs e)
         {
-            //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
-            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.Macrocosmos.GetSpellEntity();
+            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = new SpellEntity(SpellsDefine.Macrocosmos, SpellTargetType.Self);
         }
         // Helios
         private void UseHelios_OnClick(object sender, RoutedEventArgs e)
         {
-            //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
-            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.Helios.GetSpellEntity();
+            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = new SpellEntity(SpellsDefine.Helios, SpellTargetType.Self);
         }
         // AspectedHelios
         private void UseAspectedHelios_OnClick(object sender, RoutedEventArgs e)
         {
-            //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
-            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.AspectedHelios.GetSpellEntity();
+            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = new SpellEntity(SpellsDefine.AspectedHelios, SpellTargetType.Self);
         }
-        // Assize
-        /*private void UseAssize_OnClick(object sender, RoutedEventArgs e)
+        private void UseBeneficII_OnClick(object sender, RoutedEventArgs e)
         {
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.Assize.GetSpellEntity();
+            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = new SpellEntity(SpellsDefine.Benefic2, SpellTargetType.CurrTarget);
         }
-
-        // Asylum
-        private void UseAsylum_OnClick(object sender, RoutedEventArgs e)
-        {
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.Asylum.GetSpellEntity();
-        }
-        // Asylum Self
-        private void UseAsylumSelf_OnClick(object sender, RoutedEventArgs e)
-        {
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = new SpellEntity(SpellsDefine.Asylum, SpellTargetType.Self);
-
-        }
-
-        // LiturgyOfTheBell
-        private void UseLiturgyoftheBell_OnClick(object sender, RoutedEventArgs e)
-        {
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.LiturgyOfTheBell.GetSpellEntity();
-        }
-
-        // PresenceofMind
-        private void UsePresenceofMind_OnClick(object sender, RoutedEventArgs e)
-        {
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.PresenceofMind.GetSpellEntity();
-        }
-
-        // AfflatusRapture
-        private void UseAfflatusRapture_OnClick(object sender, RoutedEventArgs e)
-        {
-            //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
-            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
-        }
-        private void UseCureIII_OnClick(object sender, RoutedEventArgs e)
-        {
-            //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.ThinAir.GetSpellEntity();
-            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.Cure3.GetSpellEntity();
-        }
-        private void UseMedicaII_OnClick(object sender, RoutedEventArgs e)
-        {
-            //AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.AfflatusRapture.GetSpellEntity();
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.ThinAir.GetSpellEntity();
-            AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.Medica2.GetSpellEntity();
-        }
-
-        // PlenaryIndulgence
-        private void UsePlenaryIndulgence_OnClick(object sender, RoutedEventArgs e)
-        {
-
-            //AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.PlenaryIndulgence.GetSpellEntity();
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.PlenaryIndulgence.GetSpellEntity();
-            //LogHelper.Debug("trying to use Pneuma next");
-            //AIRoot.GetBattleData<BattleData>().NextGcdSpellId = SpellsDefine.Pneuma.GetSpellEntity();
-        }
-
-        // ThinAir
-        private void UseThinAir_OnClick(object sender, RoutedEventArgs e)
-        {
-            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.ThinAir.GetSpellEntity();
-        }
-        */
+       
 
 
         private void Expander_OnMouseMove(object sender, MouseEventArgs e)

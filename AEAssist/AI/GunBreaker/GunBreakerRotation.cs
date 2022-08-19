@@ -23,6 +23,8 @@ namespace AEAssist.AI.Gunbreaker
             }
             CountDownHandler.Instance.AddListener(300, () =>
             {
+                if (DataBinding.Instance.GNBManualControl)
+                    return Task.FromResult(false);
                 if (DataBinding.Instance.GNBOpen)
                     return SpellsDefine.RoughDivide.DoAbility();
                 return SpellsDefine.LightningShot.DoGCD();

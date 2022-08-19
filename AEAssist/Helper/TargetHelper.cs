@@ -3,6 +3,7 @@ using AEAssist.Define;
 using ff14bot;
 using ff14bot.Objects;
 using System;
+using ff14bot.Managers;
 
 namespace AEAssist.Helper
 {
@@ -94,7 +95,7 @@ namespace AEAssist.Helper
             var list = TargetMgr.Instance.EnemysIn25;
             var count = 0;
             foreach (var v in list)
-                if (v.Value.Distance(target) <= damageRange)
+                if (v.Value.Distance(target)-v.Value.CombatReach <= damageRange)
                     count++;
 
             return count;

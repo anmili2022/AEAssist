@@ -27,35 +27,42 @@ namespace AEAssist.AI.Summoner
             if (SMN_SpellHelper.PhoenixTrance())
                 return -7;
 
+
             return 0;
         }
 
         public List<Action<SpellQueueSlot>> Openers { get; } = new List<Action<SpellQueueSlot>>()
         {
           pre1,
-          pre2,
           Step0,
+          Step1,
+
         };
 
         public int StepCount => 3;
 
         private static void pre1(SpellQueueSlot slot) 
         { 
-            if (AIRoot.GetBattleData<BattleData>().lastGCDSpell == null || DataBinding.Instance.SMNSettings.DelayOpeningBurst)
+            if (AIRoot.GetBattleData<BattleData>().lastGCDSpell == null || DataBinding.Instance.SMNSettings.DelayOpeningBurst|| SpellsDefine.SearingLight.IsReady())
                 slot.SetGCD(SpellsDefine.Ruin3, SpellTargetType.CurrTarget);
+            slot.Abilitys.Enqueue((SpellsDefine.SearingLight, SpellTargetType.Self));
         }
         private static void pre2(SpellQueueSlot slot)
         {
-            if (SpellsDefine.SearingLight.IsReady())
-                slot.SetGCD(SpellsDefine.SearingLight, SpellTargetType.Self);
+            
         }
         private static void Step0(SpellQueueSlot slot)
         {
             slot.SetGCD(SpellsDefine.SummonBahamut, SpellTargetType.CurrTarget);
-            slot.UsePotion = true;
+            
         }
 
         private static void Step1(SpellQueueSlot slot)
+        {
+            slot.SetGCD(SpellsDefine.AstralImpulse, SpellTargetType.CurrTarget);
+            slot.UsePotion = true;
+        }
+        private static void Step2(SpellQueueSlot slot)
         {
             slot.SetGCD(SpellsDefine.AstralImpulse, SpellTargetType.CurrTarget);
             uint spell = SMNAbility_Fester.GetSpell();
@@ -71,12 +78,6 @@ namespace AEAssist.AI.Summoner
             }
 
             slot.EnqueueAbility((SMNAbility_Fester.GetSpell(), SpellTargetType.CurrTarget));
-        }
-        private static void Step2(SpellQueueSlot slot)
-        {
-            slot.SetGCD(SpellsDefine.AstralImpulse, SpellTargetType.CurrTarget);
-            slot.EnqueueAbility((SpellsDefine.Fester, SpellTargetType.CurrTarget));
-
         }
 
     }

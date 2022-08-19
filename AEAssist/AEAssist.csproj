@@ -126,6 +126,9 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="..\AETriggers\TriggerModel\TriggerAction\TriggerAction_SwitchSong.cs">
       <Link>TriggerModel\TriggerAction\TriggerAction_SwitchSong.cs</Link>
     </Compile>
+    <Compile Include="..\AETriggers\TriggerModel\TriggerAction\TriggerAction_ToggleStop.cs">
+      <Link>TriggerModel\TriggerAction\TriggerAction_ToggleStop.cs</Link>
+    </Compile>
     <Compile Include="..\AETriggers\TriggerModel\TriggerAction\TriggerAction_UsePotion.cs">
       <Link>TriggerModel\TriggerAction\TriggerAction_UsePotion.cs</Link>
     </Compile>
@@ -179,11 +182,13 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     </Compile>
     <Compile Include="AI\AIMgrs.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityAstrodyne.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilityCelestialOpposition.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityCelestialIntersection.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityCrownPlay.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityDivination.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityDraw.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityEssentialDignity.cs" />
+    <Compile Include="AI\Astrologian\Ability\AstAbilitySynastry.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityExaltation.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityHalfPlay.cs" />
     <Compile Include="AI\Astrologian\Ability\AstAbilityLightspeed.cs" />
@@ -196,6 +201,9 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Astrologian\AstRotation.cs" />
     <Compile Include="AI\Astrologian\AstSpellHelper.cs" />
     <Compile Include="AI\Astrologian\Ast_AIPriorityQueue.cs" />
+    <Compile Include="AI\Astrologian\GCD\AstAOE.cs" />
+    <Compile Include="AI\Astrologian\GCD\AstAspectedHelios .cs" />
+    <Compile Include="AI\Astrologian\GCD\AstHelios.cs" />
     <Compile Include="AI\Astrologian\GCD\AstBaseGCD.cs" />
     <Compile Include="AI\Astrologian\GCD\AstGCDAscend.cs" />
     <Compile Include="AI\Astrologian\GCD\AstGCDAspectedBenefic.cs" />
@@ -253,6 +261,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\BlackMage\SpellQueue\SpellQueueSlot_Thunder.cs" />
     <Compile Include="AI\BlackMage\SpellQueue\SpellQueueSlot_Xenoglossy.cs" />
     <Compile Include="AI\BlackMage\SpellQueue\SpellQueue_DespairCombo.cs" />
+    <Compile Include="AI\Dancer\Ability\DancerAbility_CuringWaltz.cs" />
     <Compile Include="AI\Dancer\Ability\DancerAbility_Devilment.cs" />
     <Compile Include="AI\Dancer\Ability\DancerAbility_FanDance.cs" />
     <Compile Include="AI\Dancer\Ability\DancerAbility_FanDance3.cs" />
@@ -306,11 +315,16 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\GunBreaker\GCD\GunBreakerGCD_BurstStrike.cs" />
     <Compile Include="AI\GunBreaker\GCD\GunBreakerGCD_BaseGCD.cs" />
     <Compile Include="AI\GunBreaker\GCD\GunBreakerGCD_SecondaryCombo.cs" />
+    <Compile Include="AI\GunBreaker\GCD\UpdatePos.cs" />
     <Compile Include="AI\GunBreaker\Opener_GunBreaker_90.cs" />
     <Compile Include="AI\GunBreaker\GunBreakerBattleData.cs" />
     <Compile Include="AI\GunBreaker\GunBreakerRotation.cs" />
     <Compile Include="AI\GunBreaker\GunBreakerSpellHelper.cs" />
     <Compile Include="AI\GunBreaker\GunBreaker_AIPriorityQueue.cs" />
+    <Compile Include="AI\GunBreaker\Opener_GunBreaker_90_2GCD.cs" />
+    <Compile Include="AI\GunBreaker\Opener_GunBreaker_90_4GCD.cs" />
+    <Compile Include="AI\GunBreaker\SpellEvent\SpellEvent_A_State.cs" />
+    <Compile Include="AI\GunBreaker\SpellEvent\SpellEvent_A_State_Off.cs" />
     <Compile Include="AI\Machinist\SpellEvent\SpellEvent_Hypercharge.cs" />
     <Compile Include="AI\Machinist\SpellEvent\SpellEvent_UnderHyperChargetGCD.cs" />
     <Compile Include="AI\Machinist\SpellEvent\SpellEvent_UseBattery.cs" />
@@ -382,6 +396,8 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Paladin\Paladin_BattleData.cs" />
     <Compile Include="AI\Paladin\Paladin_Rotation.cs" />
     <Compile Include="AI\Paladin\Paladin_SpellHelper.cs" />
+    <Compile Include="AI\Reaper\OpenerReaperEarlyEnshroud90.cs" />
+    <Compile Include="AI\Reaper\ReaperCombatMessageStrategy.cs" />
     <Compile Include="AI\Reaper\SpellEvent\SpellEvent_EnshourdGCD.cs" />
     <Compile Include="AI\Reaper\SpellEvent\SpellEvent_Lemure.cs" />
     <Compile Include="AI\RedMage\Ability\RedMage_Ability_ContreSixte.cs" />
@@ -419,17 +435,33 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Sage\GCD\SageGCDPhlegma.cs" />
     <Compile Include="AI\Sage\GCD\SageGCDToxikon.cs" />
     <Compile Include="AI\Sage\OpenerSageStandard90.cs" />
-    <Compile Include="AI\Sage\OpenerSage_Test.cs" />
+    <Compile Include="AI\Sage\OpenerSagePneuma90.cs" />
     <Compile Include="AI\Sage\SageBattleData.cs" />
     <Compile Include="AI\Sage\SageRotation.cs" />
     <Compile Include="AI\Sage\SageSpellHelper.cs" />
     <Compile Include="AI\Sage\Sage_AIPriorityQueue.cs" />
     <Compile Include="AI\Sage\SpellEvent\SpellEventDot.cs" />
-    <Compile Include="AI\Samurai\Ability\SamuraiAbility_HissatsuShinten.cs" />
-    <Compile Include="AI\Samurai\Ability\SamuraiAbility_MeikyoShisui.cs" />
-    <Compile Include="AI\Samurai\GCD\SamuraiGCD_Base.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_Hagakure.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_HissatsuGuren.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_HissatsuGyoten.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_HissatsuKyuten.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_HissatsuYaten.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_KaeshiGoken.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_KaeshiHiganbana.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_KaeshiNamikiri.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_Meditate.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_ShohaII.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_ThirdEye.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_TsubameGaeshi.cs" />
+    <Compile Include="AI\Samurai\GCD\SamuraiGCD_AoERotations.cs" />
+    <Compile Include="AI\Samurai\GCD\SamuraiGCD_CoolDownPhase.cs" />
     <Compile Include="AI\Samurai\GCD\SamuraiGCD_Dot.cs" />
+    <Compile Include="AI\Samurai\GCD\SamuraiGCD_Fillers.cs" />
+    <Compile Include="AI\Samurai\GCD\SamuraiGCD_Higanbana.cs" />
     <Compile Include="AI\Samurai\GCD\SamuraiGCD_KaeshiSetsugekka.cs" />
+    <Compile Include="AI\Samurai\GCD\SamuraiGCD_MidareSetsugekka.cs" />
+    <Compile Include="AI\Samurai\GCD\SamuraiGCD_OddEvenBurst.cs" />
+    <Compile Include="AI\Samurai\GCD\SamuraiGCD_OgiNamikiriCombo.cs" />
     <Compile Include="AI\Samurai\SamuraiCombatMessageStrategy.cs" />
     <Compile Include="AI\Samurai\Opener_SamuraiStandard_90.cs" />
     <Compile Include="AI\Samurai\SpellEvent\SpellEvent_GCD.cs" />
@@ -437,10 +469,14 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Samurai\SpellQueue\SpellQueueSlot_KaeshiSetsugekka.cs" />
     <Compile Include="AI\Samurai\SpellQueue\SpellQueue_OgiNamikiriCombo.cs" />
     <Compile Include="AI\Samurai\SpellQueue\SpellQueue_SetsugekkaCombo.cs" />
+    <Compile Include="AI\Scholar\Ability\Scholar_Aetherpact.cs" />
+    <Compile Include="AI\Scholar\Ability\Scholar_ChainStratagem.cs" />
     <Compile Include="AI\Scholar\Ability\Scholar_EnergyDrain2.cs" />
     <Compile Include="AI\Scholar\Ability\Scholar_Aetherflow.cs" />
     <Compile Include="AI\Scholar\Ability\Scholar_Dissipation.cs" />
     <Compile Include="AI\Scholar\Ability\Scholar_LucidDreaming.cs" />
+    <Compile Include="AI\Scholar\Ability\Scholar_Protraction.cs" />
+    <Compile Include="AI\Scholar\GCD\ScholarGCD_SummonEos.cs" />
     <Compile Include="AI\Scholar\GCD\ScholarGCD_Dot.cs" />
     <Compile Include="AI\Scholar\GCD\ScholarGCD_Base.cs" />
     <Compile Include="AI\Scholar\Scholar_AIPriorityQueue.cs" />
@@ -488,6 +524,12 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="AI\Reaper\Reaper_AIPriorityQueue.cs" />
     <Compile Include="AI\Reaper\ReaperBattleData.cs" />
     <Compile Include="AI\Reaper\ReaperSpellHelper.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_HissatsuKaiten.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_HissatsuSenei.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_HissatsuShinten.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_Ikishoten.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_MeikyoShisui.cs" />
+    <Compile Include="AI\Samurai\Ability\SamuraiAbility_Shoha.cs" />
     <Compile Include="AI\Samurai\SamuraiBattleData.cs" />
     <Compile Include="AI\Samurai\SamuraiRotation.cs" />
     <Compile Include="AI\Samurai\SamuraiSpellHelper.cs" />
@@ -617,6 +659,7 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="TriggerSystem\TriggerAction\TriggerActionHandler_SwitchFinalBurstHandler.cs" />
     <Compile Include="TriggerSystem\TriggerAction\TriggerActionHandler_SwitchPotion.cs" />
     <Compile Include="TriggerSystem\TriggerAction\TriggerActionHandler_SwitchSong.cs" />
+    <Compile Include="TriggerSystem\TriggerAction\TriggerActionHandler_ToggleStop.cs" />
     <Compile Include="TriggerSystem\TriggerAction\TriggerActionHandler_UsePotion.cs" />
     <Compile Include="TriggerSystem\TriggerCond\TriggerCondHandler_AfterBattleStart.cs" />
     <Compile Include="TriggerSystem\TriggerCond\TriggerCondHandler_AfterOtherTrigger.cs" />
@@ -632,9 +675,14 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="View\BardSettingView.xaml.cs">
       <DependentUpon>BardSettingView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Converters\RangeToBooleanConverter.cs" />
+    <Compile Include="View\Overlay\SchOverlayWindow.xaml.cs">
+      <DependentUpon>SchOverlayWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Overlay\PositionOverlayWindow.xaml.cs">
       <DependentUpon>PositionOverlayWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_SchOverlay.cs" />
     <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_RedMageOverlay.cs" />
     <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_DragoonOverlay.cs" />
     <Compile Include="View\Overlay\UIComponent\OverlayUIComponent_WarriorOverlay.cs" />
@@ -813,6 +861,11 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Compile Include="Setting\Setting\BardSettings.cs" />
     <Compile Include="Setting\Setting\GeneralSettings.cs" />
     <Compile Include="Setting\Setting\VersionSetting.cs" />
+    <Resource Include="Resources\Spells\Ast\BeneficII.png" />
+    <Resource Include="Resources\Spells\GunBreaker\Camouflage.png" />
+    <Resource Include="Resources\Spells\GunBreaker\Nebula.png" />
+    <Resource Include="Resources\Spells\GunBreaker\Superbolide.png" />
+    <Resource Include="Resources\Spells\GunBreaker\HeartOfCorundum.png" />
     <Resource Include="Resources\Spells\Ast\AspectedHelios.png" />
     <Resource Include="Resources\Spells\Ast\EarthlyStar.png" />
     <Resource Include="Resources\Spells\Ast\Helios.png" />
@@ -859,6 +912,10 @@ xcopy "$(SolutionDir)))\Output" "C:\Users\Black\Documents\Rebornbuddy64\Routines
     <Resource Include="Resources\Spells\WhiteMage\PlenaryIndulgence.png" />
     <Resource Include="Resources\Spells\WhiteMage\PresenceofMind.png" />
     <Resource Include="Resources\Spells\WhiteMage\ThinAir.png" />
+    <Page Include="View\Overlay\SchOverlayWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Overlay\PositionOverlayWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

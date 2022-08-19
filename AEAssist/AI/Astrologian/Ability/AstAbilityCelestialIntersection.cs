@@ -13,6 +13,7 @@ namespace AEAssist.AI.Astrologian.Ability
             {
                 return -5;
             }
+            
             if (!SpellsDefine.CelestialIntersection.IsReady()) return -1;
             var skillTarget = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && r.CurrentHealthPercent <= 80f && r.IsTank());
             if (skillTarget == null)
@@ -26,9 +27,11 @@ namespace AEAssist.AI.Astrologian.Ability
             return 0;
         }
 
-        public Task<SpellEntity> Run()
+        public async Task<SpellEntity> Run()
         {
-            return AstSpellHelper.CastCelestialIntersection();
+            var spell = SpellsDefine.CelestialIntersection.GetSpellEntity();
+            var ret = await AstSpellHelper.CastCelestialIntersection();
+            return ret ? spell : null;            
         }
     }
 }

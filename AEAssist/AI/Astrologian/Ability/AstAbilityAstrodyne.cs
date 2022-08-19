@@ -1,6 +1,7 @@
 ﻿using AEAssist.Define;
 using AEAssist.Helper;
-using System;
+using ff14bot;
+using ff14bot.Managers;
 using System.Threading.Tasks;
 
 namespace AEAssist.AI.Astrologian.Ability
@@ -15,13 +16,13 @@ namespace AEAssist.AI.Astrologian.Ability
             //{
             //return -4;
             //}
+            if (ActionResourceManager.CostTypesStruct.timer3 < 10)
+            {
+                return -1;
+            }
             if (AIRoot.Instance.CloseBurst)
                 return -2;
-            if (AIRoot.GetBattleData<AstBattleData>().AstNum < 3)
-            {
-                LogHelper.Debug("印" + Convert.ToString(AIRoot.GetBattleData<AstBattleData>().AstNum));
-                return -2;
-            }
+            
             return 0;
 
         }
@@ -30,9 +31,9 @@ namespace AEAssist.AI.Astrologian.Ability
         {
             var spell = SpellsDefine.Astrodyne.GetSpellEntity();
             if (spell == null) return null;
-            AIRoot.GetBattleData<AstBattleData>().AstNum = 0;
-            AIRoot.GetBattleData<AstBattleData>().half = true;
-            SettingMgr.GetSetting<AstSettings>().AstHalfCard = true;
+            //AIRoot.GetBattleData<AstBattleData>().AstNum = 0;
+            //AIRoot.GetBattleData<AstBattleData>().half = true;
+            //SettingMgr.GetSetting<AstSettings>().AstHalfCard = true;
             var ret = await spell.DoAbility();
             return ret ? spell : null;
         }

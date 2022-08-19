@@ -25,15 +25,19 @@ namespace AEAssist.Define
             Reassemble,
             Tactician,
             Hypercharge,
-            ThirdEye,
             Meditation,
             Soulsow,
             Enshroud,
             ArcaneCrest,
             ArcaneCircle,
-            
+
+            //TankRoleActions
+            Reprisal,
+            Rampart,
+
             //SAM
             MeikyoShisui,
+            ThirdEye,
             
             //Sage
             Eukrasia,
@@ -91,8 +95,10 @@ namespace AEAssist.Define
             FatedCircle,
             BowShock,
             DemonSlice,
-            DemonSlaughter
-
+            DemonSlaughter,
+            Camouflage,
+            Nebula,
+            Superbolide
 
         };
 

@@ -12,23 +12,24 @@ namespace AEAssist.AI.Samurai
     {
         public List<IAIHandler> GCDQueue { get; } = new List<IAIHandler>
         {
-            //new SamuraiGCD_KaeshiSetsugekka(),
-            new SamuraiGCD_Dot(),
-            new SamuraiGCD_Base(),
+            new SamuraiGCD_AoERotations(),
+            new SamuraiGCD_KaeshiSetsugekka(),
+            new SamuraiGCD_OgiNamikiriCombo(),
+            new SamuraiGCD_OddEvenBurst(),
+            // new SamuraiGCD_Fillers(),
+            new SamuraiGCD_MidareSetsugekka(),
+            new SamuraiGCD_Higanbana(),
+            new SamuraiGCD_CoolDownPhase(),
+
         };
 
         public List<IAIHandler> AbilityQueue { get; } = new List<IAIHandler>
         {
-            //new SamuraiAbility_HissatsuShinten(),
-            // new SamuraiAbility_HissatsuKyuten(),
-            // new SamuraiGCD_OgiNamikiriCombo(),
-            // new SamuraiAbility_HissatsuKaiten(),
-            //new SamuraiAbility_KaeshiSetsugekka(),
-            // new SamuraiAbility_HissatsuSenei(),
-            //new SamuraiAbility_MeikyoShisui(),//明镜止水
-            // new SamuraiAbility_Ikishoten(),
-            // new SamuraiAbility_Shoha(),
-            // new SamuraiAbility_TsubameGaeshi()
+            new SamuraiAbility_Shoha(),
+            new SamuraiAbility_HissatsuShinten(),
+            new SamuraiAbility_HissatsuSenei(),
+            new SamuraiAbility_MeikyoShisui(),
+            new SamuraiAbility_Ikishoten(),
         };
 
         public Task<bool> UsePotion()

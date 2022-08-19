@@ -169,6 +169,12 @@ namespace AEAssist
         public string ToolTip_MCH_WildFireFirst { get; set; }
         public string ToolTip_MCH_Burst { get; set; }
         #endregion
+        
+        #region DNC
+        public string Toggle_Flourish { get; set; }
+        public string Toggle_SaberDance { get; set; }
+
+        #endregion
 
         #region RPR
 
@@ -247,8 +253,18 @@ namespace AEAssist
         public string Toggle_SureCast { get; set; }
         public string Toggle_SwiftCast { get; set; }
         public string Heal { get; set; }
-        public string Half { get; set; }
+        public string Divination { get; set; }
+
+        public string Lightspeed { get; set; }
         public string UseCDPull { get; set; }
+        public string GcdHeal { get; set; }
+
+        #endregion
+
+        #region AST
+
+        public string Toggle_Divination { get; set; }
+        public string Toggle_LightSpeed { get; set; }
 
         #endregion
 
@@ -315,7 +331,7 @@ namespace AEAssist
         public string TextBox_Regen { get; set; }
         public string TextBox_AfflatusSolace { get; set; }
 
-
+        public string Textbox_Sch_DotTimeLeft { get; set; }
 
 
     }

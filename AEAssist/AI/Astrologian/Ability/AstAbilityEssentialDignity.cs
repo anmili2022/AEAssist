@@ -13,6 +13,7 @@ namespace AEAssist.AI.Astrologian.Ability
             {
                 return -5;
             }
+            
             if (!SpellsDefine.EssentialDignity.IsReady()) return -1;
             var skillTarget = GroupHelper.CastableAlliesWithin30.FirstOrDefault(r => r.CurrentHealth > 0 && r.CurrentHealthPercent <= 30f);
             if (skillTarget == null)
@@ -26,9 +27,11 @@ namespace AEAssist.AI.Astrologian.Ability
             return 0;
         }
 
-        public Task<SpellEntity> Run()
+        public async Task<SpellEntity> Run()
         {
-            return AstSpellHelper.CastEssentialDignity();
+            var spell = SpellsDefine.EssentialDignity.GetSpellEntity();
+            var ret = await AstSpellHelper.CastEssentialDignity();
+            return ret ? spell : null;            
         }
     }
 }

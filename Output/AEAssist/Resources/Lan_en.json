@@ -33,6 +33,8 @@
   "Toggle_LucidDreaming": "Lucid Dreaming",
   "Toggle_SMN_Crimson": "Crimson",
   "Toggle_SwiftRes": "Swift Res",
+  "Toggle_Divination": "Divination",
+  "Toggle_LightSpeed" : "LightSpeed",
   "Toggle_PreferDoubleEnshroud": "2*Enshroud",
   "Toggle_UseHarpe": "Harpe",
   "Toggle_UseTrueNorthWhenMissActionDir": "TrueNorth",
@@ -114,6 +116,9 @@
   "Toggle_GNBO_pen": "LightningShot/RoughDivide",
   "Toggle_GNB_RoughDivide": "Keep1RoughDivide",
 
+  "Toggle_Flourish": "Flourish",
+  "Toggle_SaberDance": "Saber Dance",
+  
   "ToolTip_SMN_Burst": "No aethercharge",
   "ToolTip_SMN_FinalBurst": "Not implemented",
   "Toggle_SMN_SaveInstantSpells": "Save Instant Spells",
@@ -128,5 +133,5 @@
   "Toggle_PLD_IronWill": "IronWill",
   "Toggle_PLD_Requiescat": "Requiescat",
   "ToolTip_PLD_FinalBurst": "Not implemented",
-  "Toggle_PLD_Sheltron": "Sheltron",
+  "Toggle_PLD_Sheltron": "Sheltron"
 }

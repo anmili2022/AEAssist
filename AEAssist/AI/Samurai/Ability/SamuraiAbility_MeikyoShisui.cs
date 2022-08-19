@@ -1,19 +1,17 @@
-﻿using AEAssist.Define;
+﻿using System;
+using AEAssist.Define;
 using AEAssist.Helper;
 using ff14bot;
-using ff14bot.Objects;
 using System.Threading.Tasks;
 
 namespace AEAssist.AI.Samurai.Ability
 {
-    public class SamuraiAbility_MeikyoShisui : IAIHandler//明镜止水
+    public class SamuraiAbility_MeikyoShisui : IAIHandler
     {
-
         public int Check(SpellEntity lastSpell)
         {
-            var tar = Core.Me.CurrentTarget as Character;
+
             var needUseAoe = TargetHelper.CheckNeedUseAOE(2, 5);
-            return -1;
             if (needUseAoe)
             {
                 if (SpellsDefine.MeikyoShisui.IsReady())
@@ -21,12 +19,39 @@ namespace AEAssist.AI.Samurai.Ability
                     return 0;
                 }
             }
-            if (Core.Me.HasMyAuraWithTimeleft(AurasDefine.MeikyoShisui, 1000))//如果自身有明镜buff直接跳过
+
+            if (AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase == SamuraiPhase.CooldownPhase)
+            {
+                return -1;
+            }
+
+            if (!SpellsDefine.MeikyoShisui.IsReady())
+            {
                 return -14;
-            if (!SpellsDefine.MeikyoShisui.IsReady())//明镜cd中 跳过
-                return -14;
-            if (!tar.HasMyAuraWithTimeleft(AurasDefine.Higanbana, 10000))
-                return 1;
+            }
+            
+            if (Core.Me.HasAura(AurasDefine.MeikyoShisui))
+            {
+                return -13;
+            }
+
+            // var charges = Math.Abs(SpellsDefine.MeikyoShisui.GetSpellEntity().SpellData.Charges - 1);
+            // LogHelper.Info("Current charges after - 1: " + charges);
+
+            if (AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase == SamuraiPhase.OddMinutesBurstPhase  
+                || AIRoot.GetBattleData<SamuraiBattleData>().CurrPhase == SamuraiPhase.EvenMinutesBurstPhase)
+            {
+                if (SpellsDefine.MeikyoShisui.GetSpellEntity().SpellData.Charges >= 1.0)
+                {
+                    
+                    {
+                        LogHelper.Info("Use Meikyo...");
+                        AIRoot.GetBattleData<SamuraiBattleData>().burstingMeikyoShisuiCount++;
+                        return 0;
+                    }
+                }
+            }
+            
             return -5;
         }
 
@@ -34,7 +59,9 @@ namespace AEAssist.AI.Samurai.Ability
         {
             var spell = SpellsDefine.MeikyoShisui;
             if (await spell.DoAbility())
+            {
                 return spell.GetSpellEntity();
+            }
             return null;
         }
     }

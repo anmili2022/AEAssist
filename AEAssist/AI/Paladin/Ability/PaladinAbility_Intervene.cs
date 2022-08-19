@@ -30,10 +30,10 @@ namespace AEAssist.AI.Paladin.Ability
                 return 1;
             if (AIRoot.Instance.CloseBurst)
                 return -4;
-            if (spell.GetSpellEntity().SpellData.Charges < 1)
+            if (spell.GetSpellEntity().SpellData.Charges < 1.5)
                 return -6;
             
-            return 0;
+            return -1;
         }
 
         public async Task<SpellEntity> Run()
