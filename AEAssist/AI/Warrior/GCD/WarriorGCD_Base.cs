@@ -37,7 +37,8 @@ namespace AEAssist.AI.Warrior.GCD
         public int Check(SpellEntity lastSpell)
         {
             spell = GetSpell();
-            LogHelper.Debug("look this：" + spell.ToString());
+            //解放CD快好了就打3连怎么写，技能CD……
+            //LogHelper.Info($"准备释放: {spell.ToString()}");
             if (!spell.IsReady())
                 return -1;
             return 0;
@@ -64,7 +65,7 @@ namespace AEAssist.AI.Warrior.GCD
                     else return SpellsDefine.HeavySwing;//重劈
                 case SpellsDefine.Maim:
                     if (SpellsDefine.StormsEye.IsUnlock())
-                        if (tar.HasMyAuraWithTimeleft(AurasDefine.SurgingTempest, 10000))//战场风暴持续时间是否大于10秒
+                        if (tar.HasMyAuraWithTimeleft(AurasDefine.SurgingTempest, 30000))//战场风暴持续时间是否大于30秒
                             return SpellsDefine.StormsPath;//绿斩 暴风斩
                         else return SpellsDefine.StormsEye;//红斩 暴风碎
                     else

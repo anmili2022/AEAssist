@@ -42,37 +42,19 @@ namespace AEAssist.AI.Scholar.GCD
                 return SpellsDefine.SchRuin2;//毁坏
             else
             //GCD-毁灭-毁坏-气炎法-魔炎法-死炎法-极炎法
-            if (SpellsDefine.SchBroil4.IsUnlock())//极炎法
-                if (SpellsDefine.SchBroil3.IsUnlock())//死炎法
-                    if (SpellsDefine.SchBroil2.IsUnlock())//魔炎法
-                        if (SpellsDefine.SchBroil.IsUnlock())//气炎法
-                            return SpellsDefine.SchBroil4;//毁灭
-                        else
-                            return SpellsDefine.SchBroil;
-                    else
-                        return SpellsDefine.SchBroil2;
-                else
-                    return SpellsDefine.SchBroil3;
-            else
-                return SpellsDefine.SchBroil4;
+                return SpellsDefine.SchRuin;//毁灭
         }
 
         public static uint GetAOE()
         {
-            if (!SpellsDefine.ArtOfWarII.IsUnlock())//
-                if (!SpellsDefine.ArtOfWar.IsUnlock())
-                    if (!MovementManager.IsMoving)
-                        return SpellsDefine.SchBroil4;//毁灭
-                    else
-                        return SpellsDefine.SchRuin2;//毁坏
-                else
-                    return SpellsDefine.ArtOfWar;
-            else
-                return SpellsDefine.ArtOfWarII;
+          if (SpellsDefine.ArtOfWar.IsUnlock())
+                return SpellsDefine.ArtOfWar;
 
+          if (!MovementManager.IsMoving)
+                return SpellsDefine.SchRuin2;//毁灭
+          else
+                return SpellsDefine.SchRuin;//毁坏
 
-
-            
         }
 
     }

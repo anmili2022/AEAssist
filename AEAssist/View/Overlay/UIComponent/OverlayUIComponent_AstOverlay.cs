@@ -5,12 +5,12 @@ using ff14bot.Enums;
 
 namespace AEAssist.View.Overlay.UIComponent
 {
-    [Job(ClassJobType.Astrologian)]
-    internal class OverlayUIComponent_AstOverlay : OverlayUIComponent
+    [Job(ClassJobType.Scholar)]
+    internal class OverlayUIComponent_SchOverlay : OverlayUIComponent
     {
         private OverlayControl _control;
 
-        public OverlayUIComponent_AstOverlay() : base(true)
+        public OverlayUIComponent_SchOverlay() : base(true)
         {
         }
 
@@ -21,7 +21,7 @@ namespace AEAssist.View.Overlay.UIComponent
                 if (_control != null)
                     return _control;
 
-                var overlayUc = new AstOverlayWindow();
+                var overlayUc = new SchOverlayWindow();
 
                 _control = new OverlayControl
                 {

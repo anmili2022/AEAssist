@@ -25,15 +25,19 @@ namespace AEAssist.Define
             Reassemble,
             Tactician,
             Hypercharge,
-            ThirdEye,
             Meditation,
             Soulsow,
             Enshroud,
             ArcaneCrest,
             ArcaneCircle,
-            
+
+            //TankRoleActions
+            Reprisal,
+            Rampart,
+
             //SAM
             MeikyoShisui,
+            ThirdEye,
             
             //Sage
             Eukrasia,
@@ -91,8 +95,10 @@ namespace AEAssist.Define
             FatedCircle,
             BowShock,
             DemonSlice,
-            DemonSlaughter
-
+            DemonSlaughter,
+            Camouflage,
+            Nebula,
+            Superbolide
 
         };
 
@@ -682,7 +688,8 @@ namespace AEAssist.Define
         public const uint Verfire = 7510;
         public const uint Verstone = 7511;
         public const uint Zwerchhau = 7512;
-        public const uint Moulinet = 7530;
+        public const uint EnchantedMoulinet = 7530;//魔划圆斩
+        public const uint Moulinet = 7513;//划圆斩
         public const uint Vercure = 7514;
         public const uint Displacement = 7515;
         public const uint Redoublement = 7516;

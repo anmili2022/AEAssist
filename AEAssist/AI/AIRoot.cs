@@ -286,6 +286,7 @@ namespace AEAssist.AI
                 if (ret == null)
                     ret = await AIMgrs.Instance.HandleGCD(Core.Me.CurrentJob, battleData.lastGCDSpell);
                 if (ret != null) RecordGCD(ret);
+                return false;
             }
 
             if (canUseAbility)
