@@ -169,6 +169,12 @@ namespace AEAssist
         public string ToolTip_MCH_WildFireFirst { get; set; }
         public string ToolTip_MCH_Burst { get; set; }
         #endregion
+        
+        #region DNC
+        public string Toggle_Flourish { get; set; }
+        public string Toggle_SaberDance { get; set; }
+
+        #endregion
 
         #region RPR
 
@@ -215,7 +221,27 @@ namespace AEAssist
         #endregion
         #region Warrior
         public string WarriorDefenseMode { get; set; }
+        public string WarriorOnslaught { get; set; }
+        public string WarriorInnerRelease { get; set; }
+        public string WarriorPrimalRend { get; set; }
 
+        #endregion
+
+        #region RedMage
+        public string Engagement { get; set; }
+        public string Fleche { get; set; }
+        public string ContreSixte { get; set; }
+        #endregion
+
+        #region Dragoon
+        public string LifeSurge { get; set; }
+        public string LanceCharge { get; set; }
+        public string SpineshatterDive { get; set; }
+        public string DragonfireDive { get; set; }
+        public string BattleLitany { get; set; }
+        public string Jump { get; set; }
+        public string WyrmwindThrust { get; set; }
+        public string Geirskogul { get; set; }
         #endregion
 
         #region Healer
@@ -227,8 +253,18 @@ namespace AEAssist
         public string Toggle_SureCast { get; set; }
         public string Toggle_SwiftCast { get; set; }
         public string Heal { get; set; }
-        public string Half { get; set; }
+        public string Divination { get; set; }
+
+        public string Lightspeed { get; set; }
         public string UseCDPull { get; set; }
+        public string GcdHeal { get; set; }
+
+        #endregion
+
+        #region AST
+
+        public string Toggle_Divination { get; set; }
+        public string Toggle_LightSpeed { get; set; }
 
         #endregion
 
@@ -295,7 +331,7 @@ namespace AEAssist
         public string TextBox_Regen { get; set; }
         public string TextBox_AfflatusSolace { get; set; }
 
-
+        public string Textbox_Sch_DotTimeLeft { get; set; }
 
 
     }

@@ -15,9 +15,9 @@ namespace AEAssist.AI.Sage.GCD
             {
                 AurasDefine.BattleLitany,
                 AurasDefine.Brotherhood,
-                AurasDefine.ArcaneCircle,
+                //AurasDefine.ArcaneCircle,
                 AurasDefine.BattleVoice,
-                AurasDefine.SearingLight,
+                //AurasDefine.SearingLight,
                 AurasDefine.Embolden,
                 AurasDefine.Divination,
                 AurasDefine.VulnerabilityTrickAttack,
@@ -31,10 +31,6 @@ namespace AEAssist.AI.Sage.GCD
             {
                 return true;
             }
-            //if (PotionHelper.CheckPotion(SettingMgr.GetSetting<GeneralSettings>().MindPotionId))
-            //{
-                //return true;
-            //}
             return false;
         }
         public int Check(SpellEntity lastSpell)

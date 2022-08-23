@@ -14,8 +14,16 @@ namespace AEAssist.AI.Dancer.GCD
             {
                 return -10;
             }
+
+            if (SpellsDefine.Flourish.RecentlyUsed())
+            {
+                return 1;
+            }
+
             if (!Core.Me.HasAura(AurasDefine.FlourishingSymmetry) &&
-                !Core.Me.HasAura(AurasDefine.FlourshingFlow))
+                !Core.Me.HasAura(AurasDefine.FlourshingFlow) &&
+                !Core.Me.HasAura(AurasDefine.SilkenFlow) &&
+                !Core.Me.HasAura(AurasDefine.SilkenSymmetry))
             {
                 return -1;
             }
@@ -24,6 +32,8 @@ namespace AEAssist.AI.Dancer.GCD
             {
                 return -2;
             }
+
+
             return 0;
         }
 

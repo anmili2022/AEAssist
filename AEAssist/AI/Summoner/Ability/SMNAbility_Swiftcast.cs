@@ -29,7 +29,7 @@ namespace AEAssist.AI.Summoner.Ability
                 return 2;
 
             //ensure next one will be ready on time
-            if (DataBinding.Instance.SMNSettings.SwiftcastOption == 1 && SMN_SpellHelper.Ifrit() && !ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.AvailablePetFlags.Garuda))
+            if (DataBinding.Instance.SMNSettings.SwiftcastOption == 1 && SMN_SpellHelper.Ifrit() && ActionResourceManager.Summoner.AvailablePets.HasFlag(ActionResourceManager.Summoner.AvailablePetFlags.Garuda))
                 return 3;
             
             return -99;

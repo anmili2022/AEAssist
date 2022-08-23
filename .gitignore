@@ -5,3 +5,5 @@
 .vs
 Temp*.json
 .idea
+/Output/AEAssist/Resources
+/Output/AETriggers/Triggerline

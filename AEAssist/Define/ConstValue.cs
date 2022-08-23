@@ -16,8 +16,9 @@
         public static int ReaperDoubleEnshroudMinCheckTime = 4500;
         public static int ReaperDoubleEnshroudMaxCheckTime = 25000;
 
-        public static int SageAOECount = 2;
+        public static int SageAOECount = 3;
         public static int WhiteMageAOECount = 2;
+        public static int RedMageAOECount = 2;
         public static int ScholarAOECount = 3;
 
         public static int BlackMageAOECount = 2;

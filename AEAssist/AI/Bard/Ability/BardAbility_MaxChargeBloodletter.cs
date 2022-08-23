@@ -1,5 +1,6 @@
 ﻿using AEAssist.Define;
 using AEAssist.Helper;
+using ff14bot;
 using System.Threading.Tasks;
 
 namespace AEAssist.AI.Bard.Ability
@@ -13,7 +14,7 @@ namespace AEAssist.AI.Bard.Ability
             if (!AEAssist.DataBinding.Instance.Bloodletter) return -3;
             if (!SpellsDefine.Bloodletter.IsReady())
                 return -2;
-            if (SpellsDefine.Bloodletter.IsMaxChargeReady())
+            if (SpellsDefine.Bloodletter.IsMaxChargeReady(0.1f))
                 return 0;
             return -3;
         }
@@ -21,9 +22,13 @@ namespace AEAssist.AI.Bard.Ability
         public async Task<SpellEntity> Run()
         {
             var SpellEntity = SpellsDefine.Bloodletter.GetSpellEntity();
-            if (SpellsDefine.RainofDeath.IsReady() && TargetHelper.CheckNeedUseAOE(25, 8, ConstValue.BardAOECount))
+            //LogHelper.Info($"{ConstValue.BardAOECount} {TargetHelper.CheckNeedUseAOE(25, 8, ConstValue.BardAOECount)}");
+            if (TargetHelper.CheckNeedUseAOE(25, 8, ConstValue.BardAOECount))
+            {
+                if (!SpellsDefine.RainofDeath.IsReady())
+                    return null;
                 SpellEntity = SpellsDefine.RainofDeath.GetSpellEntity();
-
+            }
             if (await SpellEntity.DoAbility()) return SpellEntity;
 
             return null;

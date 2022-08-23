@@ -26,5 +26,35 @@ namespace AEAssist.View.Overlay
         {
             OverlayManager.OverlayManager.Instance.Close();
         }
+
+        private void UseRampart_OnClick(object sender, RoutedEventArgs e)
+        {
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.Rampart.GetSpellEntity();
+        }
+
+        private void UseReprisal_OnClick(object sender, RoutedEventArgs e)
+        {
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.Reprisal.GetSpellEntity(); 
+        }
+
+        private void UseSuperbolide_OnClick(object sender, RoutedEventArgs e)
+        {
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.Superbolide.GetSpellEntity();
+        }
+
+        private void UseNebula_OnClick(object sender, RoutedEventArgs e)
+        {
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.Nebula.GetSpellEntity();
+        }
+
+        private void UseCamouflage_OnClick(object sender, RoutedEventArgs e)
+        {
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.Camouflage.GetSpellEntity();
+        }
+
+        private void UseHeartOfCorundum_OnClick(object sender, RoutedEventArgs e)
+        {
+            AIRoot.GetBattleData<BattleData>().NextAbilitySpellId = SpellsDefine.HeartOfCorundum.GetSpellEntity();
+        }
     }
 }
